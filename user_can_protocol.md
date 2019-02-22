@@ -3,6 +3,7 @@
 This document defines the User CAN Protcol, commonly called the CAN API.
 
 ## Document References ##
+
 These documents are authoritative in the following order. The character X indicates the file's version.
 
 1. User CAN Protocol DBC - This file is in Vector proprietary DBC file format stored in this repository. The file name is as_pacmod.dbc.
@@ -10,6 +11,7 @@ These documents are authoritative in the following order. The character X indica
 3. This document.
 
 ## Arbitration Field Ranges ##
+
 The list below constrains the assignment of arbitration values to specific messages. Its purpose is to give increasing priority to the increasing time-criticality of associated data.
 
 1. 0x000-0x07F - System-wide reports (global and component reports meant to be received by all components)
