@@ -2,6 +2,21 @@
 
 The as_pacmod.dbc file is formatted as a Vector DBC file.  This file specifies changes to this file.
 
+## Change 006
+
+### Requirements
+
+1. Keep IDs adjacent.
+
+### Changes
+
+1. Modify – Message: NOTIFICATION_CMD 
+   1. Message Properties: 
+      1. Address: 0x41B
+2. Modify – Message: ANG_VEL_RPT
+   1. Message Properties: 
+      1. Address: 0x41A
+
 ## Change 005 Approved 2/22/2019
 
 ### Requirements
