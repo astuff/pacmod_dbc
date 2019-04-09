@@ -8,13 +8,15 @@ assignees: ''
 ---
 
 ## General Instructions
-For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.  Before submitting the issue, delete all the instructions.
+For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.
+
+Before submitting the issue, be sure to do the following.  Apply both a status and a type label.  Apply the "Ongoing CAN API 3.0 Updates" project.  Apply a milestone.  Delete all the instructions and definitions.
 
 ## Editing Mark Instructions
 Remove a line:  <mark>~~Remove this line.~~</mark>
 Add a line: <mark>Remove this line.</mark>
 
-## Field Instructions
+## Definitions
 1. **Requirement**: Brief description of the motivation and function of the change.
 2. **Message Name**: Name of message as it will appear in the PACMod System User Manual and the Vector DBC file.
 3. **Message ID**: 11-bit value for the CAN arbitration field.
@@ -56,4 +58,4 @@ Message Rate: 30 Hz
 |VERTICAL_ACCEL|Signed|40|16|0.01|0|-327.68|327.67|m/s2|
 
 1 0=NEW_DATA_NOT_RX, 1=NEW_DATA_RX
-2 0=NOT_VALID, 1=VALID
+2 0=NOT_VALED, 1=VALID
