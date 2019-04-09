@@ -13,8 +13,8 @@ For changes to an existing message, copy the current message data from the PACMo
 Before submitting the issue, be sure to do the following.  Apply both a status and a type label.  Apply the "Ongoing CAN API 3.0 Updates" project.  Apply a milestone.  Delete all the instructions and definitions.
 
 ## Editing Mark Instructions
-Remove a line:  <mark>~~Remove this line.~~</mark>
-Add a line: <mark>Remove this line.</mark>
+Remove a line:  ~~Remove this line.~~
+Add a line: ***Add this line.***
 
 ## Definitions
 1. **Requirement**: Brief description of the motivation and function of the change.
