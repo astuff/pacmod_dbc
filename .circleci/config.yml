@@ -8,8 +8,12 @@ jobs:
       - run:
           name: Set Up Container
           command: |
-            pip install --user cantools
+            pip install --user cantools xmlschema
       - run:
           name: Validate DBC
           command: |
             /home/circleci/.local/bin/cantools dump as_pacmod*.dbc
+      - run:
+          name: Validate XSD and XML
+          command: |
+            python tests/xml_validation.py
