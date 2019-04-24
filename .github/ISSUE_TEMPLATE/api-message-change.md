@@ -26,7 +26,20 @@ Add a line: ***Add this line.***
 7. **Message Rate**: This is either "event" based or rate in Hz.  All messages are broadcast without solicitation.
 8. **Name**: The name of data field as it will appear in the PACMod System User Manual and the Vector DBC file.  The name is immediately followed by a footnote number if there is one.
 9. **Type**: This is either "signed" or "unsigned", depending on the data.  A signed number is in two's compliment format.
-10. **Bitpos**: Bitpos (data field bit position) 0 is the least significant of byte 0 and bitpos 63 is the most significant bit of byte 7.  All the bits in between increase with increasing bit significance and increasing byte numbers.
+10. **Bitpos**: Vector DBC bit numbering begins with 0 at the least significant bit of byte 0 and ends with 63 at the most significant bit of byte 7 as follows:
+
+|Byte\Bit|7|6|5|4|3|2|1|0|
+|---|---|---|---|---|---|---|---|---|
+|**0**|7|6|5|4|3|2|1|0|
+|**1**|15|14|13|12|11|10|9|8|
+|**2**|23|22|21|20|19|18|17|16|
+|**3**|31|30|29|28|27|26|25|24|
+|**4**|39|38|37|36|35|34|33|32|
+|**5**|47|46|45|44|43|42|41|40|
+|**6**|55|54|53|52|51|50|49|48|
+|**7**|63|62|61|60|59|58|57|56|
+
+The bit position or start bit of a signal is the bit number of the most significant bit within the signal for Motorola/Big-Endian and the least significant bit within the signal for Intel/Little-Endian.  The API requires Motorola/Big-Endian, so the bit position will always be the bit number of the most significant byte.
 11. **Length**: Number of bits in the data field.  PACMod CAN API is Motorola/Big-Endian.
 12. **Factor**: Multiply the data by this number to achieve the correct scale for the given units.
 13. **Offset**: Add this number to the sum of the data and the factor to achieve the correct offset for the given units.
