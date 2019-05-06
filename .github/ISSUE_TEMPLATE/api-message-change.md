@@ -8,13 +8,22 @@ assignees: ''
 ---
 
 ## General Instructions
-For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.
+Remember this is a **public forum**, so please keep your comments appropriate.
 
-Before submitting the issue, be sure to do the following.  Apply both a status and a type label.  Apply the "Ongoing CAN API 3.0 Updates" project.  Apply a milestone.  Delete all the instructions and definitions.
+The GitHub issues list is edited in the "Markdown" markup language.  When you edit the text in an issue, there is both a "write" and a "preview" window.  The write is the code and the preview is the rendered view.  If you want some formatting in your issue, refer to a markdown guide such as [this](https://www.markdownguide.org/basic-syntax/) one.
+
+Before submitting the issue, be sure to do the following.
+1. Apply **both** a status label and a type label.
+2. Apply the "Ongoing CAN API 3.0 Updates" project.
+3. Apply a milestone.  The dates on the milestones relate to the date that the CAN API team is meeting.
+4. Assign the issue to yourself and all of the members of the CAN API team.
+5. Delete all the instructions and definitions.
+
+For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.
 
 ## Editing Mark Instructions
 Remove a line:  ~~Remove this line.~~
-Add a line: ***Add this line.***
+Add a line: **Add this line.**
 
 ## Definitions
 1. **Requirement**: Brief description of the motivation and function of the change.
