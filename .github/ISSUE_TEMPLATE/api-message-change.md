@@ -19,6 +19,11 @@ Before submitting the issue, be sure to do the following.
 4. Assign the issue to yourself and all of the members of the CAN API team.
 5. Delete all the instructions and definitions.
 
+The AutonomouStuff staff will perform the following:
+1. Keep the status label and milestone up to date throughout the development of the issue.
+2. Apply the appropriate release label when the issue issue is released.
+3. Add comments as needed.
+
 For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.
 
 ## Editing Mark Instructions
