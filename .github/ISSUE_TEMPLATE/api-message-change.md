@@ -12,17 +12,16 @@ Remember this is a **public forum**, so please keep your comments appropriate.
 
 The GitHub issues list is edited in the "Markdown" markup language.  When you edit the text in an issue, there is both a "write" and a "preview" window.  The write is the code and the preview is the rendered view.  If you want some formatting in your issue, refer to a markdown guide such as [this](https://www.markdownguide.org/basic-syntax/) one.
 
-Before submitting the issue, be sure to do the following.
+Before submitting the issue, please delete all the instructions and definitions.
+
+The AutonomouStuff CAN API committee staff will perform the following:
 1. Apply **both** a status label and a type label.
 2. Apply the "Ongoing CAN API 3.0 Updates" project.
 3. Apply a milestone.  The dates on the milestones relate to the date that the CAN API team is meeting.
-4. Assign the issue to yourself and all of the members of the CAN API team.
-5. Delete all the instructions and definitions.
-
-The AutonomouStuff staff will perform the following:
-1. Keep the status label and milestone up to date throughout the development of the issue.
-2. Apply the appropriate release label when the issue issue is released.
-3. Add comments as needed.
+4. Assign the issue to all of the members of the CAN API team.
+5. Keep the status label and milestone up to date throughout the development of the issue.
+6. Apply the appropriate release label when the issue issue is released.
+7. Add comments as needed.
 
 For changes to an existing message, copy the current message data from the PACMod System User Guide into this document.  Use the formatting below to markup the changes.  For new messages, extend the example template below as needed.
 
