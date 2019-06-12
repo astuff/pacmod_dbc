@@ -712,6 +712,7 @@ BA_DEF_DEF_  "GenMsgSendType" "Cyclic ";
 BA_DEF_DEF_  "Source_Address_Type" "NO_SOURCE_ADDRESS";
 BA_DEF_DEF_  "Source_Address" 0;
 BA_ "GenMsgCycleTime" BO_ 1051 250;
+BA_ "GenMsgCycleTime" BO_ 1044 1000;
 BA_ "Source_Address_Type" BO_ 32 1;
 BA_ "Source_Address" BO_ 33 1;
 BA_ "Source_Address_Type" BO_ 33 1;
