@@ -107,8 +107,8 @@ BO_ 816 TURN_AUX_RPT: 8 PACMOD
  SG_ DRIVER_BLINKER_BULB_ON : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 812 STEERING_AUX_RPT: 8 PACMOD
- SG_ USER_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE_IS_VALID : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE : 39|16@0+ (0.001,0) [0|65.535] "rad/s"  CUSTOMER_ECU
  SG_ RAW_TORQUE_IS_VALID : 57|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -139,8 +139,8 @@ BO_ 792 HEADLIGHT_AUX_RPT: 8 PACMOD
 BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ BRAKE_ON_OFF_IS_VALID : 60|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_ON_OFF : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_BRAKE_PRESSURE_IS_VALID : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_BRAKE_PRESSURE : 39|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE_IS_VALID : 57|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -149,8 +149,8 @@ BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ RAW_PEDAL_POS : 7|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
 
 BO_ 768 ACCEL_AUX_RPT: 8 PACMOD
- SG_ USER_INTERACTION_IS_VALID : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE_IS_VALID : 41|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE : 23|16@0- (0.001,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_POS_IS_VALID : 40|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -699,6 +699,9 @@ CM_ SG_ 1035 BUILD0 "BUILD0-BUILD3 shall represent the software build number and
 CM_ SG_ 1035 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 812 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
@@ -947,4 +950,6 @@ VAL_ 1050 YAW_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1050 PITCH_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 ROLL_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
-
+VAL_ 768 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
+VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
+VAL_ 812 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
