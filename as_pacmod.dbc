@@ -624,6 +624,41 @@ BO_ 1050 ANG_VEL_RPT: 8 PACMOD
  SG_ ROLL_VEL : 31|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
  SG_ YAW_VEL : 47|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
 
+BO_ 1032 SOFTWARE_VERSION_RPT_00: 8 PACMOD
+ SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ BUILD0 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD1 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+
+BO_ 1033 SOFTWARE_VERSION_RPT_01: 8 PACMOD
+ SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ BUILD0 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD1 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+
+BO_ 1034 SOFTWARE_VERSION_RPT_02: 8 PACMOD
+ SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ BUILD0 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD1 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+
+BO_ 1035 SOFTWARE_VERSION_RPT_03: 8 PACMOD
+ SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ BUILD0 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD1 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
 
 
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
@@ -636,15 +671,66 @@ CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message tra
 CM_ SG_ 34 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 35 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 1032 MAJOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1032 MINOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1032 PATCH "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1032 BUILD0 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1032 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1032 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1032 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1033 MAJOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1033 MINOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1033 PATCH "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1033 BUILD0 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1033 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1033 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1033 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1034 MAJOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1034 MINOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1034 PATCH "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1034 BUILD0 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1034 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1034 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1034 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1035 MAJOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1035 MINOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1035 PATCH "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1035 BUILD0 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1035 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1035 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
 BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic ","NotUsed ","NotUsed ","NotUsed ","NotUsed ","NotUsed ","NotUsed ","IfActive ","NoMsgSendType ";
+BA_DEF_ BO_  "Component_Address_Type" ENUM  "NO_COMPONENT_ADDRESS","COMPONENT_ADDRESS";
+BA_DEF_ BO_  "Component_Address" INT 0 255;
 BA_DEF_DEF_  "GenSigCycleTime" 33;
 BA_DEF_DEF_  "GenMsgCycleTime" 33;
 BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
 BA_DEF_DEF_  "GenMsgSendType" "Cyclic ";
+BA_DEF_DEF_  "Component_Address_Type" "NO_COMPONENT_ADDRESS";
+BA_DEF_DEF_  "Component_Address" 0;
 BA_ "GenMsgCycleTime" BO_ 1051 250;
+BA_ "GenMsgCycleTime" BO_ 1044 1000;
+BA_ "Component_Address_Type" BO_ 32 1;
+BA_ "Component_Address" BO_ 33 1;
+BA_ "Component_Address_Type" BO_ 33 1;
+BA_ "Component_Address" BO_ 34 2;
+BA_ "Component_Address_Type" BO_ 34 1;
+BA_ "Component_Address" BO_ 35 3;
+BA_ "Component_Address_Type" BO_ 35 1;
+BA_ "GenMsgCycleTime" BO_ 1032 1000;
+BA_ "Component_Address_Type" BO_ 1032 1;
+BA_ "GenMsgCycleTime" BO_ 1033 1000;
+BA_ "Component_Address_Type" BO_ 1033 1;
+BA_ "Component_Address" BO_ 1033 1;
+BA_ "GenMsgCycleTime" BO_ 1034 1000;
+BA_ "Component_Address_Type" BO_ 1034 1;
+BA_ "Component_Address" BO_ 1034 2;
+BA_ "GenMsgCycleTime" BO_ 1035 1000;
+BA_ "Component_Address_Type" BO_ 1035 1;
+BA_ "Component_Address" BO_ 1035 3;
 VAL_ 1046 DIM_LEVEL 12 "DIM_LEVEL_MAX" 11 "DIM_LEVEL_11" 10 "DIM_LEVEL_10" 9 "DIM_LEVEL_9" 8 "DIM_LEVEL_8" 7 "DIM_LEVEL_7" 6 "DIM_LEVEL_6" 5 "DIM_LEVEL_5" 4 "DIM_LEVEL_4" 3 "DIM_LEVEL_3" 2 "DIM_LEVEL_2" 1 "DIM_LEVEL_1" 0 "DIM_LEVEL_MIN" ;
 VAL_ 792 HEADLIGHTS_MODE 3 "Headlights On - Auto Mode" 2 "Headlights On - Manual Mode" 1 "Parking Lights Only" 0 "Headlights Off" ;
 VAL_ 528 OUTPUT_VALUE 5 "DASH_CONTROL_DOWN" 4 "DASH_CONTROL_UP" 3 "DASH_CONTROL_RIGHT" 2 "DASH_CONTROL_LEFT" 1 "DASH_CONTROL_OK" 0 "DASH_CONTROL_NONE" ;
@@ -763,20 +849,90 @@ VAL_ 16 PACMOD_SYSTEM_ENABLED 0 "Control Disabled" 1 "Control Enabled" ;
 VAL_ 16 PACMOD_SYSTEM_OVERRIDE_ACTIVE 0 "Not Overridden" 1 "Overridden" ;
 VAL_ 16 BRK_CAN_TIMEOUT 0 "No Active CAN Timeout" 1 "Active CAN Timeout" ;
 VAL_ 1024 VEHICLE_SPEED_VALID 0 "INVALID" 1 "VALID" ;
-VAL_ 528 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 524 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 544 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 520 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 532 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 564 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 548 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 540 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 536 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 560 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 552 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 512 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 516 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
-VAL_ 556 COMMAND_TIMEOUT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 512 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 516 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 516 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 516 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 516 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 516 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 516 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 520 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 520 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 520 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 520 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 520 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 520 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 524 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 524 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 524 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 524 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 524 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 524 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 528 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 528 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 528 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 528 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 528 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 528 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 532 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 532 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 532 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 532 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 532 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 532 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 536 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 536 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 536 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 536 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 536 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 536 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 540 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 540 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 540 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 540 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 540 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 540 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 544 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 544 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 544 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 544 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 544 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 544 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 548 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 548 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 548 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 548 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 548 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 548 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 552 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 552 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 552 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 552 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 552 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 552 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 556 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 556 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 556 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 556 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 556 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 556 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 560 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 560 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 560 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 560 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 560 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 560 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 564 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 564 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 564 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 564 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 564 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 564 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 1051 BUZZER_MUTE 0 "NOT_MUTED" 1 "MUTED" ;
 VAL_ 1051 UNDERDASH_LIGHTS_WHITE 0 "NO_ACTION" 1 "WHITE" ;
 VAL_ 1049 LATERAL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
