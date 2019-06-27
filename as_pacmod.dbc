@@ -664,6 +664,20 @@ BO_ 1035 SOFTWARE_VERSION_RPT_03: 8 PACMOD
  SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
  SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
 
+BO_ 513 ACCEL_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ ACCEL_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_ACCEL_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
+BO_ 517 BRAKE_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ BRAKE_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_BRAKE_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
+BO_ 557 STEERING_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ POSITION_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_POSITION_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ROTATION_RATE_CMD_LIMIT : 39|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_ROTATION_RATE : 55|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
 
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
@@ -706,6 +720,14 @@ CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and
 CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 812 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 513 ACCEL_CMD_LIMIT "The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
+CM_ SG_ 513 LIMITED_ACCEL_CMD "The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.";
+CM_ SG_ 517 BRAKE_CMD_LIMIT "The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
+CM_ SG_ 517 LIMITED_BRAKE_CMD "The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT.";
+CM_ SG_ 557 POSITION_CMD_LIMIT "The POSITION_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 LIMITED_POSITION_CMD "The LIMITED_POSITION_CMD shall have the value of command associated with this system constrained by the STEERING_CMD_LIMIT.";
+CM_ SG_ 557 ROTATION_RATE_CMD_LIMIT "The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 LIMITED_ROTATION_RATE "The LIMITED_ROTATION_RATE_CMD shall have the value of command associated with this system constrained by the ROTATION_RATE_CMD_LIMIT.";
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
