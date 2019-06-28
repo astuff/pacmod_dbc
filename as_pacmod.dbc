@@ -107,8 +107,8 @@ BO_ 816 TURN_AUX_RPT: 8 PACMOD
  SG_ DRIVER_BLINKER_BULB_ON : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 812 STEERING_AUX_RPT: 8 PACMOD
- SG_ USER_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE_IS_VALID : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE : 39|16@0+ (0.001,0) [0|65.535] "rad/s"  CUSTOMER_ECU
  SG_ RAW_TORQUE_IS_VALID : 57|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -139,8 +139,8 @@ BO_ 792 HEADLIGHT_AUX_RPT: 8 PACMOD
 BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ BRAKE_ON_OFF_IS_VALID : 60|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_ON_OFF : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_BRAKE_PRESSURE_IS_VALID : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_BRAKE_PRESSURE : 39|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE_IS_VALID : 57|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -149,8 +149,8 @@ BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ RAW_PEDAL_POS : 7|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
 
 BO_ 768 ACCEL_AUX_RPT: 8 PACMOD
- SG_ USER_INTERACTION_IS_VALID : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ USER_INTERACTION : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION_IS_VALID : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OPERATOR_INTERACTION : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE_IS_VALID : 41|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE : 23|16@0- (0.001,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_POS_IS_VALID : 40|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -459,6 +459,7 @@ BO_ 32 COMPONENT_RPT_00: 8 PACMOD
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ CAN_TIMEOUT_FAULT : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ESTOP : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 33 COMPONENT_RPT_01: 8 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -482,6 +483,7 @@ BO_ 33 COMPONENT_RPT_01: 8 PACMOD
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ CAN_TIMEOUT_FAULT : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ESTOP : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 34 COMPONENT_RPT_02: 8 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -505,6 +507,7 @@ BO_ 34 COMPONENT_RPT_02: 8 PACMOD
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ CAN_TIMEOUT_FAULT : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ESTOP : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 35 COMPONENT_RPT_03: 8 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -528,6 +531,7 @@ BO_ 35 COMPONENT_RPT_03: 8 PACMOD
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ CAN_TIMEOUT_FAULT : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ESTOP : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 260 BRAKE_CMD: 8 CUSTOMER_ECU
  SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
@@ -660,6 +664,20 @@ BO_ 1035 SOFTWARE_VERSION_RPT_03: 8 PACMOD
  SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
  SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
 
+BO_ 513 ACCEL_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ ACCEL_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_ACCEL_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
+BO_ 517 BRAKE_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ BRAKE_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_BRAKE_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
+BO_ 557 STEERING_CMD_LIMIT_RPT: 8 PACMOD
+ SG_ POSITION_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_POSITION_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ROTATION_RATE_CMD_LIMIT : 39|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_ROTATION_RATE : 55|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+
 
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
@@ -699,6 +717,17 @@ CM_ SG_ 1035 BUILD0 "BUILD0-BUILD3 shall represent the software build number and
 CM_ SG_ 1035 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 812 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
+CM_ SG_ 513 ACCEL_CMD_LIMIT "The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
+CM_ SG_ 513 LIMITED_ACCEL_CMD "The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.";
+CM_ SG_ 517 BRAKE_CMD_LIMIT "The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
+CM_ SG_ 517 LIMITED_BRAKE_CMD "The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT.";
+CM_ SG_ 557 POSITION_CMD_LIMIT "The POSITION_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 LIMITED_POSITION_CMD "The LIMITED_POSITION_CMD shall have the value of command associated with this system constrained by the STEERING_CMD_LIMIT.";
+CM_ SG_ 557 ROTATION_RATE_CMD_LIMIT "The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 LIMITED_ROTATION_RATE "The LIMITED_ROTATION_RATE_CMD shall have the value of command associated with this system constrained by the ROTATION_RATE_CMD_LIMIT.";
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
@@ -788,6 +817,7 @@ VAL_ 32 WATCHDOG 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 32 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 ESTOP 0 "RELEASED" 1 "PRESSED" ;
+VAL_ 32 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
 VAL_ 33 ACCEL 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 33 BRAKE 0 "ABSENT" 1 "PRESENT" ;
@@ -807,6 +837,7 @@ VAL_ 33 WATCHDOG 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 33 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 ESTOP 0 "RELEASED" 1 "PRESSED" ;
+VAL_ 33 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
 VAL_ 34 ACCEL 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 34 BRAKE 0 "ABSENT" 1 "PRESENT" ;
@@ -826,6 +857,7 @@ VAL_ 34 WATCHDOG 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 34 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 ESTOP 0 "RELEASED" 1 "PRESSED" ;
+VAL_ 34 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
 VAL_ 35 ACCEL 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 35 BRAKE 0 "ABSENT" 1 "PRESENT" ;
@@ -845,6 +877,7 @@ VAL_ 35 WATCHDOG 0 "ABSENT" 1 "PRESENT" ;
 VAL_ 35 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 ESTOP 0 "RELEASED" 1 "PRESSED" ;
+VAL_ 35 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 16 PACMOD_SYSTEM_ENABLED 0 "Control Disabled" 1 "Control Enabled" ;
 VAL_ 16 PACMOD_SYSTEM_OVERRIDE_ACTIVE 0 "Not Overridden" 1 "Overridden" ;
 VAL_ 16 BRK_CAN_TIMEOUT 0 "No Active CAN Timeout" 1 "Active CAN Timeout" ;
@@ -947,4 +980,6 @@ VAL_ 1050 YAW_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1050 PITCH_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 ROLL_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
-
+VAL_ 768 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
+VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
+VAL_ 812 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
