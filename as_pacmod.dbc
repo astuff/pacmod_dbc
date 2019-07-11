@@ -451,10 +451,11 @@ BO_ 32 COMPONENT_RPT_00: 8 PACMOD
  SG_ MEDIA_CONTROLS : 12|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ PARKING_BRAKE : 13|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SHIFT : 14|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ STEERING : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ TURN : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WIPER : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WATCHDOG : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SPRAY : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ STEERING : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TURN : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WIPER : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG : 19|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COUNTER : 35|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 39|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
@@ -476,10 +477,11 @@ BO_ 33 COMPONENT_RPT_01: 8 PACMOD
  SG_ MEDIA_CONTROLS : 12|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ PARKING_BRAKE : 13|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SHIFT : 14|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ STEERING : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ TURN : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WIPER : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WATCHDOG : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SPRAY : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ STEERING : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TURN : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WIPER : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG : 19|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COUNTER : 35|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 39|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
@@ -501,10 +503,11 @@ BO_ 34 COMPONENT_RPT_02: 8 PACMOD
  SG_ MEDIA_CONTROLS : 12|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ PARKING_BRAKE : 13|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SHIFT : 14|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ STEERING : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ TURN : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WIPER : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WATCHDOG : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SPRAY : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ STEERING : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TURN : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WIPER : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG : 19|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COUNTER : 35|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 39|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
@@ -526,10 +529,11 @@ BO_ 35 COMPONENT_RPT_03: 8 PACMOD
  SG_ MEDIA_CONTROLS : 12|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ PARKING_BRAKE : 13|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SHIFT : 14|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ STEERING : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ TURN : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WIPER : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
- SG_ WATCHDOG : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SPRAY : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ STEERING : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TURN : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WIPER : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG : 19|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COUNTER : 35|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 39|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
@@ -956,9 +960,9 @@ VAL_ 520 OUTPUT_VALUE 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CR
 VAL_ 520 MANUAL_INPUT 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
 VAL_ 520 COMMANDED_VALUE 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
 VAL_ 264 CRUISE_CONTROL_BUTTON 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
-VAL_ 564 OUTPUT_VALUE 7 "High" 6 "Low" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
-VAL_ 564 COMMANDED_VALUE 7 "High" 6 "Low" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
-VAL_ 564 MANUAL_INPUT 7 "High" 6 "Low" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
+VAL_ 564 OUTPUT_VALUE 255 "High" 254 "Medium" 253 "Low" 10 "Intermittent 10" 9 "Intermittent 9" 8 "Intermittent 8" 7 "Intermittent 7" 6 "Intermittent 6" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
+VAL_ 564 COMMANDED_VALUE 255 "High" 254 "Medium" 253 "Low" 10 "Intermittent 10" 9 "Intermittent 9" 8 "Intermittent 8" 7 "Intermittent 7" 6 "Intermittent 6" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
+VAL_ 564 MANUAL_INPUT 255 "High" 254 "Medium" 253 "Low" 10 "Intermittent 10" 9 "Intermittent 9" 8 "Intermittent 8" 7 "Intermittent 7" 6 "Intermittent 6" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
 VAL_ 308 WIPER_CMD 255 "High" 254 "Medium" 253 "Low" 10 "Intermittent 10" 9 "Intermittent 9" 8 "Intermittent 8" 7 "Intermittent 7" 6 "Intermittent 6" 5 "Intermittent 5" 4 "Intermittent 4" 3 "Intermittent 3" 2 "Intermittent 2" 1 "Intermittent 1" 0 "Wipers Off" ;
 VAL_ 540 OUTPUT_VALUE 0 "OFF" 1 "ON" ;
 VAL_ 540 COMMANDED_VALUE 0 "OFF" 1 "ON" ;
