@@ -678,8 +678,8 @@ BO_ 517 BRAKE_CMD_LIMIT_RPT: 8 PACMOD
  SG_ LIMITED_BRAKE_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 557 STEERING_CMD_LIMIT_RPT: 8 PACMOD
- SG_ POSITION_CMD_LIMIT : 7|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
- SG_ LIMITED_POSITION_CMD : 23|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ POSITION_CMD_LIMIT : 7|16@0- (0.001,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LIMITED_POSITION_CMD : 23|16@0- (0.001,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE_CMD_LIMIT : 39|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
  SG_ LIMITED_ROTATION_RATE : 55|16@0+ (0.001,0) [0|1] ""  CUSTOMER_ECU
 
@@ -849,9 +849,9 @@ CM_ SG_ 513 ACCEL_CMD_LIMIT "The ACCEL_CMD_LIMIT shall have the value of the lim
 CM_ SG_ 513 LIMITED_ACCEL_CMD "The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.";
 CM_ SG_ 517 BRAKE_CMD_LIMIT "The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
 CM_ SG_ 517 LIMITED_BRAKE_CMD "The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT.";
-CM_ SG_ 557 POSITION_CMD_LIMIT "The POSITION_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 POSITION_CMD_LIMIT "The POSITION_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
 CM_ SG_ 557 LIMITED_POSITION_CMD "The LIMITED_POSITION_CMD shall have the value of command associated with this system constrained by the STEERING_CMD_LIMIT.";
-CM_ SG_ 557 ROTATION_RATE_CMD_LIMIT "The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.  It limits the absolute value of the command.";
+CM_ SG_ 557 ROTATION_RATE_CMD_LIMIT "The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
 CM_ SG_ 557 LIMITED_ROTATION_RATE "The LIMITED_ROTATION_RATE_CMD shall have the value of command associated with this system constrained by the ROTATION_RATE_CMD_LIMIT.";
 CM_ SG_ 768 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 768 RAW_PEDAL_FORCE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
