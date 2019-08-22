@@ -3,8 +3,11 @@
 This document the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod 3.0 System and resides on the User CAN data bus.
 
 ## Document References
+This document is the authoritative defintion of the User CAN Protocol.  The following documents are supplimental to this document.  They all reside in GitHub (https://github.com/astuff/pacmod_dbc).
 
-The file as_pacmod.dbc stored in this repository contains the CAN Message definitions in Vector proprietary DBC file format.
+- as_pacmod.dbc - The file contains the CAN Message definitions in Vector proprietary DBC file format.
+- vehicle_associations.xml - The file contains the availability of each message on each of the different vehicle platforms.
+- dbc_description.html - This file is derived from as_pacmod.dbc and vehicle_associations.xml.  It is a human readble version of the same.
 
 ## Definitions
 
@@ -57,4 +60,4 @@ The byte order of all CAN messages is Motorola/Big-Endian.
 
 ## CAN Message Availability
 
-Each vehicle has a subset of available CAN messages.  The DBC specifies the availability of each message.
+Each vehicle has a subset of available CAN messages.  The file vehicle_associations.xml specifies the availability of each message.
