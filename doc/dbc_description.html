@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -73,7 +73,10 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USER_INTERACTION</td>
+        <td>OPERATOR_INTERACTION
+          <sup>1</sup>
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">32</td>
         <td class="centered-text">1</td>
@@ -84,7 +87,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS_IS_VALID</td>
+        <td>RAW_PEDAL_POS_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">40</td>
         <td class="centered-text">1</td>
@@ -95,7 +100,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_FORCE_IS_VALID</td>
+        <td>RAW_PEDAL_FORCE_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
         <td class="centered-text">1</td>
@@ -106,7 +113,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USER_INTERACTION_IS_VALID</td>
+        <td>OPERATOR_INTERACTION_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
         <td class="centered-text">1</td>
@@ -117,6 +126,21 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>ACCEL_CMD</h1>
     <table class="message-table">
       <tr>
@@ -133,7 +157,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">3</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -198,6 +222,75 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <h1>ACCEL_CMD_LIMIT_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">513</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x201</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">4</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ACCEL_CMD_LIMIT
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>LIMITED_ACCEL_CMD
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.
+    </p>
     <h1>ACCEL_RPT</h1>
     <table class="message-table">
       <tr>
@@ -257,7 +350,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -268,7 +363,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -279,7 +376,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -290,7 +389,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -301,7 +402,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -313,7 +416,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -361,6 +464,9 @@
     <p class="notes-para">
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
     <h1>ANG_VEL_RPT</h1>
     <table class="message-table">
       <tr>
@@ -377,7 +483,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">7</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -585,7 +691,10 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USER_INTERACTION</td>
+        <td>OPERATOR_INTERACTION
+          <sup>1</sup>
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">48</td>
         <td class="centered-text">1</td>
@@ -607,7 +716,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS_IS_VALID</td>
+        <td>RAW_PEDAL_POS_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">56</td>
         <td class="centered-text">1</td>
@@ -618,7 +729,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_FORCE_IS_VALID</td>
+        <td>RAW_PEDAL_FORCE_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">57</td>
         <td class="centered-text">1</td>
@@ -629,7 +742,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_BRAKE_PRESSURE_IS_VALID</td>
+        <td>RAW_BRAKE_PRESSURE_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
         <td class="centered-text">1</td>
@@ -640,7 +755,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USER_INTERACTION_IS_VALID</td>
+        <td>OPERATOR_INTERACTION_AVAIL
+          <sup>e</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
         <td class="centered-text">1</td>
@@ -651,7 +768,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_ON_OFF_IS_VALID</td>
+        <td>BRAKE_ON_OFF_AVAIL
+          <sup>f</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
         <td class="centered-text">1</td>
@@ -662,6 +781,27 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>BRAKE_CMD</h1>
     <table class="message-table">
       <tr>
@@ -678,7 +818,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">3</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -741,6 +881,527 @@
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
+      </tr>
+    </table>
+    <h1>BRAKE_CMD_LIMIT_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">517</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x205</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">4</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>BRAKE_CMD_LIMIT
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>LIMITED_BRAKE_CMD
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT.
+    </p>
+    <h1>BRAKE_DECCEL_AUX_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">824</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x338</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">3</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>XBR_ACTIVE_CONTROL_MODE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>XBR_SYSTEM_STATE
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FOUNDATION_BRAKE_USE
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>HILL_HOLDER_MODE
+          <sup>4</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>XBR_ACTIVE_CONTROL_MODE_AVAIL
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>XBR_SYSTEM_STATE_AVAIL
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">17</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FOUNDATION_BRAKE_USE_AVAIL
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>HILL_HOLDER_MODE_AVAIL
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_BRAKE_DEMAND, 1=DRIVERS_BRAKE_DEMAND, 2=ADDITION_MODE_OF_XBR_ACCELERATION_CONTROL, 3=MAXIMUM_MODE_OF_XBR_ACCELERATION_CONTROL<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=ANY_EXTERNAL_BRAKE_DEMAND_WILL_BE_ACCEPTED, 2=NO_EXTERNAL_BRAKE_DEMAND_WILL_BE_ACCEPTED<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=FOUNDATION_BRAKES_NOT_IN_USE, 1=FOUNDATION_BRAKES_IN_USE<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=INACTIVE, 1=ACTIVE, 2=ACTIVE_BUT_INACTIVE_SOON, 6=ERROR<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <h1>BRAKE_DECCEL_CMD</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">316</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x13c</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">4</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">CUSTOMER_ECU</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>IGNORE_OVERRIDES</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CLEAR_OVERRIDE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_DECCEL_CMD</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">m/s^2</td>
+      </tr>
+      <tr>
+        <td>XBR_EBI_MODE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">25</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>XBR_PRIORITY
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">27</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>XBR_CONTROL_MODE
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">29</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_ENDURANCE_BRAKE_INTEGRATION_ALLOWED, 1=ONLY_ENDURANCE_BRAKES_ALLOWED, 2=ENDURANCE_BRAKE_INTEGRATION_ALLOWED<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=HIGHEST_PRIORITY, 1=HIGH_PRIORITY, 2=MEDIUM_PRIORITY, 3=LOW_PRIORITY<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OVERRIDE_DISABLE, 1=ACCELERATION_CONTROL_WITH_ADDITION_MODE, 2=ACCELERATION_CONTROL_WITH_MAXIMUM_MODE<br>
+    </p>
+    <h1>BRAKE_DECCEL_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">572</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x23c</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">7</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLED</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OVERRIDE_ACTIVE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_OUTPUT_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>INPUT_OUTPUT_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OUTPUT_REPORTED_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PACMOD_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>VEHICLE_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_TIMEOUT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MANUAL_INPUT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">m/s^2</td>
+      </tr>
+      <tr>
+        <td>COMMANDED_VALUE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">m/s^2</td>
+      </tr>
+      <tr>
+        <td>OUTPUT_VALUE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">m/s^2</td>
       </tr>
     </table>
     <h1>BRAKE_MOTOR_RPT_1</h1>
@@ -990,7 +1651,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -1001,7 +1664,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -1012,7 +1677,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -1023,7 +1690,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -1034,7 +1703,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -1046,7 +1717,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -1094,6 +1765,9 @@
     <p class="notes-para">
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
     <h1>COMPONENT_RPT_00</h1>
     <table class="message-table">
       <tr>
@@ -1110,7 +1784,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -1287,9 +1961,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING
-          <sup>2</sup>
-        </td>
+        <td>SPRAY</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -1300,7 +1972,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TURN
+        <td>STEERING
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1313,7 +1985,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WIPER
+        <td>TURN
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1326,11 +1998,46 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WATCHDOG
+        <td>WIPER
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>WATCHDOG
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_DECCEL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REAR_PASS_DOOR</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -1391,8 +2098,8 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ESTOP
-          <sup>4</sup>
+        <td>INTERNAL_SUPPLY_VOLTAGE_FAULT
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -1412,9 +2119,6 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_FAULT, 1=FAULT<br>
-    </p>
-    <p class="notes-para">
-      <sup>4</sup>0=RELEASED, 1=PRESSED<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -1438,7 +2142,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -1615,9 +2319,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING
-          <sup>2</sup>
-        </td>
+        <td>SPRAY</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -1628,7 +2330,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TURN
+        <td>STEERING
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1641,7 +2343,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WIPER
+        <td>TURN
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1654,11 +2356,46 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WATCHDOG
+        <td>WIPER
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>WATCHDOG
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_DECCEL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REAR_PASS_DOOR</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -1719,8 +2456,8 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ESTOP
-          <sup>4</sup>
+        <td>INTERNAL_SUPPLY_VOLTAGE_FAULT
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -1740,9 +2477,6 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_FAULT, 1=FAULT<br>
-    </p>
-    <p class="notes-para">
-      <sup>4</sup>0=RELEASED, 1=PRESSED<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -1766,7 +2500,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -1943,9 +2677,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING
-          <sup>2</sup>
-        </td>
+        <td>SPRAY</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -1956,7 +2688,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TURN
+        <td>STEERING
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1969,7 +2701,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WIPER
+        <td>TURN
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1982,11 +2714,46 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WATCHDOG
+        <td>WIPER
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>WATCHDOG
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_DECCEL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REAR_PASS_DOOR</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -2047,8 +2814,8 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ESTOP
-          <sup>4</sup>
+        <td>INTERNAL_SUPPLY_VOLTAGE_FAULT
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -2068,9 +2835,6 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_FAULT, 1=FAULT<br>
-    </p>
-    <p class="notes-para">
-      <sup>4</sup>0=RELEASED, 1=PRESSED<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -2094,7 +2858,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -2271,9 +3035,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING
-          <sup>2</sup>
-        </td>
+        <td>SPRAY</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -2284,7 +3046,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TURN
+        <td>STEERING
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -2297,7 +3059,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WIPER
+        <td>TURN
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -2310,11 +3072,46 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WATCHDOG
+        <td>WIPER
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>WATCHDOG
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_DECCEL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REAR_PASS_DOOR</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -2375,8 +3172,8 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ESTOP
-          <sup>4</sup>
+        <td>INTERNAL_SUPPLY_VOLTAGE_FAULT
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -2396,9 +3193,6 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_FAULT, 1=FAULT<br>
-    </p>
-    <p class="notes-para">
-      <sup>4</sup>0=RELEASED, 1=PRESSED<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -2422,7 +3216,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -2508,7 +3302,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -2551,7 +3345,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -2562,7 +3358,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -2573,7 +3371,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -2584,7 +3384,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -2595,7 +3397,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -2607,7 +3411,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -2620,7 +3424,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -2633,7 +3437,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -2646,7 +3450,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -2662,7 +3466,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_LEFT_CMD</h1>
     <table class="message-table">
@@ -2680,7 +3487,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -2766,7 +3573,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -2809,7 +3616,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -2820,7 +3629,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -2831,7 +3642,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -2842,7 +3655,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -2853,7 +3668,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -2865,7 +3682,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -2878,7 +3695,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -2891,7 +3708,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -2904,7 +3721,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -2920,7 +3737,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_RIGHT_CMD</h1>
     <table class="message-table">
@@ -2938,7 +3758,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3024,7 +3844,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3067,7 +3887,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -3078,7 +3900,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -3089,7 +3913,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -3100,7 +3926,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -3111,7 +3939,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -3123,7 +3953,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -3136,7 +3966,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -3149,7 +3979,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -3162,7 +3992,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -3178,7 +4008,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DATE_TIME_RPT</h1>
     <table class="message-table">
@@ -3196,7 +4029,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3299,7 +4132,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3358,7 +4191,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3533,6 +4366,75 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <h1>ESTOP_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1052</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x41c</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">1</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ESTOP
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ESTOP_FAULT
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=RELEASED, 1=PRESSED<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
     <h1>GLOBAL_CMD</h1>
     <table class="message-table">
       <tr>
@@ -3549,7 +4451,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3759,7 +4661,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3840,7 +4742,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -3883,7 +4785,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -3894,7 +4798,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -3905,7 +4811,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -3916,7 +4824,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -3927,7 +4837,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -3939,7 +4851,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -3987,6 +4899,9 @@
     <p class="notes-para">
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
     <h1>HEADLIGHT_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -4003,7 +4918,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">3</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4070,7 +4985,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HEADLIGHTS_ON_IS_VALID</td>
+        <td>HEADLIGHTS_ON_AVAIL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
         <td class="centered-text">1</td>
@@ -4081,7 +4998,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HEADLIGHTS_ON_BRIGHT_IS_VALID</td>
+        <td>HEADLIGHTS_ON_BRIGHT_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">17</td>
         <td class="centered-text">1</td>
@@ -4092,7 +5011,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FOG_LIGHTS_ON_IS_VALID</td>
+        <td>FOG_LIGHTS_ON_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
         <td class="centered-text">1</td>
@@ -4103,7 +5024,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HEADLIGHTS_MODE_IS_VALID</td>
+        <td>HEADLIGHTS_MODE_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
         <td class="centered-text">1</td>
@@ -4116,6 +5039,18 @@
     </table>
     <p class="notes-para">
       <sup>1</sup>3=Headlights On - Auto Mode, 2=Headlights On - Manual Mode, 1=Parking Lights Only, 0=Headlights Off<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>HEADLIGHT_CMD</h1>
     <table class="message-table">
@@ -4133,7 +5068,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4219,7 +5154,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4262,7 +5197,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -4273,7 +5210,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -4284,7 +5223,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -4295,7 +5236,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -4306,7 +5249,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -4318,7 +5263,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -4331,7 +5276,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4344,7 +5289,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -4357,7 +5302,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -4373,7 +5318,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
     </p>
     <h1>HORN_CMD</h1>
     <table class="message-table">
@@ -4391,7 +5339,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4477,7 +5425,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4520,7 +5468,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -4531,7 +5481,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -4542,7 +5494,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -4553,7 +5507,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -4564,7 +5520,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -4576,7 +5534,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -4589,7 +5547,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4602,7 +5560,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -4615,7 +5573,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -4631,7 +5589,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=OFF, 1=ON<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=ON<br>
     </p>
     <h1>INTERIOR_LIGHTS_RPT</h1>
     <table class="message-table">
@@ -4649,7 +5610,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">3</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -4695,6 +5656,17 @@
         <td>MOOD_LIGHTS_ON</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>AMBIENT_LIGHT_SENSOR</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -4752,6 +5724,17 @@
         <td>DIM_LEVEL_IS_VALID</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>AMBIENT_LIGHT_SENSOR_IS_VALID</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -4893,7 +5876,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">7</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5047,7 +6030,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5133,7 +6116,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5176,7 +6159,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -5187,7 +6172,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -5198,7 +6185,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -5209,7 +6198,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -5220,7 +6211,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -5232,7 +6225,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -5245,7 +6238,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5258,7 +6251,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -5271,7 +6264,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -5287,7 +6280,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
     </p>
     <h1>NOTIFICATION_CMD</h1>
     <table class="message-table">
@@ -5305,7 +6301,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5374,7 +6370,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5543,7 +6539,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5624,7 +6620,350 @@
       </tr>
       <tr>
         <td>DLC</td>
+        <td class="centered-text">4</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLED</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OVERRIDE_ACTIVE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_TIMEOUT
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MANUAL_INPUT</td>
+        <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMANDED_VALUE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OUTPUT_VALUE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">24</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <h1>REAR_LIGHTS_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1048</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x418</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>BRAKE_LIGHTS_ON</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REVERSE_LIGHTS_ON</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_LIGHTS_ON_IS_VALID</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REVERSE_LIGHTS_ON_IS_VALID</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">9</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <h1>REAR_PASS_DOOR_CMD</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">320</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x140</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">CUSTOMER_ECU</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>IGNORE_OVERRIDES</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CLEAR_OVERRIDE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REAR_PASS_DOOR_CMD
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
+    </p>
+    <h1>REAR_PASS_DOOR_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">576</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x240</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5722,9 +7061,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT
-          <sup>1</sup>
-        </td>
+        <td>COMMAND_TIMEOUT</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -5735,123 +7072,48 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">24</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
         <td class="centered-text"></td>
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
     </p>
-    <h1>REAR_LIGHTS_RPT</h1>
-    <table class="message-table">
-      <tr>
-        <td>ID Decimal</td>
-        <td class="centered-text">1048</td>
-      </tr>
-      <tr>
-        <td>ID Hexadecimal</td>
-        <td class="centered-text">0x418</td>
-      </tr>
-      <tr>
-        <td>Frame Format</td>
-        <td class="centered-text">Standard</td>
-      </tr>
-      <tr>
-        <td>DLC</td>
-        <td class="centered-text">8</td>
-      </tr>
-      <tr>
-        <td>Sender</td>
-        <td class="centered-text">PACMOD</td>
-      </tr>
-    </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
-    <table class="signals-table">
-      <tr class="header-row">
-        <td class="centered-text bold">Name</td>
-        <td class="centered-text bold">Type</td>
-        <td class="centered-text bold">Bitpos</td>
-        <td class="centered-text bold">Length</td>
-        <td class="centered-text bold">Factor</td>
-        <td class="centered-text bold">Offset</td>
-        <td class="centered-text bold">Min</td>
-        <td class="centered-text bold">Max</td>
-        <td class="centered-text bold">Unit</td>
-      </tr>
-      <tr>
-        <td>BRAKE_LIGHTS_ON</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>REVERSE_LIGHTS_ON</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>BRAKE_LIGHTS_ON_IS_VALID</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">8</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>REVERSE_LIGHTS_ON_IS_VALID</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">9</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-    </table>
     <h1>SHIFT_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -5868,7 +7130,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -5933,7 +7195,22 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BETWEEN_GEARS_IS_VALID</td>
+        <td>WRITE_TO_CONFIG
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BETWEEN_GEARS_AVAIL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -5944,7 +7221,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STAY_IN_NEUTRAL_MODE_IS_VALID</td>
+        <td>STAY_IN_NEUTRAL_MODE_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -5955,7 +7234,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_INTERLOCK_ACTIVE_IS_VALID</td>
+        <td>BRAKE_INTERLOCK_ACTIVE_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
         <td class="centered-text">1</td>
@@ -5966,7 +7247,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPEED_INTERLOCK_ACTIVE_IS_VALID</td>
+        <td>SPEED_INTERLOCK_ACTIVE_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
         <td class="centered-text">1</td>
@@ -5976,7 +7259,33 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>WRITE_TO_CONFIG_IS_VALID</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">12</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=SILENT, 1=BEEP<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>SHIFT_CMD</h1>
     <table class="message-table">
       <tr>
@@ -5993,7 +7302,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6083,7 +7392,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6091,6 +7400,876 @@
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLED</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OVERRIDE_ACTIVE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMAND_TIMEOUT
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MANUAL_INPUT
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMMANDED_VALUE
+          <sup>4</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OUTPUT_VALUE
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 5=BETWEEN_GEARS, 6=ERROR, 7=NONE<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
+    </p>
+    <h1>SOFTWARE_VERSION_RPT_00</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1032</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x408</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">7</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>MAJOR
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINOR
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PATCH
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BUILD0
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD1
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD2
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD3
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <h1>SOFTWARE_VERSION_RPT_01</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1033</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x409</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">7</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>MAJOR
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINOR
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PATCH
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BUILD0
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD1
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD2
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD3
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <h1>SOFTWARE_VERSION_RPT_02</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1034</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x40a</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">7</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>MAJOR
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINOR
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PATCH
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BUILD0
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD1
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD2
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD3
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <h1>SOFTWARE_VERSION_RPT_03</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1035</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x40b</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">7</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>MAJOR
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINOR
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PATCH
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BUILD0
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD1
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD2
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>BUILD3
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+    </p>
+    <h1>SPRAYER_CMD</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">312</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x138</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">CUSTOMER_ECU</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>IGNORE_OVERRIDES</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CLEAR_OVERRIDE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SPRAYER_CMD
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_SPRAYING, 1=SPRAYING<br>
+    </p>
+    <h1>SPRAYER_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">568</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x238</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">4</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -6181,9 +8360,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT
-          <sup>1</sup>
-        </td>
+        <td>COMMAND_TIMEOUT</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -6194,54 +8371,39 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT
-          <sup>2</sup>
-        </td>
+        <td>MANUAL_INPUT</td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">15</td>
         <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE
-          <sup>3</sup>
-        </td>
+        <td>COMMANDED_VALUE</td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">23</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE
-          <sup>2</sup>
-        </td>
+        <td>OUTPUT_VALUE</td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">31</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">24</td>
+        <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
     </table>
-    <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
-    </p>
-    <p class="notes-para">
-      <sup>2</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 5=BETWEEN_GEARS, 6=ERROR, 7=NONE<br>
-    </p>
-    <p class="notes-para">
-      <sup>3</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
-    </p>
     <h1>STEERING_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -6312,7 +8474,10 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>USER_INTERACTION</td>
+        <td>OPERATOR_INTERACTION
+          <sup>1</sup>
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">48</td>
         <td class="centered-text">1</td>
@@ -6323,7 +8488,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_POSITION_IS_VALID</td>
+        <td>RAW_POSITION_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">56</td>
         <td class="centered-text">1</td>
@@ -6334,7 +8501,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_TORQUE_IS_VALID</td>
+        <td>RAW_TORQUE_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">57</td>
         <td class="centered-text">1</td>
@@ -6345,7 +8514,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ROTATION_RATE_IS_VALID</td>
+        <td>ROTATION_RATE_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
         <td class="centered-text">1</td>
@@ -6356,7 +8527,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USER_INTERACTION_IS_VALID</td>
+        <td>OPERATOR_INTERACTION_AVAIL
+          <sup>e</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
         <td class="centered-text">1</td>
@@ -6367,6 +8540,24 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>STEERING_CMD</h1>
     <table class="message-table">
       <tr>
@@ -6383,7 +8574,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">5</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6459,6 +8650,107 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <h1>STEERING_CMD_LIMIT_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">557</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x22d</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">8</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>POSITION_CMD_LIMIT
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Signed</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">-32.768</td>
+        <td class="centered-text">32.767</td>
+        <td class="centered-text">rad</td>
+      </tr>
+      <tr>
+        <td>LIMITED_POSITION_CMD
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Signed</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">-32.768</td>
+        <td class="centered-text">32.767</td>
+        <td class="centered-text">rad</td>
+      </tr>
+      <tr>
+        <td>ROTATION_RATE_CMD_LIMIT
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">32.768</td>
+        <td class="centered-text">rad/s</td>
+      </tr>
+      <tr>
+        <td>LIMITED_ROTATION_RATE
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.001</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">32.768</td>
+        <td class="centered-text">rad/s</td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>The POSITION_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>The LIMITED_POSITION_CMD shall have the value of command associated with this system constrained by the STEERING_CMD_LIMIT.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>The LIMITED_ROTATION_RATE_CMD shall have the value of command associated with this system constrained by the ROTATION_RATE_CMD_LIMIT.
+    </p>
     <h1>STEERING_MOTOR_RPT_1</h1>
     <table class="message-table">
       <tr>
@@ -6706,7 +8998,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -6717,7 +9011,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -6728,7 +9024,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -6739,7 +9037,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -6750,7 +9050,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -6762,7 +9064,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -6810,6 +9112,9 @@
     <p class="notes-para">
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
     <h1>TURN_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -6826,7 +9131,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6869,7 +9174,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DRIVER_BLINKER_BULB_ON_IS_VALID</td>
+        <td>DRIVER_BLINKER_BULB_ON_AVAIL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -6880,7 +9187,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_BLINKER_BULB_ON_IS_VALID</td>
+        <td>PASS_BLINKER_BULB_ON_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -6891,6 +9200,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>TURN_CMD</h1>
     <table class="message-table">
       <tr>
@@ -6907,7 +9222,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6993,7 +9308,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7036,7 +9351,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7047,7 +9364,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -7058,7 +9377,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -7069,7 +9390,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -7080,7 +9403,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -7092,7 +9417,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -7105,7 +9430,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -7118,7 +9443,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -7131,7 +9456,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -7147,7 +9472,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
     </p>
     <h1>VEHICLE_SPEED_RPT</h1>
     <table class="message-table">
@@ -7165,7 +9493,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">3</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7229,7 +9557,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7277,7 +9605,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7336,7 +9664,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">7</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7390,6 +9718,876 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <h1>WATCHDOG_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1536</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x600</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">8</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>GLOBAL_ENABLE_FLAG
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_COMMAND_TIMEOUT_ERROR
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_PACMOD_SUBSYSTEM_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_VEHICLE_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_PACMOD_SYSTEM_FAULT_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_CONFIG_FAULT_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_ENABLED
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">9</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">10</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">11</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">12</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">13</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">14</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_ENABLED
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">17</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">18</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">19</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">20</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">22</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_ENABLED
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">24</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">25</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">26</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">27</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">28</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">29</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">30</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SHIFT_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_ENABLED
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">32</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">33</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">34</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">35</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">36</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_PACMOD_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">37</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">38</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEER_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD1_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">40</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD1_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">41</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD1_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">42</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD2_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">43</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD2_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">44</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD2_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD3_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">46</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD3_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD3_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">48</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI1_RPT_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">49</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI1_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">50</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI1_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">51</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI1_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">52</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI2_RPT_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">53</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI2_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">54</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI2_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI2_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">56</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI3_RPT_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">57</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI3_CONFIG_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">58</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI3_CAN_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">59</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI3_COUNTER_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">60</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MOD_SYSTEM_PRESENT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">61</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MINI_SYSTEM_PRESENT_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">62</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_INTERNAL_POWER_SUPPLY_FAULT</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">63</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
     <h1>WHEEL_SPEED_RPT</h1>
     <table class="message-table">
       <tr>
@@ -7428,7 +10626,7 @@
       </tr>
       <tr>
         <td>WHEEL_SPD_FRONT_LEFT</td>
-        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">16</td>
         <td class="centered-text">0.01</td>
@@ -7487,7 +10685,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7574,7 +10772,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FRONT_WIPING_IS_VALID</td>
+        <td>FRONT_WIPING_AVAIL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -7585,7 +10785,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FRONT_SPRAYING_IS_VALID</td>
+        <td>FRONT_SPRAYING_AVAIL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -7596,7 +10798,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_WIPING_IS_VALID</td>
+        <td>REAR_WIPING_AVAIL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
         <td class="centered-text">1</td>
@@ -7607,7 +10811,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SPRAYING_IS_VALID</td>
+        <td>REAR_SPRAYING_AVAIL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
         <td class="centered-text">1</td>
@@ -7618,7 +10824,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY_NEAR_EMPTY_IS_VALID</td>
+        <td>SPRAY_NEAR_EMPTY_AVAIL
+          <sup>e</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
         <td class="centered-text">1</td>
@@ -7629,7 +10837,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY_EMPTY_IS_VALID</td>
+        <td>SPRAY_EMPTY_AVAIL
+          <sup>f</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
         <td class="centered-text">1</td>
@@ -7640,6 +10850,24 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>WIPER_CMD</h1>
     <table class="message-table">
       <tr>
@@ -7656,7 +10884,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7724,7 +10952,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>7=High, 6=Low, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>1</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
     </p>
     <h1>WIPER_RPT</h1>
     <table class="message-table">
@@ -7742,7 +10970,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7785,7 +11013,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7796,7 +11026,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -7807,7 +11039,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -7818,7 +11052,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -7829,7 +11065,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -7841,7 +11079,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -7854,7 +11092,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -7867,7 +11105,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -7880,7 +11118,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -7896,7 +11134,10 @@
       <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>7=High, 6=Low, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
     </p>
     <h1>YAW_RATE_RPT</h1>
     <table class="message-table">
@@ -7914,7 +11155,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">8</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
