@@ -117,6 +117,8 @@ BO_ 812 STEERING_AUX_RPT: 8 PACMOD
  SG_ RAW_TORQUE : 23|16@0- (0.001,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_POSITION_AVAIL : 56|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ RAW_POSITION : 7|16@0- (0.001,0) [-32.768|32.767] ""  CUSTOMER_ECU
+ SG_ ROTATION_RATE_SIGN : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ROTATION_RATE_SIGN_AVAIL : 60|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 808 SHIFT_AUX_RPT: 3 PACMOD
  SG_ SPEED_INTERLOCK_ACTIVE_AVAIL : 11|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -878,6 +880,10 @@ BO_ 584 MARKER_LAMP_RPT: 4 PACMOD
  SG_ COMMANDED_VALUE : 16|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 24|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
+BO_ 1053 USER_NOTIFICATION_CMD: 1 CUSTOMER_ECU
+ SG_ BUZZER_MUTE : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ UNDERDASH_LIGHTS_WHITE : 1|1@0+ (1,0) [0|1] ""  PACMOD
+
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
 CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -947,6 +953,8 @@ CM_ SG_ 812 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of 
 CM_ SG_ 812 ROTATION_RATE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 RAW_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 RAW_POSITION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 812 ROTATION_RATE_SIGN_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 812 ROTATION_RATE_SIGN "Counterclockwise rotation is positive according to the right-hand rule.";
 CM_ SG_ 816 PASS_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 816 DRIVER_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 820 SPRAY_EMPTY_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1081,6 +1089,9 @@ BA_ "GenSigCycleTime" SG_ 1536 MINI3_CAN_TIMEOUT 100;
 BA_ "GenSigCycleTime" SG_ 1536 MINI3_COUNTER_FAULT 100;
 BA_ "GenSigCycleTime" SG_ 1536 MOD_SYSTEM_PRESENT_FAULT 100;
 BA_ "GenSigCycleTime" SG_ 1536 MINI_SYSTEM_PRESENT_FAULT 100;
+BA_ "GenMsgCycleTime" BO_ 1053 250;
+BA_ "GenSigCycleTime" SG_ 1053 BUZZER_MUTE 250;
+BA_ "GenSigCycleTime" SG_ 1053 UNDERDASH_LIGHTS_WHITE 250;
 VAL_ 1046 DIM_LEVEL 12 "DIM_LEVEL_MAX" 11 "DIM_LEVEL_11" 10 "DIM_LEVEL_10" 9 "DIM_LEVEL_9" 8 "DIM_LEVEL_8" 7 "DIM_LEVEL_7" 6 "DIM_LEVEL_6" 5 "DIM_LEVEL_5" 4 "DIM_LEVEL_4" 3 "DIM_LEVEL_3" 2 "DIM_LEVEL_2" 1 "DIM_LEVEL_1" 0 "DIM_LEVEL_MIN" ;
 VAL_ 792 HEADLIGHTS_MODE 3 "Headlights On - Auto Mode" 2 "Headlights On - Manual Mode" 1 "Parking Lights Only" 0 "Headlights Off" ;
 VAL_ 528 OUTPUT_VALUE 5 "DASH_CONTROL_DOWN" 4 "DASH_CONTROL_UP" 3 "DASH_CONTROL_RIGHT" 2 "DASH_CONTROL_LEFT" 1 "DASH_CONTROL_OK" 0 "DASH_CONTROL_NONE" ;
@@ -1316,6 +1327,7 @@ VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 768 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
 VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
 VAL_ 812 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
+VAL_ 812 ROTATION_RATE_SIGN 0 "POSITIVE" 1 "NEGATIVE";
 VAL_ 312 SPRAYER_CMD 0 "NOT_SPRAYING" 1 "SPRAYING";
 VAL_ 1536 GLOBAL_ENABLE_FLAG 0 "FALSE" 1 "TRUE";
 VAL_ 1536 GLOBAL_OVERRIDE_ACTIVE 0 "FALSE" 1 "TRUE";
@@ -1402,3 +1414,5 @@ VAL_ 328 MARKER_LAMP_CMD 0 "OFF" 1 "ON" ;
 VAL_ 584 MANUAL_INPUT 0 "OFF" 1 "ON" ;
 VAL_ 584 COMMANDED_VALUE 0 "OFF" 1 "ON" ;
 VAL_ 584 OUTPUT_VALUE 0 "OFF" 1 "ON" ;
+VAL_ 1053 BUZZER_MUTE 0 "NOT_MUTED" 1 "MUTED" ;
+VAL_ 1053 UNDERDASH_LIGHTS_WHITE 0 "NO_ACTION" 1 "WHITE" ;
