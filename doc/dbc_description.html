@@ -9136,8 +9136,22 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_POSITION_AVAIL
+        <td>ROTATION_RATE_SIGN
+          <sup>2</sup>
           <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">49</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>RAW_POSITION_AVAIL
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">56</td>
@@ -9150,7 +9164,7 @@
       </tr>
       <tr>
         <td>RAW_TORQUE_AVAIL
-          <sup>c</sup>
+          <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">57</td>
@@ -9163,7 +9177,7 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_AVAIL
-          <sup>d</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
@@ -9176,10 +9190,23 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>e</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ROTATION_RATE_SIGN_AVAIL
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">60</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -9192,10 +9219,13 @@
       <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
     </p>
     <p class="notes-para">
+      <sup>2</sup>0=POSITIVE, 1=NEGATIVE<br>
+    </p>
+    <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>b</sup>Counterclockwise rotation is positive according to the right-hand rule.
     </p>
     <p class="notes-para">
       <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -9205,6 +9235,12 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>STEERING_CMD</h1>
     <table class="message-table">
@@ -10124,6 +10160,75 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
+    </p>
+    <h1>USER_NOTIFICATION_CMD</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1053</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x41d</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">1</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">CUSTOMER_ECU</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>BUZZER_MUTE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>UNDERDASH_LIGHTS_WHITE
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_MUTED, 1=MUTED<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_ACTION, 1=WHITE<br>
     </p>
     <h1>VEHICLE_SPEED_RPT</h1>
     <table class="message-table">
