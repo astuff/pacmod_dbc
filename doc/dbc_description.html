@@ -4987,6 +4987,20 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
+        <td>SUPERVISORY_ENABLE_REQUIRED
+          <sup>4</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">14</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
         <td>CONFIG_FAULT_ACTIVE</td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5017,6 +5031,12 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=No Active CAN Timeout, 1=Active CAN Timeout<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message.
     </p>
     <h1>HAZARD_LIGHTS_CMD</h1>
     <table class="message-table">
@@ -9798,6 +9818,95 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <h1>SUPERVISORY_CTRL</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">129</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x81</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">CUSTOMER_ECU</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENABLE
+          <sup>1</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COUNTER
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">11</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMPLEMENT
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE_ALL_SYSTEMS, 1=ALLOW_ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>A system shall enable only if the supervisory enablement rules are met.  See User CAN Protocol Standard 3.0.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
     </p>
     <h1>TURN_AUX_RPT</h1>
     <table class="message-table">
