@@ -5,7 +5,7 @@ pipelines:
         image: ubuntu:bionic
         script:
           - apt-get update -q
-          - apt-get install -y python3-pip
-          - pip3 install --user cantools xmlschema
+          - apt-get install -y --no-install-recommends python3-pip python3-setuptools
+          - pip3 install cantools xmlschema
           - cantools dump as_pacmod*.dbc
           - python3 tests/xml_validation.py
