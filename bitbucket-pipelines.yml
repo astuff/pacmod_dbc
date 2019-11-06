@@ -1,0 +1,11 @@
+pipelines:
+  default:
+    - step:
+        name: Validation
+        image: ubuntu:bionic
+        script:
+          - apt-get update -q
+          - apt-get install -y python3-pip
+          - pip3 install --user cantools xmlschema
+          - cantools dump as_pacmod*.dbc
+          - python3 tests/xml_validation.py
