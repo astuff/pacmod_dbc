@@ -64,7 +64,7 @@ Each vehicle has a subset of available CAN messages.  The file vehicle_associati
 
 ## Supervisory Enablement Rules
 
-Supervisory enablement rules apply to vehicle a platform when the SUPERVISORY_ENABLE_REQUIRED in the GLOBAL_RPT message is REQUIRED.  This message allows the ECU that trasmits the system command messages and the ECU with overriding enable/disable authority to be separate ECUs.
+Supervisory enablement rules apply to a vehicle platform when the SUPERVISORY_ENABLE_REQUIRED in the GLOBAL_RPT message is REQUIRED.  This message allows the ECU that trasmits the system command messages and the ECU with overriding enable/disable authority to be separate ECUs.
 
 A vehicle system under PACMod control “shall enable” if all of the following are true:
 1. The ENABLE field is received as ALLOW ENABLE.
