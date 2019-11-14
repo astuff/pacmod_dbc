@@ -75,7 +75,7 @@ A vehicle system under PACMod control “shall enable” if all of the following
 The allowed time period is 3 times the message period of this message. The same vehicle system shall disable immediately if any of the following are true:
 
 1. This ENABLE field is DISABLE ALL SYSTEMS.
-2. The respective system command message ENABLE field is “1”
+2. The respective system command message ENABLE field is “0”
 3. The allowed time period has elapsed before a this message is received.
 4. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
 
