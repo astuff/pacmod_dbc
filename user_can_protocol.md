@@ -61,3 +61,24 @@ The byte order of all CAN messages is Motorola/Big-Endian.
 ## CAN Message Availability
 
 Each vehicle has a subset of available CAN messages.  The file vehicle_associations.xml specifies the availability of each message.
+
+## Supervisory Enablement Rules
+
+Supervisory enablement rules apply to a vehicle platform when the SUPERVISORY_ENABLE_REQUIRED in the GLOBAL_RPT message is REQUIRED.  This message allows the ECU that trasmits the system command messages and the ECU with overriding enable/disable authority to be separate ECUs.
+
+A vehicle system under PACMod control “shall enable” if all of the following are true:
+1. The ENABLE field is received as ALLOW ENABLE.
+2. The respective system command message ENABLE field is received as “1” within the allowed time period.
+3. The rules for the COUNTER and COMPLEMENT fields in this message are met.
+4. The ENABLE field must be equal to ALLOW ENABLE and received in its corresponding message before receiving the system command message with the ENABLE field equal to “1”.
+
+The allowed time period is 3 times the message period of this message. The same vehicle system shall disable immediately if any of the following are true:
+
+1. This ENABLE field is DISABLE ALL SYSTEMS.
+2. The respective system command message ENABLE field is “0”
+3. The allowed time period has elapsed before a this message is received.
+4. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
+
+## Default Bit Values
+
+All undefined bits shall be set to 0.

@@ -444,6 +444,7 @@ BO_ 16 GLOBAL_RPT: 8 PACMOD
  SG_ BRK_CAN_TIMEOUT : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ USR_CAN_TIMEOUT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ USR_CAN_READ_ERRORS : 55|16@0+ (1,0) [0|65535] ""  CUSTOMER_ECU
+ SG_ SUPERVISORY_ENABLE_REQUIRED : 14|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 32 COMPONENT_RPT_00: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -884,6 +885,11 @@ BO_ 1053 USER_NOTIFICATION_CMD: 1 CUSTOMER_ECU
  SG_ BUZZER_MUTE : 0|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ UNDERDASH_LIGHTS_WHITE : 1|1@0+ (1,0) [0|1] ""  PACMOD
 
+BO_ 129 SUPERVISORY_CTRL: 2 CUSTOMER_ECU
+ SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" PACMOD
+ SG_ COMPLEMENT : 15|4@0+ (1,0) [0|15] "" PACMOD
+
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
 CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -967,6 +973,10 @@ CM_ SG_ 824 XBR_ACTIVE_CONTROL_MODE_AVAIL "PACMod sets this value as a function 
 CM_ SG_ 824 XBR_SYSTEM_STATE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 824 FOUNDATION_BRAKE_USE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 824 HILL_HOLDER_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 129 ENABLE "A system shall enable only if the supervisory enablement rules are met.  See User CAN Protocol Standard 3.0.";
+CM_ SG_ 129 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
+CM_ SG_ 129 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
@@ -1225,6 +1235,7 @@ VAL_ 35 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 16 PACMOD_SYSTEM_ENABLED 0 "Control Disabled" 1 "Control Enabled" ;
 VAL_ 16 PACMOD_SYSTEM_OVERRIDE_ACTIVE 0 "Not Overridden" 1 "Overridden" ;
 VAL_ 16 BRK_CAN_TIMEOUT 0 "No Active CAN Timeout" 1 "Active CAN Timeout" ;
+VAL_ 16 SUPERVISORY_ENABLE_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
 VAL_ 1024 VEHICLE_SPEED_VALID 0 "INVALID" 1 "VALID" ;
 VAL_ 512 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 512 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
@@ -1416,3 +1427,4 @@ VAL_ 584 COMMANDED_VALUE 0 "OFF" 1 "ON" ;
 VAL_ 584 OUTPUT_VALUE 0 "OFF" 1 "ON" ;
 VAL_ 1053 BUZZER_MUTE 0 "NOT_MUTED" 1 "MUTED" ;
 VAL_ 1053 UNDERDASH_LIGHTS_WHITE 0 "NO_ACTION" 1 "WHITE" ;
+VAL_ 129 ENABLE 0 "DISABLE_ALL_SYSTEMS" 1 "ALLOW_ENABLE" ;
