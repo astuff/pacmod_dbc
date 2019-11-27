@@ -45,14 +45,3 @@ DBC: (Fix) Add transmssion rate to DBC.
 2. DBC: (Add) Add Engine Brake System.
 3. DBC: (Add) Add Marker Lamp System.
 4. DBC: (Add) Add transmission gear number report.
-
-# Future Release
-DBC: (Add) Customer Notification Command message.
-DBC: (Add) Add sign to ROTATION_RATE field of the STEERING_AUX_RPT message.
-DBC: (Add) Add SUPERVISORY_CTRL message.
-DBC: (Add) Add SUPERVISORY_ENABLE_REQUIRED field to the GLOBAL_RPT message.
-DBC: (Add) Add ‌SUPERVISORY_TIMEOUT and SUPERVISORY_SANITY_FAULT field to the Component Reports.
-DOC: (Add) Add Supervisory Enable/Disable rules to user_can_protocol.md.
-DOC: (Add) Add rule about undefined bits to user_can_protocol.md.
-DOC: (Add) Add transmission type/rate and address type/address to HTML version of DBC.
-DOC: (Add) Add changelog.md.
