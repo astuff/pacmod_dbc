@@ -898,6 +898,14 @@ BO_ 129 SUPERVISORY_CTRL: 2 CUSTOMER_ECU
  SG_ COUNTER : 11|4@0+ (1,0) [0|15] "" PACMOD
  SG_ COMPLEMENT : 15|4@0+ (1,0) [0|15] "" PACMOD
 
+BO_ 1040 ENGINE_RPT: 6 PACMOD
+ SG_ ENGINE_SPEED : 7|16@0+ (0.25,0) [0|65535] "" CUSTOMER_ECU
+ SG_ ENGINE_TORQUE : 23|16@0+ (0.0625,0) [0|4095.9375] "" CUSTOMER_ECU
+ SG_ ENGINE_COOLANT_TEMP : 39|8@0+ (1,-40) [-40|215] "" CUSTOMER_ECU
+ SG_ ENGINE_SPEED_AVAIL : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ ENGINE_TORQUE_AVAIL : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ ENGINE_COOLANT_TEMP_AVAIL : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+
 CM_ BU_ PACMOD "AutonomouStuff PACMod";
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
 CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -985,6 +993,9 @@ CM_ SG_ 129 ENABLE "A system shall enable only if the supervisory enablement rul
 CM_ SG_ 129 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 129 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
+CM_ SG_ 1040 ENGINE_SPEED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1040 ENGINE_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1040 ENGINE_COOLANT_TEMP_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 BA_DEF_ SG_  "GenSigCycleTime" INT 0 60000;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 60000;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic ","OnWrite ","OnWriteWithRepetition ","OnChange ","OnChangeWithRepetition ","IfActive ","IfActiveWithRepetition ","NoSigSendType";
