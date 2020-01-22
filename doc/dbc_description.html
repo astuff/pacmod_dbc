@@ -5111,6 +5111,132 @@
     <p class="notes-para">
       <sup>1</sup>0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH<br>
     </p>
+    <h1>ENGINE_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1040</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x410</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">6</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">33</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ENGINE_SPEED</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.25</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">16383.75</td>
+        <td class="centered-text">rpm</td>
+      </tr>
+      <tr>
+        <td>ENGINE_TORQUE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.0625</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">4095.9375</td>
+        <td class="centered-text">N-m</td>
+      </tr>
+      <tr>
+        <td>ENGINE_COOLANT_TEMP</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">-40</td>
+        <td class="centered-text">-40</td>
+        <td class="centered-text">215</td>
+        <td class="centered-text">deg_C</td>
+      </tr>
+      <tr>
+        <td>ENGINE_SPEED_AVAIL
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">40</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ENGINE_TORQUE_AVAIL
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">41</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ENGINE_COOLANT_TEMP_AVAIL
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">42</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>ESTOP_RPT</h1>
     <table class="message-table">
       <tr>
