@@ -96,6 +96,7 @@
       </tr>
       <tr>
         <td>RAW_PEDAL_POS_AVAIL
+          <sup>2</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -109,6 +110,7 @@
       </tr>
       <tr>
         <td>RAW_PEDAL_FORCE_AVAIL
+          <sup>2</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -122,6 +124,7 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
+          <sup>2</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -136,6 +139,9 @@
     </table>
     <p class="notes-para">
       <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -194,7 +200,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -205,7 +213,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -216,7 +226,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -238,6 +250,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
     <h1>ACCEL_CMD_LIMIT_RPT</h1>
     <table class="message-table">
       <tr>
@@ -360,7 +378,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -371,7 +391,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -383,7 +405,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -396,7 +418,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -409,7 +431,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -422,7 +444,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -435,7 +457,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -448,7 +470,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -494,10 +516,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <h1>ANG_VEL_RPT</h1>
     <table class="message-table">
@@ -753,7 +778,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_ON_OFF</td>
+        <td>BRAKE_ON_OFF
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">49</td>
         <td class="centered-text">1</td>
@@ -765,6 +792,7 @@
       </tr>
       <tr>
         <td>RAW_PEDAL_POS_AVAIL
+          <sup>3</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -778,6 +806,7 @@
       </tr>
       <tr>
         <td>RAW_PEDAL_FORCE_AVAIL
+          <sup>3</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -791,6 +820,7 @@
       </tr>
       <tr>
         <td>RAW_BRAKE_PRESSURE_AVAIL
+          <sup>3</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -804,6 +834,7 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
+          <sup>3</sup>
           <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -817,6 +848,7 @@
       </tr>
       <tr>
         <td>BRAKE_ON_OFF_AVAIL
+          <sup>3</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -831,6 +863,12 @@
     </table>
     <p class="notes-para">
       <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -895,7 +933,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -906,7 +946,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -917,7 +959,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -939,6 +983,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
     <h1>BRAKE_CMD_LIMIT_RPT</h1>
     <table class="message-table">
       <tr>
@@ -1114,6 +1164,7 @@
       </tr>
       <tr>
         <td>XBR_ACTIVE_CONTROL_MODE_AVAIL
+          <sup>5</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1127,6 +1178,7 @@
       </tr>
       <tr>
         <td>XBR_SYSTEM_STATE_AVAIL
+          <sup>5</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1140,6 +1192,7 @@
       </tr>
       <tr>
         <td>FOUNDATION_BRAKE_USE_AVAIL
+          <sup>5</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1153,6 +1206,7 @@
       </tr>
       <tr>
         <td>HILL_HOLDER_MODE_AVAIL
+          <sup>5</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -1176,6 +1230,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=INACTIVE, 1=ACTIVE, 2=ACTIVE_BUT_INACTIVE_SOON, 6=ERROR<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -1234,7 +1291,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -1245,7 +1304,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -1256,7 +1317,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -1279,7 +1342,7 @@
       </tr>
       <tr>
         <td>XBR_EBI_MODE
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">25</td>
@@ -1292,7 +1355,7 @@
       </tr>
       <tr>
         <td>XBR_PRIORITY
-          <sup>2</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">27</td>
@@ -1305,7 +1368,7 @@
       </tr>
       <tr>
         <td>XBR_CONTROL_MODE
-          <sup>3</sup>
+          <sup>5</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">29</td>
@@ -1318,13 +1381,19 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_ENDURANCE_BRAKE_INTEGRATION_ALLOWED, 1=ONLY_ENDURANCE_BRAKES_ALLOWED, 2=ENDURANCE_BRAKE_INTEGRATION_ALLOWED<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=HIGHEST_PRIORITY, 1=HIGH_PRIORITY, 2=MEDIUM_PRIORITY, 3=LOW_PRIORITY<br>
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=OVERRIDE_DISABLE, 1=ACCELERATION_CONTROL_WITH_ADDITION_MODE, 2=ACCELERATION_CONTROL_WITH_MAXIMUM_MODE<br>
+      <sup>3</sup>0=NO_ENDURANCE_BRAKE_INTEGRATION_ALLOWED, 1=ONLY_ENDURANCE_BRAKES_ALLOWED, 2=ENDURANCE_BRAKE_INTEGRATION_ALLOWED<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=HIGHEST_PRIORITY, 1=HIGH_PRIORITY, 2=MEDIUM_PRIORITY, 3=LOW_PRIORITY<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=OVERRIDE_DISABLE, 1=ACCELERATION_CONTROL_WITH_ADDITION_MODE, 2=ACCELERATION_CONTROL_WITH_MAXIMUM_MODE<br>
     </p>
     <h1>BRAKE_DECCEL_RPT</h1>
     <table class="message-table">
@@ -1371,7 +1440,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -1382,7 +1453,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -1393,7 +1466,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -1404,7 +1479,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -1415,7 +1492,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -1426,7 +1505,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -1437,7 +1518,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -1448,7 +1531,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT</td>
+        <td>COMMAND_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -1492,6 +1577,15 @@
         <td class="centered-text">m/s^2</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
     <h1>BRAKE_MOTOR_RPT_1</h1>
     <table class="message-table">
       <tr>
@@ -1749,7 +1843,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -1760,7 +1856,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -1772,7 +1870,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -1785,7 +1883,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -1798,7 +1896,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -1811,7 +1909,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -1824,7 +1922,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -1837,7 +1935,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -1883,10 +1981,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <h1>COMPONENT_RPT_00</h1>
     <table class="message-table">
@@ -3649,7 +3750,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -3660,7 +3763,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -3671,7 +3776,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -3683,7 +3790,7 @@
       </tr>
       <tr>
         <td>CRUISE_CONTROL_BUTTON
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -3696,7 +3803,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
     </p>
     <h1>CRUISE_CONTROL_BUTTONS_RPT</h1>
     <table class="message-table">
@@ -3743,7 +3856,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -3754,7 +3869,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -3766,7 +3883,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -3779,7 +3896,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -3792,7 +3909,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -3805,7 +3922,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -3818,7 +3935,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -3831,7 +3948,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -3844,7 +3961,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -3857,7 +3974,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -3870,7 +3987,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -3883,13 +4000,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_LEFT_CMD</h1>
     <table class="message-table">
@@ -3936,7 +4056,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -3947,7 +4069,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -3958,7 +4082,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -3970,7 +4096,7 @@
       </tr>
       <tr>
         <td>DASH_CONTROLS_BUTTON
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -3983,7 +4109,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_LEFT_RPT</h1>
     <table class="message-table">
@@ -4030,7 +4162,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4041,7 +4175,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -4053,7 +4189,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -4066,7 +4202,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -4079,7 +4215,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -4092,7 +4228,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -4105,7 +4241,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -4118,7 +4254,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -4131,7 +4267,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4144,7 +4280,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -4157,7 +4293,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -4170,13 +4306,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_RIGHT_CMD</h1>
     <table class="message-table">
@@ -4223,7 +4362,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4234,7 +4375,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -4245,7 +4388,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -4257,7 +4402,7 @@
       </tr>
       <tr>
         <td>DASH_CONTROLS_BUTTON
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4270,7 +4415,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DASH_CONTROLS_RIGHT_RPT</h1>
     <table class="message-table">
@@ -4317,7 +4468,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4328,7 +4481,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -4340,7 +4495,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -4353,7 +4508,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -4366,7 +4521,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -4379,7 +4534,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -4392,7 +4547,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -4405,7 +4560,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -4418,7 +4573,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4431,7 +4586,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -4444,7 +4599,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -4457,13 +4612,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
     </p>
     <h1>DATE_TIME_RPT</h1>
     <table class="message-table">
@@ -4688,7 +4846,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>DRIVER_DOOR_OPEN</td>
+        <td>DRIVER_DOOR_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4699,7 +4859,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_DOOR_OPEN</td>
+        <td>PASS_DOOR_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -4710,7 +4872,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_DRIVER_DOOR_OPEN</td>
+        <td>REAR_DRIVER_DOOR_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -4721,7 +4885,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_PASS_DOOR_OPEN</td>
+        <td>REAR_PASS_DOOR_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -4732,7 +4898,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HOOD_OPEN</td>
+        <td>HOOD_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -4743,7 +4911,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TRUNK_OPEN</td>
+        <td>TRUNK_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -4754,7 +4924,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FUEL_DOOR_OPEN</td>
+        <td>FUEL_DOOR_OPEN
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -4765,7 +4937,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DRIVER_DOOR_OPEN_AVAIL</td>
+        <td>DRIVER_DOOR_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -4776,7 +4950,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_DOOR_OPEN_AVAIL</td>
+        <td>PASS_DOOR_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -4787,7 +4963,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_DRIVER_DOOR_OPEN_AVAIL</td>
+        <td>REAR_DRIVER_DOOR_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
         <td class="centered-text">1</td>
@@ -4798,7 +4976,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_PASS_DOOR_OPEN_AVAIL</td>
+        <td>REAR_PASS_DOOR_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
         <td class="centered-text">1</td>
@@ -4809,7 +4989,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HOOD_OPEN_AVAIL</td>
+        <td>HOOD_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
         <td class="centered-text">1</td>
@@ -4820,7 +5002,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>TRUNK_OPEN_AVAIL</td>
+        <td>TRUNK_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
         <td class="centered-text">1</td>
@@ -4831,7 +5015,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FUEL_DOOR_OPEN_AVAIL</td>
+        <td>FUEL_DOOR_OPEN_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">14</td>
         <td class="centered-text">1</td>
@@ -4842,6 +5028,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=CLOSED, 1=OPEN<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <h1>ENGINE_BRAKE_CMD</h1>
     <table class="message-table">
       <tr>
@@ -4887,7 +5079,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4898,7 +5092,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -4909,7 +5105,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -4921,7 +5119,7 @@
       </tr>
       <tr>
         <td>ENGINE_BRAKE_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -4934,7 +5132,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH<br>
     </p>
     <h1>ENGINE_BRAKE_RPT</h1>
     <table class="message-table">
@@ -4981,7 +5185,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -4992,7 +5198,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -5003,7 +5211,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -5014,7 +5224,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -5025,7 +5237,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -5036,7 +5250,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -5047,7 +5263,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -5058,7 +5276,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT</td>
+        <td>COMMAND_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -5070,7 +5290,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5083,7 +5303,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -5096,7 +5316,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -5109,7 +5329,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=OFF, 1=LOW, 2=MEDIUM, 3=HIGH<br>
     </p>
     <h1>ENGINE_RPT</h1>
     <table class="message-table">
@@ -5190,6 +5419,7 @@
       </tr>
       <tr>
         <td>ENGINE_SPEED_AVAIL
+          <sup>1</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5203,6 +5433,7 @@
       </tr>
       <tr>
         <td>ENGINE_TORQUE_AVAIL
+          <sup>1</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5216,6 +5447,7 @@
       </tr>
       <tr>
         <td>ENGINE_COOLANT_TEMP_AVAIL
+          <sup>1</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5228,6 +5460,9 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
@@ -5359,7 +5594,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>CLEAR_FAULTS</td>
+        <td>CLEAR_FAULTS
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -5370,6 +5607,9 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
     <h1>GLOBAL_RPT</h1>
     <table class="message-table">
       <tr>
@@ -5441,7 +5681,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>USR_CAN_TIMEOUT</td>
+        <td>USR_CAN_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -5452,7 +5694,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STR_CAN_TIMEOUT</td>
+        <td>STR_CAN_TIMEOUT
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -5464,7 +5708,7 @@
       </tr>
       <tr>
         <td>BRK_CAN_TIMEOUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -5476,7 +5720,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_SUBSYSTEM_TIMEOUT</td>
+        <td>PACMOD_SUBSYSTEM_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -5487,7 +5733,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEH_CAN_TIMEOUT</td>
+        <td>VEH_CAN_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -5498,7 +5746,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_SYSTEM_FAULT_ACTIVE</td>
+        <td>PACMOD_SYSTEM_FAULT_ACTIVE
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -5510,7 +5760,7 @@
       </tr>
       <tr>
         <td>SUPERVISORY_ENABLE_REQUIRED
-          <sup>4</sup>
+          <sup>5</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5523,7 +5773,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CONFIG_FAULT_ACTIVE</td>
+        <td>CONFIG_FAULT_ACTIVE
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -5552,10 +5804,13 @@
       <sup>2</sup>0=Not Overridden, 1=Overridden<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=No Active CAN Timeout, 1=Active CAN Timeout<br>
+      <sup>3</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
+      <sup>4</sup>0=No Active CAN Timeout, 1=Active CAN Timeout<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message.
@@ -5605,7 +5860,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -5616,7 +5873,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -5627,7 +5886,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -5638,7 +5899,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HAZARD_LIGHTS_CMD</td>
+        <td>HAZARD_LIGHTS_CMD
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -5649,6 +5912,15 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=ON<br>
+    </p>
     <h1>HAZARD_LIGHTS_RPT</h1>
     <table class="message-table">
       <tr>
@@ -5694,7 +5966,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -5705,7 +5979,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -5717,7 +5993,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -5730,7 +6006,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -5743,7 +6019,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -5756,7 +6032,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -5769,7 +6045,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -5782,7 +6058,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -5794,7 +6070,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -5805,7 +6083,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
         <td class="centered-text">1</td>
@@ -5816,7 +6096,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
         <td class="centered-text">1</td>
@@ -5828,10 +6110,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=OFF, 1=ON<br>
     </p>
     <h1>HEADLIGHT_AUX_RPT</h1>
     <table class="message-table">
@@ -5878,7 +6166,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>HEADLIGHTS_ON</td>
+        <td>HEADLIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -5889,7 +6179,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>HEADLIGHTS_ON_BRIGHT</td>
+        <td>HEADLIGHTS_ON_BRIGHT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -5900,7 +6192,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FOG_LIGHTS_ON</td>
+        <td>FOG_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -5912,7 +6206,7 @@
       </tr>
       <tr>
         <td>HEADLIGHTS_MODE
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5925,6 +6219,7 @@
       </tr>
       <tr>
         <td>HEADLIGHTS_ON_AVAIL
+          <sup>3</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5938,6 +6233,7 @@
       </tr>
       <tr>
         <td>HEADLIGHTS_ON_BRIGHT_AVAIL
+          <sup>3</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5951,6 +6247,7 @@
       </tr>
       <tr>
         <td>FOG_LIGHTS_ON_AVAIL
+          <sup>3</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5964,6 +6261,7 @@
       </tr>
       <tr>
         <td>HEADLIGHTS_MODE_AVAIL
+          <sup>3</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -5977,7 +6275,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>3=Headlights On - Auto Mode, 2=Headlights On - Manual Mode, 1=Parking Lights Only, 0=Headlights Off<br>
+      <sup>1</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>3=Headlights On - Auto Mode, 2=Headlights On - Manual Mode, 1=Parking Lights Only, 0=Headlights Off<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -6036,7 +6340,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -6047,7 +6353,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -6058,7 +6366,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -6070,7 +6380,7 @@
       </tr>
       <tr>
         <td>HEADLIGHT_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -6083,7 +6393,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
     </p>
     <h1>HEADLIGHT_RPT</h1>
     <table class="message-table">
@@ -6130,7 +6446,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -6141,7 +6459,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -6153,7 +6473,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -6166,7 +6486,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -6179,7 +6499,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -6192,7 +6512,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -6205,7 +6525,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -6218,7 +6538,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -6231,7 +6551,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -6244,7 +6564,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -6257,7 +6577,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -6270,13 +6590,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
     </p>
     <h1>HORN_CMD</h1>
     <table class="message-table">
@@ -6323,7 +6646,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -6334,7 +6659,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -6345,7 +6672,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -6357,7 +6686,7 @@
       </tr>
       <tr>
         <td>HORN_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -6370,7 +6699,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=OFF, 1=ON<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=ON<br>
     </p>
     <h1>HORN_RPT</h1>
     <table class="message-table">
@@ -6417,7 +6752,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -6428,7 +6765,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -6440,7 +6779,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -6453,7 +6792,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -6466,7 +6805,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -6479,7 +6818,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -6492,7 +6831,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -6505,7 +6844,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -6518,7 +6857,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -6531,7 +6870,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -6544,7 +6883,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -6557,13 +6896,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=OFF, 1=ON<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=OFF, 1=ON<br>
     </p>
     <h1>INTERIOR_LIGHTS_RPT</h1>
     <table class="message-table">
@@ -6610,7 +6952,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>FRONT_DOME_LIGHTS_ON</td>
+        <td>FRONT_DOME_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -6621,7 +6965,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_DOME_LIGHTS_ON</td>
+        <td>REAR_DOME_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -6632,7 +6978,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MOOD_LIGHTS_ON</td>
+        <td>MOOD_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -6643,7 +6991,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>AMBIENT_LIGHT_SENSOR</td>
+        <td>AMBIENT_LIGHT_SENSOR
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -6655,7 +7005,7 @@
       </tr>
       <tr>
         <td>DIM_LEVEL
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -6667,7 +7017,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FRONT_DOME_LIGHTS_ON_AVAIL</td>
+        <td>FRONT_DOME_LIGHTS_ON_AVAIL
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
         <td class="centered-text">1</td>
@@ -6678,7 +7030,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_DOME_LIGHTS_ON_AVAIL</td>
+        <td>REAR_DOME_LIGHTS_ON_AVAIL
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">17</td>
         <td class="centered-text">1</td>
@@ -6689,7 +7043,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MOOD_LIGHTS_ON_AVAIL</td>
+        <td>MOOD_LIGHTS_ON_AVAIL
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
         <td class="centered-text">1</td>
@@ -6700,7 +7056,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DIM_LEVEL_AVAIL</td>
+        <td>DIM_LEVEL_AVAIL
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
         <td class="centered-text">1</td>
@@ -6711,7 +7069,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>AMBIENT_LIGHT_SENSOR_AVAIL</td>
+        <td>AMBIENT_LIGHT_SENSOR_AVAIL
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">20</td>
         <td class="centered-text">1</td>
@@ -6723,7 +7083,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>12=DIM_LEVEL_MAX, 11=DIM_LEVEL_11, 10=DIM_LEVEL_10, 9=DIM_LEVEL_9, 8=DIM_LEVEL_8, 7=DIM_LEVEL_7, 6=DIM_LEVEL_6, 5=DIM_LEVEL_5, 4=DIM_LEVEL_4, 3=DIM_LEVEL_3, 2=DIM_LEVEL_2, 1=DIM_LEVEL_1, 0=DIM_LEVEL_MIN<br>
+      <sup>1</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=DARK, 1=BRIGHT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>12=DIM_LEVEL_MAX, 11=DIM_LEVEL_11, 10=DIM_LEVEL_10, 9=DIM_LEVEL_9, 8=DIM_LEVEL_8, 7=DIM_LEVEL_7, 6=DIM_LEVEL_6, 5=DIM_LEVEL_5, 4=DIM_LEVEL_4, 3=DIM_LEVEL_3, 2=DIM_LEVEL_2, 1=DIM_LEVEL_1, 0=DIM_LEVEL_MIN<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <h1>LAT_LON_HEADING_RPT</h1>
     <table class="message-table">
@@ -7054,7 +7423,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7065,7 +7436,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7076,7 +7449,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7088,7 +7463,7 @@
       </tr>
       <tr>
         <td>MARKER_LAMP_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -7101,7 +7476,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=OFF, 1=ON<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=ON<br>
     </p>
     <h1>MARKER_LAMP_RPT</h1>
     <table class="message-table">
@@ -7148,7 +7529,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7159,7 +7542,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7170,7 +7555,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7181,7 +7568,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -7192,7 +7581,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -7203,7 +7594,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -7214,7 +7607,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -7225,7 +7620,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT</td>
+        <td>COMMAND_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -7237,7 +7634,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -7250,7 +7647,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
@@ -7263,7 +7660,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
@@ -7276,7 +7673,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=OFF, 1=ON<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=OFF, 1=ON<br>
     </p>
     <h1>MEDIA_CONTROLS_CMD</h1>
     <table class="message-table">
@@ -7323,7 +7729,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7334,7 +7742,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7345,7 +7755,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7357,7 +7769,7 @@
       </tr>
       <tr>
         <td>MEDIA_CONTROLS_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -7370,7 +7782,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
     </p>
     <h1>MEDIA_CONTROLS_RPT</h1>
     <table class="message-table">
@@ -7417,7 +7835,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7428,7 +7848,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7440,7 +7862,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -7453,7 +7875,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -7466,7 +7888,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -7479,7 +7901,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -7492,7 +7914,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -7505,7 +7927,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -7518,7 +7940,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -7531,7 +7953,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -7544,7 +7966,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -7557,13 +7979,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
     </p>
     <h1>NOTIFICATION_CMD</h1>
     <table class="message-table">
@@ -7687,7 +8112,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>DRIVER_SEAT_OCCUPIED</td>
+        <td>DRIVER_SEAT_OCCUPIED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7698,7 +8125,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_SEAT_OCCUPIED</td>
+        <td>PASS_SEAT_OCCUPIED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7709,7 +8138,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEAT_OCCUPIED</td>
+        <td>REAR_SEAT_OCCUPIED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7720,7 +8151,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DRIVER_SEATBELT_BUCKLED</td>
+        <td>DRIVER_SEATBELT_BUCKLED
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -7731,7 +8164,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_SEATBELT_BUCKLED</td>
+        <td>PASS_SEATBELT_BUCKLED
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -7742,7 +8177,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEATBELT_BUCKLED</td>
+        <td>REAR_SEATBELT_BUCKLED
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -7753,7 +8190,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DRIVER_SEAT_OCCUPIED_AVAIL</td>
+        <td>DRIVER_SEAT_OCCUPIED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -7764,7 +8203,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_SEAT_OCCUPIED_AVAIL</td>
+        <td>PASS_SEAT_OCCUPIED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -7775,7 +8216,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEAT_OCCUPIED_AVAIL</td>
+        <td>REAR_SEAT_OCCUPIED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
         <td class="centered-text">1</td>
@@ -7786,7 +8229,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>DRIVER_SEATBELT_BUCKLED_AVAIL</td>
+        <td>DRIVER_SEATBELT_BUCKLED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
         <td class="centered-text">1</td>
@@ -7797,7 +8242,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_SEATBELT_BUCKLED_AVAIL</td>
+        <td>PASS_SEATBELT_BUCKLED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
         <td class="centered-text">1</td>
@@ -7808,7 +8255,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEATBELT_BUCKLED_AVAIL</td>
+        <td>REAR_SEATBELT_BUCKLED_AVAIL
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
         <td class="centered-text">1</td>
@@ -7819,6 +8268,15 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_OCCUPIED, 1=OCCUPIED<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_BUCKLED, 1=BUCKLED<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <h1>PARKING_BRAKE_CMD</h1>
     <table class="message-table">
       <tr>
@@ -7864,7 +8322,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7875,7 +8335,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7886,7 +8348,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -7897,7 +8361,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PARKING_BRAKE_CMD</td>
+        <td>PARKING_BRAKE_CMD
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -7908,6 +8374,15 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=OFF, 1=ON<br>
+    </p>
     <h1>PARKING_BRAKE_RPT</h1>
     <table class="message-table">
       <tr>
@@ -7953,7 +8428,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -7964,7 +8441,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -7976,7 +8455,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -7989,7 +8468,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -8002,7 +8481,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -8015,7 +8494,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -8028,7 +8507,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -8041,7 +8520,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -8053,7 +8532,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -8064,7 +8545,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
         <td class="centered-text">1</td>
@@ -8075,7 +8558,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
         <td class="centered-text">1</td>
@@ -8087,10 +8572,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=OFF, 1=ON<br>
     </p>
     <h1>REAR_LIGHTS_RPT</h1>
     <table class="message-table">
@@ -8137,7 +8628,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>BRAKE_LIGHTS_ON</td>
+        <td>BRAKE_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8148,7 +8641,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REVERSE_LIGHTS_ON</td>
+        <td>REVERSE_LIGHTS_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8159,7 +8654,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_LIGHTS_ON_AVAIL</td>
+        <td>BRAKE_LIGHTS_ON_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -8170,7 +8667,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REVERSE_LIGHTS_ON_AVAIL</td>
+        <td>REVERSE_LIGHTS_ON_AVAIL
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
         <td class="centered-text">1</td>
@@ -8181,6 +8680,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <h1>REAR_PASS_DOOR_CMD</h1>
     <table class="message-table">
       <tr>
@@ -8226,7 +8731,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8237,7 +8744,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8248,7 +8757,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -8260,7 +8771,7 @@
       </tr>
       <tr>
         <td>REAR_PASS_DOOR_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -8273,7 +8784,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
     </p>
     <h1>REAR_PASS_DOOR_RPT</h1>
     <table class="message-table">
@@ -8320,7 +8837,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8331,7 +8850,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8342,7 +8863,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -8353,7 +8876,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -8364,7 +8889,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -8375,7 +8902,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -8386,7 +8915,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -8397,7 +8928,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT</td>
+        <td>COMMAND_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -8409,7 +8942,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -8422,7 +8955,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -8435,7 +8968,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -8448,7 +8981,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NEUTRAL, 1=OPEN, 2=CLOSE<br>
     </p>
     <h1>SHIFT_AUX_RPT</h1>
     <table class="message-table">
@@ -8495,7 +9037,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>BETWEEN_GEARS</td>
+        <td>BETWEEN_GEARS
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8506,7 +9050,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STAY_IN_NEUTRAL_MODE</td>
+        <td>STAY_IN_NEUTRAL_MODE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8517,7 +9063,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_INTERLOCK_ACTIVE</td>
+        <td>BRAKE_INTERLOCK_ACTIVE
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -8528,7 +9076,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPEED_INTERLOCK_ACTIVE</td>
+        <td>SPEED_INTERLOCK_ACTIVE
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -8540,7 +9090,7 @@
       </tr>
       <tr>
         <td>WRITE_TO_CONFIG
-          <sup>1</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -8553,6 +9103,7 @@
       </tr>
       <tr>
         <td>BETWEEN_GEARS_AVAIL
+          <sup>5</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -8566,6 +9117,7 @@
       </tr>
       <tr>
         <td>STAY_IN_NEUTRAL_MODE_AVAIL
+          <sup>5</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -8579,6 +9131,7 @@
       </tr>
       <tr>
         <td>BRAKE_INTERLOCK_ACTIVE_AVAIL
+          <sup>5</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -8592,6 +9145,7 @@
       </tr>
       <tr>
         <td>SPEED_INTERLOCK_ACTIVE_AVAIL
+          <sup>5</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -8604,7 +9158,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>WRITE_TO_CONFIG_IS_VALID</td>
+        <td>WRITE_TO_CONFIG_IS_VALID
+          <sup>5</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
         <td class="centered-text">1</td>
@@ -8615,7 +9171,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>GEAR_NUMBER_AVAIL</td>
+        <td>GEAR_NUMBER_AVAIL
+          <sup>5</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
         <td class="centered-text">1</td>
@@ -8638,7 +9196,19 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=SILENT, 1=BEEP<br>
+      <sup>1</sup>0=NOT_BETWEEN_GEARS, 1=BETWEEN_GEARS<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=SILENT, 1=BEEP<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -8697,7 +9267,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8708,7 +9280,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8719,7 +9293,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -8731,7 +9307,7 @@
       </tr>
       <tr>
         <td>SHIFT_CMD
-          <sup>1</sup>
+          <sup>3</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -8745,7 +9321,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.
@@ -8795,7 +9377,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -8806,7 +9390,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -8818,7 +9404,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -8831,7 +9417,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -8844,7 +9430,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -8857,7 +9443,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -8870,7 +9456,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -8883,7 +9469,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -8896,7 +9482,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -8909,7 +9495,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>4</sup>
+          <sup>5</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -8922,7 +9508,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -8935,16 +9521,19 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 5=BETWEEN_GEARS, 6=ERROR, 7=NONE<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
+      <sup>4</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 5=BETWEEN_GEARS, 6=ERROR, 7=NONE<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=PARK, 1=REVERSE, 2=NEUTRAL, 3=FORWARD/HIGH, 4=LOW, 7=NONE<br>
     </p>
     <h1>SOFTWARE_VERSION_RPT_00</h1>
     <table class="message-table">
@@ -9635,7 +10224,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -9646,7 +10237,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -9657,7 +10250,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -9669,7 +10264,7 @@
       </tr>
       <tr>
         <td>SPRAYER_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -9682,7 +10277,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NOT_SPRAYING, 1=SPRAYING<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_SPRAYING, 1=SPRAYING<br>
     </p>
     <h1>SPRAYER_RPT</h1>
     <table class="message-table">
@@ -9729,7 +10330,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -9740,7 +10343,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -9751,7 +10356,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_OUTPUT_FAULT</td>
+        <td>COMMAND_OUTPUT_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -9762,7 +10369,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>INPUT_OUTPUT_FAULT</td>
+        <td>INPUT_OUTPUT_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -9773,7 +10382,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_REPORTED_FAULT</td>
+        <td>OUTPUT_REPORTED_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -9784,7 +10395,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PACMOD_FAULT</td>
+        <td>PACMOD_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -9795,7 +10408,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>VEHICLE_FAULT</td>
+        <td>VEHICLE_FAULT
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
         <td class="centered-text">1</td>
@@ -9806,7 +10421,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMAND_TIMEOUT</td>
+        <td>COMMAND_TIMEOUT
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">1</td>
@@ -9817,7 +10434,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
         <td class="centered-text">1</td>
@@ -9828,7 +10447,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
         <td class="centered-text">1</td>
@@ -9839,7 +10460,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
         <td class="centered-text">1</td>
@@ -9850,6 +10473,18 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_SPRAYIG, 1=SPRAYING<br>
+    </p>
     <h1>STEERING_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -9957,6 +10592,7 @@
       </tr>
       <tr>
         <td>RAW_POSITION_AVAIL
+          <sup>3</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -9970,6 +10606,7 @@
       </tr>
       <tr>
         <td>RAW_TORQUE_AVAIL
+          <sup>3</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -9983,6 +10620,7 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_AVAIL
+          <sup>3</sup>
           <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -9996,6 +10634,7 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
+          <sup>3</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -10009,6 +10648,7 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_SIGN_AVAIL
+          <sup>3</sup>
           <sup>g</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -10026,6 +10666,9 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=POSITIVE, 1=NEGATIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -10093,7 +10736,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -10104,7 +10749,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -10115,7 +10762,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -10148,6 +10797,12 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
     <h1>STEERING_CMD_LIMIT_RPT</h1>
     <table class="message-table">
       <tr>
@@ -10514,7 +11169,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -10525,7 +11182,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -10537,7 +11196,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -10550,7 +11209,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -10563,7 +11222,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -10576,7 +11235,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -10589,7 +11248,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -10602,7 +11261,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -10648,10 +11307,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <h1>SUPERVISORY_CTRL</h1>
     <table class="message-table">
@@ -10795,7 +11457,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>DRIVER_BLINKER_BULB_ON</td>
+        <td>DRIVER_BLINKER_BULB_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -10806,7 +11470,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PASS_BLINKER_BULB_ON</td>
+        <td>PASS_BLINKER_BULB_ON
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -10818,6 +11484,7 @@
       </tr>
       <tr>
         <td>DRIVER_BLINKER_BULB_ON_AVAIL
+          <sup>2</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -10831,6 +11498,7 @@
       </tr>
       <tr>
         <td>PASS_BLINKER_BULB_ON_AVAIL
+          <sup>2</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -10843,6 +11511,12 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
@@ -10894,7 +11568,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -10905,7 +11581,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -10916,7 +11594,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -10928,7 +11608,7 @@
       </tr>
       <tr>
         <td>TURN_SIGNAL_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -10941,7 +11621,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
     </p>
     <h1>TURN_RPT</h1>
     <table class="message-table">
@@ -10988,7 +11674,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -10999,7 +11687,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -11011,7 +11701,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -11024,7 +11714,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -11037,7 +11727,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -11050,7 +11740,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -11063,7 +11753,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -11076,7 +11766,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -11089,7 +11779,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -11102,7 +11792,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -11115,7 +11805,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -11128,13 +11818,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=RIGHT, 1=NONE, 2=LEFT, 3=HAZARD<br>
     </p>
     <h1>USER_NOTIFICATION_CMD</h1>
     <table class="message-table">
@@ -12498,7 +13191,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>FRONT_WIPING</td>
+        <td>FRONT_WIPING
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -12509,7 +13204,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FRONT_SPRAYING</td>
+        <td>FRONT_SPRAYING
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -12520,7 +13217,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_WIPING</td>
+        <td>REAR_WIPING
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -12531,7 +13230,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SPRAYING</td>
+        <td>REAR_SPRAYING
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
         <td class="centered-text">1</td>
@@ -12542,7 +13243,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY_NEAR_EMPTY</td>
+        <td>SPRAY_NEAR_EMPTY
+          <sup>3</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
         <td class="centered-text">1</td>
@@ -12553,7 +13256,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY_EMPTY</td>
+        <td>SPRAY_EMPTY
+          <sup>4</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
         <td class="centered-text">1</td>
@@ -12565,6 +13270,7 @@
       </tr>
       <tr>
         <td>FRONT_WIPING_AVAIL
+          <sup>5</sup>
           <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12578,6 +13284,7 @@
       </tr>
       <tr>
         <td>FRONT_SPRAYING_AVAIL
+          <sup>5</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12591,6 +13298,7 @@
       </tr>
       <tr>
         <td>REAR_WIPING_AVAIL
+          <sup>5</sup>
           <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12604,6 +13312,7 @@
       </tr>
       <tr>
         <td>REAR_SPRAYING_AVAIL
+          <sup>5</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12617,6 +13326,7 @@
       </tr>
       <tr>
         <td>SPRAY_NEAR_EMPTY_AVAIL
+          <sup>5</sup>
           <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12630,6 +13340,7 @@
       </tr>
       <tr>
         <td>SPRAY_EMPTY_AVAIL
+          <sup>5</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12642,6 +13353,21 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_WIPING, 1=WIPING<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_SPRAYING, 1=SPRAYING<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_NEAR_EMPTY, 1=NEAR_EMPTY<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_EMPTY, 1=EMPTY<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
@@ -12705,7 +13431,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLE</td>
+        <td>ENABLE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -12716,7 +13444,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>IGNORE_OVERRIDES</td>
+        <td>IGNORE_OVERRIDES
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -12727,7 +13457,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CLEAR_OVERRIDE</td>
+        <td>CLEAR_OVERRIDE
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
         <td class="centered-text">1</td>
@@ -12739,7 +13471,7 @@
       </tr>
       <tr>
         <td>WIPER_CMD
-          <sup>1</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -12752,7 +13484,13 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>1</sup>0=DISABLE, 1=ENABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
     </p>
     <h1>WIPER_RPT</h1>
     <table class="message-table">
@@ -12799,7 +13537,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>ENABLED</td>
+        <td>ENABLED
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
@@ -12810,7 +13550,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OVERRIDE_ACTIVE</td>
+        <td>OVERRIDE_ACTIVE
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
@@ -12822,7 +13564,7 @@
       </tr>
       <tr>
         <td>COMMAND_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -12835,7 +13577,7 @@
       </tr>
       <tr>
         <td>INPUT_OUTPUT_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -12848,7 +13590,7 @@
       </tr>
       <tr>
         <td>OUTPUT_REPORTED_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -12861,7 +13603,7 @@
       </tr>
       <tr>
         <td>PACMOD_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -12874,7 +13616,7 @@
       </tr>
       <tr>
         <td>VEHICLE_FAULT
-          <sup>1</sup>
+          <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -12887,7 +13629,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -12900,7 +13642,7 @@
       </tr>
       <tr>
         <td>MANUAL_INPUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -12913,7 +13655,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -12926,7 +13668,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -12939,13 +13681,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>1</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
     </p>
     <h1>YAW_RATE_RPT</h1>
     <table class="message-table">
