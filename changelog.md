@@ -45,3 +45,10 @@
 2. (Add) Add Engine Brake System.
 3. (Add) Add Marker Lamp System.
 4. (Add) Add transmission gear number report.
+
+# 7.2.0
+1. (Add) Add USER_NOTIFICATION_CMD.
+2. (Add) Add sign to ROTATION_RATE in message STEERING_AUX_RPT.
+3. (Add) Add SUPERVISORY_CTRL message and governing rules.
+4. (Add) Add ENGINE_RPT message.
+5. (Fix) Update .html generator to include message type, message rate, and component address.
