@@ -247,7 +247,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -311,7 +311,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>LIMITED_ACCEL_CMD
@@ -324,7 +324,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -490,7 +490,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>COMMANDED_VALUE</td>
@@ -501,7 +501,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>OUTPUT_VALUE</td>
@@ -512,7 +512,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -980,7 +980,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -1044,7 +1044,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>LIMITED_BRAKE_CMD
@@ -1057,7 +1057,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -1955,7 +1955,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>COMMANDED_VALUE</td>
@@ -1966,7 +1966,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>OUTPUT_VALUE</td>
@@ -1977,7 +1977,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -6676,7 +6676,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">6</td>
+        <td class="centered-text">7</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -6778,6 +6778,28 @@
         <td class="centered-text">0</td>
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FUEL_LEVEL_AVAIL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">43</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FUEL_LEVEL</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">0.005</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">%</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -8326,6 +8348,7 @@
       <tr>
         <td>DIM_LEVEL
           <sup>3</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -8333,7 +8356,7 @@
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">12</td>
+        <td class="centered-text">24</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
@@ -8409,10 +8432,13 @@
       <sup>2</sup>0=DARK, 1=BRIGHT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>12=DIM_LEVEL_MAX, 11=DIM_LEVEL_11, 10=DIM_LEVEL_10, 9=DIM_LEVEL_9, 8=DIM_LEVEL_8, 7=DIM_LEVEL_7, 6=DIM_LEVEL_6, 5=DIM_LEVEL_5, 4=DIM_LEVEL_4, 3=DIM_LEVEL_3, 2=DIM_LEVEL_2, 1=DIM_LEVEL_1, 0=DIM_LEVEL_MIN<br>
+      <sup>3</sup>24=DIM_LEVEL_23, 23=DIM_LEVEL_22, 22=DIM_LEVEL_21, 21=DIM_LEVEL_20, 20=DIM_LEVEL_19, 19=DIM_LEVEL_18, 18=DIM_LEVEL_17, 17=DIM_LEVEL_16, 16=DIM_LEVEL_15, 15=DIM_LEVEL_14, 14=DIM_LEVEL_13, 13=DIM_LEVEL_12, 12=DIM_LEVEL_MAX, 11=DIM_LEVEL_11, 10=DIM_LEVEL_10, 9=DIM_LEVEL_9, 8=DIM_LEVEL_8, 7=DIM_LEVEL_7, 6=DIM_LEVEL_6, 5=DIM_LEVEL_5, 4=DIM_LEVEL_4, 3=DIM_LEVEL_3, 2=DIM_LEVEL_2, 1=DIM_LEVEL_1, 0=DIM_LEVEL_MIN<br>
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Lowest dim level assigned to DIM_LEVEL_MIN, the dimmest light. Highest dim level assigned to DIM_LEVEL_MAX, the brightest light. Dim levels in between start with DIM_LEVEL_1.
     </p>
     <h1>LAT_LON_HEADING_RPT</h1>
     <table class="message-table">
@@ -9497,11 +9523,37 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEATBELT_BUCKLED
+        <td>DRIVER_REAR_SEATBELT_BUCKLED
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PASS_REAR_SEATBELT_BUCKLED
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CENTER_REAR_SEATBELT_BUCKLED
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -9575,11 +9627,37 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REAR_SEATBELT_BUCKLED_AVAIL
+        <td>DRIVER_REAR_SEATBELT_BUCKLED_AVAIL
           <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PASS_REAR_SEATBELT_BUCKLED_AVAIL
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">14</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CENTER_REAR_SEATBELT_BUCKLED_AVAIL
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -13159,6 +13237,95 @@
     <p class="notes-para">
       <sup>c</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
     </p>
+    <h1>TIRE_PRESSURE_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1054</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x41e</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">8</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">100</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>FRONT_LEFT_TIRE_PRESSURE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">6553.5</td>
+        <td class="centered-text">kPa</td>
+      </tr>
+      <tr>
+        <td>FRONT_RIGHT_TIRE_PRESSURE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">6553.5</td>
+        <td class="centered-text">kPa</td>
+      </tr>
+      <tr>
+        <td>REAR_LEFT_TIRE_PRESSURE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">6553.5</td>
+        <td class="centered-text">kPa</td>
+      </tr>
+      <tr>
+        <td>REAR_RIGHT_TIRE_PRESSURE</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">16</td>
+        <td class="centered-text">0.1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">6553.5</td>
+        <td class="centered-text">kPa</td>
+      </tr>
+    </table>
     <h1>TURN_AUX_RPT</h1>
     <table class="message-table">
       <tr>
