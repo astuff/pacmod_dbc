@@ -1108,6 +1108,9 @@ CM_ SG_ 792 FOG_LIGHTS_ON_AVAIL "PACMod sets this value as a function of which v
 CM_ SG_ 792 HEADLIGHTS_ON_BRIGHT_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 792 HEADLIGHTS_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
+// INTERIOR_LIGHTS_RPT COMMENTS
+CM_ SG_ 1046 DIM_LEVEL "Lowest dim level assigned to DIM_LEVEL_MIN, the dimmest light. Highest dim level assigned to DIM_LEVEL_MAX, the brightest light. Dim levels in between start with DIM_LEVEL_1.";
+
 // SHIFT_AUX_RPT COMMENTS
 CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
