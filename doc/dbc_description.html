@@ -686,6 +686,87 @@
     <p class="notes-para">
       <sup>2</sup>0=NOT_VALID, 1=VALID<br>
     </p>
+    <h1>ANTILOCK_BRAKE_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1056</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x420</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">100</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ANTILOCK_BRAKE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ANTILOCK_BRAKE_ACTIVE_AVAIL
+          <sup>2</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>BRAKE_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -9675,6 +9756,83 @@
     <p class="notes-para">
       <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
+    <h1>PARKING_BRAKE_AUX_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">804</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x324</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">250</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>PARKING_BRAKE_APPLIED_STATUS
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PARKING_BRAKE_APPLIED_STATUS_AVAIL
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=RELEASED, 1=APPLIED, 2=BETWEEN<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
     <h1>PARKING_BRAKE_CMD</h1>
     <table class="message-table">
       <tr>
@@ -13326,6 +13484,87 @@
         <td class="centered-text">kPa</td>
       </tr>
     </table>
+    <h1>TRACTION_CONTROL_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1055</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x41f</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">2</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">100</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>TRACTION_CONTROL_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>TRACTION_CONTROL_ACTIVE_AVAIL
+          <sup>2</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
     <h1>TURN_AUX_RPT</h1>
     <table class="message-table">
       <tr>
