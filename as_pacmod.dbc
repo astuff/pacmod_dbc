@@ -86,6 +86,10 @@ BO_ 1050 ANG_VEL_RPT: 7 PACMOD
  SG_ ROLL_VEL : 31|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
  SG_ YAW_VEL : 47|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
 
+BO_ 1056 ANTILOCK_BRAKE_RPT: 2 PACMOD
+ SG_ ANTILOCK_BRAKE_ACTIVE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ANTILOCK_BRAKE_ACTIVE_AVAIL : 8|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ RAW_PEDAL_POS : 7|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
  SG_ RAW_PEDAL_FORCE : 23|16@0- (1,0) [-32.768|32.767] ""  CUSTOMER_ECU
@@ -886,6 +890,10 @@ BO_ 1054 TIRE_PRESSURE_RPT: 4 PACMOD
  SG_ REAR_LEFT_TIRE_PRESSURE : 23|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
  SG_ REAR_RIGHT_TIRE_PRESSURE : 31|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
 
+BO_ 1055 TRACTION_CONTROL_RPT: 2 PACMOD
+ SG_ TRACTION_CONTROL_ACTIVE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TRACTION_CONTROL_ACTIVE_AVAIL : 8|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 816 TURN_AUX_RPT: 2 PACMOD
  SG_ DRIVER_BLINKER_BULB_ON : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ PASS_BLINKER_BULB_ON : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1060,6 +1068,9 @@ CM_ SG_ 768 RAW_PEDAL_POS_AVAIL "PACMod sets this value as a function of which v
 CM_ SG_ 513 ACCEL_CMD_LIMIT "The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
 CM_ SG_ 513 LIMITED_ACCEL_CMD "The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.";
 
+// ANTILOCK_BRAKE_RPT COMMENTS
+CM_ SG_ 1056 ANTILOCK_BRAKE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+
 // BRAKE_AUX_RPT COMMENTS
 CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 772 BRAKE_ON_OFF_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1176,6 +1187,9 @@ CM_ SG_ 129 ENABLE "A system shall enable only if the supervisory enablement rul
 CM_ SG_ 129 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 129 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 
+// TRACTION_CONTROL_RPT COMMENTS
+CM_ SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+
 // TURN_AUX_RPT COMMENTS
 CM_ SG_ 816 PASS_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 816 DRIVER_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1228,6 +1242,11 @@ BA_DEF_DEF_  "Component_Address" 0;
 //  Message and Signal Attributes  //
 //                                 //
 /////////////////////////////////////
+
+// ANTILOCK_BRAKE_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1056 100;
+BA_ "GenSigCycleTime" SG_ 1056 ANTILOCK_BRAKE_ACTIVE 100;
+BA_ "GenSigCycleTime" SG_ 1056 ANTILOCK_BRAKE_ACTIVE_AVAIL 100;
 
 // CABIN_CLIMATE_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 340 1000;
@@ -1381,12 +1400,17 @@ BA_ "GenSigCycleTime" SG_ 1035 BUILD1 1000;
 BA_ "GenSigCycleTime" SG_ 1035 BUILD2 1000;
 BA_ "GenSigCycleTime" SG_ 1035 BUILD3 1000;
 
-// TIRE_PRESSURE_RPT
+// TIRE_PRESSURE_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1054 100;
 BA_ "GenSigCycleTime" SG_ 1054 FRONT_LEFT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 FRONT_RIGHT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 REAR_LEFT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 REAR_RIGHT_TIRE_PRESSURE 100;
+
+// TRACTION_CONTROL_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1055 100;
+BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE 100;
+BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 100;
 
 // USER_NOTIFICATION_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1053 250;
@@ -1502,6 +1526,10 @@ VAL_ 1050 YAW_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1050 PITCH_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 ROLL_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
+
+// ANTILOCK_BRAKE_RPT VALUES
+VAL_ 1056 ANTILOCK_BRAKE_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
+VAL_ 1056 ANTILOCK_BRAKE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // BRAKE_AUX_RPT VALUES
 VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
@@ -2156,6 +2184,10 @@ VAL_ 556 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 
 // SUPERVISORY_CTRL VALUES
 VAL_ 129 ENABLE 0 "DISABLE_ALL_SYSTEMS" 1 "ALLOW_ENABLE" ;
+
+// TRACTION_CONTROL_RPT VALUES
+VAL_ 1055 TRACTION_CONTROL_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
+VAL_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // TURN_AUX_RPT VALUES
 VAL_ 816 DRIVER_BLINKER_BULB_ON 0 "OFF" 1 "ON" ;
