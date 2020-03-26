@@ -1,19 +1,24 @@
+# 8.0.1
+1. (Fix) Fix change log.
+
 # 8.0.0
-(Change) Change REAR_SEATBELT_BUCKLED to DRIVER_REAR_SEATBELT_BUCKLED.
-(Add) Add CABIN_CLIMATE, CABIN_FAN_SPEED, and CABIN_TEMP Systems.
-(Add) Add SAFETY_FUNC_CMD, SAFETY_FUNC_RPT, SAFETY_BRAKE_CMD, SAFETY_BRAKE_CMD messages.
-(Add) Add PASS_REAR_SEATBELT_BUCKLED add CENTER_REAR_SEATBELT_BUCKLED to OCCUPANCY_RPT message.
-(Add) Add FUEL_LEVEL to ENGINE_RPT message.
-(Add) Add TIRE_PRESSURE_RPT message.
-(Add) Add ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages.
-(Add) Add PARKING_BRAKE_AUX_RPT message.
-(Add) Add additional dim levels to DIM_LEVEL within INTERIOR_LIGHTS_RPT message.
-(Fix) Add missing values for all discrete signals in dbc file.
-(Fix) Add missing user defined attributes.
-(Fix) Reorganize dbc file. No changes to message formats.
-(Fix) Fix Wiper System command and report limits.
-(Fix) Add units to auxiliary reports with unit of percent.
-(Fix) Reorder and spell check the change log.
+1. (Change) Change REAR_SEATBELT_BUCKLED to DRIVER_REAR_SEATBELT_BUCKLED.
+2. (Add) Add CABIN_CLIMATE, CABIN_FAN_SPEED, and CABIN_TEMP Systems.
+3. (Add) Add SAFETY_FUNC_CMD, SAFETY_FUNC_RPT, SAFETY_BRAKE_CMD, SAFETY_BRAKE_CMD messages.
+4. (Add) Add PASS_REAR_SEATBELT_BUCKLED add CENTER_REAR_SEATBELT_BUCKLED to OCCUPANCY_RPT message.
+5. (Add) Add FUEL_LEVEL to ENGINE_RPT message.
+6. (Add) Add TIRE_PRESSURE_RPT message.
+7. (Add) Add ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages.
+8. (Add) Add PARKING_BRAKE_AUX_RPT message.
+9. (Add) Add additional dim levels to DIM_LEVEL within INTERIOR_LIGHTS_RPT message.
+10. (Fix) Add missing values for all discrete signals in dbc file.
+11. (Fix) Add missing user defined attributes.
+12. (Fix) Reorganize dbc file. No changes to message formats.
+13. (Fix) Fix Wiper System command and report limits.
+14. (Fix) Add units to auxiliary reports with unit of percent.
+15. (Fix) Reorder and spell check the change log.
+16. (Fix) Change System-wide commands CAN ID range for Safety function commands in user_can_protocol.
+17. (Fix) Elaborate on types of CAN messages in user_can_protocol.
 
 # 7.2.0
 1. (Add) Add USER_NOTIFICATION_CMD.
