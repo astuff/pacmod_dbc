@@ -686,87 +686,6 @@
     <p class="notes-para">
       <sup>2</sup>0=NOT_VALID, 1=VALID<br>
     </p>
-    <h1>ANTILOCK_BRAKE_RPT</h1>
-    <table class="message-table">
-      <tr>
-        <td>ID Decimal</td>
-        <td class="centered-text">1056</td>
-      </tr>
-      <tr>
-        <td>ID Hexadecimal</td>
-        <td class="centered-text">0x420</td>
-      </tr>
-      <tr>
-        <td>Frame Format</td>
-        <td class="centered-text">Standard</td>
-      </tr>
-      <tr>
-        <td>DLC</td>
-        <td class="centered-text">2</td>
-      </tr>
-      <tr>
-        <td>Sender</td>
-        <td class="centered-text">PACMOD</td>
-      </tr>
-      <tr>
-        <td>Send Type</td>
-        <td class="centered-text">Cyclic </td>
-      </tr>
-      <tr>
-        <td>Interval (ms)</td>
-        <td class="centered-text">100</td>
-      </tr>
-    </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
-    <table class="signals-table">
-      <tr class="header-row">
-        <td class="centered-text bold">Name</td>
-        <td class="centered-text bold">Type</td>
-        <td class="centered-text bold">Bitpos</td>
-        <td class="centered-text bold">Length</td>
-        <td class="centered-text bold">Factor</td>
-        <td class="centered-text bold">Offset</td>
-        <td class="centered-text bold">Min</td>
-        <td class="centered-text bold">Max</td>
-        <td class="centered-text bold">Unit</td>
-      </tr>
-      <tr>
-        <td>ANTILOCK_BRAKE_ACTIVE
-          <sup>1</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>ANTILOCK_BRAKE_ACTIVE_AVAIL
-          <sup>2</sup>
-          <sup>a</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">8</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-    </table>
-    <p class="notes-para">
-      <sup>1</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
-    </p>
-    <p class="notes-para">
-      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
-    </p>
-    <p class="notes-para">
-      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
     <h1>BRAKE_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -3439,7 +3358,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY</td>
+        <td>SPRAYER
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -3907,7 +3828,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY</td>
+        <td>SPRAYER
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -4375,7 +4298,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY</td>
+        <td>SPRAYER
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -4843,7 +4768,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>SPRAY</td>
+        <td>SPRAYER
+          <sup>2</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">1</td>
@@ -6434,6 +6361,147 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <h1>DRIVE_TRAIN_FEATURE_ACTIVE_RPT</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1055</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x41f</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">1</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">100</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>ANTILOCK_BRAKE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>TRACTION_CONTROL_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FOUR_WHEEL_DRIVE_ACTIVE
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ANTILOCK_BRAKE_ACTIVE_AVAIL
+          <sup>2</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>TRACTION_CONTROL_ACTIVE_AVAIL
+          <sup>2</sup>
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>FOUR_WHEEL_DRIVE_ACTIVE_AVAIL
+          <sup>2</sup>
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>ENGINE_BRAKE_CMD</h1>
     <table class="message-table">
@@ -10718,15 +10786,31 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMMAND_PERMITTED
+          <sup>4</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=APPLY_BRAKE, 1=RELEASE_BRAKE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO FAULT, 1=FAULT<br>
+      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=NO TIMEOUT, 1=TIMEOUT<br>
+      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=COMMAND_NOT_PERMITTED, 1=COMMAND_PERMITTED<br>
     </p>
     <h1>SAFETY_FUNC_CMD</h1>
     <table class="message-table">
@@ -10787,7 +10871,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NONE, 1=AUTO_READY, 2=AUTO, 3=MANUAL_READY, 4=CRITICAL_STOP, 5=CRITICAL_STOP2<br>
+      <sup>1</sup>0=NONE, 1=AUTO_READY, 2=AUTO, 3=MANUAL_READY, 4=CRITICAL_STOP1, 5=CRITICAL_STOP2<br>
     </p>
     <h1>SAFETY_FUNC_RPT</h1>
     <table class="message-table">
@@ -10805,7 +10889,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">3</td>
+        <td class="centered-text">4</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -10950,12 +11034,90 @@
         <td class="centered-text">2</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>MANUAL_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">24</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>AUTO_READY_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">25</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>AUTO_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">26</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>MANUAL_READY_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">27</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CRITICAL_STOP1_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">28</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CRITICAL_STOP2_STATE_OBTAINABLE
+          <sup>9</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">29</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=NONE, 1=AUTO_READY, 2=AUTO, 3=MANUAL_READY, 4=CRITICAL_STOP, 5=CRITICAL_STOP2<br>
+      <sup>1</sup>0=NONE, 1=AUTO_READY, 2=AUTO, 3=MANUAL_READY, 4=CRITICAL_STOP1, 5=CRITICAL_STOP2<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=MANUAL_BRAKED, 1=MANUAL_UNBRAKED, 2=AUTO_READY, 3=AUTO_INACTIVE, 4=AUTO_ACTIVE_BRAKED, 5=AUTO_ACTIVE_UNBRAKED, 6=MANUAL_READY, 7=CRITICAL_STOP, 8=CRITICAL_STOP2<br>
+      <sup>2</sup>0=MANUAL_BRAKED, 1=MANUAL_UNBRAKED, 2=AUTO_READY, 3=AUTO_INACTIVE, 4=AUTO_ACTIVE_BRAKED, 5=AUTO_ACTIVE_UNBRAKED, 6=MANUAL_READY, 7=CRITICAL_STOP1, 8=CRITICAL_STOP2<br>
     </p>
     <p class="notes-para">
       <sup>3</sup>0=INVALID, 1=MANUAL, 2=AUTO<br>
@@ -10974,6 +11136,9 @@
     </p>
     <p class="notes-para">
       <sup>8</sup>0=OKAY, 1=FAULT, 2=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>9</sup>0=NOT_OBTAINABLE, 1=OBTAINABLE<br>
     </p>
     <h1>SHIFT_AUX_RPT</h1>
     <table class="message-table">
@@ -13484,87 +13649,6 @@
         <td class="centered-text">kPa</td>
       </tr>
     </table>
-    <h1>TRACTION_CONTROL_RPT</h1>
-    <table class="message-table">
-      <tr>
-        <td>ID Decimal</td>
-        <td class="centered-text">1055</td>
-      </tr>
-      <tr>
-        <td>ID Hexadecimal</td>
-        <td class="centered-text">0x41f</td>
-      </tr>
-      <tr>
-        <td>Frame Format</td>
-        <td class="centered-text">Standard</td>
-      </tr>
-      <tr>
-        <td>DLC</td>
-        <td class="centered-text">2</td>
-      </tr>
-      <tr>
-        <td>Sender</td>
-        <td class="centered-text">PACMOD</td>
-      </tr>
-      <tr>
-        <td>Send Type</td>
-        <td class="centered-text">Cyclic </td>
-      </tr>
-      <tr>
-        <td>Interval (ms)</td>
-        <td class="centered-text">100</td>
-      </tr>
-    </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
-    <table class="signals-table">
-      <tr class="header-row">
-        <td class="centered-text bold">Name</td>
-        <td class="centered-text bold">Type</td>
-        <td class="centered-text bold">Bitpos</td>
-        <td class="centered-text bold">Length</td>
-        <td class="centered-text bold">Factor</td>
-        <td class="centered-text bold">Offset</td>
-        <td class="centered-text bold">Min</td>
-        <td class="centered-text bold">Max</td>
-        <td class="centered-text bold">Unit</td>
-      </tr>
-      <tr>
-        <td>TRACTION_CONTROL_ACTIVE
-          <sup>1</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>TRACTION_CONTROL_ACTIVE_AVAIL
-          <sup>2</sup>
-          <sup>a</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">8</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-    </table>
-    <p class="notes-para">
-      <sup>1</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
-    </p>
-    <p class="notes-para">
-      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
-    </p>
-    <p class="notes-para">
-      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
     <h1>TURN_AUX_RPT</h1>
     <table class="message-table">
       <tr>
