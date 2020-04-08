@@ -1,3 +1,13 @@
+# Future Release
+1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages.
+2. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
+3. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
+4. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
+5. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
+6. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
+7. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
+8. (Fix) Rename values to replace spaces with underscores in SAFETY_BRAKE_RPT.
+
 # 8.0.1
 1. (Fix) Fix change log.
 
@@ -15,7 +25,7 @@
 11. (Fix) Add missing user defined attributes.
 12. (Fix) Reorganize dbc file. No changes to message formats.
 13. (Fix) Fix Wiper System command and report limits.
-14. (Fix) Add units to auxiliary reports with unit of percent.
+14. (Fix) Add units of percent to accel and brake by-wire system messages.
 15. (Fix) Reorder and spell check the change log.
 16. (Fix) Change System-wide commands CAN ID range for Safety function commands in user_can_protocol.
 17. (Fix) Elaborate on types of CAN messages in user_can_protocol.
