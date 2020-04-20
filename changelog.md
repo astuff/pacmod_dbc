@@ -1,12 +1,15 @@
 # Future Release
 1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages.
 2. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
-3. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
-4. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
-5. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
-6. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
-7. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
-8. (Fix) Rename values to replace spaces with underscores in SAFETY_BRAKE_RPT.
+3. (Add) Add GLOBAL_RPT_2 message.
+4. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
+5. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
+6. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
+7. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
+8. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
+9. (Fix) Rename values to replace spaces with underscores in SAFETY_BRAKE_RPT.
+10. (Fix) Rename COMMAND in SAFETY_BRAKE_CMD and REPORTED_VALUE in SAFETY_BRAKE_RPT.
+11. (Fix) Add units to temperature signals in CABIN_TEMP_CMD and CABIN_TEMP_RPT.
 
 # 8.0.1
 1. (Fix) Fix change log.
