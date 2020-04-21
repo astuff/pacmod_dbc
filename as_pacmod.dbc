@@ -1065,15 +1065,28 @@ BO_ 1037 YAW_RATE_RPT: 2 PACMOD
  SG_ YAW_RATE : 7|16@0- (0.01,0) [-327.68|327.67] "rad/s"  CUSTOMER_ECU
 
 
+///////////////////////////////////
+//                               //
+// Network Node Comment Section  //
+//                               //
+///////////////////////////////////
 
+CM_ BU_ PACMOD "AutonomouStuff PACMod";
+
+///////////////////////////////
+//                           //
+//  Message Comment Section  //
+//                           //
+///////////////////////////////
+
+// GLOBAL_RPT
+CM_ BO_ 16 "Not for new development.";
 
 //////////////////////////////
 //                          //
 //  Signal Comment Section  //
 //                          //
 //////////////////////////////
-
-CM_ BU_ PACMOD "AutonomouStuff PACMod";
 
 // ACCEL_AUX_RPT COMMENTS
 CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
