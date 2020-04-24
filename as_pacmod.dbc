@@ -228,7 +228,7 @@ BO_ 332 CABIN_TEMP_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
- SG_ CABIN_TEMP_CMD : 15|8@0+ (0.1,10) [10|35] ""  PACMOD
+ SG_ CABIN_TEMP_CMD : 15|8@0+ (0.1,10) [10|35] "deg_C"  PACMOD
 
 BO_ 588 CABIN_TEMP_RPT: 4 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -239,9 +239,9 @@ BO_ 588 CABIN_TEMP_RPT: 4 PACMOD
  SG_ PACMOD_FAULT : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ VEHICLE_FAULT : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_TIMEOUT : 7|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ MANUAL_INPUT : 15|8@0+ (0.1,10) [10|35] ""  CUSTOMER_ECU
- SG_ COMMANDED_VALUE : 23|8@0+ (0.1,10) [10|35] ""  CUSTOMER_ECU
- SG_ OUTPUT_VALUE : 31|8@0+ (0.1,10) [10|35] ""  CUSTOMER_ECU
+ SG_ MANUAL_INPUT : 15|8@0+ (0.1,10) [10|35] "deg_C"  CUSTOMER_ECU
+ SG_ COMMANDED_VALUE : 23|8@0+ (0.1,10) [10|35] "deg_C"  CUSTOMER_ECU
+ SG_ OUTPUT_VALUE : 31|8@0+ (0.1,10) [10|35] "deg_C"  CUSTOMER_ECU
 
 BO_ 32 COMPONENT_RPT_00: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -517,6 +517,12 @@ BO_ 16 GLOBAL_RPT: 8 PACMOD
  SG_ CONFIG_FAULT_ACTIVE : 15|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ USR_CAN_READ_ERRORS : 55|16@0+ (1,0) [0|65535] ""  CUSTOMER_ECU
 
+BO_ 17 GLOBAL_RPT_2: 1 PACMOD
+ SG_ SYSTEM_ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SYSTEM_OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SYSTEM_FAULT_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SUPERVISORY_ENABLE_REQUIRED : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 276 HAZARD_LIGHTS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
@@ -725,11 +731,11 @@ BO_ 576 REAR_PASS_DOOR_RPT: 4 PACMOD
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
 
 BO_ 193 SAFETY_BRAKE_CMD: 1 CUSTOMER_ECU
- SG_ COMMAND : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ SAFETY_BRAKE_CMD : 0|1@0+ (1,0) [0|1] ""  PACMOD
 
 BO_ 65 SAFETY_BRAKE_RPT: 1 PACMOD
  SG_ COMMANDED_VALUE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ REPORTED_VALUE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OUTPUT_VALUE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ REPORTED_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_REPORTED_FAULT : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_TIMEOUT : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1059,15 +1065,28 @@ BO_ 1037 YAW_RATE_RPT: 2 PACMOD
  SG_ YAW_RATE : 7|16@0- (0.01,0) [-327.68|327.67] "rad/s"  CUSTOMER_ECU
 
 
+///////////////////////////////////
+//                               //
+// Network Node Comment Section  //
+//                               //
+///////////////////////////////////
 
+CM_ BU_ PACMOD "AutonomouStuff PACMod";
+
+///////////////////////////////
+//                           //
+//  Message Comment Section  //
+//                           //
+///////////////////////////////
+
+// GLOBAL_RPT
+CM_ BO_ 16 "Not for new development.";
 
 //////////////////////////////
 //                          //
 //  Signal Comment Section  //
 //                          //
 //////////////////////////////
-
-CM_ BU_ PACMOD "AutonomouStuff PACMod";
 
 // ACCEL_AUX_RPT COMMENTS
 CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
@@ -1125,6 +1144,11 @@ CM_ SG_ 1040 ENGINE_COOLANT_TEMP_AVAIL "PACMod sets this value as a function of 
 
 // GLOBAL_RPT COMMENTS
 CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
+
+// GLOBAL_RPT_2 COMMENTS
+CM_ SG_ 17 SYSTEM_ENABLED "One or more systems are enabled." ;
+CM_ SG_ 17 SYSTEM_FAULT_ACTIVE "One or more faults are active." ;
+CM_ SG_ 17 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
 
 // HEADLIGHT_AUX_RPT COMMENTS
 CM_ SG_ 792 HEADLIGHTS_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1914,6 +1938,12 @@ VAL_ 16 PACMOD_SYSTEM_FAULT_ACTIVE 0 "FALSE" 1 "TRUE" ;
 VAL_ 16 SUPERVISORY_ENABLE_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
 VAL_ 16 CONFIG_FAULT_ACTIVE 0 "FALSE" 1 "TRUE" ;
 
+// GLOBAL_RPT_2 VALUES
+VAL_ 17 SYSTEM_ENABLED 0 "CONTROL_DISABLED" 1 "CONTROL_ENABLED" ;
+VAL_ 17 SYSTEM_OVERRIDE_ACTIVE 0 "NOT_OVERRIDDEN" 1 "OVERRIDDEN" ;
+VAL_ 17 SYSTEM_FAULT_ACTIVE 0 "FALSE" 1 "TRUE" ;
+VAL_ 17 SUPERVISORY_ENABLE_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
+
 // HAZARD_LIGHTS_CMD VALUES
 VAL_ 276 ENABLE 0 "DISABLE" 1 "ENABLE" ;
 VAL_ 276 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
@@ -2110,11 +2140,11 @@ VAL_ 576 COMMANDED_VALUE 0 "NEUTRAL" 1 "OPEN" 2 "CLOSE" ;
 VAL_ 576 OUTPUT_VALUE 0 "NEUTRAL" 1 "OPEN" 2 "CLOSE" ;
 
 // SAFETY_BRAKE_CMD VALUE
-VAL_ 193 COMMAND 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
+VAL_ 193 SAFETY_BRAKE_CMD 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
 
 // SAFETY_BRAKE_RPT VALUE
 VAL_ 65 COMMANDED_VALUE 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
-VAL_ 65 REPORTED_VALUE 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
+VAL_ 65 OUTPUT_VALUE 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
 VAL_ 65 REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 65 COMMAND_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 65 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;

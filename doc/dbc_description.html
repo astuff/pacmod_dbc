@@ -2953,7 +2953,7 @@
         <td class="centered-text">10</td>
         <td class="centered-text">10</td>
         <td class="centered-text">35</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">deg_C</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -3119,7 +3119,7 @@
         <td class="centered-text">10</td>
         <td class="centered-text">10</td>
         <td class="centered-text">35</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">deg_C</td>
       </tr>
       <tr>
         <td>COMMANDED_VALUE</td>
@@ -3130,7 +3130,7 @@
         <td class="centered-text">10</td>
         <td class="centered-text">10</td>
         <td class="centered-text">35</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">deg_C</td>
       </tr>
       <tr>
         <td>OUTPUT_VALUE</td>
@@ -3141,7 +3141,7 @@
         <td class="centered-text">10</td>
         <td class="centered-text">10</td>
         <td class="centered-text">35</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">deg_C</td>
       </tr>
     </table>
     <p class="notes-para">
@@ -7306,6 +7306,127 @@
     <p class="notes-para">
       <sup>a</sup>Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message.
     </p>
+    <h1>GLOBAL_RPT_2</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">17</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x11</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">1</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">33</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>SYSTEM_ENABLED
+          <sup>1</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SYSTEM_OVERRIDE_ACTIVE
+          <sup>2</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SYSTEM_FAULT_ACTIVE
+          <sup>3</sup>
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>SUPERVISORY_ENABLE_REQUIRED
+          <sup>4</sup>
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+    </table>
+    <p class="notes-para">
+      <sup>1</sup>0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>One or more systems are enabled.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>One or more faults are active.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message.
+    </p>
     <h1>HAZARD_LIGHTS_CMD</h1>
     <table class="message-table">
       <tr>
@@ -10661,7 +10782,7 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>COMMAND
+        <td>SAFETY_BRAKE_CMD
           <sup>1</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -10735,7 +10856,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>REPORTED_VALUE
+        <td>OUTPUT_VALUE
           <sup>1</sup>
         </td>
         <td class="centered-text">Unsigned</td>
