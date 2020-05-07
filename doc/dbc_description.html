@@ -59,28 +59,6 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS</td>
-        <td class="centered-text">Signed</td>
-        <td class="centered-text">7</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">0.001</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_PEDAL_FORCE</td>
-        <td class="centered-text">Signed</td>
-        <td class="centered-text">23</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">0.001</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
         <td>OPERATOR_INTERACTION
           <sup>1</sup>
           <sup>a</sup>
@@ -95,37 +73,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS_AVAIL
-          <sup>2</sup>
-          <sup>b</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">40</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_PEDAL_FORCE_AVAIL
-          <sup>2</sup>
-          <sup>c</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">41</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
         <td>OPERATOR_INTERACTION_AVAIL
           <sup>2</sup>
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -148,12 +98,6 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>ACCEL_CMD</h1>
     <table class="message-table">
@@ -239,7 +183,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>ACCEL_CMD</td>
+        <td>ACCEL_CMD
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -255,6 +201,9 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>ACCEL_CMD_LIMIT_RPT</h1>
     <table class="message-table">
@@ -328,10 +277,10 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>a</sup>The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+      <sup>a</sup>The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Percent of full-scale value of signal from 0 to 1.
     </p>
     <p class="notes-para">
-      <sup>b</sup>The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT.
+      <sup>b</sup>The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT. Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>ACCEL_RPT</h1>
     <table class="message-table">
@@ -482,7 +431,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -493,7 +444,9 @@
         <td class="centered-text">%</td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
         <td class="centered-text">16</td>
@@ -504,7 +457,9 @@
         <td class="centered-text">%</td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
         <td class="centered-text">16</td>
@@ -523,6 +478,15 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Percent of full-scale value of signal from 0 to 1.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>ANG_VEL_RPT</h1>
     <table class="message-table">
@@ -731,42 +695,22 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS</td>
-        <td class="centered-text">Signed</td>
-        <td class="centered-text">7</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_PEDAL_FORCE</td>
-        <td class="centered-text">Signed</td>
-        <td class="centered-text">23</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_BRAKE_PRESSURE</td>
+        <td>BRAKE_PRESSURE
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">16</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">0.0001</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION
           <sup>1</sup>
-          <sup>a</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">48</td>
@@ -791,37 +735,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_PEDAL_POS_AVAIL
-          <sup>3</sup>
-          <sup>b</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">56</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_PEDAL_FORCE_AVAIL
+        <td>BRAKE_PRESSURE_AVAIL
           <sup>3</sup>
           <sup>c</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">57</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_BRAKE_PRESSURE_AVAIL
-          <sup>3</sup>
-          <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
@@ -835,7 +751,7 @@
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
           <sup>3</sup>
-          <sup>e</sup>
+          <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
@@ -849,7 +765,7 @@
       <tr>
         <td>BRAKE_ON_OFF_AVAIL
           <sup>3</sup>
-          <sup>f</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
@@ -871,10 +787,10 @@
       <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
-      <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
+      <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.
     </p>
     <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>b</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
       <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -884,9 +800,6 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>BRAKE_CMD</h1>
     <table class="message-table">
@@ -972,7 +885,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_CMD</td>
+        <td>BRAKE_CMD
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -988,6 +903,9 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>BRAKE_CMD_LIMIT_RPT</h1>
     <table class="message-table">
@@ -1061,10 +979,10 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>a</sup>The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.
+      <sup>a</sup>The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Percent of full-scale value of signal from 0 to 1.
     </p>
     <p class="notes-para">
-      <sup>b</sup>The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT.
+      <sup>b</sup>The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT. Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>BRAKE_DECCEL_AUX_RPT</h1>
     <table class="message-table">
@@ -1947,7 +1865,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>MANUAL_INPUT</td>
+        <td>MANUAL_INPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -1958,7 +1878,9 @@
         <td class="centered-text">%</td>
       </tr>
       <tr>
-        <td>COMMANDED_VALUE</td>
+        <td>COMMANDED_VALUE
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
         <td class="centered-text">16</td>
@@ -1969,7 +1891,9 @@
         <td class="centered-text">%</td>
       </tr>
       <tr>
-        <td>OUTPUT_VALUE</td>
+        <td>OUTPUT_VALUE
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
         <td class="centered-text">16</td>
@@ -1988,6 +1912,15 @@
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Percent of full-scale value of signal from 0 to 1.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>CABIN_CLIMATE_CMD</h1>
     <table class="message-table">
@@ -6940,14 +6873,16 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FUEL_LEVEL</td>
+        <td>FUEL_LEVEL
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
         <td class="centered-text">8</td>
         <td class="centered-text">0.005</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
         <td class="centered-text">%</td>
       </tr>
     </table>
@@ -6962,6 +6897,9 @@
     </p>
     <p class="notes-para">
       <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.
     </p>
     <h1>ESTOP_RPT</h1>
     <table class="message-table">
@@ -12799,26 +12737,17 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>RAW_POSITION</td>
-        <td class="centered-text">Signed</td>
-        <td class="centered-text">7</td>
-        <td class="centered-text">16</td>
-        <td class="centered-text">0.001</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_TORQUE</td>
+        <td>STEERING_TORQUE
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">23</td>
         <td class="centered-text">16</td>
-        <td class="centered-text">0.001</td>
+        <td class="centered-text">0.0001</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">-32.768</td>
-        <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
+        <td class="centered-text">-2</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text">%</td>
       </tr>
       <tr>
         <td>ROTATION_RATE</td>
@@ -12834,7 +12763,7 @@
       <tr>
         <td>OPERATOR_INTERACTION
           <sup>1</sup>
-          <sup>a</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">48</td>
@@ -12848,7 +12777,7 @@
       <tr>
         <td>ROTATION_RATE_SIGN
           <sup>2</sup>
-          <sup>b</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">49</td>
@@ -12860,21 +12789,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>RAW_POSITION_AVAIL
-          <sup>3</sup>
-          <sup>c</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">56</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>RAW_TORQUE_AVAIL
+        <td>STEERING_TORQUE_AVAIL
           <sup>3</sup>
           <sup>d</sup>
         </td>
@@ -12940,13 +12855,13 @@
       <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
-      <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
+      <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.
     </p>
     <p class="notes-para">
-      <sup>b</sup>Counterclockwise rotation is positive according to the right-hand rule.
+      <sup>b</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>c</sup>Counterclockwise rotation is positive according to the right-hand rule.
     </p>
     <p class="notes-para">
       <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
