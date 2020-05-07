@@ -1,15 +1,22 @@
 # Future Release
-1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages.
-2. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
-3. (Add) Add GLOBAL_RPT_2 message.
-4. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
-5. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
-6. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
-7. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
-8. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
-9. (Fix) Rename values to replace spaces with underscores in SAFETY_BRAKE_RPT.
-10. (Fix) Rename COMMAND in SAFETY_BRAKE_CMD and REPORTED_VALUE in SAFETY_BRAKE_RPT.
-11. (Fix) Add units to temperature signals in CABIN_TEMP_CMD and CABIN_TEMP_RPT.
+1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages. Obsolete.
+1. (Change) Remove RAW_PEDAL_POS and RAW_PEDAL_POS_AVAIL signals from ACCEL_AUX_RPT and BRAKE_AUX_RPT messages. Not used, not well defined.
+1. (Change) Remove RAW_PEDAL_FORCE and RAW_PEDAL_FORCE_AVAIL signals from ACCEL_AUX_RPT and BRAKE_AUX_RPT messages. Not used, not well defined.
+1. (Change) Remove RAW_POSITION signal from STEERING_AUX_RPT message. Not used, not well defined.
+1. (Change) Change units, scale, range, and name of the RAW_BRAKE_PRESSURE signal of the BRAKE_AUX_RPT message. Message was less useful and was not well defined.
+1. (Change) Change units, scale, range, and name of the RAW_TORQUE signal of the STEERING_AUX_RPT. Message was less useful and was not well defined.
+1. (Change) Expand the range of the FUEL_LEVEL signal of the ENGINE_RPT message for consistency with changes above.
+1. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
+1. (Add) Add GLOBAL_RPT_2 message.
+1. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
+1. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
+1. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
+1. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
+1. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
+1. (Fix) Rename values to replace spaces with underscores in SAFETY_BRAKE_RPT.
+1. (Fix) Rename COMMAND in SAFETY_BRAKE_CMD and REPORTED_VALUE in SAFETY_BRAKE_RPT.
+1. (Fix) Add units to temperature signals in CABIN_TEMP_CMD and CABIN_TEMP_RPT.
+1. (Fix) Add comments to describe the use of the % unit in all applicable signals.
 
 # 8.0.1
 1. (Fix) Fix change log.
