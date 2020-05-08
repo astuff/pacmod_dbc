@@ -5,7 +5,6 @@
 1. (Change) Remove RAW_POSITION signal from STEERING_AUX_RPT message. Not used, not well defined.
 1. (Change) Change units, scale, range, and name of the RAW_BRAKE_PRESSURE signal of the BRAKE_AUX_RPT message. Message was less useful and was not well defined.
 1. (Change) Change units, scale, range, and name of the RAW_TORQUE signal of the STEERING_AUX_RPT. Message was less useful and was not well defined.
-1. (Change) Expand the range of the FUEL_LEVEL signal of the ENGINE_RPT message for consistency with changes above.
 1. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
 1. (Add) Add GLOBAL_RPT_2 message.
 1. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
