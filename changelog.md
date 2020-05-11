@@ -9,6 +9,7 @@
 1. (Add) Add GLOBAL_RPT_2 message.
 1. (Add) Add obtainable signals to SAFETY_BRAKE_RPT.
 1. (Add) Add COMMAND_PERMITTED signal to SAFETY_BRAKE_RPT.
+1. (Add) Add VEHICLE_ANGLE_CALIB_STATUS and VEHICLE_ANGLE_CALIB_STATUS_AVIAL signals to STEERING_AUX_RPT.
 1. (Fix) Rename signal SPRAY to SPRAYER in COMPONENT_RPT messages.
 1. (Fix) Add missing values for SPRAYER in all COMPONENT_RPT messages.
 1. (Fix) Rename values CRITICAL_STOP to CRITICAL_STOP1.
