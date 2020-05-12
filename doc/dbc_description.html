@@ -12789,8 +12789,21 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING_TORQUE_AVAIL
+        <td>VEHICLE_ANGLE_CALIB_STATUS
           <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">50</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEERING_TORQUE_AVAIL
+          <sup>4</sup>
           <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12804,7 +12817,7 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_AVAIL
-          <sup>3</sup>
+          <sup>4</sup>
           <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12818,7 +12831,7 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>3</sup>
+          <sup>4</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12832,11 +12845,24 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_SIGN_AVAIL
-          <sup>3</sup>
+          <sup>4</sup>
           <sup>g</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>VEHICLE_ANGLE_CALIB_STATUS_AVAIL
+          <sup>4</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">61</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -12852,7 +12878,10 @@
       <sup>2</sup>0=POSITIVE, 1=NEGATIVE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>3</sup>0=NOT_CALIBRATED, 1=CALIBRATED<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.
