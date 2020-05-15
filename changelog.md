@@ -3,7 +3,7 @@
 1. (Change) Remove RAW_PEDAL_POS and RAW_PEDAL_POS_AVAIL signals from ACCEL_AUX_RPT and BRAKE_AUX_RPT messages. Not used, not well defined.
 1. (Change) Remove RAW_PEDAL_FORCE and RAW_PEDAL_FORCE_AVAIL signals from ACCEL_AUX_RPT and BRAKE_AUX_RPT messages. Not used, not well defined.
 1. (Change) Remove RAW_POSITION signal from STEERING_AUX_RPT message. Not used, not well defined.
-1. (Change) Change units, scale, range, and name of the RAW_BRAKE_PRESSURE signal of the BRAKE_AUX_RPT message. Message was less useful and was not well defined.
+1. (Change) Change sign, units, scale, range, and name of the RAW_BRAKE_PRESSURE signal of the BRAKE_AUX_RPT message. Message was less useful and was not well defined.
 1. (Change) Change units, scale, range, and name of the RAW_TORQUE signal of the STEERING_AUX_RPT. Message was less useful and was not well defined.
 1. (Add) Add DRIVE_TRAIN_FEATURE_ACTIVE_RPT message.
 1. (Add) Add GLOBAL_RPT_2 message.

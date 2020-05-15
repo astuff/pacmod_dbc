@@ -83,7 +83,7 @@ BO_ 1050 ANG_VEL_RPT: 7 PACMOD
  SG_ YAW_VEL : 47|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
 
 BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
- SG_ BRAKE_PRESSURE : 39|16@0- (0.0001,0) [0|2] "%"  CUSTOMER_ECU
+ SG_ BRAKE_PRESSURE : 39|16@0+ (0.0001,0) [0|2] "%"  CUSTOMER_ECU
  SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_ON_OFF : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_PRESSURE_AVAIL : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1146,7 +1146,7 @@ CM_ SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL "PACMod sets this value as a function
 CM_ SG_ 1040 ENGINE_SPEED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1040 ENGINE_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1040 ENGINE_COOLANT_TEMP_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
-CM_ SG_ 1040 FUEL_LEVEL "Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.";
+CM_ SG_ 1040 FUEL_LEVEL "Percent of nominal full-scale value of signal from 0 to 1.";
 
 // GLOBAL_RPT COMMENTS
 CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
