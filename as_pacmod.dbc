@@ -1128,25 +1128,25 @@ CM_ SG_ 516 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 // COMPONENT_RPT_00 COMMENTS
 CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 32 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
-CM_ SG_ 32 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 32 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 32 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_01 COMMENTS
 CM_ SG_ 33 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 33 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
-CM_ SG_ 33 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 33 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 33 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_02 COMMENTS
 CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 34 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
-CM_ SG_ 34 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 34 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 34 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_03 COMMENTS
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 35 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
-CM_ SG_ 35 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 35 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 35 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // DRIVE_TRAIN_FEATURE_ACTIVE_RPT COMMENTS

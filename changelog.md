@@ -1,7 +1,8 @@
 # Future Release
 1. (Add) Add WATCHDOG_SANITY_FAULT signal to component report messages.
-1. (Fix) Add definitions of MANUAL_INPUT, COMMANDED_VALUE, OUTPUT_VALUE signals in system report messages.
+1. (Fix) Add definitions of MANUAL_INPUT, COMMANDED_VALUE, OUTPUT_VALUE signals in system report messages to the User CAN Protocol document.
 1. (Fix) Add comment that elaborates on the definition of the CAN_TIMEOUT_FAULT signal in the component report messages.
+1. (Fix) Correct CMD_AC_OFF_ON signal limit within the CABIN_CLIMATE_CMD message.
 
 # 9.0.0
 1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages. Obsolete.
