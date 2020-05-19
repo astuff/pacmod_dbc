@@ -27,9 +27,22 @@ Each stock vehicle system under by-wire control has an associated by-wire system
 
 Each system command and report message pair is of one of the following types:
 1. Boolean: The data type carried by the command or report message is a boolean and is 8 bits long.
-2. Enumeration: The data type carried by the command or report message is an enumeration and is of 8 or 16 bits.
-3. Multi Enumeration: The data type carried by the command or report message is a set of enumerations.  They of varying number and sizes limited by how they fit into 8 or 16 bits.
-4. Float: The data type carried by the command or report message is 8 or 16 bit integer.
+1. Enumeration: The data type carried by the command or report message is an enumeration and is of 8 or 16 bits.
+1. Multi Enumeration: The data type carried by the command or report message is a set of enumerations.  They of varying number and sizes limited by how they fit into 8 or 16 bits.
+1. Float: The data type carried by the command or report message is 8 or 16 bit integer.
+
+A single command and report message pair communicates data related to the by-wire control established at the corresponding operator control for a single stock vehicle parameter. Each report message includes the following fields.
+
+1. MANUAL_INPUT - measurement from operator control for monitoring operator intent.
+1. COMMANDED_VALUE - copy of the command received for diagnostic of User CAN.
+1. OUTPUT_VALUE - feedback related to the PACMod System output for diagnostic of the PACMod System.
+
+The availability of feedback data for the OUTPUT_VALUE varies between stock vehicle platforms and their unique by-wire implementations. The following list provides an order of precedence for the data that shall be written to the OUTPUT_VALUE field. Number 1 in the list is highest precedence.
+
+1. Stock ECU data for the operator control in both manual and by-wire modes.
+1. Position data from the operator control actuator in by-wire mode and equal to MANUAL_INPUT in manual mode.
+1. COMMANDED_VALUE in by-wire mode and MANUAL_INPUT in manual mode.
+1. Zero in both modes.
 
 The global messages affect the PACMod System as a whole (all its systems and/or components).  It is made up of the global command and the global report.  The global command affects the PACMod System as a whole.  The global report reflects the status of the PACMod System as a whole.  Global messages are identified with "GLOBAL" in its name.
 
@@ -44,15 +57,15 @@ There are other miscellaneous commands and reports.
 The list below constrains the assignment of CAN IDs to specific messages. Its purpose is to give increasing priority to the increasing time-criticality of associated data.
 
 1. 0x000-0x03F (0-63) - System-wide reports (global and component reports meant to be received by all components)
-2. 0x040-0x07F (64-127) - Safety function reports (independent of by-wire functions)
-3. 0x080-0x0BF (128-191)- System-wide commands (global commands)
-4. 0x0C0-0x0FF (192-255) - Safety function commands (independent of by-wire functions)
-5. 0x100-0x1FF (256-511) - System-based commands
-6. 0x200-0x2FF (512-767) - System-based reports
-7. 0x300-0x3FF (768-1023) - System-based auxiliary reports
-8. 0x400-0x4FF (1024-1279) - Misc. reports, non-time-critical commands
-9. 0x500-0x5FF (1280-1535) - Internal diagnostic messages (generally undocumented)
-10. 0x600-0x7FF (1536-2047) - Unused
+1. 0x040-0x07F (64-127) - Safety function reports (independent of by-wire functions)
+1. 0x080-0x0BF (128-191)- System-wide commands (global commands)
+1. 0x0C0-0x0FF (192-255) - Safety function commands (independent of by-wire functions)
+1. 0x100-0x1FF (256-511) - System-based commands
+1. 0x200-0x2FF (512-767) - System-based reports
+1. 0x300-0x3FF (768-1023) - System-based auxiliary reports
+1. 0x400-0x4FF (1024-1279) - Misc. reports, non-time-critical commands
+1. 0x500-0x5FF (1280-1535) - Internal diagnostic messages (generally undocumented)
+1. 0x600-0x7FF (1536-2047) - Unused
 
 ## Rules for Transmitting CAN Messages
 
@@ -76,16 +89,16 @@ Supervisory enablement rules apply to a vehicle platform when the SUPERVISORY_EN
 
 A vehicle system under PACMod control “shall enable” if all of the following are true:
 1. The ENABLE field is received as ALLOW ENABLE.
-2. The respective system command message ENABLE field is received as “1” within the allowed time period.
-3. The rules for the COUNTER and COMPLEMENT fields in this message are met.
-4. The ENABLE field must be equal to ALLOW ENABLE and received in its corresponding message before receiving the system command message with the ENABLE field equal to “1”.
+1. The respective system command message ENABLE field is received as “1” within the allowed time period.
+1. The rules for the COUNTER and COMPLEMENT fields in this message are met.
+1. The ENABLE field must be equal to ALLOW ENABLE and received in its corresponding message before receiving the system command message with the ENABLE field equal to “1”.
 
 The allowed time period is 3 times the message period of this message. The same vehicle system shall disable immediately if any of the following are true:
 
 1. This ENABLE field is DISABLE ALL SYSTEMS.
-2. The respective system command message ENABLE field is “0”
-3. The allowed time period has elapsed before a this message is received.
-4. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
+1. The respective system command message ENABLE field is “0”
+1. The allowed time period has elapsed before a this message is received.
+1. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
 
 ## Default Bit Values
 

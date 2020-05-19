@@ -162,7 +162,7 @@ BO_ 340 CABIN_CLIMATE_CMD: 3 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
- SG_ CMD_AC_OFF_ON : 9|2@0+ (1,0) [0|63] ""  PACMOD
+ SG_ CMD_AC_OFF_ON : 9|2@0+ (1,0) [0|1] ""  PACMOD
  SG_ CMD_MAX_AC_OFF_ON : 11|2@0+ (1,0) [0|1] ""  PACMOD
  SG_ CMD_DEFROST_OFF_ON : 13|2@0+ (1,0) [0|1] ""  PACMOD
  SG_ CMD_MAX_DEFROST_OFF_ON : 15|2@0+ (1,0) [0|1] ""  PACMOD
@@ -267,6 +267,7 @@ BO_ 32 COMPONENT_RPT_00: 6 PACMOD
  SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -300,6 +301,7 @@ BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -333,6 +335,7 @@ BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -366,6 +369,7 @@ BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 264 CRUISE_CONTROL_BUTTONS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -1124,18 +1128,26 @@ CM_ SG_ 516 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 // COMPONENT_RPT_00 COMMENTS
 CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 32 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 32 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 32 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_01 COMMENTS
 CM_ SG_ 33 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 33 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 33 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 33 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_02 COMMENTS
 CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 34 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 34 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 34 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // COMPONENT_RPT_03 COMMENTS
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 35 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 35 CAN_TIMEOUT_FAULT "This value may relate to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 35 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 
 // DRIVE_TRAIN_FEATURE_ACTIVE_RPT COMMENTS
 CM_ SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1722,6 +1734,7 @@ VAL_ 32 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 32 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 32 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_01 VALUES
 VAL_ 33 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
@@ -1753,6 +1766,7 @@ VAL_ 33 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 33 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 33 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_02 VALUES
 VAL_ 34 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
@@ -1784,6 +1798,7 @@ VAL_ 34 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 34 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 34 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_03 VALUES
 VAL_ 35 COMPONENT_TYPE 0 "PACMod" 1 "PACMini" 2 "PACMicro" ;
@@ -1815,6 +1830,7 @@ VAL_ 35 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 35 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 35 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // CRUISE_CONTROL_BUTTONS_CMD
 VAL_ 264 ENABLE 0 "DISABLE" 1 "ENABLE" ;

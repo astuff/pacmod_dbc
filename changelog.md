@@ -1,3 +1,8 @@
+# Future Release
+1. (Add) Add WATCHDOG_SANITY_FAULT signal to component report messages.
+1. (Fix) Add definitions of MANUAL_INPUT, COMMANDED_VALUE, OUTPUT_VALUE signals in system report messages.
+1. (Fix) Add comment that elaborates on the definition of the CAN_TIMEOUT_FAULT signal in the component report messages.
+
 # 9.0.0
 1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages. Obsolete.
 1. (Change) Remove RAW_PEDAL_POS and RAW_PEDAL_POS_AVAIL signals from ACCEL_AUX_RPT and BRAKE_AUX_RPT messages. Not used, not well defined.
