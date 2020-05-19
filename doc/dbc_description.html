@@ -2015,7 +2015,7 @@
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">63</td>
+        <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
@@ -3488,6 +3488,7 @@
       <tr>
         <td>CAN_TIMEOUT_FAULT
           <sup>3</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
@@ -3537,6 +3538,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>WATCHDOG_SANITY_FAULT
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
@@ -3555,6 +3570,12 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component.
     </p>
     <h1>COMPONENT_RPT_01</h1>
     <table class="message-table">
@@ -3958,6 +3979,7 @@
       <tr>
         <td>CAN_TIMEOUT_FAULT
           <sup>3</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
@@ -4007,6 +4029,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>WATCHDOG_SANITY_FAULT
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
@@ -4025,6 +4061,12 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component.
     </p>
     <h1>COMPONENT_RPT_02</h1>
     <table class="message-table">
@@ -4428,6 +4470,7 @@
       <tr>
         <td>CAN_TIMEOUT_FAULT
           <sup>3</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
@@ -4477,6 +4520,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>WATCHDOG_SANITY_FAULT
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
@@ -4495,6 +4552,12 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component.
     </p>
     <h1>COMPONENT_RPT_03</h1>
     <table class="message-table">
@@ -4898,6 +4961,7 @@
       <tr>
         <td>CAN_TIMEOUT_FAULT
           <sup>3</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
@@ -4947,6 +5011,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>WATCHDOG_SANITY_FAULT
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
@@ -4965,6 +5043,12 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component.
     </p>
     <h1>CRUISE_CONTROL_BUTTONS_CMD</h1>
     <table class="message-table">
