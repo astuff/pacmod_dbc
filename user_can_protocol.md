@@ -108,5 +108,5 @@ All undefined bits shall be set to 0.
 
 These rules maintain consistency and readability of as_pacmod.dbc file.
 
-1. All signal value names shall be specified in capital letters.
-1. All signal value names shall us the underscore character.
+1. All signal value names shall use capital letters.
+1. All signal value names shall use the underscore character.
