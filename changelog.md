@@ -1,8 +1,12 @@
 # Future Release
 1. (Add) Add WATCHDOG_SANITY_FAULT signal to component report messages.
+1. (Add) Add STARTUP value to STATE signal of SAFETY_FUNC_RPT.
+1. (Add) Expand value definitions and add comments for MANUAL_INPUT and OUTPUT_VALUE signals in HAZARD_LIGHTS_RPT message.
 1. (Fix) Add definitions of MANUAL_INPUT, COMMANDED_VALUE, OUTPUT_VALUE signals in system report messages to the User CAN Protocol document.
 1. (Fix) Add comment that elaborates on the definition of the CAN_TIMEOUT_FAULT signal in the component report messages.
 1. (Fix) Correct CMD_AC_OFF_ON signal limit within the CABIN_CLIMATE_CMD message.
+1. (Fix) Rename CABIN_EBRAKE_OPCTRL to CABIN_SAFETY_BRAKE_OPCTRL for consistency.
+1. (Fix) Rename signal values to all caps and underscores for headlight and wiper systems, GLOBAL_RPT, and component reports for consistency.
 
 # 9.0.0
 1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages. Obsolete.

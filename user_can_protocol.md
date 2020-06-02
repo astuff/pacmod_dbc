@@ -103,3 +103,10 @@ The allowed time period is 3 times the message period of this message. The same 
 ## Default Bit Values
 
 All undefined bits shall be set to 0.
+
+## Vector DBC Rules
+
+These rules maintain consistency and readability of as_pacmod.dbc file.
+
+1. All signal value names shall use capital letters.
+1. All signal value names shall use the underscore character.

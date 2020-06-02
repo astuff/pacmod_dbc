@@ -3554,7 +3554,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
+      <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
     </p>
     <p class="notes-para">
       <sup>2</sup>0=ABSENT, 1=PRESENT<br>
@@ -4045,7 +4045,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
+      <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
     </p>
     <p class="notes-para">
       <sup>2</sup>0=ABSENT, 1=PRESENT<br>
@@ -4536,7 +4536,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
+      <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
     </p>
     <p class="notes-para">
       <sup>2</sup>0=ABSENT, 1=PRESENT<br>
@@ -5027,7 +5027,7 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=PACMod, 1=PACMini, 2=PACMicro<br>
+      <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
     </p>
     <p class="notes-para">
       <sup>2</sup>0=ABSENT, 1=PRESENT<br>
@@ -6946,7 +6946,10 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>FUEL_LEVEL_AVAIL</td>
+        <td>FUEL_LEVEL_AVAIL
+          <sup>1</sup>
+          <sup>d</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">43</td>
         <td class="centered-text">1</td>
@@ -6958,7 +6961,7 @@
       </tr>
       <tr>
         <td>FUEL_LEVEL
-          <sup>d</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -6983,7 +6986,10 @@
       <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <p class="notes-para">
-      <sup>d</sup>Percent of nominal full-scale value of signal from 0 to 1.
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>Percent of nominal full-scale value of signal from 0 to 1.
     </p>
     <h1>ESTOP_RPT</h1>
     <table class="message-table">
@@ -7311,16 +7317,16 @@
       </tr>
     </table>
     <p class="notes-para">
-      <sup>1</sup>0=Control Disabled, 1=Control Enabled<br>
+      <sup>1</sup>0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=Not Overridden, 1=Overridden<br>
+      <sup>2</sup>0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
     </p>
     <p class="notes-para">
       <sup>3</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=No Active CAN Timeout, 1=Active CAN Timeout<br>
+      <sup>4</sup>0=NO_ACTIVE_CAN_TIMEOUT, 1=ACTIVE_CAN_TIMEOUT<br>
     </p>
     <p class="notes-para">
       <sup>5</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
@@ -7706,6 +7712,7 @@
       <tr>
         <td>MANUAL_INPUT
           <sup>4</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -7718,7 +7725,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>4</sup>
+          <sup>5</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
@@ -7732,6 +7739,7 @@
       <tr>
         <td>OUTPUT_VALUE
           <sup>4</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
@@ -7753,7 +7761,16 @@
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=OFF, 1=ON<br>
+      <sup>4</sup>0=OFF/NOT_PRESSED, 1=ON/PRESSED<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=OFF, 1=ON<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Platforms vary on use of latched or momentary interface, see platform user guide.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Platforms vary on use of latched or momentary interface, see platform user guide.
     </p>
     <h1>HEADLIGHT_AUX_RPT</h1>
     <table class="message-table">
@@ -7912,7 +7929,7 @@
       <sup>1</sup>0=OFF, 1=ON<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>3=Headlights On - Auto Mode, 2=Headlights On - Manual Mode, 1=Parking Lights Only, 0=Headlights Off<br>
+      <sup>2</sup>3=HEADLIGHTS_ON_AUTO MODE, 2=HEADLIGHTS_ON_MANUAL_MODE, 1=PARKING_LIGHTS_ONLY, 0=HEADLIGHTS_OFF<br>
     </p>
     <p class="notes-para">
       <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
@@ -8033,7 +8050,7 @@
       <sup>2</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
+      <sup>3</sup>2=HIGH_BEAMS, 1=LOW_BEAMS, 0=HEADLIGHTS_OFF<br>
     </p>
     <h1>HEADLIGHT_RPT</h1>
     <table class="message-table">
@@ -8233,7 +8250,7 @@
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>2=High Beams, 1=Low Beams, 0=Headlights Off<br>
+      <sup>4</sup>2=HIGH_BEAMS, 1=LOW_BEAMS, 0=HEADLIGHTS_OFF<br>
     </p>
     <h1>HORN_CMD</h1>
     <table class="message-table">
@@ -11100,7 +11117,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>CABIN_EBRAKE_OPCTRL
+        <td>CABIN_SAFETY_BRAKE_OPCTRL
           <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -11260,7 +11277,7 @@
       <sup>1</sup>0=NONE, 1=AUTO_READY, 2=AUTO, 3=MANUAL_READY, 4=CRITICAL_STOP1, 5=CRITICAL_STOP2<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=MANUAL_BRAKED, 1=MANUAL_UNBRAKED, 2=AUTO_READY, 3=AUTO_INACTIVE, 4=AUTO_ACTIVE_BRAKED, 5=AUTO_ACTIVE_UNBRAKED, 6=MANUAL_READY, 7=CRITICAL_STOP1, 8=CRITICAL_STOP2<br>
+      <sup>2</sup>0=MANUAL_BRAKED, 1=MANUAL_UNBRAKED, 2=AUTO_READY, 3=AUTO_INACTIVE, 4=AUTO_ACTIVE_BRAKED, 5=AUTO_ACTIVE_UNBRAKED, 6=MANUAL_READY, 7=CRITICAL_STOP1, 8=CRITICAL_STOP2, 9=STARTUP<br>
     </p>
     <p class="notes-para">
       <sup>3</sup>0=INVALID, 1=MANUAL, 2=AUTO<br>
@@ -15429,7 +15446,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>GLOBAL_INTERNAL_POWER_SUPPLY_FAULT</td>
+        <td>GLOBAL_INTERNAL_POWER_SUPPLY_FAULT
+          <sup>1</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">63</td>
         <td class="centered-text">1</td>
@@ -15876,7 +15895,7 @@
       <sup>2</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>3</sup>255=HIGH, 254=MEDIUM, 253=LOW, 10=INTERMITTENT_10, 9=INTERMITTENT_9, 8=INTERMITTENT_8, 7=INTERMITTENT_7, 6=INTERMITTENT_6, 5=INTERMITTENT_5, 4=INTERMITTENT_4, 3=INTERMITTENT_3, 2=INTERMITTENT_2, 1=INTERMITTENT_1, 0=WIPERS_OFF<br>
     </p>
     <h1>WIPER_RPT</h1>
     <table class="message-table">
@@ -16076,7 +16095,7 @@
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>255=High, 254=Medium, 253=Low, 10=Intermittent 10, 9=Intermittent 9, 8=Intermittent 8, 7=Intermittent 7, 6=Intermittent 6, 5=Intermittent 5, 4=Intermittent 4, 3=Intermittent 3, 2=Intermittent 2, 1=Intermittent 1, 0=Wipers Off<br>
+      <sup>4</sup>255=HIGH, 254=MEDIUM, 253=LOW, 10=INTERMITTENT_10, 9=INTERMITTENT_9, 8=INTERMITTENT_8, 7=INTERMITTENT_7, 6=INTERMITTENT_6, 5=INTERMITTENT_5, 4=INTERMITTENT_4, 3=INTERMITTENT_3, 2=INTERMITTENT_2, 1=INTERMITTENT_1, 0=WIPERS_OFF<br>
     </p>
     <h1>YAW_RATE_RPT</h1>
     <table class="message-table">
