@@ -7,6 +7,8 @@
 1. (Fix) Correct CMD_AC_OFF_ON signal limit within the CABIN_CLIMATE_CMD message.
 1. (Fix) Rename CABIN_EBRAKE_OPCTRL to CABIN_SAFETY_BRAKE_OPCTRL for consistency.
 1. (Fix) Rename signal values to all caps and underscores for headlight and wiper systems, GLOBAL_RPT, and component reports for consistency.
+1. (Fix) Rename FAN OFF signal value to FAN_OFF.
+1. (Fix) Add rules to user_can_protocol for naming values.
 
 # 9.0.0
 1. (Change) Remove ANTILOCK_BRAKE_RPT and TRACTION_CONTROL_RPT messages. Obsolete.
