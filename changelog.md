@@ -1,4 +1,4 @@
-# Future Release
+# 9.1.0
 1. (Add) Add WATCHDOG_SANITY_FAULT signal to component report messages.
 1. (Add) Add STARTUP value to STATE signal of SAFETY_FUNC_RPT.
 1. (Add) Expand value definitions and add comments for MANUAL_INPUT and OUTPUT_VALUE signals in HAZARD_LIGHTS_RPT message.
