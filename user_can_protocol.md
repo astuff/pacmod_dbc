@@ -104,9 +104,21 @@ The allowed time period is 3 times the message period of this message. The same 
 
 All undefined bits shall be set to 0.
 
-## Vector DBC Rules
+# Vector DBC Rules
 
 These rules maintain consistency and readability of as_pacmod.dbc file.
+
+## Signal Name Rules
+
+Bool signal type names shall be suffixed with a direct reference to their affirmative value.
+
+Enumeration signal type names that require additional specificity shall be suffixed with a reference to their corresponding physical signal type. When the signal represents logical information instead of physical, one of the following suffixes shall be used:
+
+1. MODE - shall represent a signal that is read/write and indicates differing behaviors with a given set of hardware or I/O.
+1. STATE - shall represent a signal that is read/write and indicates a physical or logical condition.
+1. STATUS - shall represent a signal that is read only and indicates a physical or logical condition.
+
+## Signal Value Name Rules
 
 1. All signal value names shall use capital letters.
 1. All signal value names shall use the underscore character.
