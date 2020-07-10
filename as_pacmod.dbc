@@ -1088,7 +1088,7 @@ CM_ BO_ 16 "Not for new development.";
 
 // ACCEL_AUX_RPT COMMENTS
 CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
-CM_ SG_ 768 ACCEL_LIMITING_ACTIVE "ACCEL_LIMITING_ACTIVE shall have the value of 1 if a limiting function will limit an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 768 ACCEL_LIMITING_ACTIVE "ACCEL_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
 CM_ SG_ 768 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 768 ACCEL_LIMITING_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
@@ -1107,7 +1107,7 @@ CM_ SG_ 512 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 // BRAKE_AUX_RPT COMMENTS
 CM_ SG_ 772 BRAKE_PRESSURE "Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.";
 CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
-CM_ SG_ 772 BRAKE_LIMITING_ACTIVE "BRAKE_LIMITING_ACTIVE shall have the value of 1 if a limiting function will limit an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 772 BRAKE_LIMITING_ACTIVE "BRAKE_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
 CM_ SG_ 772 BRAKE_ON_OFF_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 772 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 772 BRAKE_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1237,7 +1237,7 @@ CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and
 CM_ SG_ 812 STEERING_TORQUE "Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.";
 CM_ SG_ 812 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 812 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
-CM_ SG_ 812 STEERING_LIMITING_ACTIVE "STEERING_LIMITING_ACTIVE shall have the value of 1 if a limiting function will limit an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 812 STEERING_LIMITING_ACTIVE "STEERING_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
 CM_ SG_ 812 ROTATION_RATE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 STEERING_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 ROTATION_RATE_SIGN_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
