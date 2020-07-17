@@ -73,12 +73,40 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OPERATOR_INTERACTION_AVAIL
+        <td>ACCEL_LIMITING_ACTIVE
           <sup>2</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
+        <td class="centered-text">33</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OPERATOR_INTERACTION_AVAIL
+          <sup>3</sup>
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>ACCEL_LIMITING_ACTIVE_AVAIL
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">43</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -91,13 +119,22 @@
       <sup>1</sup>0=NO_INTERACTION, 1=INTERACTION<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>2</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>b</sup>ACCEL_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>ACCEL_CMD</h1>
     <table class="message-table">
@@ -735,9 +772,23 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_PRESSURE_AVAIL
+        <td>BRAKE_LIMITING_ACTIVE
           <sup>3</sup>
           <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">50</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_PRESSURE_AVAIL
+          <sup>4</sup>
+          <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
@@ -750,8 +801,8 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>3</sup>
-          <sup>d</sup>
+          <sup>4</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
@@ -764,11 +815,25 @@
       </tr>
       <tr>
         <td>BRAKE_ON_OFF_AVAIL
-          <sup>3</sup>
-          <sup>e</sup>
+          <sup>4</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_LIMITING_ACTIVE_AVAIL
+          <sup>4</sup>
+          <sup>g</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">61</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -784,7 +849,10 @@
       <sup>2</sup>0=OFF, 1=ON<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>3</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.
@@ -793,13 +861,19 @@
       <sup>b</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>c</sup>BRAKE_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
       <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <p class="notes-para">
       <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>g</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>BRAKE_CMD</h1>
     <table class="message-table">
@@ -5078,7 +5152,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5184,7 +5258,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5384,7 +5458,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5490,7 +5564,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5690,7 +5764,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5796,7 +5870,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -5996,7 +6070,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">250</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -6174,7 +6248,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">250</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -7483,7 +7557,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -7589,7 +7663,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -7800,7 +7874,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -7974,7 +8048,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -8080,7 +8154,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -8280,7 +8354,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -8386,7 +8460,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -8586,7 +8660,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">250</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -9061,7 +9135,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -9167,7 +9241,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -9367,7 +9441,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -9473,7 +9547,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -9750,7 +9824,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">250</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10012,7 +10086,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">250</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10089,7 +10163,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10195,7 +10269,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10395,7 +10469,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">250</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10498,7 +10572,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -10604,7 +10678,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -12515,7 +12589,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -12621,7 +12695,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -12903,9 +12977,23 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING_TORQUE_AVAIL
+        <td>STEERING_LIMITING_ACTIVE
           <sup>4</sup>
           <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">51</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEERING_TORQUE_AVAIL
+          <sup>5</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">57</td>
@@ -12918,8 +13006,8 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_AVAIL
-          <sup>4</sup>
-          <sup>e</sup>
+          <sup>5</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
@@ -12932,8 +13020,8 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>4</sup>
-          <sup>f</sup>
+          <sup>5</sup>
+          <sup>g</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
@@ -12946,8 +13034,8 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_SIGN_AVAIL
-          <sup>4</sup>
-          <sup>g</sup>
+          <sup>5</sup>
+          <sup>h</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
@@ -12960,10 +13048,24 @@
       </tr>
       <tr>
         <td>VEHICLE_ANGLE_CALIB_STATUS_AVAIL
-          <sup>4</sup>
+          <sup>5</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">61</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEERING_LIMITING_ACTIVE_AVAIL
+          <sup>5</sup>
+          <sup>i</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">62</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -12982,7 +13084,10 @@
       <sup>3</sup>0=NOT_CALIBRATED, 1=CALIBRATED<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>4</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.
@@ -12994,7 +13099,7 @@
       <sup>c</sup>Counterclockwise rotation is positive according to the right-hand rule.
     </p>
     <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>d</sup>STEERING_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
       <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -13004,6 +13109,12 @@
     </p>
     <p class="notes-para">
       <sup>g</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>h</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>i</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>STEERING_CMD</h1>
     <table class="message-table">
@@ -13843,7 +13954,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -13954,7 +14065,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -14060,7 +14171,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
@@ -14434,74 +14545,7 @@
         <td class="centered-text">0</td>
         <td class="centered-text">-32.768</td>
         <td class="centered-text">32.767</td>
-        <td class="centered-text"></td>
-      </tr>
-    </table>
-    <h1>VEH_SPECIFIC_RPT_1</h1>
-    <table class="message-table">
-      <tr>
-        <td>ID Decimal</td>
-        <td class="centered-text">1042</td>
-      </tr>
-      <tr>
-        <td>ID Hexadecimal</td>
-        <td class="centered-text">0x412</td>
-      </tr>
-      <tr>
-        <td>Frame Format</td>
-        <td class="centered-text">Standard</td>
-      </tr>
-      <tr>
-        <td>DLC</td>
-        <td class="centered-text">2</td>
-      </tr>
-      <tr>
-        <td>Sender</td>
-        <td class="centered-text">PACMOD</td>
-      </tr>
-      <tr>
-        <td>Send Type</td>
-        <td class="centered-text">Cyclic </td>
-      </tr>
-      <tr>
-        <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
-      </tr>
-    </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
-    <table class="signals-table">
-      <tr class="header-row">
-        <td class="centered-text bold">Name</td>
-        <td class="centered-text bold">Type</td>
-        <td class="centered-text bold">Bitpos</td>
-        <td class="centered-text bold">Length</td>
-        <td class="centered-text bold">Factor</td>
-        <td class="centered-text bold">Offset</td>
-        <td class="centered-text bold">Min</td>
-        <td class="centered-text bold">Max</td>
-        <td class="centered-text bold">Unit</td>
-      </tr>
-      <tr>
-        <td>SHIFT_POS_1</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">7</td>
-        <td class="centered-text">8</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text"></td>
-        <td class="centered-text"></td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>SHIFT_POS_2</td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">15</td>
-        <td class="centered-text">8</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text"></td>
-        <td class="centered-text"></td>
-        <td class="centered-text"></td>
+        <td class="centered-text">m/s^2</td>
       </tr>
     </table>
     <h1>VIN_RPT</h1>
@@ -15579,7 +15623,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -15819,7 +15863,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
@@ -15925,7 +15969,7 @@
       </tr>
       <tr>
         <td>Interval (ms)</td>
-        <td class="centered-text">33</td>
+        <td class="centered-text">100</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
