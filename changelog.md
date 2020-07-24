@@ -1,6 +1,6 @@
 # Future Release
 1. (Add) Add SAFETY_FUNC_CRITICAL_STOP_RPT message.
-1. (Add) Add WATCHDOG_RPT_2.
+1. (Add) Add WATCHDOG_RPT_2 message.
 
 # 10.0.0
 1. (Change) Remove VEH_SPECIFIC_RPT_1 because it isn't used and isn't fully defined.
