@@ -1,4 +1,4 @@
-# Future Release
+# 10.1.0
 1. (Add) Add SAFETY_FUNC_CRITICAL_STOP_RPT message.
 1. (Add) Add WATCHDOG_RPT_2 message.
 
