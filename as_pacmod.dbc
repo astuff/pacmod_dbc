@@ -272,6 +272,7 @@ BO_ 32 COMPONENT_RPT_00: 6 PACMOD
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -306,6 +307,7 @@ BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -340,6 +342,7 @@ BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -374,6 +377,42 @@ BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+
+BO_ 36 COMPONENT_RPT_04: 6 PACMOD
+ SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ ACCEL : 4|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ BRAKE : 5|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ CRUISE_CONTROL_BUTTONS : 6|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ DASH_CONTROLS_LEFT : 7|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ DASH_CONTROLS_RIGHT : 8|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ HAZARD_LIGHTS : 9|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ HEADLIGHT : 10|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ HORN : 11|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ MEDIA_CONTROLS : 12|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ PARKING_BRAKE : 13|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SHIFT : 14|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SPRAYER : 15|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ STEERING : 16|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TURN : 17|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WIPER : 18|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG : 19|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ BRAKE_DECCEL : 20|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ REAR_PASS_DOOR : 21|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ ENGINE_BRAKE : 22|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ MARKER_LAMP : 23|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ CABIN_CLIMATE : 24|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ CABIN_FAN_SPEED : 25|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ CABIN_TEMP : 26|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COUNTER : 35|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ COMPLEMENT : 39|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ CONFIG_FAULT : 40|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ CAN_TIMEOUT_FAULT : 41|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ INTERNAL_SUPPLY_VOLTAGE_FAULT : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SUPERVISORY_TIMEOUT : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 264 CRUISE_CONTROL_BUTTONS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -759,12 +798,13 @@ BO_ 1056 SAFETY_FUNC_CRITICAL_STOP_RPT: 3  PACMOD
  SG_ VEHICLE_REPORT_TIMEOUT : 11|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ VEHICLE_REPORT_FAULT : 12|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ LOW_ENGINE_RPM : 13|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ PRI_SAFETY_BRAKE_1_FAULT : 14|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ PRI_SAFETY_BRAKE_2_FAULT : 15|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ SEC_SAFETY_BRAKE_1_FAULT : 16|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ SEC_SAFETY_BRAKE_2_FAULT : 17|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PRI_SAFETY_BRAKE_SIGNAL_1_FAULT : 14|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PRI_SAFETY_BRAKE_SIGNAL_2_FAULT : 15|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SEC_SAFETY_BRAKE_SIGNAL_1_FAULT : 16|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SEC_SAFETY_BRAKE_SIGNAL_2_FAULT : 17|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ PRIMARY_PROCESSOR_FAULT : 18|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SECONDARY_PROCESSOR_FAULT : 19|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ REMOTE_STOP_CMD : 20|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 64 SAFETY_FUNC_RPT: 4 PACMOD
  SG_ COMMANDED_VALUE : 3|4@0+ (1,0) [0|5] ""  CUSTOMER_ECU
@@ -844,6 +884,15 @@ BO_ 1034 SOFTWARE_VERSION_RPT_02: 7 PACMOD
  SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
 
 BO_ 1035 SOFTWARE_VERSION_RPT_03: 7 PACMOD
+ SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ BUILD0 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD1 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD2 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ BUILD3 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+
+BO_ 1036 SOFTWARE_VERSION_RPT_04: 7 PACMOD
  SG_ MAJOR : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ MINOR : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ PATCH : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
@@ -1200,24 +1249,35 @@ CM_ SG_ 32 COUNTER "Counter shall have the value of 0 with the first message tra
 CM_ SG_ 32 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 32 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 32 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
+CM_ SG_ 32 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
 
 // COMPONENT_RPT_01 COMMENTS
 CM_ SG_ 33 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 33 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 33 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 33 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
+CM_ SG_ 33 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
 
 // COMPONENT_RPT_02 COMMENTS
 CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 34 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 34 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 34 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
+CM_ SG_ 34 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
 
 // COMPONENT_RPT_03 COMMENTS
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 35 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
 CM_ SG_ 35 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 35 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
+CM_ SG_ 35 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+
+// COMPONENT_RPT_04 COMMENTS
+CM_ SG_ 36 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
+CM_ SG_ 36 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+CM_ SG_ 36 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
+CM_ SG_ 36 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
+CM_ SG_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
 
 // DRIVE_TRAIN_FEATURE_ACTIVE_RPT COMMENTS
 CM_ SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1267,12 +1327,13 @@ CM_ SG_ 1056 PACMOD_SYSTEM_NOT_ACTIVE "This value shall latch while the safety f
 CM_ SG_ 1056 VEHICLE_REPORT_TIMEOUT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 VEHICLE_REPORT_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 LOW_ENGINE_RPM "This value shall latch while the safety function is in the critical stop state.";
-CM_ SG_ 1056 PRI_SAFETY_BRAKE_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
-CM_ SG_ 1056 PRI_SAFETY_BRAKE_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
-CM_ SG_ 1056 SEC_SAFETY_BRAKE_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
-CM_ SG_ 1056 SEC_SAFETY_BRAKE_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
+CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
+CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
+CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
+CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
 CM_ SG_ 1056 PRIMARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 SECONDARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
+CM_ SG_ 1056 REMOTE_STOP_CMD "This value shall latch while the safety function is in the critical stop state.";
 
 // SHIFT_AUX_RPT COMMENTS
 CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1318,6 +1379,15 @@ CM_ SG_ 1035 BUILD0 "BUILD0-BUILD3 shall represent the software build number and
 CM_ SG_ 1035 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 CM_ SG_ 1035 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+
+// SOFTWARE_VERSION_RPT_04 COMMENTS
+CM_ SG_ 1036 MAJOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1036 MINOR "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1036 PATCH "MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.";
+CM_ SG_ 1036 BUILD0 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1036 BUILD1 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1036 BUILD2 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
+CM_ SG_ 1036 BUILD3 "BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.";
 
 // STEERING_AUX_RPT COMMENTS
 CM_ SG_ 812 STEERING_TORQUE "Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.";
@@ -1513,6 +1583,10 @@ BA_ "Component_Address_Type" BO_ 34 1;
 // COMPONENT_RPT_03 ATTRIBUTES
 BA_ "Component_Address" BO_ 35 3;
 BA_ "Component_Address_Type" BO_ 35 1;
+
+// COMPONENT_RPT_04 ATTRIBUTES
+BA_ "Component_Address" BO_ 36 4;
+BA_ "Component_Address_Type" BO_ 36 1;
 
 // DASH_CONTROLS_LEFT_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 268 100;
@@ -1814,12 +1888,13 @@ BA_ "GenSigCycleTime" SG_ 1056 PACMOD_SYSTEM_NOT_ACTIVE 1000;
 BA_ "GenSigCycleTime" SG_ 1056 VEHICLE_REPORT_TIMEOUT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 VEHICLE_REPORT_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 LOW_ENGINE_RPM 1000;
-BA_ "GenSigCycleTime" SG_ 1056 PRI_SAFETY_BRAKE_1_FAULT 1000;
-BA_ "GenSigCycleTime" SG_ 1056 PRI_SAFETY_BRAKE_2_FAULT 1000;
-BA_ "GenSigCycleTime" SG_ 1056 SEC_SAFETY_BRAKE_1_FAULT 1000;
-BA_ "GenSigCycleTime" SG_ 1056 SEC_SAFETY_BRAKE_2_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_1_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_2_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_1_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 PRIMARY_PROCESSOR_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 SECONDARY_PROCESSOR_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 REMOTE_STOP_CMD 1000;
 
 // SOFTWARE_VERSION_RPT_00 ATTRIBUTES
 BA_ "Component_Address" BO_ 1032 0;
@@ -1868,6 +1943,18 @@ BA_ "GenSigCycleTime" SG_ 1035 BUILD0 1000;
 BA_ "GenSigCycleTime" SG_ 1035 BUILD1 1000;
 BA_ "GenSigCycleTime" SG_ 1035 BUILD2 1000;
 BA_ "GenSigCycleTime" SG_ 1035 BUILD3 1000;
+
+// SOFTWARE_VERSION_RPT_04 ATTRIBUTES
+BA_ "Component_Address" BO_ 1036 4;
+BA_ "Component_Address_Type" BO_ 1036 1;
+BA_ "GenMsgCycleTime" BO_ 1036 1000;
+BA_ "GenSigCycleTime" SG_ 1036 MAJOR 1000;
+BA_ "GenSigCycleTime" SG_ 1036 MINOR 1000;
+BA_ "GenSigCycleTime" SG_ 1036 PATCH 1000;
+BA_ "GenSigCycleTime" SG_ 1036 BUILD0 1000;
+BA_ "GenSigCycleTime" SG_ 1036 BUILD1 1000;
+BA_ "GenSigCycleTime" SG_ 1036 BUILD2 1000;
+BA_ "GenSigCycleTime" SG_ 1036 BUILD3 1000;
 
 // SPRAYER_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 312 100;
@@ -2276,6 +2363,7 @@ VAL_ 32 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 32 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 32 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_01 VALUES
 VAL_ 33 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2308,6 +2396,7 @@ VAL_ 33 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 33 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 33 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_02 VALUES
 VAL_ 34 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2340,6 +2429,7 @@ VAL_ 34 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 34 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 34 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // COMPONENT_RPT_03 VALUES
 VAL_ 35 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2372,6 +2462,40 @@ VAL_ 35 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 35 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 35 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+
+// COMPONENT_RPT_04 VALUES
+VAL_ 36 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
+VAL_ 36 ACCEL 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 BRAKE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 CRUISE_CONTROL_BUTTONS 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 DASH_CONTROLS_LEFT 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 DASH_CONTROLS_RIGHT 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 HAZARD_LIGHTS 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 HEADLIGHT 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 HORN 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 MEDIA_CONTROLS 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 PARKING_BRAKE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 SHIFT 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 SPRAYER 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 STEERING 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 TURN 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 WIPER 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 WATCHDOG 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 BRAKE_DECCEL 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 REAR_PASS_DOOR 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 ENGINE_BRAKE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 MARKER_LAMP 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 CABIN_CLIMATE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 CABIN_FAN_SPEED 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 CABIN_TEMP 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 CAN_TIMEOUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 INTERNAL_SUPPLY_VOLTAGE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 36 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // CRUISE_CONTROL_BUTTONS_CMD
 VAL_ 264 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2728,12 +2852,13 @@ VAL_ 1056 PACMOD_SYSTEM_NOT_ACTIVE 0 "FALSE" 1 "TRUE";
 VAL_ 1056 VEHICLE_REPORT_TIMEOUT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 VEHICLE_REPORT_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 LOW_ENGINE_RPM 0 "FALSE" 1 "TRUE";
-VAL_ 1056 PRI_SAFETY_BRAKE_1_FAULT 0 "FALSE" 1 "TRUE";
-VAL_ 1056 PRI_SAFETY_BRAKE_2_FAULT 0 "FALSE" 1 "TRUE";
-VAL_ 1056 SEC_SAFETY_BRAKE_1_FAULT 0 "FALSE" 1 "TRUE";
-VAL_ 1056 SEC_SAFETY_BRAKE_2_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 PRI_SAFETY_BRAKE_SIGNAL_1_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 PRI_SAFETY_BRAKE_SIGNAL_2_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 SEC_SAFETY_BRAKE_SIGNAL_1_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 PRIMARY_PROCESSOR_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 SECONDARY_PROCESSOR_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 REMOTE_STOP_CMD 0 "FALSE" 1 "TRUE";
 
 // SAFETY_FUNC_RPT VALUES
 VAL_ 64 COMMANDED_VALUE 0 "NONE" 1 "AUTO_READY" 2 "AUTO" 3 "MANUAL_READY" 4 "CRITICAL_STOP1" 5 "CRITICAL_STOP2" ;

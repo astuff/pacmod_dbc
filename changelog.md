@@ -1,3 +1,9 @@
+# Future Release
+1. (Add) Add COMPONENT_RPT_04 and SOFTWARE_VERSION_RPT_04 messages.
+1. (Add) Add REMOTE_STOP_CMD signal to the SAFETY_FUNC_CRITICAL_STOP_RPT message.
+1. (Add) Add WATCHDOG_SYSTEM_PRESENT_FAULT signal to the COMPONENT_RPT_XX messages.
+1. (Fix) Rename PRI_SAFETY_BRAKE_X_FAULT signals in SAFETY_FUNC_CRITICAL_STOP_RPT message.
+
 # 10.1.0
 1. (Add) Add SAFETY_FUNC_CRITICAL_STOP_RPT message.
 1. (Add) Add WATCHDOG_RPT_2 message.
