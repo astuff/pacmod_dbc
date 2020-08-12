@@ -12021,6 +12021,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>PRI_SAFETY_BRAKE_PRESSURE_FAULT
+          <sup>1</sup>
+          <sup>v</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">21</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=FALSE, 1=TRUE<br>
@@ -12087,6 +12101,9 @@
     </p>
     <p class="notes-para">
       <sup>u</sup>This value shall latch while the safety function is in the critical stop state.
+    </p>
+    <p class="notes-para">
+      <sup>v</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects disagreement between safety brake command and safety brake response.
     </p>
     <h1>SAFETY_FUNC_RPT</h1>
     <table class="message-table">
