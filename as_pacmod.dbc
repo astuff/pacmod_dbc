@@ -805,6 +805,7 @@ BO_ 1056 SAFETY_FUNC_CRITICAL_STOP_RPT: 3  PACMOD
  SG_ PRIMARY_PROCESSOR_FAULT : 18|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SECONDARY_PROCESSOR_FAULT : 19|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ REMOTE_STOP_CMD : 20|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PRI_SAFETY_BRAKE_PRESSURE_FAULT : 21|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 64 SAFETY_FUNC_RPT: 4 PACMOD
  SG_ COMMANDED_VALUE : 3|4@0+ (1,0) [0|5] ""  CUSTOMER_ECU
@@ -1334,6 +1335,7 @@ CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the s
 CM_ SG_ 1056 PRIMARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 SECONDARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 REMOTE_STOP_CMD "This value shall latch while the safety function is in the critical stop state.";
+CM_ SG_ 1056 PRI_SAFETY_BRAKE_PRESSURE_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects disagreement between safety brake command and safety brake response.";
 
 // SHIFT_AUX_RPT COMMENTS
 CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1895,6 +1897,7 @@ BA_ "GenSigCycleTime" SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 PRIMARY_PROCESSOR_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 SECONDARY_PROCESSOR_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 REMOTE_STOP_CMD 1000;
+BA_ "GenSigCycleTime" SG_ 1056 PRI_SAFETY_BRAKE_PRESSURE_FAULT 1000;
 
 // SOFTWARE_VERSION_RPT_00 ATTRIBUTES
 BA_ "Component_Address" BO_ 1032 0;
@@ -2859,6 +2862,7 @@ VAL_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 PRIMARY_PROCESSOR_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 SECONDARY_PROCESSOR_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 REMOTE_STOP_CMD 0 "FALSE" 1 "TRUE";
+VAL_ 1056 PRI_SAFETY_BRAKE_PRESSURE_FAULT 0 "FALSE" 1 "TRUE";
 
 // SAFETY_FUNC_RPT VALUES
 VAL_ 64 COMMANDED_VALUE 0 "NONE" 1 "AUTO_READY" 2 "AUTO" 3 "MANUAL_READY" 4 "CRITICAL_STOP1" 5 "CRITICAL_STOP2" ;
