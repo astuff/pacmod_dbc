@@ -1,3 +1,7 @@
+# 11.0.0
+1. (Change) Change size and states of OUTPUT_VALUE signal within SAFETY_BRAKE_RPT:.
+1. (Change) Change bit position of REPORTED_FAULT signal within SAFETY_BRAKE_RPT:.
+
 # 10.3.0
 1. (Add) Add PRI_SAFETY_BRAKE_PRESSURE_FAULT signal to SAFETY_FUNC_CRITICAL_STOP_RPT message.
 
