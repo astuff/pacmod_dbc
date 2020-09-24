@@ -11546,33 +11546,20 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>1</sup>
-        </td>
-        <td class="centered-text">Unsigned</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text"></td>
-      </tr>
-      <tr>
-        <td>REPORTED_FAULT
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">3</td>
         <td class="centered-text"></td>
       </tr>
       <tr>
         <td>COMMAND_REPORTED_FAULT
-          <sup>2</sup>
+          <sup>3</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -11585,7 +11572,7 @@
       </tr>
       <tr>
         <td>COMMAND_TIMEOUT
-          <sup>3</sup>
+          <sup>4</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -11598,10 +11585,23 @@
       </tr>
       <tr>
         <td>COMMAND_PERMITTED
-          <sup>4</sup>
+          <sup>5</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>REPORTED_FAULT
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">6</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -11614,13 +11614,16 @@
       <sup>1</sup>0=APPLY_BRAKE, 1=RELEASE_BRAKE<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_FAULT, 1=FAULT<br>
+      <sup>2</sup>0=BRAKE_APPLIED, 1=BRAKE_RELEASED, 2=BETWEEN, 3=OUT_OF_RANGE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+      <sup>3</sup>0=NO_FAULT, 1=FAULT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=COMMAND_NOT_PERMITTED, 1=COMMAND_PERMITTED<br>
+      <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=COMMAND_NOT_PERMITTED, 1=COMMAND_PERMITTED<br>
     </p>
     <h1>SAFETY_FUNC_CMD</h1>
     <table class="message-table">
@@ -12082,16 +12085,16 @@
       <sup>n</sup>This value shall latch while the safety function is in the critical stop state.
     </p>
     <p class="notes-para">
-      <sup>o</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.
+      <sup>o</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 1.
     </p>
     <p class="notes-para">
-      <sup>p</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.
+      <sup>p</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 2.
     </p>
     <p class="notes-para">
-      <sup>q</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.
+      <sup>q</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 1.
     </p>
     <p class="notes-para">
-      <sup>r</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.
+      <sup>r</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 2.
     </p>
     <p class="notes-para">
       <sup>s</sup>This value shall latch while the safety function is in the critical stop state.

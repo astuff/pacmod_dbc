@@ -774,11 +774,11 @@ BO_ 193 SAFETY_BRAKE_CMD: 1 CUSTOMER_ECU
 
 BO_ 65 SAFETY_BRAKE_RPT: 1 PACMOD
  SG_ COMMANDED_VALUE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ OUTPUT_VALUE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ REPORTED_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OUTPUT_VALUE : 2|2@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ COMMAND_REPORTED_FAULT : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_TIMEOUT : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_PERMITTED : 5|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ REPORTED_FAULT : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 192 SAFETY_FUNC_CMD: 1 CUSTOMER_ECU
  SG_ COMMAND : 3|4@0+ (1,0) [0|5] ""  PACMOD
@@ -1328,10 +1328,10 @@ CM_ SG_ 1056 PACMOD_SYSTEM_NOT_ACTIVE "This value shall latch while the safety f
 CM_ SG_ 1056 VEHICLE_REPORT_TIMEOUT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 VEHICLE_REPORT_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 LOW_ENGINE_RPM "This value shall latch while the safety function is in the critical stop state.";
-CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
-CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault.";
-CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
-CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault.";
+CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 1.";
+CM_ SG_ 1056 PRI_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 2.";
+CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_1_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 1.";
+CM_ SG_ 1056 SEC_SAFETY_BRAKE_SIGNAL_2_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 2.";
 CM_ SG_ 1056 PRIMARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 SECONDARY_PROCESSOR_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 REMOTE_STOP_CMD "This value shall latch while the safety function is in the critical stop state.";
@@ -2831,11 +2831,11 @@ VAL_ 193 SAFETY_BRAKE_CMD 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
 
 // SAFETY_BRAKE_RPT VALUE
 VAL_ 65 COMMANDED_VALUE 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
-VAL_ 65 OUTPUT_VALUE 0 "APPLY_BRAKE" 1 "RELEASE_BRAKE" ;
-VAL_ 65 REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 65 OUTPUT_VALUE 0 "BRAKE_APPLIED" 1 "BRAKE_RELEASED" 2 "BETWEEN"  3 "OUT_OF_RANGE";
 VAL_ 65 COMMAND_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 65 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 65 COMMAND_PERMITTED 0 "COMMAND_NOT_PERMITTED" 1 "COMMAND_PERMITTED" ;
+VAL_ 65 REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // SAFETY_FUNC_CMD VALUES
 VAL_ 192 COMMAND 0 "NONE" 1 "AUTO_READY" 2 "AUTO" 3 "MANUAL_READY" 4 "CRITICAL_STOP1" 5 "CRITICAL_STOP2" ;
