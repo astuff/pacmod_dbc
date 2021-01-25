@@ -52,7 +52,10 @@ Component reports have a fixed association to a single component.  It contains d
 
 There are other miscellaneous commands and reports.
 
-## CAN IDs ##
+## CAN Bus
+User CAN Protocol datalink layer is CAN 2.0 at 500kbps.
+
+## CAN IDs
 
 The list below constrains the assignment of CAN IDs to specific messages. Its purpose is to give increasing priority to the increasing time-criticality of associated data.
 
@@ -98,6 +101,44 @@ The allowed time period is 3 times the message period of this message. The same 
 1. This ENABLE field is DISABLE ALL SYSTEMS.
 1. The respective system command message ENABLE field is “0”
 1. The allowed time period has elapsed before a this message is received.
+1. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
+
+## Global Command Sanity Check Rules
+Global sanity check rules apply to a vehicle platform when the SANITY_CHECK_REQUIRED in the GLOBAL_COMMAND message is REQUIRED. The PACMod system shall be disabled according to the rules.
+
+1. The master component shall validate the COUNTER and COMPLEMENT in the GLOBAL_CMD message.
+1. The master component shall respond to a invalid COUNTER and COMPLEMENT only when the PACMod System is ENABLED.
+1. The master component shall set DISABLE_ALL_SYSTEMS to TRUE at initialization.
+1. If all PACMod components have completed initialization activities and have commenced periodic activities:
+    1. If SANITY_CHECK_REQUIRED = NOT_REQUIRED:
+        1. Then DISABLE_ALL_SYSTEMS = FALSE.
+    1. Else if SANITY_CHECK_REQUIRED = REQUIRED:
+        1. If DISABLE_ALL_SYSTEMS is TRUE, the master component shall set DISABLE_ALL_SYSTEMS to FALSE when all of the following are true:
+            1. The master component receives 3 consecutive GLOBAL_CMD messages with valid COUNTER and COMPLEMENT.
+            1. The GLOBAL_CMD message is not timed out.
+        1. Afterward, DISABLE_ALL_SYSTEMS shall be set to TRUE when any of the following are true:
+            1. Invalid COUNTER and COMPLEMENT.
+            1. Timeout of the GLOBAL_CMD message.
+        1. If any system is then enabled while DISABLE_ALL_SYSTEMS is FALSE, a transition to TRUE shall have the following result:
+            1. The SYSTEM_FAULT_ACTIVE signal of GLOBAL_RPT_2 shall be TRUE.
+            1. The Watchdog Report 2 GLOBAL_CMD_SANITY_FAULT shall be TRUE if the COUNTER and COMPLEMENT are invalid.
+            1. The Watchdog Report 2 GLOBAL_CMD_TIMEOUT shall be TRUE if there is a Timeout of the GLOBAL_CMD message.
+1. The User PC shall monitor the COMPONENT_RPT from the master component and register a fault when any of the following are true:
+    1. Invalid COUNTER and COMPLEMENT.
+    1. Timeout of the COMPONENT_RPT message.
+
+## System Global Disable Rules
+A vehicle system under PACMod control “shall enable” if all of the following are true:
+
+1. The respective system command message ENABLE field is received as “ENABLE” within the allowed time period.
+1. The rules for the COUNTER and COMPLEMENT fields in this message are met.
+1. The DISABLE_ALL_SYSTEMS field must be equal to FALSE and received in its corresponding message before receiving the system command message with the ENABLE field equal to “ENABLE”.
+
+The allowed time period is 3 times the message period of this message. The same vehicle system shall disable immediately if any of the following are true:
+
+1. This DISABLE_ALL_SYSTEMS field is TRUE.
+1. The respective system command message ENABLE field is “DISABLE”
+1. The allowed time period has elapsed before this message is received.
 1. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
 
 ## Default Bit Values

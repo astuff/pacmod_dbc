@@ -47,8 +47,13 @@ BU_: CUSTOMER_ECU PACMOD
 BO_ 768 ACCEL_AUX_RPT: 6 PACMOD
  SG_ OPERATOR_INTERACTION : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ACCEL_LIMITING_ACTIVE : 33|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PARKING_BRAKE_INTERLOCK_ACTIVE : 34|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_INTERLOCK_ACTIVE : 35|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CALIBRATION_STATUS : 38|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ OPERATOR_INTERACTION_AVAIL : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ACCEL_LIMITING_ACTIVE_AVAIL : 43|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL : 44|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_INTERLOCK_ACTIVE_AVAIL : 45|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 256 ACCEL_CMD: 3 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -89,10 +94,13 @@ BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_ON_OFF : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_LIMITING_ACTIVE : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_REDUCED_ASSIST : 51|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CALIBRATION_STATUS : 54|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ BRAKE_PRESSURE_AVAIL : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OPERATOR_INTERACTION_AVAIL : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_ON_OFF_AVAIL : 60|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_LIMITING_ACTIVE_AVAIL : 61|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_REDUCED_ASSIST_AVAIL : 62|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 260 BRAKE_CMD: 3 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -499,13 +507,15 @@ BO_ 1047 DOOR_RPT: 2 PACMOD
  SG_ TRUNK_OPEN_AVAIL : 13|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ FUEL_DOOR_OPEN_AVAIL : 14|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
-BO_ 1055 DRIVE_TRAIN_FEATURE_ACTIVE_RPT: 1 PACMOD
+BO_ 1055 DRIVE_TRAIN_FEATURE_RPT: 2 PACMOD
  SG_ ANTILOCK_BRAKE_ACTIVE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRACTION_CONTROL_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ FOUR_WHEEL_DRIVE_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ANTILOCK_BRAKE_ACTIVE_AVAIL : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRACTION_CONTROL_ACTIVE_AVAIL : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ FOUR_WHEEL_DRIVE_ACTIVE_AVAIL : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ DRIVE_MODE : 11|4@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ DRIVE_MODE_AVAIL : 12|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 324 ENGINE_BRAKE_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -540,8 +550,11 @@ BO_ 1052 ESTOP_RPT: 1 PACMOD
  SG_ ESTOP : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ESTOP_FAULT : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
-BO_ 128 GLOBAL_CMD: 1 CUSTOMER_ECU
+BO_ 128 GLOBAL_CMD: 2 CUSTOMER_ECU
  SG_ CLEAR_FAULTS : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ SANITY_CHECK_REQUIRED : 1|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ COUNTER : 11|4@0+ (1,0) [0|15] ""  PACMOD
+ SG_ COMPLEMENT : 15|4@0+ (1,0) [0|15] ""  PACMOD
 
 BO_ 16 GLOBAL_RPT: 8 PACMOD
  SG_ PACMOD_SYSTEM_ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -561,6 +574,7 @@ BO_ 17 GLOBAL_RPT_2: 1 PACMOD
  SG_ SYSTEM_OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SUPERVISORY_ENABLE_REQUIRED : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ DISABLE_ALL_SYSTEMS  : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 276 HAZARD_LIGHTS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -830,6 +844,7 @@ BO_ 808 SHIFT_AUX_RPT: 3 PACMOD
  SG_ BRAKE_INTERLOCK_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SPEED_INTERLOCK_ACTIVE : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ WRITE_TO_CONFIG : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CALIBRATION_STATUS : 7|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ BETWEEN_GEARS_AVAIL : 8|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ STAY_IN_NEUTRAL_MODE_AVAIL : 9|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_INTERLOCK_ACTIVE_AVAIL : 10|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -928,6 +943,7 @@ BO_ 812 STEERING_AUX_RPT: 8 PACMOD
  SG_ ROTATION_RATE_SIGN : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ VEHICLE_ANGLE_CALIB_STATUS : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ STEERING_LIMITING_ACTIVE : 51|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CALIBRATION_STATUS : 54|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ STEERING_TORQUE_AVAIL : 57|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROTATION_RATE_AVAIL : 58|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OPERATOR_INTERACTION_AVAIL : 59|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1012,7 +1028,7 @@ BO_ 560 TURN_RPT: 4 PACMOD
 
 BO_ 1053 USER_NOTIFICATION_CMD: 1 CUSTOMER_ECU
  SG_ BUZZER_MUTE : 0|1@0+ (1,0) [0|1] ""  PACMOD
- SG_ UNDERDASH_LIGHTS_WHITE : 1|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ LIGHT_COMMAND : 4|4@0+ (1,0) [0|1] ""  PACMOD
 
 BO_ 1043 VEH_DYNAMICS_RPT: 1 PACMOD
  SG_ VEH_G_FORCES : 7|8@0+ (0.001,0) [-32.768|32.767] "m/s^2"  CUSTOMER_ECU
@@ -1092,7 +1108,7 @@ BO_ 1536 WATCHDOG_RPT: 8 PACMOD
  SG_ MINI_SYSTEM_PRESENT_FAULT : 62|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ GLOBAL_INTERNAL_POWER_SUPPLY_FAULT : 63|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
-BO_ 1057 WATCHDOG_RPT_2: 5  PACMOD
+BO_ 1057 WATCHDOG_RPT_2: 6  PACMOD
  SG_ ACCEL_RPT_TIMEOUT : 0|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_RPT_TIMEOUT : 1|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_DECCEL_RPT_TIMEOUT : 2|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1133,6 +1149,9 @@ BO_ 1057 WATCHDOG_RPT_2: 5  PACMOD
  SG_ MINI1_SYSTEM_PRESENT_FAULT : 37|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ MINI2_SYSTEM_PRESENT_FAULT : 38|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ MINI3_SYSTEM_PRESENT_FAULT : 39|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ DRIVE_MODE_INVALID : 40|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ GLOBAL_CMD_SANITY_FAULT : 41|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ GLOBAL_CMD_TIMEOUT : 42|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 1031 WHEEL_SPEED_RPT: 8 PACMOD
  SG_ WHEEL_SPD_FRONT_LEFT : 7|16@0- (0.01,0) [-327.68|327.67] "rad/s"  CUSTOMER_ECU
@@ -1203,8 +1222,13 @@ CM_ BO_ 16 "Not for new development.";
 // ACCEL_AUX_RPT COMMENTS
 CM_ SG_ 768 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 768 ACCEL_LIMITING_ACTIVE "ACCEL_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 768 PARKING_BRAKE_INTERLOCK_ACTIVE "PARK_BRAKE_INTERLOCK_ACTIVE shall have the value of 1 if an active parking brake prevents or reduces the command. Otherwise, the value shall be 0.";
+CM_ SG_ 768 BRAKE_INTERLOCK_ACTIVE "BRAKE_INTERLOCK_ACTIVE shall have the value of 1 if an active brake prevents or reduces the command. Otherwise, the value shall be 0.";
+CM_ SG_ 768 CALIBRATION_STATUS "CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.";
 CM_ SG_ 768 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 768 ACCEL_LIMITING_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 768 PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 768 BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // ACCEL_CMD COMMENTS
 CM_ SG_ 256 ACCEL_CMD "Percent of full-scale value of signal from 0 to 1.";
@@ -1222,10 +1246,13 @@ CM_ SG_ 512 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 772 BRAKE_PRESSURE "Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.";
 CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 772 BRAKE_LIMITING_ACTIVE "BRAKE_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 772 BRAKE_REDUCED_ASSIST "BRAKE_REDUCED_ASSIST shall have the value of 1 if Brake System is in a reduced assist mode. Otherwise, the value shall be 0.";
+CM_ SG_ 772 CALIBRATION_STATUS "CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.";
 CM_ SG_ 772 BRAKE_ON_OFF_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 772 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 772 BRAKE_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 772 BRAKE_LIMITING_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 772 BRAKE_REDUCED_ASSIST_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // BRAKE_CMD COMMENTS
 CM_ SG_ 260 BRAKE_CMD "Percent of full-scale value of signal from 0 to 1.";
@@ -1280,10 +1307,19 @@ CM_ SG_ 36 CAN_TIMEOUT_FAULT "This value relates to message specific or general 
 CM_ SG_ 36 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
 
-// DRIVE_TRAIN_FEATURE_ACTIVE_RPT COMMENTS
+// CRUISE_CONTROL_BUTTONS_CMD COMMENTS
+CM_ SG_ 264 CRUISE_CONTROL_BUTTON "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
+
+// CRUISE_CONTROL_BUTTONS_RPT COMMENTS
+CM_ SG_ 520 MANUAL_INPUT "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
+CM_ SG_ 520 COMMANDED_VALUE "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
+CM_ SG_ 520 OUTPUT_VALUE "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
+
+// DRIVE_TRAIN_FEATURE_RPT COMMENTS
 CM_ SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1055 DRIVE_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // ENGINE_RPT COMMENTS
 CM_ SG_ 1040 ENGINE_SPEED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1292,6 +1328,11 @@ CM_ SG_ 1040 ENGINE_COOLANT_TEMP_AVAIL "PACMod sets this value as a function of 
 CM_ SG_ 1040 FUEL_LEVEL_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1040 FUEL_LEVEL "Percent of nominal full-scale value of signal from 0 to 1.";
 
+// GLOBAL_CMD COMMENTS
+CM_ SG_ 128 SANITY_CHECK_REQUIRED "When this value is REQUIRED, the COUNTER and COMPLEMENT values must be set to enable the PACMod System.";
+CM_ SG_ 128 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
+CM_ SG_ 128 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100." ;
+
 // GLOBAL_RPT COMMENTS
 CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
 
@@ -1299,6 +1340,7 @@ CM_ SG_ 16 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when 
 CM_ SG_ 17 SYSTEM_ENABLED "One or more systems are enabled." ;
 CM_ SG_ 17 SYSTEM_FAULT_ACTIVE "One or more faults are active." ;
 CM_ SG_ 17 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
+CM_ SG_ 17 DISABLE_ALL_SYSTEMS "Global Command Sanity Check Rules and System Global Disable Rules apply when SANITY_CHECK_REQUIRED is REQUIRED." ;
 
 // HAZARD_LIGHTS_RPT COMMENTS
 CM_ SG_ 532 MANUAL_INPUT "Platforms vary on use of latched or momentary interface, see platform user guide." ;
@@ -1338,6 +1380,7 @@ CM_ SG_ 1056 REMOTE_STOP_CMD "This value shall latch while the safety function i
 CM_ SG_ 1056 PRI_SAFETY_BRAKE_PRESSURE_FAULT "This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects disagreement between safety brake command and safety brake response.";
 
 // SHIFT_AUX_RPT COMMENTS
+CM_ SG_ 808 CALIBRATION_STATUS "CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.";
 CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 STAY_IN_NEUTRAL_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1396,6 +1439,7 @@ CM_ SG_ 812 STEERING_TORQUE "Percent of nominal full-scale value of signal from 
 CM_ SG_ 812 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
 CM_ SG_ 812 OPERATOR_INTERACTION_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 STEERING_LIMITING_ACTIVE "STEERING_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.";
+CM_ SG_ 812 CALIBRATION_STATUS "CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.";
 CM_ SG_ 812 ROTATION_RATE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 STEERING_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 812 ROTATION_RATE_SIGN_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1658,7 +1702,7 @@ BA_ "GenSigCycleTime" SG_ 1047 HOOD_OPEN_AVAIL 250;
 BA_ "GenSigCycleTime" SG_ 1047 TRUNK_OPEN_AVAIL 250;
 BA_ "GenSigCycleTime" SG_ 1047 FUEL_DOOR_OPEN_AVAIL 250;
 
-// DRIVE_TRAIN_FEATURE_ACTIVE_RPT ATTRIBUTES
+// DRIVE_TRAIN_FEATURE_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1055 100;
 BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_ACTIVE 100;
 BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE 100;
@@ -1666,6 +1710,8 @@ BA_ "GenSigCycleTime" SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE 100;
 BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL 100;
 BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 100;
 BA_ "GenSigCycleTime" SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL 100;
+BA_ "GenSigCycleTime" SG_ 1055 DRIVE_MODE 100;
+BA_ "GenSigCycleTime" SG_ 1055 DRIVE_MODE_AVAIL 100;
 
 // HAZARD_LIGHTS_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 276 100;
@@ -2018,7 +2064,7 @@ BA_ "GenSigCycleTime" SG_ 560 OUTPUT_VALUE 100;
 // USER_NOTIFICATION_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1053 250;
 BA_ "GenSigCycleTime" SG_ 1053 BUZZER_MUTE 250;
-BA_ "GenSigCycleTime" SG_ 1053 UNDERDASH_LIGHTS_WHITE 250;
+BA_ "GenSigCycleTime" SG_ 1053 LIGHT_COMMAND 250;
 
 // VIN_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1044 1000;
@@ -2135,6 +2181,9 @@ BA_ "GenSigCycleTime" SG_ 1057 MOD3_SYSTEM_PRESENT_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1057 MINI1_SYSTEM_PRESENT_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1057 MINI2_SYSTEM_PRESENT_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1057 MINI3_SYSTEM_PRESENT_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 DRIVE_MODE_INVALID 1000;
+BA_ "GenSigCycleTime" SG_ 1057 GLOBAL_CMD_SANITY_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 GLOBAL_CMD_TIMEOUT 1000;
 
 // WIPER_AUX_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 820 100;
@@ -2184,8 +2233,13 @@ BA_ "GenSigCycleTime" SG_ 564 OUTPUT_VALUE 100;
 // ACCEL_AUX_RPT VALUES
 VAL_ 768 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
 VAL_ 768 ACCEL_LIMITING_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE";
+VAL_ 768 PARKING_BRAKE_INTERLOCK_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE";
+VAL_ 768 BRAKE_INTERLOCK_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE";
+VAL_ 768 CALIBRATION_STATUS 0 "INACTIVE" 1 "ACTIVE" 2 "COMPLETE" 3 "ERROR" ;
 VAL_ 768 OPERATOR_INTERACTION_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 768 ACCEL_LIMITING_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 768 PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 768 BRAKE_INTERLOCK_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // ACCEL_CMD VALUES
 VAL_ 256 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2214,10 +2268,13 @@ VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
 VAL_ 772 BRAKE_ON_OFF 0 "OFF" 1 "ON" ;
 VAL_ 772 BRAKE_LIMITING_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
+VAL_ 772 BRAKE_REDUCED_ASSIST 0 "NOT_REDUCED" 1 "REDUCED" ;
+VAL_ 772 CALIBRATION_STATUS 0 "INACTIVE" 1 "ACTIVE" 2 "COMPLETE" 3 "ERROR" ;
 VAL_ 772 BRAKE_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 772 OPERATOR_INTERACTION_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 772 BRAKE_ON_OFF_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 772 BRAKE_LIMITING_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 772 BRAKE_REDUCED_ASSIST_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // BRAKE_CMD VALUES
 VAL_ 260 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2504,7 +2561,7 @@ VAL_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 264 ENABLE 0 "DISABLE" 1 "ENABLE" ;
 VAL_ 264 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
 VAL_ 264 CLEAR_OVERRIDE 0 "FALSE" 1 "TRUE" ;
-VAL_ 264 CRUISE_CONTROL_BUTTON 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
+VAL_ 264 CRUISE_CONTROL_BUTTON 7 "CRUISE_CONTROL_LIM" 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
 
 // CRUISE_CONTROL_BUTTONS_RPT
 VAL_ 520 ENABLED 0 "FALSE" 1 "TRUE" ;
@@ -2515,9 +2572,9 @@ VAL_ 520 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 520 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 520 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 520 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
-VAL_ 520 MANUAL_INPUT 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
-VAL_ 520 COMMANDED_VALUE 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
-VAL_ 520 OUTPUT_VALUE 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
+VAL_ 520 MANUAL_INPUT 7 "CRUISE_CONTROL_LIM" 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
+VAL_ 520 COMMANDED_VALUE 7 "CRUISE_CONTROL_LIM" 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
+VAL_ 520 OUTPUT_VALUE 7 "CRUISE_CONTROL_LIM" 6 "CRUISE_CONTROL_ON_OFF" 5 "CRUISE_CONTROL_RES_INC" 4 "CRUISE_CONTROL_SET_DEC" 3 "CRUISE_CONTROL_ACC_CLOSER" 2 "CRUISE_CONTROL_ACC_FURTHER" 1 "CRUISE_CONTROL_CNCL" 0 "CRUISE_CONTROL_NONE" ;
 
 // DASH_CONTROLS_LEFT_CMD VALUES
 VAL_ 268 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2573,13 +2630,15 @@ VAL_ 1047 HOOD_OPEN_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1047 TRUNK_OPEN_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1047 FUEL_DOOR_OPEN_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
-// DRIVE_TRAIN_FEATURE_ACTIVE_RPT VALUES
+// DRIVE_TRAIN_FEATURE_RPT VALUES
 VAL_ 1055 ANTILOCK_BRAKE_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 1055 TRACTION_CONTROL_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 1055 FOUR_WHEEL_DRIVE_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 1055 DRIVE_MODE 0 "NORMAL" 1 "ECO" 2 "SPORT" ;
+VAL_ 1055 DRIVE_MODE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // ENGINE_BRAKE_CMD VALUES
 VAL_ 324 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2612,6 +2671,7 @@ VAL_ 1052 ESTOP_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 
 // GLOBAL_CMD VALUES
 VAL_ 128 CLEAR_FAULTS 0 "FALSE" 1 "TRUE" ;
+VAL_ 128 SANITY_CHECK_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
 
 // GLOBAL_RPT VALUES
 VAL_ 16 PACMOD_SYSTEM_ENABLED 0 "CONTROL_DISABLED" 1 "CONTROL_ENABLED" ;
@@ -2630,6 +2690,7 @@ VAL_ 17 SYSTEM_ENABLED 0 "CONTROL_DISABLED" 1 "CONTROL_ENABLED" ;
 VAL_ 17 SYSTEM_OVERRIDE_ACTIVE 0 "NOT_OVERRIDDEN" 1 "OVERRIDDEN" ;
 VAL_ 17 SYSTEM_FAULT_ACTIVE 0 "FALSE" 1 "TRUE" ;
 VAL_ 17 SUPERVISORY_ENABLE_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
+VAL_ 17 DISABLE_ALL_SYSTEMS 0 "FALSE" 1 "TRUE" ;
 
 // HAZARD_LIGHTS_CMD VALUES
 VAL_ 276 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2887,6 +2948,7 @@ VAL_ 808 STAY_IN_NEUTRAL_MODE 0 "OFF" 1 "ON" ;
 VAL_ 808 BRAKE_INTERLOCK_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 808 SPEED_INTERLOCK_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 808 WRITE_TO_CONFIG 0 "SILENT" 1 "BEEP";
+VAL_ 808 CALIBRATION_STATUS 0 "INACTIVE" 1 "ACTIVE" 2 "COMPLETE" 3 "ERROR" ;
 VAL_ 808 BETWEEN_GEARS_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 STAY_IN_NEUTRAL_MODE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
@@ -2937,6 +2999,7 @@ VAL_ 812 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
 VAL_ 812 ROTATION_RATE_SIGN 0 "POSITIVE" 1 "NEGATIVE";
 VAL_ 812 VEHICLE_ANGLE_CALIB_STATUS 0 "NOT_CALIBRATED" 1 "CALIBRATED";
 VAL_ 812 STEERING_LIMITING_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE";
+VAL_ 812 CALIBRATION_STATUS 0 "INACTIVE" 1 "ACTIVE" 2 "COMPLETE" 3 "ERROR" ;
 VAL_ 812 STEERING_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 812 ROTATION_RATE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 812 OPERATOR_INTERACTION_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
@@ -2989,7 +3052,7 @@ VAL_ 560 OUTPUT_VALUE 0 "RIGHT" 1 "NONE" 2 "LEFT" 3 "HAZARD" ;
 
 // USER_NOTIFICATION_CMD VALUES
 VAL_ 1053 BUZZER_MUTE 0 "NOT_MUTED" 1 "MUTED" ;
-VAL_ 1053 UNDERDASH_LIGHTS_WHITE 0 "NO_ACTION" 1 "WHITE" ;
+VAL_ 1053 LIGHT_COMMAND 0 "NO_ACTION" 1 "WHITE" 2 "RED" 3 "GREEN" 4 "BLUE" 5 "PURPLE" 6 "ORANGE" 7 "YELLOW" 8 "TEAL" 9 "PINK" 10 "OFF" ;
 
 // VEHICLE_SPEED_RPT VALUES
 VAL_ 1024 VEHICLE_SPEED_VALID 0 "INVALID" 1 "VALID" ;
@@ -3101,6 +3164,9 @@ VAL_ 1057 MOD3_SYSTEM_PRESENT_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1057 MINI1_SYSTEM_PRESENT_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1057 MINI2_SYSTEM_PRESENT_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1057 MINI3_SYSTEM_PRESENT_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 DRIVE_MODE_INVALID 0 "FALSE" 1 "TRUE";
+VAL_ 1057 GLOBAL_CMD_SANITY_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 GLOBAL_CMD_TIMEOUT 0 "FALSE" 1 "TRUE";
 
 // WIPER_AUX_RPT VALUES
 VAL_ 820 FRONT_WIPING 0 "NOT_WIPING" 1 "WIPING" ;

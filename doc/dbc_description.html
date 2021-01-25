@@ -11,6 +11,7 @@
       .signals-table, .signals-table tr, .signals-table td { border: 1px solid black }
       .signals-table td { padding: 3px 5px }
       .notes-para { margin: 0 0 0 0; padding: 0 0 0 0.5em; text-indent: -0.5em; width: 800px }
+          .message-comment { text-decoration: underline }
     </style>
   </head>
   <body>
@@ -45,7 +46,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -87,9 +88,51 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>OPERATOR_INTERACTION_AVAIL
-          <sup>3</sup>
+        <td>PARKING_BRAKE_INTERLOCK_ACTIVE
+          <sup>2</sup>
           <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">34</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_INTERLOCK_ACTIVE
+          <sup>2</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">35</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CALIBRATION_STATUS
+          <sup>3</sup>
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">38</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>OPERATOR_INTERACTION_AVAIL
+          <sup>4</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -102,11 +145,39 @@
       </tr>
       <tr>
         <td>ACCEL_LIMITING_ACTIVE_AVAIL
-          <sup>3</sup>
-          <sup>d</sup>
+          <sup>4</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">43</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL
+          <sup>4</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">44</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_INTERLOCK_ACTIVE_AVAIL
+          <sup>4</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">45</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -122,7 +193,10 @@
       <sup>2</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>3</sup>0=INACTIVE, 1=ACTIVE, 2=COMPLETE, 3=ERROR<br>
+    </p>
+    <p class="notes-para">
+      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -131,10 +205,16 @@
       <sup>b</sup>ACCEL_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>c</sup>PARK_BRAKE_INTERLOCK_ACTIVE shall have the value of 1 if an active parking brake prevents or reduces the command. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>d</sup>BRAKE_INTERLOCK_ACTIVE shall have the value of 1 if an active brake prevents or reduces the command. Otherwise, the value shall be 0.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>ACCEL_CMD</h1>
     <table class="message-table">
@@ -167,7 +247,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -273,7 +353,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -350,7 +430,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -482,7 +562,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -495,7 +575,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -518,12 +598,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>Percent of full-scale value of signal from 0 to 1.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>ANG_VEL_RPT</h1>
     <table class="message-table">
@@ -556,7 +630,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Lexus RX 450h</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -718,7 +792,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -786,9 +860,37 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BRAKE_PRESSURE_AVAIL
+        <td>BRAKE_REDUCED_ASSIST
           <sup>4</sup>
           <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">51</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>CALIBRATION_STATUS
+          <sup>5</sup>
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">54</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_PRESSURE_AVAIL
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">58</td>
@@ -801,8 +903,8 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>4</sup>
-          <sup>e</sup>
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
@@ -815,7 +917,7 @@
       </tr>
       <tr>
         <td>BRAKE_ON_OFF_AVAIL
-          <sup>4</sup>
+          <sup>6</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -829,11 +931,25 @@
       </tr>
       <tr>
         <td>BRAKE_LIMITING_ACTIVE_AVAIL
-          <sup>4</sup>
-          <sup>g</sup>
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">61</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BRAKE_REDUCED_ASSIST_AVAIL
+          <sup>6</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">62</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -852,7 +968,13 @@
       <sup>3</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>4</sup>0=NOT_REDUCED, 1=REDUCED<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=INACTIVE, 1=ACTIVE, 2=COMPLETE, 3=ERROR<br>
+    </p>
+    <p class="notes-para">
+      <sup>6</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.
@@ -864,16 +986,13 @@
       <sup>c</sup>BRAKE_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>d</sup>BRAKE_REDUCED_ASSIST shall have the value of 1 if Brake System is in a reduced assist mode. Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>e</sup>CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.
     </p>
     <p class="notes-para">
       <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>BRAKE_CMD</h1>
     <table class="message-table">
@@ -906,7 +1025,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1012,7 +1131,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1171,7 +1290,7 @@
       <tr>
         <td>XBR_SYSTEM_STATE_AVAIL
           <sup>5</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">17</td>
@@ -1185,7 +1304,7 @@
       <tr>
         <td>FOUNDATION_BRAKE_USE_AVAIL
           <sup>5</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
@@ -1199,7 +1318,7 @@
       <tr>
         <td>HILL_HOLDER_MODE_AVAIL
           <sup>5</sup>
-          <sup>d</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
@@ -1228,15 +1347,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>BRAKE_DECCEL_CMD</h1>
     <table class="message-table">
@@ -1609,7 +1719,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Polaris Ranger</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1676,7 +1786,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Polaris Ranger</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1754,7 +1864,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Polaris Ranger</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1821,7 +1931,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -1953,7 +2063,7 @@
       </tr>
       <tr>
         <td>COMMANDED_VALUE
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -1966,7 +2076,7 @@
       </tr>
       <tr>
         <td>OUTPUT_VALUE
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -1989,12 +2099,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of full-scale value of signal from 0 to 1.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>Percent of full-scale value of signal from 0 to 1.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>Percent of full-scale value of signal from 0 to 1.
     </p>
     <h1>CABIN_CLIMATE_CMD</h1>
     <table class="message-table">
@@ -2027,7 +2131,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -2198,7 +2302,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -2593,7 +2697,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -2699,7 +2803,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -2899,7 +3003,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -3000,7 +3104,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -3195,7 +3299,7 @@
         <td class="centered-text">0</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -3703,7 +3807,7 @@
         <td class="centered-text">1</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -4211,7 +4315,7 @@
         <td class="centered-text">2</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -4719,7 +4823,7 @@
         <td class="centered-text">3</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -5731,7 +5835,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -5786,6 +5890,7 @@
       <tr>
         <td>CRUISE_CONTROL_BUTTON
           <sup>3</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5804,7 +5909,10 @@
       <sup>2</sup>0=FALSE, 1=TRUE<br>
     </p>
     <p class="notes-para">
-      <sup>3</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+      <sup>3</sup>7=CRUISE_CONTROL_LIM, 6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.
     </p>
     <h1>CRUISE_CONTROL_BUTTONS_RPT</h1>
     <table class="message-table">
@@ -5837,7 +5945,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -5957,6 +6065,7 @@
       <tr>
         <td>MANUAL_INPUT
           <sup>4</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -5970,6 +6079,7 @@
       <tr>
         <td>COMMANDED_VALUE
           <sup>4</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -5983,6 +6093,7 @@
       <tr>
         <td>OUTPUT_VALUE
           <sup>4</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -6004,7 +6115,10 @@
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+      <sup>4</sup>7=CRUISE_CONTROL_LIM, 6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.
     </p>
     <h1>DASH_CONTROLS_LEFT_CMD</h1>
     <table class="message-table">
@@ -6449,7 +6563,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -6649,7 +6763,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Lexus RX 450h</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -6827,7 +6941,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7029,7 +7143,7 @@
     <p class="notes-para">
       <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
-    <h1>DRIVE_TRAIN_FEATURE_ACTIVE_RPT</h1>
+    <h1>DRIVE_TRAIN_FEATURE_RPT</h1>
     <table class="message-table">
       <tr>
         <td>ID Decimal</td>
@@ -7045,7 +7159,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7060,7 +7174,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7129,7 +7243,7 @@
       <tr>
         <td>TRACTION_CONTROL_ACTIVE_AVAIL
           <sup>2</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -7143,10 +7257,37 @@
       <tr>
         <td>FOUR_WHEEL_DRIVE_ACTIVE_AVAIL
           <sup>2</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>DRIVE_MODE
+          <sup>3</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">11</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">2</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>DRIVE_MODE_AVAIL
+          <sup>2</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">12</td>
         <td class="centered-text">1</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
@@ -7162,13 +7303,10 @@
       <sup>2</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
+      <sup>3</sup>0=NORMAL, 1=ECO, 2=SPORT<br>
+    </p>
+    <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>ENGINE_BRAKE_CMD</h1>
     <table class="message-table">
@@ -7201,7 +7339,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7307,7 +7445,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7507,7 +7645,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7570,7 +7708,7 @@
       <tr>
         <td>ENGINE_TORQUE_AVAIL
           <sup>1</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">41</td>
@@ -7584,7 +7722,7 @@
       <tr>
         <td>ENGINE_COOLANT_TEMP_AVAIL
           <sup>1</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">42</td>
@@ -7598,7 +7736,7 @@
       <tr>
         <td>FUEL_LEVEL_AVAIL
           <sup>1</sup>
-          <sup>d</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">43</td>
@@ -7611,7 +7749,7 @@
       </tr>
       <tr>
         <td>FUEL_LEVEL
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -7630,16 +7768,7 @@
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>Percent of nominal full-scale value of signal from 0 to 1.
+      <sup>b</sup>Percent of nominal full-scale value of signal from 0 to 1.
     </p>
     <h1>ESTOP_RPT</h1>
     <table class="message-table">
@@ -7672,7 +7801,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7734,7 +7863,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">2</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -7749,7 +7878,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -7775,9 +7904,61 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>SANITY_CHECK_REQUIRED
+          <sup>2</sup>
+          <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COUNTER
+          <sup>b</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">11</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>COMPLEMENT
+          <sup>c</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=FALSE, 1=TRUE<br>
+    </p>
+    <p class="notes-para">
+      <sup>2</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>When this value is REQUIRED, the COUNTER and COMPLEMENT values must be set to enable the PACMod System.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
     </p>
     <h1>GLOBAL_RPT</h1>
     <table class="message-table">
@@ -7809,8 +7990,22 @@
         <td>Interval (ms)</td>
         <td class="centered-text">33</td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="message-comment">Message Comments</td>
+      </tr>
+      <tr>
+        <td>Not for new development.</td>
+      </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8015,7 +8210,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8083,6 +8278,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>DISABLE_ALL_SYSTEMS
+          <sup>3</sup>
+          <sup>d</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
@@ -8104,6 +8313,9 @@
     </p>
     <p class="notes-para">
       <sup>c</sup>Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message.
+    </p>
+    <p class="notes-para">
+      <sup>d</sup>Global Command Sanity Check Rules and System Global Disable Rules apply when SANITY_CHECK_REQUIRED is REQUIRED.
     </p>
     <h1>HAZARD_LIGHTS_CMD</h1>
     <table class="message-table">
@@ -8136,7 +8348,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8242,7 +8454,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8389,7 +8601,7 @@
       <tr>
         <td>OUTPUT_VALUE
           <sup>4</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">24</td>
@@ -8418,9 +8630,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>Platforms vary on use of latched or momentary interface, see platform user guide.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>Platforms vary on use of latched or momentary interface, see platform user guide.
     </p>
     <h1>HEADLIGHT_AUX_RPT</h1>
     <table class="message-table">
@@ -8453,7 +8662,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Ford Transit, Dev Vehicle 1, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8535,7 +8744,7 @@
       <tr>
         <td>HEADLIGHTS_ON_BRIGHT_AVAIL
           <sup>3</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">17</td>
@@ -8549,7 +8758,7 @@
       <tr>
         <td>FOG_LIGHTS_ON_AVAIL
           <sup>3</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
@@ -8563,7 +8772,7 @@
       <tr>
         <td>HEADLIGHTS_MODE_AVAIL
           <sup>3</sup>
-          <sup>d</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
@@ -8586,15 +8795,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>HEADLIGHT_CMD</h1>
     <table class="message-table">
@@ -8627,7 +8827,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8733,7 +8933,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -8933,7 +9133,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9039,7 +9239,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9239,7 +9439,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9430,7 +9630,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Lexus RX 450h</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9552,7 +9752,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Lexus RX 450h</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9714,7 +9914,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -9820,7 +10020,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10020,7 +10220,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10126,7 +10326,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10326,7 +10526,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Lexus RX 450h, Ford Transit, JPN Taxi</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10403,7 +10603,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10665,7 +10865,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10742,7 +10942,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -10848,7 +11048,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11151,7 +11351,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: JPN Taxi</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11257,7 +11457,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: JPN Taxi</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11457,7 +11657,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11518,7 +11718,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11656,7 +11856,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11717,7 +11917,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -11747,7 +11947,7 @@
       <tr>
         <td>REMOTE_STOP_FAULT
           <sup>1</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">1</td>
@@ -11761,7 +11961,7 @@
       <tr>
         <td>SAFETY_BRAKE_OPCTRL_OFF
           <sup>1</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">2</td>
@@ -11775,7 +11975,7 @@
       <tr>
         <td>SAFETY_BRAKE_CMD_TIMEOUT
           <sup>1</sup>
-          <sup>d</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">3</td>
@@ -11789,7 +11989,7 @@
       <tr>
         <td>SAFETY_FUNC_CMD_TIMEOUT
           <sup>1</sup>
-          <sup>e</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">4</td>
@@ -11803,7 +12003,7 @@
       <tr>
         <td>SAFETY_FUNC_CRITICAL_STOP_1_CMD
           <sup>1</sup>
-          <sup>f</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">5</td>
@@ -11817,7 +12017,7 @@
       <tr>
         <td>SAFETY_FUNC_CRITICAL_STOP_2_CMD
           <sup>1</sup>
-          <sup>g</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">6</td>
@@ -11831,7 +12031,7 @@
       <tr>
         <td>SAFETY_FUNC_NONE_CMD
           <sup>1</sup>
-          <sup>h</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
@@ -11845,7 +12045,7 @@
       <tr>
         <td>PACMOD_SYSTEM_TIMEOUT
           <sup>1</sup>
-          <sup>i</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -11859,7 +12059,7 @@
       <tr>
         <td>PACMOD_SYSTEM_FAULT
           <sup>1</sup>
-          <sup>j</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
@@ -11873,7 +12073,7 @@
       <tr>
         <td>PACMOD_SYSTEM_NOT_ACTIVE
           <sup>1</sup>
-          <sup>k</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
@@ -11887,7 +12087,7 @@
       <tr>
         <td>VEHICLE_REPORT_TIMEOUT
           <sup>1</sup>
-          <sup>l</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
@@ -11901,7 +12101,7 @@
       <tr>
         <td>VEHICLE_REPORT_FAULT
           <sup>1</sup>
-          <sup>m</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
@@ -11915,7 +12115,7 @@
       <tr>
         <td>LOW_ENGINE_RPM
           <sup>1</sup>
-          <sup>n</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
@@ -11929,7 +12129,7 @@
       <tr>
         <td>PRI_SAFETY_BRAKE_SIGNAL_1_FAULT
           <sup>1</sup>
-          <sup>o</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">14</td>
@@ -11943,7 +12143,7 @@
       <tr>
         <td>PRI_SAFETY_BRAKE_SIGNAL_2_FAULT
           <sup>1</sup>
-          <sup>p</sup>
+          <sup>c</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -11957,7 +12157,7 @@
       <tr>
         <td>SEC_SAFETY_BRAKE_SIGNAL_1_FAULT
           <sup>1</sup>
-          <sup>q</sup>
+          <sup>d</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">16</td>
@@ -11971,7 +12171,7 @@
       <tr>
         <td>SEC_SAFETY_BRAKE_SIGNAL_2_FAULT
           <sup>1</sup>
-          <sup>r</sup>
+          <sup>e</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">17</td>
@@ -11985,7 +12185,7 @@
       <tr>
         <td>PRIMARY_PROCESSOR_FAULT
           <sup>1</sup>
-          <sup>s</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">18</td>
@@ -11999,7 +12199,7 @@
       <tr>
         <td>SECONDARY_PROCESSOR_FAULT
           <sup>1</sup>
-          <sup>t</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">19</td>
@@ -12013,7 +12213,7 @@
       <tr>
         <td>REMOTE_STOP_CMD
           <sup>1</sup>
-          <sup>u</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">20</td>
@@ -12027,7 +12227,7 @@
       <tr>
         <td>PRI_SAFETY_BRAKE_PRESSURE_FAULT
           <sup>1</sup>
-          <sup>v</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">21</td>
@@ -12046,67 +12246,19 @@
       <sup>a</sup>This value shall latch while the safety function is in the critical stop state.
     </p>
     <p class="notes-para">
-      <sup>b</sup>This value shall latch while the safety function is in the critical stop state.
+      <sup>b</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 1.
     </p>
     <p class="notes-para">
-      <sup>c</sup>This value shall latch while the safety function is in the critical stop state.
+      <sup>c</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 2.
     </p>
     <p class="notes-para">
-      <sup>d</sup>This value shall latch while the safety function is in the critical stop state.
+      <sup>d</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 1.
     </p>
     <p class="notes-para">
-      <sup>e</sup>This value shall latch while the safety function is in the critical stop state.
+      <sup>e</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 2.
     </p>
     <p class="notes-para">
-      <sup>f</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>h</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>i</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>j</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>k</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>l</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>m</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>n</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>o</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 1.
-    </p>
-    <p class="notes-para">
-      <sup>p</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects a fault on signal 2.
-    </p>
-    <p class="notes-para">
-      <sup>q</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 1.
-    </p>
-    <p class="notes-para">
-      <sup>r</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the secondary microprocessor detects a fault on signal 2.
-    </p>
-    <p class="notes-para">
-      <sup>s</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>t</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>u</sup>This value shall latch while the safety function is in the critical stop state.
-    </p>
-    <p class="notes-para">
-      <sup>v</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects disagreement between safety brake command and safety brake response.
+      <sup>f</sup>This value shall latch while the safety function is in the critical stop state. It shall be TRUE when the primary microprocessor detects disagreement between safety brake command and safety brake response.
     </p>
     <h1>SAFETY_FUNC_RPT</h1>
     <table class="message-table">
@@ -12139,7 +12291,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -12406,7 +12558,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Polaris Ranger</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -12485,9 +12637,23 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>BETWEEN_GEARS_AVAIL
+        <td>CALIBRATION_STATUS
           <sup>5</sup>
           <sup>a</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>BETWEEN_GEARS_AVAIL
+          <sup>6</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">8</td>
@@ -12500,7 +12666,7 @@
       </tr>
       <tr>
         <td>STAY_IN_NEUTRAL_MODE_AVAIL
-          <sup>5</sup>
+          <sup>6</sup>
           <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -12514,8 +12680,8 @@
       </tr>
       <tr>
         <td>BRAKE_INTERLOCK_ACTIVE_AVAIL
-          <sup>5</sup>
-          <sup>c</sup>
+          <sup>6</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
@@ -12528,8 +12694,8 @@
       </tr>
       <tr>
         <td>SPEED_INTERLOCK_ACTIVE_AVAIL
-          <sup>5</sup>
-          <sup>d</sup>
+          <sup>6</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
@@ -12542,7 +12708,7 @@
       </tr>
       <tr>
         <td>WRITE_TO_CONFIG_IS_VALID
-          <sup>5</sup>
+          <sup>6</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
@@ -12555,7 +12721,7 @@
       </tr>
       <tr>
         <td>GEAR_NUMBER_AVAIL
-          <sup>5</sup>
+          <sup>6</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
@@ -12591,19 +12757,16 @@
       <sup>4</sup>0=SILENT, 1=BEEP<br>
     </p>
     <p class="notes-para">
-      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>5</sup>0=INACTIVE, 1=ACTIVE, 2=COMPLETE, 3=ERROR<br>
     </p>
     <p class="notes-para">
-      <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>6</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.
     </p>
     <p class="notes-para">
       <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>SHIFT_CMD</h1>
     <table class="message-table">
@@ -12636,7 +12799,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -12746,7 +12909,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -12953,7 +13116,7 @@
         <td class="centered-text">0</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -12981,7 +13144,7 @@
       </tr>
       <tr>
         <td>MINOR
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -12994,7 +13157,7 @@
       </tr>
       <tr>
         <td>PATCH
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -13007,7 +13170,7 @@
       </tr>
       <tr>
         <td>BUILD0
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -13020,7 +13183,7 @@
       </tr>
       <tr>
         <td>BUILD1
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">39</td>
@@ -13033,7 +13196,7 @@
       </tr>
       <tr>
         <td>BUILD2
-          <sup>f</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -13046,7 +13209,7 @@
       </tr>
       <tr>
         <td>BUILD3
-          <sup>g</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -13062,22 +13225,7 @@
       <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
     </p>
     <p class="notes-para">
-      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+      <sup>b</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
     </p>
     <h1>SOFTWARE_VERSION_RPT_01</h1>
     <table class="message-table">
@@ -13114,7 +13262,7 @@
         <td class="centered-text">1</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -13142,7 +13290,7 @@
       </tr>
       <tr>
         <td>MINOR
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -13155,7 +13303,7 @@
       </tr>
       <tr>
         <td>PATCH
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -13168,7 +13316,7 @@
       </tr>
       <tr>
         <td>BUILD0
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -13181,7 +13329,7 @@
       </tr>
       <tr>
         <td>BUILD1
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">39</td>
@@ -13194,7 +13342,7 @@
       </tr>
       <tr>
         <td>BUILD2
-          <sup>f</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -13207,7 +13355,7 @@
       </tr>
       <tr>
         <td>BUILD3
-          <sup>g</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -13223,22 +13371,7 @@
       <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
     </p>
     <p class="notes-para">
-      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+      <sup>b</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
     </p>
     <h1>SOFTWARE_VERSION_RPT_02</h1>
     <table class="message-table">
@@ -13275,7 +13408,7 @@
         <td class="centered-text">2</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -13303,7 +13436,7 @@
       </tr>
       <tr>
         <td>MINOR
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -13316,7 +13449,7 @@
       </tr>
       <tr>
         <td>PATCH
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -13329,7 +13462,7 @@
       </tr>
       <tr>
         <td>BUILD0
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -13342,7 +13475,7 @@
       </tr>
       <tr>
         <td>BUILD1
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">39</td>
@@ -13355,7 +13488,7 @@
       </tr>
       <tr>
         <td>BUILD2
-          <sup>f</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -13368,7 +13501,7 @@
       </tr>
       <tr>
         <td>BUILD3
-          <sup>g</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -13384,22 +13517,7 @@
       <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
     </p>
     <p class="notes-para">
-      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+      <sup>b</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
     </p>
     <h1>SOFTWARE_VERSION_RPT_03</h1>
     <table class="message-table">
@@ -13436,7 +13554,7 @@
         <td class="centered-text">3</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Ford Transit</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -13464,7 +13582,7 @@
       </tr>
       <tr>
         <td>MINOR
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -13477,7 +13595,7 @@
       </tr>
       <tr>
         <td>PATCH
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -13490,7 +13608,7 @@
       </tr>
       <tr>
         <td>BUILD0
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -13503,7 +13621,7 @@
       </tr>
       <tr>
         <td>BUILD1
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">39</td>
@@ -13516,7 +13634,7 @@
       </tr>
       <tr>
         <td>BUILD2
-          <sup>f</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -13529,7 +13647,7 @@
       </tr>
       <tr>
         <td>BUILD3
-          <sup>g</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -13545,22 +13663,7 @@
       <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
     </p>
     <p class="notes-para">
-      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+      <sup>b</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
     </p>
     <h1>SOFTWARE_VERSION_RPT_04</h1>
     <table class="message-table">
@@ -13625,7 +13728,7 @@
       </tr>
       <tr>
         <td>MINOR
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">15</td>
@@ -13638,7 +13741,7 @@
       </tr>
       <tr>
         <td>PATCH
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">23</td>
@@ -13651,7 +13754,7 @@
       </tr>
       <tr>
         <td>BUILD0
-          <sup>d</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">31</td>
@@ -13664,7 +13767,7 @@
       </tr>
       <tr>
         <td>BUILD1
-          <sup>e</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">39</td>
@@ -13677,7 +13780,7 @@
       </tr>
       <tr>
         <td>BUILD2
-          <sup>f</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">47</td>
@@ -13690,7 +13793,7 @@
       </tr>
       <tr>
         <td>BUILD3
-          <sup>g</sup>
+          <sup>b</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">55</td>
@@ -13706,22 +13809,7 @@
       <sup>a</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
     </p>
     <p class="notes-para">
-      <sup>b</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>MAJOR, MINOR, and PATCH shall be the software version number and shall be defined by Sematic Versioning 2.0.  For build numbers other than 0000, it shall be the most recent software release.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
+      <sup>b</sup>BUILD0-BUILD3 shall represent the software build number and shall be constrained to characters A-Z and 0-9.
     </p>
     <h1>SPRAYER_CMD</h1>
     <table class="message-table">
@@ -13754,7 +13842,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -13860,7 +13948,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14060,7 +14148,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14153,9 +14241,23 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>STEERING_TORQUE_AVAIL
+        <td>CALIBRATION_STATUS
           <sup>5</sup>
           <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">54</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">3</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>STEERING_TORQUE_AVAIL
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">57</td>
@@ -14168,7 +14270,7 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_AVAIL
-          <sup>5</sup>
+          <sup>6</sup>
           <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -14182,8 +14284,8 @@
       </tr>
       <tr>
         <td>OPERATOR_INTERACTION_AVAIL
-          <sup>5</sup>
-          <sup>g</sup>
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">59</td>
@@ -14196,8 +14298,8 @@
       </tr>
       <tr>
         <td>ROTATION_RATE_SIGN_AVAIL
-          <sup>5</sup>
-          <sup>h</sup>
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">60</td>
@@ -14210,7 +14312,7 @@
       </tr>
       <tr>
         <td>VEHICLE_ANGLE_CALIB_STATUS_AVAIL
-          <sup>5</sup>
+          <sup>6</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">61</td>
@@ -14223,8 +14325,8 @@
       </tr>
       <tr>
         <td>STEERING_LIMITING_ACTIVE_AVAIL
-          <sup>5</sup>
-          <sup>i</sup>
+          <sup>6</sup>
+          <sup>f</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">62</td>
@@ -14249,7 +14351,10 @@
       <sup>4</sup>0=NOT_ACTIVE, 1=ACTIVE<br>
     </p>
     <p class="notes-para">
-      <sup>5</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
+      <sup>5</sup>0=INACTIVE, 1=ACTIVE, 2=COMPLETE, 3=ERROR<br>
+    </p>
+    <p class="notes-para">
+      <sup>6</sup>0=NOT_AVAILABLE, 1=AVAILABLE<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.
@@ -14264,19 +14369,10 @@
       <sup>d</sup>STEERING_LIMITING_ACTIVE shall have the value of 1 if a limiting function is reducing an excessive command.  Otherwise, the value shall be 0.
     </p>
     <p class="notes-para">
-      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+      <sup>e</sup>CALIBRATION_STATUS shall indicate the status of a calibration of this system. If this system has more than one calibration, then those calibrations are INACTIVE.
     </p>
     <p class="notes-para">
       <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>g</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>h</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>i</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>STEERING_CMD</h1>
     <table class="message-table">
@@ -14309,7 +14405,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14421,7 +14517,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14530,7 +14626,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14597,7 +14693,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14675,7 +14771,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14742,7 +14838,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -14933,7 +15029,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15030,7 +15126,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15119,7 +15215,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Ford Transit, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15175,7 +15271,7 @@
       <tr>
         <td>PASS_BLINKER_BULB_ON_AVAIL
           <sup>2</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
@@ -15195,9 +15291,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>TURN_CMD</h1>
     <table class="message-table">
@@ -15230,7 +15323,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15336,7 +15429,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15536,7 +15629,7 @@
         <td class="centered-text">250</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15563,12 +15656,12 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>UNDERDASH_LIGHTS_WHITE
+        <td>LIGHT_COMMAND
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
-        <td class="centered-text">1</td>
-        <td class="centered-text">1</td>
+        <td class="centered-text">4</td>
+        <td class="centered-text">4</td>
         <td class="centered-text">1</td>
         <td class="centered-text">0</td>
         <td class="centered-text">0</td>
@@ -15580,7 +15673,7 @@
       <sup>1</sup>0=NOT_MUTED, 1=MUTED<br>
     </p>
     <p class="notes-para">
-      <sup>2</sup>0=NO_ACTION, 1=WHITE<br>
+      <sup>2</sup>0=NO_ACTION, 1=WHITE, 2=RED, 3=GREEN, 4=BLUE, 5=PURPLE, 6=ORANGE, 7=YELLOW, 8=TEAL, 9=PINK, 10=OFF<br>
     </p>
     <h1>VEHICLE_SPEED_RPT</h1>
     <table class="message-table">
@@ -15613,7 +15706,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15741,7 +15834,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: All Supported Vehicle Platforms</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -15819,7 +15912,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Freightliner, JPN Taxi, MKZ, Polaris Ranger</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -16684,7 +16777,7 @@
       </tr>
       <tr>
         <td>DLC</td>
-        <td class="centered-text">5</td>
+        <td class="centered-text">6</td>
       </tr>
       <tr>
         <td>Sender</td>
@@ -16699,7 +16792,7 @@
         <td class="centered-text">1000</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Lexus RX 450h, Ford Transit, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -17232,6 +17325,45 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>DRIVE_MODE_INVALID
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">40</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_CMD_SANITY_FAULT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">41</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
+      <tr>
+        <td>GLOBAL_CMD_TIMEOUT
+          <sup>1</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">42</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=FALSE, 1=TRUE<br>
@@ -17267,7 +17399,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -17356,7 +17488,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -17464,7 +17596,7 @@
       <tr>
         <td>FRONT_SPRAYING_AVAIL
           <sup>5</sup>
-          <sup>b</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">9</td>
@@ -17478,7 +17610,7 @@
       <tr>
         <td>REAR_WIPING_AVAIL
           <sup>5</sup>
-          <sup>c</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">10</td>
@@ -17492,7 +17624,7 @@
       <tr>
         <td>REAR_SPRAYING_AVAIL
           <sup>5</sup>
-          <sup>d</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">11</td>
@@ -17506,7 +17638,7 @@
       <tr>
         <td>SPRAY_NEAR_EMPTY_AVAIL
           <sup>5</sup>
-          <sup>e</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">12</td>
@@ -17520,7 +17652,7 @@
       <tr>
         <td>SPRAY_EMPTY_AVAIL
           <sup>5</sup>
-          <sup>f</sup>
+          <sup>a</sup>
         </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">13</td>
@@ -17549,21 +17681,6 @@
     </p>
     <p class="notes-para">
       <sup>a</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>c</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>d</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>e</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
-    </p>
-    <p class="notes-para">
-      <sup>f</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
     </p>
     <h1>WIPER_CMD</h1>
     <table class="message-table">
@@ -17596,7 +17713,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -17702,7 +17819,7 @@
         <td class="centered-text">100</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Dev Vehicle 1</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
@@ -17902,7 +18019,7 @@
         <td class="centered-text">33</td>
       </tr>
     </table>
-    <p class="supported-vehicles">Supported Vehicles: Lexus RX450h</p>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
     <table class="signals-table">
       <tr class="header-row">
         <td class="centered-text bold">Name</td>
