@@ -1,3 +1,17 @@
+# 11.1.0
+1. (Add) Add BRAKE_REDUCED_ASSIST and BRAKE_REDUCED_ASSIST_AVAIL to BRAKE_AUX_RPT.
+1. (Add) Add CRUISE_CONTROL_LIM value CRUISE_CONTROL_BUTTONS system.
+1. (Add) Rename DRIVE_TRAIN_FEATURE_ACTIVE_RPT to DRIVE_TRAIN_FEATURE_RPT. Add DRIVE_MODE and DRIVE_MODE_AVAIL signals.
+1. (Add) Add BRAKE_INTERLOCK_ACTIVE, PARKING_BRAKE_INTERLOCK_ACTIVE, BRAKE_INTERLOCK_ACTIVE_AVAIL, and PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL signals to ACCEL_AUX_RPT message.
+1. (Add) Rename and add values to LIGHT_COMMAND signal to USER_NOTIFICATION_CMD message.
+1. (Add) Add CALIBRATION_STATUS signal to ACCEL_AUX_RPT, BRAKE_AUX_RPT, SHIFT_AUX_RPT, and STEERING_AUX_RPT messages.
+1. (Add) Add SANITY_CHECK_REQUIRED, COUNTER, and COMPLEMENT signals to the GLOBAL_CMD message.
+1. (Add) Add DISABLE_ALL_SYSTEMS signal to the GLOBAL_RPT_2 message.
+1. (Add) Add DRIVE_MODE_INVALID, GLOBAL_CMD_SANITY_FAULT, and GLOBAL_CMD_TIMEOUT signals to the WATCHDOG_RPT_2 message.
+1. (Add) Add the Global Command Sanity Check Rules and System Global Disable Rules to the user_can_protocol document.
+1. (Fix) Add bitrate to user_can_protocol document.
+1. (Fix) Update Vehicle Associations.
+
 # 11.0.0
 1. (Change) Change size, bit position, and states of OUTPUT_VALUE signal within SAFETY_BRAKE_RPT.
 1. (Change) Change bit position of REPORTED_FAULT signal within SAFETY_BRAKE_RPT.
