@@ -281,6 +281,7 @@ BO_ 32 COMPONENT_RPT_00: 6 PACMOD
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -316,6 +317,7 @@ BO_ 33 COMPONENT_RPT_01: 6 PACMOD
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -351,6 +353,7 @@ BO_ 34 COMPONENT_RPT_02: 6 PACMOD
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -386,6 +389,7 @@ BO_ 35 COMPONENT_RPT_03: 6 PACMOD
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 36 COMPONENT_RPT_04: 6 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -421,6 +425,7 @@ BO_ 36 COMPONENT_RPT_04: 6 PACMOD
  SG_ SUPERVISORY_SANITY_FAULT : 44|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SANITY_FAULT : 45|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
 
 BO_ 264 CRUISE_CONTROL_BUTTONS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -575,6 +580,7 @@ BO_ 17 GLOBAL_RPT_2: 1 PACMOD
  SG_ SYSTEM_FAULT_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SUPERVISORY_ENABLE_REQUIRED : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ DISABLE_ALL_SYSTEMS  : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SYSTEM_READY  : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 276 HAZARD_LIGHTS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -666,13 +672,13 @@ BO_ 1038 LAT_LON_HEADING_RPT: 8 PACMOD
 
 BO_ 1049 LINEAR_ACCEL_RPT: 7 PACMOD
  SG_ LATERAL_NEW_DATA_RX : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ LONGITUDNAL_NEW_DATA_RX : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LONGITUDINAL_NEW_DATA_RX : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ VERTICAL_NEW_DATA_RX : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ LATERAL_VALID : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
- SG_ LONGITUDNAL_VALID : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ LONGITUDINAL_VALID : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ VERTICAL_VALID : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ LATERAL_ACCEL : 15|16@0- (0.01,0) [-327.68|327.67] "m/s^2"  CUSTOMER_ECU
- SG_ LONGITUDNAL_ACCEL : 31|16@0- (0.01,0) [-327.68|327.67] "m/s^2"  CUSTOMER_ECU
+ SG_ LONGITUDINAL_ACCEL : 31|16@0- (0.01,0) [-327.68|327.67] "m/s^2"  CUSTOMER_ECU
  SG_ VERTICAL_ACCEL : 47|16@0- (0.01,0) [-327.68|327.67] "m/s^2"  CUSTOMER_ECU
 
 BO_ 328 MARKER_LAMP_CMD: 2 CUSTOMER_ECU
@@ -1042,6 +1048,16 @@ BO_ 1044 VIN_RPT: 7 PACMOD
  SG_ VEH_MY_CODE : 31|8@0+ (1,0) [0|0] ""  CUSTOMER_ECU
  SG_ VEH_SERIAL : 39|24@0+ (1,0) [0|0] ""  CUSTOMER_ECU
 
+BO_ 1058 VIN_RPT_2: 8 PACMOD
+ SG_ VEHICLE_IDENTIFIER_SECTION_10 : 7|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_11 : 15|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_12 : 23|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_13 : 31|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_14 : 39|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_15 : 47|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_16 : 55|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+ SG_ VEHICLE_IDENTIFIER_SECTION_17 : 63|8@0+ (1,0) [0|255] "ASCII"  CUSTOMER_ECU
+
 BO_ 1536 WATCHDOG_RPT: 8 PACMOD
  SG_ GLOBAL_ENABLE_FLAG : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ GLOBAL_OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1210,8 +1226,17 @@ CM_ BU_ PACMOD "AutonomouStuff PACMod";
 //                           //
 ///////////////////////////////
 
-// GLOBAL_RPT
+// GLOBAL_RPT MESSAGE COMMENT
 CM_ BO_ 16 "Not for new development.";
+
+// VIN_RPT MESSAGE COMMENT
+CM_ BO_ 1044 "Not for new development.";
+
+// WATCHDOG_RPT MESSAGE COMMENT
+CM_ BO_ 1536 "Not for new development.";
+
+// YAW_RATE_RPT MESSAGE COMMENT
+CM_ BO_ 1037 "Not for new development.";
 
 //////////////////////////////
 //                          //
@@ -1242,6 +1267,11 @@ CM_ SG_ 512 MANUAL_INPUT "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 512 COMMANDED_VALUE "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 512 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 
+// ANG_VEL_RPT COMMENTS
+CM_ SG_ 1050 PITCH_VEL "Pitch is positive according to right hand rule with the axis pointing to the left as the vehicle goes forward.";
+CM_ SG_ 1050 ROLL_VEL "Roll is positive according to right hand rule with the axis pointing forward.";
+CM_ SG_ 1050 YAW_VEL "Yaw is positive according to right hand rule with the axis pointing up.";
+
 // BRAKE_AUX_RPT COMMENTS
 CM_ SG_ 772 BRAKE_PRESSURE "Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.";
 CM_ SG_ 772 OPERATOR_INTERACTION "OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.";
@@ -1267,6 +1297,17 @@ CM_ SG_ 824 XBR_SYSTEM_STATE_AVAIL "PACMod sets this value as a function of whic
 CM_ SG_ 824 FOUNDATION_BRAKE_USE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 824 HILL_HOLDER_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
+// BRAKE_MOTOR_RPT_1 COMMENTS
+CM_ SG_ 1025 MOTOR_CURRENT "As reported by the motor.";
+CM_ SG_ 1025 SHAFT_POSITION "As reported by the motor.";
+
+// BRAKE_MOTOR_RPT_2 COMMENTS
+CM_ SG_ 1026 ANGULAR_SPEED "As reported by the motor.";
+
+// BRAKE_MOTOR_RPT_3 COMMENTS
+CM_ SG_ 1027 TORQUE_OUTPUT "As reported by the motor.";
+CM_ SG_ 1027 TORQUE_INPUT "As reported by the motor.";
+
 // BRAKE_RPT COMMENTS
 CM_ SG_ 516 MANUAL_INPUT "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 516 COMMANDED_VALUE "Percent of full-scale value of signal from 0 to 1.";
@@ -1278,6 +1319,7 @@ CM_ SG_ 32 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  F
 CM_ SG_ 32 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 32 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 32 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+CM_ SG_ 32 COMPONENT_READY "This value will indicate whether this component is ready for by-wire control." ;
 
 // COMPONENT_RPT_01 COMMENTS
 CM_ SG_ 33 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -1285,6 +1327,7 @@ CM_ SG_ 33 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  F
 CM_ SG_ 33 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 33 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 33 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+CM_ SG_ 33 COMPONENT_READY "This value will indicate whether this component is ready for by-wire control." ;
 
 // COMPONENT_RPT_02 COMMENTS
 CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -1292,6 +1335,7 @@ CM_ SG_ 34 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  F
 CM_ SG_ 34 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 34 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 34 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+CM_ SG_ 34 COMPONENT_READY "This value will indicate whether this component is ready for by-wire control." ;
 
 // COMPONENT_RPT_03 COMMENTS
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -1299,6 +1343,7 @@ CM_ SG_ 35 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  F
 CM_ SG_ 35 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 35 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 35 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+CM_ SG_ 35 COMPONENT_READY "This value will indicate whether this component is ready for by-wire control." ;
 
 // COMPONENT_RPT_04 COMMENTS
 CM_ SG_ 36 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -1306,6 +1351,7 @@ CM_ SG_ 36 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  F
 CM_ SG_ 36 CAN_TIMEOUT_FAULT "This value relates to message specific or general CAN timeouts.  It includes the watchdog component report timeout." ;
 CM_ SG_ 36 WATCHDOG_SANITY_FAULT "This value relates to problems with the COUNTER and COMPLIMENT signals in the component report received from the watchdog component." ;
 CM_ SG_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT "This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE." ;
+CM_ SG_ 36 COMPONENT_READY "This value will indicate whether this component is ready for by-wire control." ;
 
 // CRUISE_CONTROL_BUTTONS_CMD COMMENTS
 CM_ SG_ 264 CRUISE_CONTROL_BUTTON "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
@@ -1341,6 +1387,7 @@ CM_ SG_ 17 SYSTEM_ENABLED "One or more systems are enabled." ;
 CM_ SG_ 17 SYSTEM_FAULT_ACTIVE "One or more faults are active." ;
 CM_ SG_ 17 SUPERVISORY_ENABLE_REQUIRED "Supervisory Enablement Rules apply when SUPERVISORY_ENABLE_REQUIRED is REQUIRED.  It provides backward compatibility with prior versions of this specification that did not have the SUPERVISORY_CTRL message." ;
 CM_ SG_ 17 DISABLE_ALL_SYSTEMS "Global Command Sanity Check Rules and System Global Disable Rules apply when SANITY_CHECK_REQUIRED is REQUIRED." ;
+CM_ SG_ 17 SYSTEM_READY "System Ready Rules apply at all times." ;
 
 // HAZARD_LIGHTS_RPT COMMENTS
 CM_ SG_ 532 MANUAL_INPUT "Platforms vary on use of latched or momentary interface, see platform user guide." ;
@@ -1354,6 +1401,11 @@ CM_ SG_ 792 HEADLIGHTS_ON_AVAIL "PACMod sets this value as a function of which v
 
 // INTERIOR_LIGHTS_RPT COMMENTS
 CM_ SG_ 1046 DIM_LEVEL "Lowest dim level assigned to DIM_LEVEL_MIN, the dimmest light. Highest dim level assigned to DIM_LEVEL_MAX, the brightest light. Dim levels in between start with DIM_LEVEL_1.";
+
+// LINEAR_ACCEL_RPT COMMENTS
+CM_ SG_ 1049 LATERAL_ACCEL "Lateral acceleration is positive in the left direction as the vehicle goes forward." ;
+CM_ SG_ 1049 LONGITUDINAL_ACCEL "Longitudinal acceleration is positive in the forward direction." ;
+CM_ SG_ 1049 VERTICAL_ACCEL "Vertical acceleration is positive in the upward direction." ;
 
 // SAFETY_FUNC_CRITICAL_STOP_RPT COMMENTS
 CM_ SG_ 1056 AUTOMANUAL_OPCTRL_FAULT "This value shall latch while the safety function is in the critical stop state.";
@@ -1385,6 +1437,7 @@ CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function o
 CM_ SG_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 STAY_IN_NEUTRAL_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 BETWEEN_GEARS_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 808 GEAR_NUMBER "Gear number is positive for forward gears.";
 
 // SHIFT_CMD COMMENTS
 CM_ SG_ 296 SHIFT_CMD "FORWARD is also HIGH on vehicles with LOW/HIGH, PARK and LOW only available on certain Vehicles.";
@@ -1452,6 +1505,17 @@ CM_ SG_ 557 LIMITED_POSITION_CMD "The LIMITED_POSITION_CMD shall have the value 
 CM_ SG_ 557 ROTATION_RATE_CMD_LIMIT "The ROTATION_RATE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system.";
 CM_ SG_ 557 LIMITED_ROTATION_RATE "The LIMITED_ROTATION_RATE_CMD shall have the value of command associated with this system constrained by the ROTATION_RATE_CMD_LIMIT.";
 
+// STEERING_MOTOR_RPT_1 COMMENTS
+CM_ SG_ 1028 MOTOR_CURRENT "As reported by the motor.";
+CM_ SG_ 1028 SHAFT_POSITION "As reported by the motor.";
+
+// STEERING_MOTOR_RPT_2 COMMENTS
+CM_ SG_ 1029 ANGULAR_SPEED "As reported by the motor.";
+
+// STEERING_MOTOR_RPT_3 COMMENTS
+CM_ SG_ 1030 TORQUE_OUTPUT "As reported by the motor.";
+CM_ SG_ 1030 TORQUE_INPUT "As reported by the motor.";
+
 // SUPERVISORY_CTRL COMMENTS
 CM_ SG_ 129 ENABLE "A system shall enable only if the supervisory enablement rules are met.  See User CAN Protocol Standard 3.0.";
 CM_ SG_ 129 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -1461,6 +1525,18 @@ CM_ SG_ 129 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  
 CM_ SG_ 816 PASS_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 816 DRIVER_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
+// VEH_DYNAMICS_RPT COMMENTS
+CM_ SG_ 1043 VEH_G_FORCES "G forces are positive in the forward direction.";
+ 
+// VEHICLE_SPEED_RPT COMMENTS
+CM_ SG_ 1024 VEHICLE_SPEED "Wheel speed is positive in the forward direction.";
+
+// WHEEL_SPEED_RPT COMMENTS
+CM_ SG_ 1031 WHEEL_SPD_FRONT_LEFT "Wheel speed is positive in the forward direction.";
+CM_ SG_ 1031 WHEEL_SPD_FRONT_RIGHT "Wheel speed is positive in the forward direction.";
+CM_ SG_ 1031 WHEEL_SPD_REAR_LEFT "Wheel speed is positive in the forward direction.";
+CM_ SG_ 1031 WHEEL_SPD_REAR_RIGHT "Wheel speed is positive in the forward direction.";
+
 // WIPER_AUX_RPT COMMENTS
 CM_ SG_ 820 SPRAY_EMPTY_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 820 SPRAY_NEAR_EMPTY_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1468,6 +1544,9 @@ CM_ SG_ 820 REAR_SPRAYING_AVAIL "PACMod sets this value as a function of which v
 CM_ SG_ 820 REAR_WIPING_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 820 FRONT_SPRAYING_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 820 FRONT_WIPING_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+
+// YAW_RATE_RPT COMMENTS
+CM_ SG_ 1037 YAW_RATE "Yaw is positive according to right hand rule with the axis pointing up.";
 
 
 
@@ -2072,6 +2151,17 @@ BA_ "GenSigCycleTime" SG_ 1044 VEH_SERIAL 1000;
 BA_ "GenSigCycleTime" SG_ 1044 VEH_MY_CODE 1000;
 BA_ "GenSigCycleTime" SG_ 1044 VEH_MFG_CODE 1000;
 
+// VIN_RPT_2 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1058 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_10 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_11 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_12 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_13 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_14 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_15 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_16 1000;
+BA_ "GenSigCycleTime" SG_ 1058 VEHICLE_IDENTIFIER_SECTION_17 1000;
+
 // WATCHDOG_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1536 100;
 BA_ "GenSigCycleTime" SG_ 1536 GLOBAL_ENABLE_FLAG 100;
@@ -2424,6 +2514,7 @@ VAL_ 32 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 32 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 32 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 
 // COMPONENT_RPT_01 VALUES
 VAL_ 33 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2457,6 +2548,7 @@ VAL_ 33 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 33 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 33 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 
 // COMPONENT_RPT_02 VALUES
 VAL_ 34 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2490,6 +2582,7 @@ VAL_ 34 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 34 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 34 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 
 // COMPONENT_RPT_03 VALUES
 VAL_ 35 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2523,6 +2616,7 @@ VAL_ 35 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 35 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 35 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 
 // COMPONENT_RPT_04 VALUES
 VAL_ 36 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -2556,6 +2650,7 @@ VAL_ 36 SUPERVISORY_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 36 SUPERVISORY_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 36 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 36 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 
 // CRUISE_CONTROL_BUTTONS_CMD
 VAL_ 264 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2691,6 +2786,7 @@ VAL_ 17 SYSTEM_OVERRIDE_ACTIVE 0 "NOT_OVERRIDDEN" 1 "OVERRIDDEN" ;
 VAL_ 17 SYSTEM_FAULT_ACTIVE 0 "FALSE" 1 "TRUE" ;
 VAL_ 17 SUPERVISORY_ENABLE_REQUIRED 0 "NOT_REQUIRED" 1 "REQUIRED" ;
 VAL_ 17 DISABLE_ALL_SYSTEMS 0 "FALSE" 1 "TRUE" ;
+VAL_ 17 SYSTEM_READY 0 "NOT_READY" 1 "READY" ;
 
 // HAZARD_LIGHTS_CMD VALUES
 VAL_ 276 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -2773,10 +2869,10 @@ VAL_ 1046 AMBIENT_LIGHT_SENSOR_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
 // LINEAR_ACCEL_RPT VALUES
 VAL_ 1049 LATERAL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
-VAL_ 1049 LONGITUDNAL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
+VAL_ 1049 LONGITUDINAL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1049 VERTICAL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1049 LATERAL_VALID 0 "NOT_VALID" 1 "VALID" ;
-VAL_ 1049 LONGITUDNAL_VALID 0 "NOT_VALID" 1 "VALID" ;
+VAL_ 1049 LONGITUDINAL_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1049 VERTICAL_VALID 0 "NOT_VALID" 1 "VALID" ;
 
 // MARKER_LAMP_CMD VALUES
@@ -2990,9 +3086,9 @@ VAL_ 568 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 568 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 568 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 568 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
-VAL_ 568 MANUAL_INPUT 0 "NOT_SPRAYIG" 1 "SPRAYING" ;
-VAL_ 568 COMMANDED_VALUE 0 "NOT_SPRAYIG" 1 "SPRAYING" ;
-VAL_ 568 OUTPUT_VALUE 0 "NOT_SPRAYIG" 1 "SPRAYING" ;
+VAL_ 568 MANUAL_INPUT 0 "NOT_SPRAYING" 1 "SPRAYING" ;
+VAL_ 568 COMMANDED_VALUE 0 "NOT_SPRAYING" 1 "SPRAYING" ;
+VAL_ 568 OUTPUT_VALUE 0 "NOT_SPRAYING" 1 "SPRAYING" ;
 
 // STEERING_AUX_RPT VALUES
 VAL_ 812 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";

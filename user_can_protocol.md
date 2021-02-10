@@ -116,6 +116,7 @@ Global sanity check rules apply to a vehicle platform when the SANITY_CHECK_REQU
         1. If DISABLE_ALL_SYSTEMS is TRUE, the master component shall set DISABLE_ALL_SYSTEMS to FALSE when all of the following are true:
             1. The master component receives 3 consecutive GLOBAL_CMD messages with valid COUNTER and COMPLEMENT.
             1. The GLOBAL_CMD message is not timed out.
+            1. The SYSTEM_READY signal in the GLOBAL_RPT_2 message is READY.
         1. Afterward, DISABLE_ALL_SYSTEMS shall be set to TRUE when any of the following are true:
             1. Invalid COUNTER and COMPLEMENT.
             1. Timeout of the GLOBAL_CMD message.
@@ -141,9 +142,24 @@ The allowed time period is 3 times the message period of this message. The same 
 1. The allowed time period has elapsed before this message is received.
 1. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
 
+## System Ready Rules
+The SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be READY all the following are true:
+
+1. Estop is released.
+1. No active faults.
+1. All COMPONENT_READY signals in the COMPONENT_RPT messages from all installed components are READY.
+1. The SYSTEM_OVERRIDE_ACTIVE signal in the GLOBAL_RPT_2 is NOT_OVERRIDDEN.
+
+Otherwise the SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be NOT_READY.
+
 ## Default Bit Values
 
 All undefined bits shall be set to 0.
+
+## Fixed-Body Reference Frame
+Any signals that refer to the local kinematics of a vehicle shall use the following local vehicle fixed-body reference frame.
+
+![alt_text](/reference_frame.png "reference_frame.png")
 
 # Vector DBC Rules
 

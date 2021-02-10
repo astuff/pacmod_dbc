@@ -1,3 +1,12 @@
+# 11.2.0
+1. (Add) Add COMPONENT_READY signal to all COMPONENT_RPT_NN messages.
+1. (Add) Add SYSTEM_READY signal to GLOBAL_RPT_2 message.
+1. (Add) Add VIN_RPT_2 message.
+1. (Fix) Add directional references to the comments of various linear and angular motion signals.
+1. (Fix) Fix spelling of "longitudnal" to longitudinal.
+1. (Fix) Fix spelling of "NOT_SPRAYNG" to NOT_SPRAYING.
+1. (Fix) Set comments for VIN_RPT, WATCHDOG_RPT, YAW_RATE_RPT to "Not for new development."
+
 # 11.1.0
 1. (Add) Add BRAKE_REDUCED_ASSIST and BRAKE_REDUCED_ASSIST_AVAIL to BRAKE_AUX_RPT.
 1. (Add) Add CRUISE_CONTROL_LIM value CRUISE_CONTROL_BUTTONS system.

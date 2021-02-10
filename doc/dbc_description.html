@@ -722,7 +722,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>PITCH_VEL</td>
+        <td>PITCH_VEL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -733,7 +735,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>ROLL_VEL</td>
+        <td>ROLL_VEL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">31</td>
         <td class="centered-text">16</td>
@@ -744,7 +748,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>YAW_VEL</td>
+        <td>YAW_VEL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">47</td>
         <td class="centered-text">16</td>
@@ -760,6 +766,15 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=NOT_VALID, 1=VALID<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Pitch is positive according to right hand rule with the axis pointing to the left as the vehicle goes forward.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Roll is positive according to right hand rule with the axis pointing forward.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Yaw is positive according to right hand rule with the axis pointing up.
     </p>
     <h1>BRAKE_AUX_RPT</h1>
     <table class="message-table">
@@ -1733,7 +1748,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>MOTOR_CURRENT</td>
+        <td>MOTOR_CURRENT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">32</td>
@@ -1744,7 +1761,9 @@
         <td class="centered-text">amps</td>
       </tr>
       <tr>
-        <td>SHAFT_POSITION</td>
+        <td>SHAFT_POSITION
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -1755,6 +1774,9 @@
         <td class="centered-text">radians</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>BRAKE_MOTOR_RPT_2</h1>
     <table class="message-table">
       <tr>
@@ -1822,7 +1844,9 @@
         <td class="centered-text">deg_C</td>
       </tr>
       <tr>
-        <td>ANGULAR_SPEED</td>
+        <td>ANGULAR_SPEED
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -1833,6 +1857,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>BRAKE_MOTOR_RPT_3</h1>
     <table class="message-table">
       <tr>
@@ -1878,7 +1905,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>TORQUE_OUTPUT</td>
+        <td>TORQUE_OUTPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">32</td>
@@ -1889,7 +1918,9 @@
         <td class="centered-text">N-m</td>
       </tr>
       <tr>
-        <td>TORQUE_INPUT</td>
+        <td>TORQUE_INPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -1900,6 +1931,9 @@
         <td class="centered-text">N-m</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>BRAKE_RPT</h1>
     <table class="message-table">
       <tr>
@@ -3744,6 +3778,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMPONENT_READY
+          <sup>5</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
@@ -3756,6 +3804,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -3771,6 +3822,9 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>This value will indicate whether this component is ready for by-wire control.
     </p>
     <h1>COMPONENT_RPT_01</h1>
     <table class="message-table">
@@ -4252,6 +4306,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMPONENT_READY
+          <sup>5</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
@@ -4264,6 +4332,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -4279,6 +4350,9 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>This value will indicate whether this component is ready for by-wire control.
     </p>
     <h1>COMPONENT_RPT_02</h1>
     <table class="message-table">
@@ -4760,6 +4834,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMPONENT_READY
+          <sup>5</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
@@ -4772,6 +4860,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -4787,6 +4878,9 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>This value will indicate whether this component is ready for by-wire control.
     </p>
     <h1>COMPONENT_RPT_03</h1>
     <table class="message-table">
@@ -5268,6 +5362,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMPONENT_READY
+          <sup>5</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
@@ -5280,6 +5388,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -5295,6 +5406,9 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>This value will indicate whether this component is ready for by-wire control.
     </p>
     <h1>COMPONENT_RPT_04</h1>
     <table class="message-table">
@@ -5776,6 +5890,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>COMPONENT_READY
+          <sup>5</sup>
+          <sup>f</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=PACMOD, 1=PACMINI, 2=PACMICRO<br>
@@ -5788,6 +5916,9 @@
     </p>
     <p class="notes-para">
       <sup>4</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
+    </p>
+    <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
     </p>
     <p class="notes-para">
       <sup>a</sup>Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
@@ -5803,6 +5934,9 @@
     </p>
     <p class="notes-para">
       <sup>e</sup>This value shall be TRUE when the WATCHDOG system present signal in the component report received from the watchdog component is FALSE or any other system present signal is TRUE.
+    </p>
+    <p class="notes-para">
+      <sup>f</sup>This value will indicate whether this component is ready for by-wire control.
     </p>
     <h1>CRUISE_CONTROL_BUTTONS_CMD</h1>
     <table class="message-table">
@@ -8292,6 +8426,20 @@
         <td class="centered-text">1</td>
         <td class="centered-text"></td>
       </tr>
+      <tr>
+        <td>SYSTEM_READY
+          <sup>5</sup>
+          <sup>e</sup>
+        </td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">5</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text"></td>
+      </tr>
     </table>
     <p class="notes-para">
       <sup>1</sup>0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
@@ -8306,6 +8454,9 @@
       <sup>4</sup>0=NOT_REQUIRED, 1=REQUIRED<br>
     </p>
     <p class="notes-para">
+      <sup>5</sup>0=NOT_READY, 1=READY<br>
+    </p>
+    <p class="notes-para">
       <sup>a</sup>One or more systems are enabled.
     </p>
     <p class="notes-para">
@@ -8316,6 +8467,9 @@
     </p>
     <p class="notes-para">
       <sup>d</sup>Global Command Sanity Check Rules and System Global Disable Rules apply when SANITY_CHECK_REQUIRED is REQUIRED.
+    </p>
+    <p class="notes-para">
+      <sup>e</sup>System Ready Rules apply at all times.
     </p>
     <h1>HAZARD_LIGHTS_CMD</h1>
     <table class="message-table">
@@ -9779,7 +9933,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>LONGITUDNAL_NEW_DATA_RX
+        <td>LONGITUDINAL_NEW_DATA_RX
           <sup>1</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -9818,7 +9972,7 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>LONGITUDNAL_VALID
+        <td>LONGITUDINAL_VALID
           <sup>2</sup>
         </td>
         <td class="centered-text">Unsigned</td>
@@ -9844,7 +9998,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>LATERAL_ACCEL</td>
+        <td>LATERAL_ACCEL
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">15</td>
         <td class="centered-text">16</td>
@@ -9855,7 +10011,9 @@
         <td class="centered-text">m/s^2</td>
       </tr>
       <tr>
-        <td>LONGITUDNAL_ACCEL</td>
+        <td>LONGITUDINAL_ACCEL
+          <sup>b</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">31</td>
         <td class="centered-text">16</td>
@@ -9866,7 +10024,9 @@
         <td class="centered-text">m/s^2</td>
       </tr>
       <tr>
-        <td>VERTICAL_ACCEL</td>
+        <td>VERTICAL_ACCEL
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">47</td>
         <td class="centered-text">16</td>
@@ -9882,6 +10042,15 @@
     </p>
     <p class="notes-para">
       <sup>2</sup>0=NOT_VALID, 1=VALID<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Lateral acceleration is positive in the left direction as the vehicle goes forward.
+    </p>
+    <p class="notes-para">
+      <sup>b</sup>Longitudinal acceleration is positive in the forward direction.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Vertical acceleration is positive in the upward direction.
     </p>
     <h1>MARKER_LAMP_CMD</h1>
     <table class="message-table">
@@ -12733,7 +12902,9 @@
         <td class="centered-text"></td>
       </tr>
       <tr>
-        <td>GEAR_NUMBER</td>
+        <td>GEAR_NUMBER
+          <sup>c</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">21</td>
         <td class="centered-text">6</td>
@@ -12767,6 +12938,9 @@
     </p>
     <p class="notes-para">
       <sup>b</sup>PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
+    </p>
+    <p class="notes-para">
+      <sup>c</sup>Gear number is positive for forward gears.
     </p>
     <h1>SHIFT_CMD</h1>
     <table class="message-table">
@@ -14115,7 +14289,7 @@
       <sup>3</sup>0=NO_TIMEOUT, 1=TIMEOUT<br>
     </p>
     <p class="notes-para">
-      <sup>4</sup>0=NOT_SPRAYIG, 1=SPRAYING<br>
+      <sup>4</sup>0=NOT_SPRAYING, 1=SPRAYING<br>
     </p>
     <h1>STEERING_AUX_RPT</h1>
     <table class="message-table">
@@ -14640,7 +14814,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>MOTOR_CURRENT</td>
+        <td>MOTOR_CURRENT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">32</td>
@@ -14651,7 +14827,9 @@
         <td class="centered-text">amps</td>
       </tr>
       <tr>
-        <td>SHAFT_POSITION</td>
+        <td>SHAFT_POSITION
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -14662,6 +14840,9 @@
         <td class="centered-text">radians</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>STEERING_MOTOR_RPT_2</h1>
     <table class="message-table">
       <tr>
@@ -14729,7 +14910,9 @@
         <td class="centered-text">deg_C</td>
       </tr>
       <tr>
-        <td>ANGULAR_SPEED</td>
+        <td>ANGULAR_SPEED
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -14740,6 +14923,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>STEERING_MOTOR_RPT_3</h1>
     <table class="message-table">
       <tr>
@@ -14785,7 +14971,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>TORQUE_OUTPUT</td>
+        <td>TORQUE_OUTPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">32</td>
@@ -14796,7 +14984,9 @@
         <td class="centered-text">N-m</td>
       </tr>
       <tr>
-        <td>TORQUE_INPUT</td>
+        <td>TORQUE_INPUT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">32</td>
@@ -14807,6 +14997,9 @@
         <td class="centered-text">N-m</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>As reported by the motor.
+    </p>
     <h1>STEERING_RPT</h1>
     <table class="message-table">
       <tr>
@@ -15720,7 +15913,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>VEHICLE_SPEED</td>
+        <td>VEHICLE_SPEED
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">16</td>
@@ -15746,6 +15941,9 @@
     </table>
     <p class="notes-para">
       <sup>1</sup>0=INVALID, 1=VALID<br>
+    </p>
+    <p class="notes-para">
+      <sup>a</sup>Wheel speed is positive in the forward direction.
     </p>
     <h1>VEH_DYNAMICS_RPT</h1>
     <table class="message-table">
@@ -15792,7 +15990,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>VEH_G_FORCES</td>
+        <td>VEH_G_FORCES
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Unsigned</td>
         <td class="centered-text">7</td>
         <td class="centered-text">8</td>
@@ -15803,6 +16003,9 @@
         <td class="centered-text">m/s^2</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>G forces are positive in the forward direction.
+    </p>
     <h1>VIN_RPT</h1>
     <table class="message-table">
       <tr>
@@ -15832,6 +16035,20 @@
       <tr>
         <td>Interval (ms)</td>
         <td class="centered-text">1000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="message-comment">Message Comments</td>
+      </tr>
+      <tr>
+        <td>Not for new development.</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Dev Vehicle 1, JPN Taxi, MKZ</p>
@@ -15881,6 +16098,139 @@
         <td class="centered-text"></td>
       </tr>
     </table>
+    <h1>VIN_RPT_2</h1>
+    <table class="message-table">
+      <tr>
+        <td>ID Decimal</td>
+        <td class="centered-text">1058</td>
+      </tr>
+      <tr>
+        <td>ID Hexadecimal</td>
+        <td class="centered-text">0x422</td>
+      </tr>
+      <tr>
+        <td>Frame Format</td>
+        <td class="centered-text">Standard</td>
+      </tr>
+      <tr>
+        <td>DLC</td>
+        <td class="centered-text">8</td>
+      </tr>
+      <tr>
+        <td>Sender</td>
+        <td class="centered-text">PACMOD</td>
+      </tr>
+      <tr>
+        <td>Send Type</td>
+        <td class="centered-text">Cyclic </td>
+      </tr>
+      <tr>
+        <td>Interval (ms)</td>
+        <td class="centered-text">1000</td>
+      </tr>
+    </table>
+    <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
+    <table class="signals-table">
+      <tr class="header-row">
+        <td class="centered-text bold">Name</td>
+        <td class="centered-text bold">Type</td>
+        <td class="centered-text bold">Bitpos</td>
+        <td class="centered-text bold">Length</td>
+        <td class="centered-text bold">Factor</td>
+        <td class="centered-text bold">Offset</td>
+        <td class="centered-text bold">Min</td>
+        <td class="centered-text bold">Max</td>
+        <td class="centered-text bold">Unit</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_10</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">7</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_11</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">15</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_12</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">23</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_13</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">31</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_14</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">39</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_15</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">47</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_16</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">55</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+      <tr>
+        <td>VEHICLE_IDENTIFIER_SECTION_17</td>
+        <td class="centered-text">Unsigned</td>
+        <td class="centered-text">63</td>
+        <td class="centered-text">8</td>
+        <td class="centered-text">1</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">0</td>
+        <td class="centered-text">255</td>
+        <td class="centered-text">ASCII</td>
+      </tr>
+    </table>
     <h1>WATCHDOG_RPT</h1>
     <table class="message-table">
       <tr>
@@ -15910,6 +16260,20 @@
       <tr>
         <td>Interval (ms)</td>
         <td class="centered-text">100</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="message-comment">Message Comments</td>
+      </tr>
+      <tr>
+        <td>Not for new development.</td>
       </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Freightliner, JPN Taxi, MKZ, Polaris Ranger</p>
@@ -17413,7 +17777,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>WHEEL_SPD_FRONT_LEFT</td>
+        <td>WHEEL_SPD_FRONT_LEFT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">16</td>
@@ -17424,7 +17790,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>WHEEL_SPD_FRONT_RIGHT</td>
+        <td>WHEEL_SPD_FRONT_RIGHT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">23</td>
         <td class="centered-text">16</td>
@@ -17435,7 +17803,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>WHEEL_SPD_REAR_LEFT</td>
+        <td>WHEEL_SPD_REAR_LEFT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">39</td>
         <td class="centered-text">16</td>
@@ -17446,7 +17816,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
       <tr>
-        <td>WHEEL_SPD_REAR_RIGHT</td>
+        <td>WHEEL_SPD_REAR_RIGHT
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">55</td>
         <td class="centered-text">16</td>
@@ -17457,6 +17829,9 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>Wheel speed is positive in the forward direction.
+    </p>
     <h1>WIPER_AUX_RPT</h1>
     <table class="message-table">
       <tr>
@@ -18018,6 +18393,20 @@
         <td>Interval (ms)</td>
         <td class="centered-text">33</td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="message-comment">Message Comments</td>
+      </tr>
+      <tr>
+        <td>Not for new development.</td>
+      </tr>
     </table>
     <p class="supported-vehicles">Supported Vehicles: Reserved for Future Use</p>
     <table class="signals-table">
@@ -18033,7 +18422,9 @@
         <td class="centered-text bold">Unit</td>
       </tr>
       <tr>
-        <td>YAW_RATE</td>
+        <td>YAW_RATE
+          <sup>a</sup>
+        </td>
         <td class="centered-text">Signed</td>
         <td class="centered-text">7</td>
         <td class="centered-text">16</td>
@@ -18044,5 +18435,8 @@
         <td class="centered-text">rad/s</td>
       </tr>
     </table>
+    <p class="notes-para">
+      <sup>a</sup>Yaw is positive according to right hand rule with the axis pointing up.
+    </p>
   </body>
 </html>
