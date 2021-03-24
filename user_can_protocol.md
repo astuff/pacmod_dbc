@@ -197,6 +197,7 @@ Enumeration signal type names that require additional specificity shall be suffi
 # Abbreviations
 
 Abbreviations are only required when the name is over 32 characters.
+
 - ACC: Adaptive Cruise Control
 - ACCEL: Accelerator or Acceleration
 - ACPTD: Accepted
