@@ -11,16 +11,25 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 
 ## Definitions
 
-- DBC: The as_pacmod.dbc file.
 - CAN ID: A CAN ID is the value in the CAN arbitration field that identifies the data in the CAN data field.
 - CAN Message: A CAN message is a CAN frame with a specific value in its CAN arbitration field.
 - Component: An individual electronic part of the PACMod System that communicates on the User CAN.
+- DBC: The as_pacmod.dbc file.
 - PACMod System: The PACMod System is the PACMod 3.0 System.
 - System: A vehicle system that is under by-wire control.
 - User CAN: The CAN bus that interfaces to the PACMod System.
 - User PC: Any device the customer uses to communicate with the PACMod System.
 - Vehicle: A vehicle with under the control of the PACMod System.
 - Vehicle Platform: A particular manufacturer make and model compatible with the PACMod System.
+
+## User CAN
+User CAN is the CAN bus interface to the PACMod System. It refers to both the User CAN bus and to the User CAN protocol that describes the messages on the CAN bus.
+
+## Restrictions
+User CAN has the following restrictions:
+1. The components on the bus are limited to the PACMod components and the customer components that need to interface to the PACMod System.
+2. Messaging is limited to the defined CAN messages of the User CAN protocol.
+3. Messaging beyond the interface to the PACMod system is prohibited.
 
 ## Types of CAN Messages
 Each stock vehicle system under by-wire control has an associated by-wire system command message and a by-wire system report message.  A command message is a CAN message from the User PC to command the PACMod System commanding the by-wire system to perform some action.  A command message is identified by a "CMD" in its name.  A report message from the PACMod System provides feedback to the User PC.  A report message is indicated by a "RPT" in its name.
@@ -165,6 +174,10 @@ Any signals that refer to the local kinematics of a vehicle shall use the follow
 
 These rules maintain consistency and readability of as_pacmod.dbc file.
 
+## General name rules
+
+All names shall be 32 characters or less in length.
+
 ## Signal Name Rules
 
 Bool signal type names shall be suffixed with a direct reference to their affirmative value.
@@ -180,3 +193,60 @@ Enumeration signal type names that require additional specificity shall be suffi
 1. All signal value names shall use capital letters.
 1. All signal value names shall use the underscore character.
 1. All signal value names shall use the "/" character to separate alternate meanings.
+
+# Abbreviations
+
+Abbreviations are only required when the name is over 32 characters.
+- ACC: Adaptive Cruise Control
+- ACCEL: Accelerator or Acceleration
+- ACPTD: Accepted
+- AUTO: Automatic
+- AUTOMS: Autonomous
+- AUTOMSMAN: Autonomous Manual
+- AUX: Auxiliary Information
+- AVAIL: Available
+- BRK: Brake
+- CALIB: Calibration
+- CMD: Command
+- CNCL: Cancel
+- CTR: Center
+- CONFIG: CONFIG.TXT
+- CTRL: Control
+- DEC: Decrease
+- DECEL: Deceleration system
+- DIR: Direction
+- DRVR: Driver
+- EBI: Endurance Brake Integration
+- EXT: External
+- ESTOP: Emergency Stop
+- FUNC: Function
+- INC: Increase
+- INT: Internal
+- INTGN: Integration
+- LAT: Lattitude
+- LON: Longitude
+- MAN: manual
+- MAX: Maximum
+- MFG: Manufacturing
+- OPCTRL: Operator Control
+- PASS: Passenger
+- PREV: Previous
+- PRI: Primary
+- PRK: Parking
+- RES: Resolution
+- RPM: Revolutions per minute
+- RPT: Report
+- RX: Received
+- SEC: Secondary
+- SPD: Speed
+- STEER: Steering System
+- STR: Steering
+- SYS: System
+- TEMP: Temperature
+- TRC: Traction Control
+- USR: User
+- VEH: Vehicle
+- VEL: Velocity
+- VOL: Volume
+- XBR: External Braking Request
+- XMSN: Transmission

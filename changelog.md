@@ -1,3 +1,28 @@
+# 11.3.0
+1. (Add) Add VEHICLE_FAULT_RPT message to communicate diagnostics from the stock vehicle. 
+1. (Fix) Add abbreviation table to the user_can_protocolto reduce with length of names and maintain consistency and clarity.
+1. (Fix) Rename DECCEL to DECEL, MOD to PACMOD, MINI to PACMINI, AUTO(NOMOUS) to AUTOMS, MANUAL to MAN for consistency.
+1. (Fix) Shorten names over 32 characters, and associated names, to comply with Vector DBC limitation:
+    1. ACCELERATION_CONTROL_WITH_MAXIMUM_MODE
+    1. ACCELERATION_CONTROL_WITH_ADDITION_MODE
+    1. NO_ENDURANCE_BRAKE_INTEGRATION_ALLOWED
+    1. ENDURANCE_BRAKE_INTEGRATION_ALLOWED
+    1. ANY_EXTERNAL_BRAKE_DEMAND_WILL_BE_ACCEPTED
+    1. NO_EXTERNAL_BRAKE_DEMAND_WILL_BE_ACCEPTED
+    1. ADDITION_MODE_OF_XBR_ACCELERATION_CONTROL
+    1. MAXIMUM_MODE_OF_XBR_ACCELERATION_CONTROL
+    1. GLOBAL_INTERNAL_POWER_SUPPLY_FAULT
+    1. GLOBAL_PACMOD_SYSTEM_FAULT_ACTIVE
+    1. DRIVER_REAR_SEATBELT_BUCKLED
+    1. DRIVER_REAR_SEATBELT_BUCKLED_AVAIL
+    1. CENTER_REAR_SEATBELT_BUCKLED
+    1. CENTER_REAR_SEATBELT_BUCKLED_AVAIL
+    1. PARKING_BRAKE_INTERLOCK_ACTIVE
+    1. PARKING_BRAKE_INTERLOCK_ACTIVE_AVAIL
+1. (Fix) Rename HEADLIGHTS_ON_AUTO MODE to HEADLIGHTS_ON_AUTO_MODE for consistency.
+1. (Fix) Add User CAN, Restrictions, and Abbreviations sections to user_can_protocol to prevent unintended CAN traffic.
+1. (Fix) Sort definitions list in user_can_protocol for consistency.
+
 # 11.2.0
 1. (Add) Add COMPONENT_READY signal to all COMPONENT_RPT_NN messages.
 1. (Add) Add SYSTEM_READY signal to GLOBAL_RPT_2 message.
