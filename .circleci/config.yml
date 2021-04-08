@@ -9,6 +9,7 @@ jobs:
           name: Set Up Container
           command: |
             pip install --user cantools xmlschema
+            pip install --user matplotlib
       - run:
           name: Validate DBC
           command: |
