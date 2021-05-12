@@ -1,3 +1,9 @@
+# 11.4.0
+1. (Add) Add EXHAUST_BRAKE System. This includes the Exhaust Brake Command and Exhaust Brake Report.
+1. (Add) Add comments to Engine Brake Command and Report values explaining the levels of braking.
+1. (Add) Changed Engine Brake Command and Report values from LOW MEDIUM HIGH to LEVEL_1 - LEVEL_5 and AUTO.
+1. (Add) Add ERROR value to PARKING_BRAKE_STATUS signal in the PARKING_BRAKE_AUX_RPT.
+
 # 11.3.0
 1. (Add) Add VEHICLE_FAULT_RPT message to communicate diagnostics from the stock vehicle. 
 1. (Fix) Add abbreviation table to the user_can_protocolto reduce with length of names and maintain consistency and clarity.
