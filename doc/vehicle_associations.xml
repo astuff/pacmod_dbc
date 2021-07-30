@@ -225,7 +225,7 @@
     <can_id>1053</can_id>
     <can_id>1057</can_id>
   </vehicle>
-  <vehicle name="Dev Vehicle 1" id="4">
+  <vehicle name="Development Vehicle 01" id="4">
     <can_id>17</can_id>
     <can_id>32</can_id>
     <can_id>33</can_id>
@@ -357,7 +357,7 @@
     <can_id>1053</can_id>
     <can_id>1536</can_id>
   </vehicle>
-  <vehicle name="Dev Vehicle 2" id="8">
+  <vehicle name="Development Vehicle 02" id="8">
     <can_id>17</can_id>
     <can_id>32</can_id>
     <can_id>33</can_id>
@@ -396,5 +396,6 @@
     <can_id>1052</can_id>
     <can_id>1053</can_id>
     <can_id>1057</can_id>
+    <can_id>1059</can_id>
   </vehicle>
 </vehicles>

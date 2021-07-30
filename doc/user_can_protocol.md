@@ -77,7 +77,8 @@ The list below constrains the assignment of CAN IDs to specific messages. Its pu
 1. 0x300-0x3FF (768-1023) - System-based auxiliary reports
 1. 0x400-0x4FF (1024-1279) - Misc. reports, non-time-critical commands
 1. 0x500-0x5FF (1280-1535) - Internal diagnostic messages (generally undocumented)
-1. 0x600-0x7FF (1536-2047) - Unused
+1. 0x600-0x6FF (1536-1791) - Internal development
+1. 0x700-0x7FF (1792-2047) - Unused
 
 ## Rules for Transmitting CAN Messages
 
@@ -85,7 +86,7 @@ All system messages transmit at 30Hz.  Other messages transmit at 30Hz or less. 
 
 The figure below is an example of the minimum separation between the transmission of the BRAKE_CMD, STEERING_CMD, and the ACCEL_CMD messages by the User PC.  The User PC transmits the complete set of messages, each separated by 500us.  The user then transmits the same set of messages again on 30Hz cycle (33.3ms) later.  Each message is again separated by 500us.
 
-![alt_text](/min_xsmn_separation.jpg "min_xsmn_separation.jpg")
+![alt_text](min_xsmn_separation.jpg "min_xsmn_separation.jpg")
 
 ## CAN Message Data
 
@@ -161,6 +162,11 @@ The SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be READY all the follo
 
 Otherwise the SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be NOT_READY.
 
+## User Notification Command Priorities
+The buzzer and LED controls have a priority list as follows.
+BUZZER_MUTE (highest), BUZZER_ON, and internal PACMod (lowest) are the buzzer control priorities.
+LIGHT_COMMAND::OFF (highest), LED_BRIGHTNESS, INTERIOR_LIGHTS_RPT::AMBIENT_LIGHT_SENSOR, INTERIOR_LIGHTS_RPT::DIM_LEVEL, MAX_BRIGHTNESS (lowest) are the light control priorities, as available.
+
 ## Default Bit Values
 
 All undefined bits shall be set to 0.
@@ -168,7 +174,7 @@ All undefined bits shall be set to 0.
 ## Fixed-Body Reference Frame
 Any signals that refer to the local kinematics of a vehicle shall use the following local vehicle fixed-body reference frame.
 
-![alt_text](/reference_frame.png "reference_frame.png")
+![alt_text](reference_frame.png "reference_frame.png")
 
 # Vector DBC Rules
 

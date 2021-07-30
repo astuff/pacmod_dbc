@@ -1,3 +1,13 @@
+# 11.5.0
+1. (Add) Add NOTIFICATION_RPT message.
+1. (Add) Add BUZZER_ON signal to USER_NOTIFICATION_CMD
+1. (Add) Add LED_BRIGHTNESS signal to USER_NOTIFICATION_CMD
+1. (Add) Add BUZZER_MUTE_INDICATOR signal to USER_NOTIFICATION_CMD
+1. (Fix) Change maximum value from 1 to 10 of LIGHT_COMMAND signal in USER_NOTIFICATION_CMD message. 
+1. (Fix) Move documentation related files to "doc" subdirectory.
+1. (Fix) Changes to the vehicle associations process.
+1. (Fix) Add 0x600-0x6FF reservation to user_can_protocol.md.
+
 # 11.4.0
 1. (Add) Add EXHAUST_BRAKE System. This includes the Exhaust Brake Command and Exhaust Brake Report.
 1. (Add) Add comments to Engine Brake Command and Report values explaining the levels of braking.
