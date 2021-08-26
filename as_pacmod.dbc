@@ -78,6 +78,20 @@ BO_ 512 ACCEL_RPT: 8 PACMOD
  SG_ COMMANDED_VALUE : 31|16@0+ (0.001,0) [0|1] "%"  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 47|16@0+ (0.001,0) [0|1] "%"  CUSTOMER_ECU
 
+BO_ 1060 AIR_PRESSURE_RPT: 7  PACMOD
+ SG_ PNEUMATIC_SUPPLY_PRESSURE : 7|8 @0+ (8,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ BRAKE_CIRCUIT_1_PRESSURE : 15|8 @0+ (8,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ BRAKE_CIRCUIT_2_PRESSURE : 23|8 @0+ (8,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ PARK_TRAILER_AIR_PRESSURE : 31|8 @0+ (8,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ POWERTRAIN_AIR_PRESSURE : 39|8 @0+ (8,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ AIR_COMPRESSOR_STATUS : 41|2 @0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ PNEUMATIC_SUPPLY_PRESSURE_AVAIL : 48|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_CIRCUIT_1_PRESSURE_AVAIL : 49|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ BRAKE_CIRCUIT_2_PRESSURE_AVAIL : 50|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PARK_TRAILER_AIR_PRESSURE_AVAIL : 51|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ POWERTRAIN_AIR_PRESSURE_AVAIL : 52|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ AIR_COMPRESSOR_STATUS_AVAIL : 53|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 1050 ANG_VEL_RPT: 7 PACMOD
  SG_ PITCH_NEW_DATA_RX : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ROLL_NEW_DATA_RX : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -533,6 +547,14 @@ BO_ 324 ENGINE_BRAKE_CMD: 2 CUSTOMER_ECU
  SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ ENGINE_BRAKE_CMD : 15|8@0+ (1,0) [0|3] ""  PACMOD
 
+BO_ 836 ENGINE_BRAKE_AUX_RPT: 4  PACMOD
+ SG_ ENGINE_BRAKE_STATUS : 1|2 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ACTUAL_ENGINE_BRK_TORQUE : 15|8 @0- (1,-125) [-125|125] "%"  CUSTOMER_ECU
+ SG_ INTENDED_ENGINE_BRK_TORQUE : 23|8 @0- (1,-125) [-125|125] "%"  CUSTOMER_ECU
+ SG_ ENGINE_BRAKE_STATUS_AVAIL : 24|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ACTUAL_ENGINE_BRK_TORQUE_AVAIL : 25|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ INTENDED_ENGINE_BRK_TORQUE_AVAIL : 26|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 580 ENGINE_BRAKE_RPT: 4 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -555,6 +577,10 @@ BO_ 1040 ENGINE_RPT: 7 PACMOD
  SG_ ENGINE_COOLANT_TEMP_AVAIL : 42|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ FUEL_LEVEL_AVAIL : 43|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ FUEL_LEVEL : 55|8@0+ (0.005,0) [0|1] "%" CUSTOMER_ECU
+
+BO_ 1061 ENGINE_RPT_2: 3  PACMOD
+ SG_ FUEL_RATE : 7|16 @0+ (0.05,0) [0|3212.75] "L/h"  CUSTOMER_ECU
+ SG_ FUEL_RATE_AVAIL : 16|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 1052 ESTOP_RPT: 1 PACMOD
  SG_ ESTOP : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -886,7 +912,9 @@ BO_ 808 SHIFT_AUX_RPT: 3 PACMOD
  SG_ SPEED_INTERLOCK_ACTIVE_AVAIL : 11|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ WRITE_TO_CONFIG_IS_VALID : 12|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ GEAR_NUMBER_AVAIL : 13|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SHIFT_MODE_AVIAL : 14|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ GEAR_NUMBER : 21|6@0- (1,0) [-32|31] ""  CUSTOMER_ECU
+ SG_ SHIFT_MODE : 23|2@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 296 SHIFT_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -1335,6 +1363,14 @@ CM_ SG_ 512 MANUAL_INPUT "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 512 COMMANDED_VALUE "Percent of full-scale value of signal from 0 to 1.";
 CM_ SG_ 512 OUTPUT_VALUE "Percent of full-scale value of signal from 0 to 1.";
 
+// AIR_PRESSURE_RPT COMMENTS
+CM_ SG_ 1060 PNEUMATIC_SUPPLY_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1060 BRAKE_CIRCUIT_1_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1060 BRAKE_CIRCUIT_2_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1060 PARK_TRAILER_AIR_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1060 POWERTRAIN_AIR_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1060 AIR_COMPRESSOR_STATUS_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+
 // ANG_VEL_RPT COMMENTS
 CM_ SG_ 1050 PITCH_VEL "Pitch is positive according to right hand rule with the axis pointing to the left as the vehicle goes forward.";
 CM_ SG_ 1050 ROLL_VEL "Roll is positive according to right hand rule with the axis pointing forward.";
@@ -1435,6 +1471,13 @@ CM_ SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL "PACMod sets this value as a function
 CM_ SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 DRIVE_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
+// ENGINE_BRAKE_AUX_RPT COMMENTS
+CM_ SG_ 836 ACTUAL_ENGINE_BRK_TORQUE "Less than 0 indicates the engine brake is actively braking the vehicle.";
+CM_ SG_ 836 INTENDED_ENGINE_BRK_TORQUE "Less than 0 indicates the engine brake is actively braking the vehicle.";
+CM_ SG_ 836 ENGINE_BRAKE_STATUS_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 836 ACTUAL_ENGINE_BRK_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 836 INTENDED_ENGINE_BRK_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+
 // ENGINE_BRAKE_CMD COMMENTS
 CM_ SG_ 324 ENGINE_BRAKE_CMD "Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum. Braking aggressiveness automatic with AUTO.";
 
@@ -1449,6 +1492,9 @@ CM_ SG_ 1040 ENGINE_TORQUE_AVAIL "PACMod sets this value as a function of which 
 CM_ SG_ 1040 ENGINE_COOLANT_TEMP_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1040 FUEL_LEVEL_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1040 FUEL_LEVEL "Percent of nominal full-scale value of signal from 0 to 1.";
+
+// ENGINE_RPT_2 COMMENTS
+CM_ SG_ 1061 FUEL_RATE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // GLOBAL_CMD COMMENTS
 CM_ SG_ 128 SANITY_CHECK_REQUIRED "When this value is REQUIRED, the COUNTER and COMPLEMENT values must be set to enable the PACMod System.";
@@ -1513,6 +1559,7 @@ CM_ SG_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function o
 CM_ SG_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 STAY_IN_NEUTRAL_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 BETWEEN_GEARS_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 808 SHIFT_MODE_AVIAL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 808 GEAR_NUMBER "Gear number is positive for forward gears.";
 
 // SHIFT_CMD COMMENTS
@@ -1681,6 +1728,21 @@ BA_DEF_DEF_  "Component_Address" 0;
 //  Message and Signal Attributes  //
 //                                 //
 /////////////////////////////////////
+
+// AIR_PRESSURE_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1060 1000;
+BA_ "GenSigCycleTime" SG_ 1060 PNEUMATIC_SUPPLY_PRESSURE 1000;
+BA_ "GenSigCycleTime" SG_ 1060 BRAKE_CIRCUIT_1_PRESSURE 1000;
+BA_ "GenSigCycleTime" SG_ 1060 BRAKE_CIRCUIT_2_PRESSURE 1000;
+BA_ "GenSigCycleTime" SG_ 1060 PARK_TRAILER_AIR_PRESSURE 1000;
+BA_ "GenSigCycleTime" SG_ 1060 POWERTRAIN_AIR_PRESSURE 1000;
+BA_ "GenSigCycleTime" SG_ 1060 AIR_COMPRESSOR_STATUS 1000;
+BA_ "GenSigCycleTime" SG_ 1060 PNEUMATIC_SUPPLY_PRESSURE_AVAIL 1000;
+BA_ "GenSigCycleTime" SG_ 1060 BRAKE_CIRCUIT_1_PRESSURE_AVAIL 1000;
+BA_ "GenSigCycleTime" SG_ 1060 BRAKE_CIRCUIT_2_PRESSURE_AVAIL 1000;
+BA_ "GenSigCycleTime" SG_ 1060 PARK_TRAILER_AIR_PRESSURE_AVAIL 1000;
+BA_ "GenSigCycleTime" SG_ 1060 POWERTRAIN_AIR_PRESSURE_AVAIL 1000;
+BA_ "GenSigCycleTime" SG_ 1060 AIR_COMPRESSOR_STATUS_AVAIL 1000;
 
 // CABIN_CLIMATE_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 340 1000;
@@ -2470,6 +2532,15 @@ VAL_ 512 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 512 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 512 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 
+// AIR_PRESSURE_RPT VALUES
+VAL_ 1060 AIR_COMPRESSOR_STATUS 0 "NOT_ACTIVE" 1 "ACTIVE" 2 "ERROR";
+VAL_ 1060 PNEUMATIC_SUPPLY_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1060 BRAKE_CIRCUIT_1_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1060 BRAKE_CIRCUIT_2_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1060 PARK_TRAILER_AIR_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1060 POWERTRAIN_AIR_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1060 AIR_COMPRESSOR_STATUS_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+
 // ANG_VEL_RPT VALUES
 VAL_ 1050 PITCH_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1050 ROLL_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
@@ -2864,6 +2935,12 @@ VAL_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 DRIVE_MODE 0 "NORMAL" 1 "ECO" 2 "SPORT" ;
 VAL_ 1055 DRIVE_MODE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 
+// ENGINE_BRAKE_AUX_RPT VALUES
+VAL_ 836 ENGINE_BRAKE_STATUS 0 "BRAKING_NOT_ACTIVE" 1 "BRAKING_ACTIVE";
+VAL_ 836 ENGINE_BRAKE_STATUS_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 836 ACTUAL_ENGINE_BRK_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 836 INTENDED_ENGINE_BRK_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+
 // ENGINE_BRAKE_CMD VALUES
 VAL_ 324 ENABLE 0 "DISABLE" 1 "ENABLE" ;
 VAL_ 324 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
@@ -2888,6 +2965,9 @@ VAL_ 1040 ENGINE_SPEED_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1040 ENGINE_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1040 ENGINE_COOLANT_TEMP_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1040 FUEL_LEVEL_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+
+// ENGINE_RPT_2 VALUES
+VAL_ 1061 FUEL_RATE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 
 // ESTOP_RPT VALUES
 VAL_ 1052 ESTOP 0 "RELEASED" 1 "PRESSED" ;
@@ -3203,7 +3283,9 @@ VAL_ 808 STAY_IN_NEUTRAL_MODE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 BRAKE_INTERLOCK_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 SPEED_INTERLOCK_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 WRITE_TO_CONFIG_IS_VALID 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 808 SHIFT_MODE_AVIAL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 808 GEAR_NUMBER_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 808 SHIFT_MODE 0 "STANDARD" 1 "SPORT" ;
 
 // SHIFT_CMD VALUES
 VAL_ 296 ENABLE 0 "DISABLE" 1 "ENABLE" ;

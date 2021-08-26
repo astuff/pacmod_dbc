@@ -1,3 +1,9 @@
+# 11.6.0
+1. (Add) Add AIR_PRESSURE_RPT, ENGINE_BRAKE_AUX_RPT, and ENGINE_RPT_2 messages.
+1. (Add) Add SHIFT_MODE and SHIFT_MODE_AVIAL signals to SHIFT_AUX_RPT message.
+1. (Fix) Update HTML Style and add Dark Mode.
+1. (Add) Add Visual improvements to HTML doc
+
 # 11.5.0
 1. (Add) Add NOTIFICATION_RPT message.
 1. (Add) Add BUZZER_ON signal to USER_NOTIFICATION_CMD
