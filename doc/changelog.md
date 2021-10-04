@@ -1,8 +1,15 @@
+# 12.0.0
+1. (Change) Restructure ENGINE_BRAKE_CMD / RPT to decouple AUTO from the individual LEVELS.
+1. (Add) Add WHEEL_SPEED_RPT_2 message and modify WHEEL_SPEED_RPT message to match the new report naming.
+1. (Fix) Typo - SHIFT_MODE_AVIAL to SHIFT_MODE_AVAIL
+1. (Fix) Fixed navigation bar highlighting in html doc.
+
 # 11.6.0
 1. (Add) Add AIR_PRESSURE_RPT, ENGINE_BRAKE_AUX_RPT, and ENGINE_RPT_2 messages.
 1. (Add) Add SHIFT_MODE and SHIFT_MODE_AVIAL signals to SHIFT_AUX_RPT message.
 1. (Fix) Update HTML Style and add Dark Mode.
 1. (Add) Add Visual improvements to HTML doc
+1. (Add) Automatically append release tag to end of dbc file name for tagged releases.
 
 # 11.5.0
 1. (Add) Add NOTIFICATION_RPT message.

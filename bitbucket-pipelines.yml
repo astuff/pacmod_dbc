@@ -10,3 +10,10 @@ pipelines:
           - pip3 install matplotlib
           - cantools dump as_pacmod*.dbc
           - python3 tests/xml_validation.py
+  tags:
+    '*':
+      - step:
+          name: DBC Release
+          script:
+          - mv as_pacmod.dbc as_pacmod_$BITBUCKET_TAG.dbc
+          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"as_pacmod_$BITBUCKET_TAG.dbc"

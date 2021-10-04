@@ -12,7 +12,7 @@
         <img src="HXGNASLogo.png" style="{background-color:white;}" width="350">
       </div>
       <div class="dbc-version-pane" id="dbc-version-pane">
-        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 11.6.0</p>
+        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 12.0.0</p>
         <p class="secondary-text dark-mode-word" id="dark-mode-word">Dark Mode</p>
         <p class="secondary-text light-mode-word" id="light-mode-word">Light Mode</p>
         <label class="dark-mode-switch">
@@ -128,6 +128,7 @@
         <a class="quick-link secondary-text" href="#WATCHDOG_RPT">WATCHDOG_RPT</a>
         <a class="quick-link secondary-text" href="#WATCHDOG_RPT_2">WATCHDOG_RPT_2</a>
         <a class="quick-link secondary-text" href="#WHEEL_SPEED_RPT">WHEEL_SPEED_RPT</a>
+        <a class="quick-link secondary-text" href="#WHEEL_SPEED_RPT_2">WHEEL_SPEED_RPT_2</a>
         <a class="quick-link secondary-text" href="#WIPER_AUX_RPT">WIPER_AUX_RPT</a>
         <a class="quick-link secondary-text" href="#WIPER_CMD">WIPER_CMD</a>
         <a class="quick-link secondary-text" href="#WIPER_RPT">WIPER_RPT</a>
@@ -2222,7 +2223,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -2309,7 +2310,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -2405,7 +2406,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, JPN Taxi, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -5059,7 +5060,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -8480,7 +8481,7 @@
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">DLC</td>
-            <td class="left-justified-text secondary-text">2</td>
+            <td class="left-justified-text secondary-text">3</td>
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">Sender</td>
@@ -8566,7 +8567,21 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTO_CMD
+                <sup>4</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">17</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
           </table>
@@ -8579,10 +8594,16 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5, 255=AUTO<br>
+            <sup>3</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum. Braking aggressiveness automatic with AUTO.
+            <sup>4</sup> 0=AUTO_OFF, 1=AUTO_ON<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Braking aggressivness automatic while AUTO_ON.
           </p>
         </div>
       </section><br><br>
@@ -8603,7 +8624,7 @@
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">DLC</td>
-            <td class="left-justified-text secondary-text">4</td>
+            <td class="left-justified-text secondary-text">5</td>
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">Sender</td>
@@ -8754,7 +8775,7 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">5</td>
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
@@ -8768,7 +8789,7 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">5</td>
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
@@ -8782,7 +8803,49 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>MAN_AUTO
+                <sup>5</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">33</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>CMD_AUTO
+                <sup>5</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">35</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OUT_AUTO
+                <sup>5</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">37</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
           </table>
@@ -8798,10 +8861,16 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5, 255=AUTO<br>
+            <sup>4</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum. Braking aggressiveness automatic with AUTO.
+            <sup>5</sup> 0=AUTO_OFF, 1=AUTO_ON<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Braking aggressiveness automatic while AUTO_ON.
           </p>
         </div>
       </section><br><br>
@@ -10391,7 +10460,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Ford Transit, Development Vehicle 01, MKZ</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Ford Transit, Development Vehicle 01, MKZ, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -13318,7 +13387,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Reserved for Future Use</p>
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -14910,7 +14979,7 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>SHIFT_MODE_AVIAL
+              <td>SHIFT_MODE_AVAIL
                 <sup>6</sup>
                 <sup>b</sup>
               </td>
@@ -15682,7 +15751,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Lexus RX 450h, Ford Transit, Development Vehicle 01, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Lexus RX 450h, Ford Transit, Development Vehicle 01, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -17004,7 +17073,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -17091,7 +17160,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -17187,7 +17256,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Freightliner, Polaris Ranger, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -20736,7 +20805,7 @@
               <td class="centered-text bold secondary-text">Unit</td>
             </tr>
             <tr>
-              <td>WHEEL_SPD_FRONT_LEFT
+              <td>WHEEL_SPD_AXLE_1_LEFT
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Signed</td>
@@ -20749,7 +20818,7 @@
               <td class="centered-text secondary-text">rad/s</td>
             </tr>
             <tr>
-              <td>WHEEL_SPD_FRONT_RIGHT
+              <td>WHEEL_SPD_AXLE_1_RIGHT
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Signed</td>
@@ -20762,7 +20831,7 @@
               <td class="centered-text secondary-text">rad/s</td>
             </tr>
             <tr>
-              <td>WHEEL_SPD_REAR_LEFT
+              <td>WHEEL_SPD_AXLE_2_LEFT
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Signed</td>
@@ -20775,7 +20844,120 @@
               <td class="centered-text secondary-text">rad/s</td>
             </tr>
             <tr>
-              <td>WHEEL_SPD_REAR_RIGHT
+              <td>WHEEL_SPD_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.01</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327.68</td>
+              <td class="centered-text secondary-text">327.67</td>
+              <td class="centered-text secondary-text">rad/s</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Wheel speed is positive in the forward direction.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="WHEEL_SPEED_RPT_2">
+        <h1 class="bold primary-text">WHEEL_SPEED_RPT_2</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1062</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x426</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 02</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>WHEEL_SPD_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.01</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327.68</td>
+              <td class="centered-text secondary-text">327.67</td>
+              <td class="centered-text secondary-text">rad/s</td>
+            </tr>
+            <tr>
+              <td>WHEEL_SPD_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.01</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327.68</td>
+              <td class="centered-text secondary-text">327.67</td>
+              <td class="centered-text secondary-text">rad/s</td>
+            </tr>
+            <tr>
+              <td>WHEEL_SPD_AXLE_4_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.01</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327.68</td>
+              <td class="centered-text secondary-text">327.67</td>
+              <td class="centered-text secondary-text">rad/s</td>
+            </tr>
+            <tr>
+              <td>WHEEL_SPD_AXLE_4_RIGHT
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Signed</td>
@@ -20832,7 +21014,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -21070,7 +21252,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 01</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 01, Development Vehicle 02</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">

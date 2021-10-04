@@ -361,6 +361,7 @@
     <can_id>17</can_id>
     <can_id>32</can_id>
     <can_id>33</can_id>
+    <can_id>34</can_id>
     <can_id>128</can_id>
     <can_id>256</can_id>
     <can_id>260</can_id>
@@ -370,6 +371,7 @@
     <can_id>296</can_id>
     <can_id>300</can_id>
     <can_id>304</can_id>
+    <can_id>308</can_id>
     <can_id>324</can_id>
     <can_id>325</can_id>
     <can_id>512</can_id>
@@ -384,21 +386,32 @@
     <can_id>581</can_id>
     <can_id>768</can_id>
     <can_id>772</can_id>
+    <can_id>792</can_id>
     <can_id>804</can_id>
     <can_id>808</can_id>
     <can_id>812</can_id>
     <can_id>816</can_id>
+    <can_id>820</can_id>
     <can_id>836</can_id>
     <can_id>1024</can_id>
+    <can_id>1025</can_id>
+    <can_id>1026</can_id>
+    <can_id>1027</can_id>
+    <can_id>1028</can_id>
+    <can_id>1029</can_id>
+    <can_id>1030</can_id>
     <can_id>1032</can_id>
     <can_id>1033</can_id>
+    <can_id>1034</can_id>
     <can_id>1040</can_id>
     <can_id>1044</can_id>
+    <can_id>1048</can_id>
     <can_id>1052</can_id>
     <can_id>1053</can_id>
     <can_id>1057</can_id>
     <can_id>1059</can_id>
     <can_id>1060</can_id>
     <can_id>1061</can_id>
+    <can_id>1062</can_id>
   </vehicle>
 </vehicles>

@@ -36,12 +36,12 @@ window.addEventListener('DOMContentLoaded', () => {
             const id = entry.target.getAttribute('id');
             if (entry.intersectionRatio > 0) 
             {
-                var element = document.querySelector(`nav a[href="#${id}"]`);
+                var element = document.querySelector(`nav a[href*="#${id}"]`);
                 element.classList.add('scrollActive');
                 modifyStyle(element, true, slider);
             } else 
             {
-                var element = document.querySelector(`nav a[href="#${id}"]`);
+                var element = document.querySelector(`nav a[href*="#${id}"]`);
                 element.classList.remove('scrollActive');
                 modifyStyle(element, false, slider);
             }
