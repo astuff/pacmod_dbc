@@ -5,9 +5,8 @@ pipelines:
         image: ubuntu:bionic
         script:
           - apt-get update -q
-          - apt-get install -y --no-install-recommends python3-pip python3-setuptools
-          - pip3 install cantools xmlschema
-          - pip3 install matplotlib
+          - apt-get install -y --no-install-recommends python3-pip python3-setuptools python3-pil python3-wheel
+          - pip3 install pillow wheel cantools xmlschema matplotlib
           - cantools dump as_pacmod*.dbc
           - python3 tests/xml_validation.py
   tags:

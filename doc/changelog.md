@@ -1,3 +1,6 @@
+# 12.1.0
+1. (Add) Add POWER_TAKE_OFF and TIPPER_BODY_00 by-wire systems.
+
 # 12.0.0
 1. (Change) Restructure ENGINE_BRAKE_CMD / RPT to decouple AUTO from the individual LEVELS.
 1. (Add) Add WHEEL_SPEED_RPT_2 message and modify WHEEL_SPEED_RPT message to match the new report naming.
