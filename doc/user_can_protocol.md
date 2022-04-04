@@ -96,6 +96,45 @@ The byte order of all CAN messages is Motorola/Big-Endian.
 
 Each vehicle has a subset of available CAN messages.  The file vehicle_associations.xml specifies the availability of each message.
 
+## Enablement Rules
+
+A PACMod System can be in either an enabled or disabled state. When it is enabled, the PACMod System has control over the vehicle subsystem. When the PACMod System is disabled, the operator controls have control over the vehicle subsystem.
+
+## Methods of Enabling PACMod Systems
+
+There are two methods to enable PACMod Systems
+
+### Individual System Enable
+The User PC can enable and disable individual PACMod Systems.
+  - Enable - All of the following must be true to enable individual PACMod Systems.
+    - The respective system command message is not timed out.
+    - The ENABLE signal must be set to ENABLE after first being set to DISABLE.
+    - If required, the Global Gommand Sanity Check Rules must be satisfied.
+    - The GLOBAL_RPT_2::SYSTEM_READY signal is READY.
+  - Disable - If any of the following are true, a PACMod System will disable.
+    - The respective system command message times out.
+    - The ENABLE signal is set to DISABLE.
+    - If required, the Global Command Sanity Check Rules are not satisfied.
+    - The GLOBAL_RPT_2::DISABLE_ALL_SYSTEMS signal is TRUE.
+    - The GLOBAL_RPT_2::SYSTEM_READY signal is FALSE.
+
+*Note - The following rules DO apply while using the Individual System Enable Method*
+- Supervisory Enablement
+- Global Command Sanity Check
+- System Global Disable
+- System Ready
+
+### Global System Enable
+The User PC selects the subsystems to enable while the PACMod System is disabled. The User PC can then enable all selected systems at the same time. While enabled, the User PC can independently enable and disable additional individual subsystems. The User PC can also disable all enabled subsystems at the same time.
+  - Select - To select a subsystem to enable, the respective system command message must not be timed out and the ENABLE signal must be set to ENABLE.
+  - Enable - The SAFETY_FUNC_CMD::COMMAND signal triggers all systems with their ENABLE signal set to ENABLE to transition to the enabled state. Once the SAFETY_FUNC_CMD::COMMAND signal is set to enable subsystems, the user PC can independently enable or disable subsystems by setting their corresponding ENABLE signals accordingly.
+  - Disable - A subsystem shall only disable if commanded to do so by the safety system, either by changing the subsystems ENABLE command, or from the SAFETY_FUNC_CMD::COMMAND.
+
+*Note - The following rules do NOT apply while using the Global System Enable Method*
+- Supervisory Enablement
+- Global Command Sanity Check
+- System Global Disable
+
 ## Supervisory Enablement Rules
 
 Supervisory enablement rules apply to a vehicle platform when the SUPERVISORY_ENABLE_REQUIRED in the GLOBAL_RPT message is REQUIRED.  This message allows the ECU that trasmits the system command messages and the ECU with overriding enable/disable authority to be separate ECUs.
@@ -153,7 +192,7 @@ The allowed time period is 3 times the message period of this message. The same 
 1. The rules for the COUNTER and COMPLEMENT fields in this message not are met.
 
 ## System Ready Rules
-The SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be READY all the following are true:
+The SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be READY when all the following are true:
 
 1. Estop is released.
 1. No active faults.

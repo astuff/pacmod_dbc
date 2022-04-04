@@ -1,3 +1,25 @@
+# 12.2.0
+1. (Add) Add ENABLE_METHOD to GLOBAL_RPT_2
+1. (Add) Add CLEAR_OVERRIDES to GLOBAL_CMD
+1. (Add) Add enable methods to user_can_protocol.md
+1. (Add) Add TRAILER_AIR_SUPPLY_CMD / RPT
+1. (Add) Add TRAILER_BRAKE_CMD / RPT
+1. (Add) Add FIRE_SUPPRESSION_RPT
+1. (Add) Add Trailer Air Supply and Trailer Brake Systems to Component and Watchdog Reports.
+1. (Fix) Change ENGINE_RPT to ENGINE_AUX_RPT
+1. (Fix) Change ENGINE_RPT_2 to ENGINE_AUX_RPT_2
+1. (Add) Add DIESEL_EXHAUST_FLUID_LEVEL to ENGINE_AUX_RPT
+1. (Add) Add OIL_LEVEL to ENGINE_AUX_RPT_2
+1. (Add) Add OIL_PRESSURE to ENGINE_AUX_RPT_2
+1. (Add) Add ENGINE system, including ENGINE_CMD and ENGINE_RPT
+1. (Add) Add SHIFT_IN_PROGRESS to SHIFT_AUX_RPT
+1. (Add) Add DRIVELINE_ENGAGED to SHIFT_AUX_RPT
+1. (Add) Add ACTUAL_GEAR_RATIO to SHIFT_AUX_RPT
+1. (Add) Add comment to BETWEEN_GEARS IN SHIFT_AUX_RPT
+1. (Add) Add CARGO_DOOR_OPEN to DOOR_RPT
+1. (Fix) Fixed typo in the TIPPER_BODY_RPT Comments section
+1. (Fix) Fix missing values for POWER_TAKE_OFF and TIPPER_BODY_00 in the COMPONENT_RPTs
+
 # 12.1.0
 1. (Add) Add POWER_TAKE_OFF and TIPPER_BODY_00 by-wire systems.
 
