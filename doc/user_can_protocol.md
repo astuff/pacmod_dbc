@@ -263,7 +263,9 @@ Abbreviations are only required when the name is over 32 characters.
 - DIR: Direction
 - DRVR: Driver
 - EBI: Endurance Brake Integration
+- ENG: Engine
 - EXT: External
+- EXTCTRL: External Control
 - ESTOP: Emergency Stop
 - FUNC: Function
 - INC: Increase

@@ -103,6 +103,12 @@ BO_ 1050 ANG_VEL_RPT: 7 PACMOD
  SG_ ROLL_VEL : 31|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
  SG_ YAW_VEL : 47|16@0- (0.001,0) [-32.768|32.767] "rad/s"  CUSTOMER_ECU
 
+BO_ 1077 AUTOMS_MAN_SWITCH_RPT: 1 PACMOD
+ SG_ AUTOMS_MAN_OPCTRL : 1|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ AUTOMS_MAN_EXTCTRL : 3|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ AUTOMS_MAN_OPCTRL_AVAIL : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ AUTOMS_MAN_EXTCTRL_AVAIL : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+
 BO_ 772 BRAKE_AUX_RPT: 8 PACMOD
  SG_ BRAKE_PRESSURE : 39|16@0+ (0.0001,0) [0|2] "%"  CUSTOMER_ECU
  SG_ OPERATOR_INTERACTION : 48|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -302,6 +308,8 @@ BO_ 32 COMPONENT_RPT_00: 7 PACMOD
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ENGINE : 48|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TIPPER_BODY_01 : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02 : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 33 COMPONENT_RPT_01: 7 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -344,6 +352,8 @@ BO_ 33 COMPONENT_RPT_01: 7 PACMOD
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ENGINE : 48|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TIPPER_BODY_01 : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02 : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 34 COMPONENT_RPT_02: 7 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -386,6 +396,8 @@ BO_ 34 COMPONENT_RPT_02: 7 PACMOD
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ENGINE : 48|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TIPPER_BODY_01 : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02 : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 35 COMPONENT_RPT_03: 7 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -428,6 +440,8 @@ BO_ 35 COMPONENT_RPT_03: 7 PACMOD
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ENGINE : 48|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TIPPER_BODY_01 : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02 : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 36 COMPONENT_RPT_04: 7 PACMOD
  SG_ COMPONENT_TYPE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
@@ -470,6 +484,8 @@ BO_ 36 COMPONENT_RPT_04: 7 PACMOD
  SG_ WATCHDOG_SYSTEM_PRESENT_FAULT : 46|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ COMPONENT_READY : 47|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
  SG_ ENGINE : 48|1@0+ (1,0) [0|1] "" CUSTOMER_ECU
+ SG_ TIPPER_BODY_01 : 49|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02 : 50|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 264 CRUISE_CONTROL_BUTTONS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -562,11 +578,15 @@ BO_ 1055 DRIVE_TRAIN_FEATURE_RPT: 2 PACMOD
  SG_ ANTILOCK_BRAKE_ACTIVE : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRACTION_CONTROL_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ FOUR_WHEEL_DRIVE_ACTIVE : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ANTILOCK_BRAKE_DISABLED : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ ANTILOCK_BRAKE_ACTIVE_AVAIL : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRACTION_CONTROL_ACTIVE_AVAIL : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ FOUR_WHEEL_DRIVE_ACTIVE_AVAIL : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ANTILOCK_BRAKE_DISABLED_AVAIL : 7|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ DRIVE_MODE : 11|4@0+ (1,0) [0|2] ""  CUSTOMER_ECU
  SG_ DRIVE_MODE_AVAIL : 12|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TRACTION_CONTROL_DISABLED : 13|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TRACTION_CONTROL_DISABLED_AVAIL : 14|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 324 ENGINE_BRAKE_CMD: 3 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -637,6 +657,16 @@ BO_ 1061 ENGINE_AUX_RPT_2: 5  PACMOD
  SG_ OIL_PRESSURE_AVAIL : 18|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OIL_LEVEL : 31|8 @0+ (0.004,0) [0|1] "%"  CUSTOMER_ECU
  SG_ OIL_PRESSURE : 39|8 @0+ (4,0) [0|1000] "kPa"  CUSTOMER_ECU
+
+BO_ 1063 ENGINE_LOAD_FACTOR_RPT: 6 PACMOD
+ SG_ DRVR_DEMANDED_ENG_TORQUE : 7|8@0- (1,-125) [-125|125] "%"  CUSTOMER_ECU
+ SG_ ACTUAL_ENGINE_TORQUE : 15|8@0- (1,-125) [-125|125] "%"  CUSTOMER_ECU
+ SG_ ENG_LOAD_AT_CURRENT_SPEED : 23|8@0+ (1,0) [0|250] "%"  CUSTOMER_ECU
+ SG_ REFERENCE_ENGINE_TORQUE : 31|16@0+ (1,0) [0|64255] "Nm"  CUSTOMER_ECU
+ SG_ DRVR_DEMANDED_ENG_TORQUE_AVAIL : 40|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ACTUAL_ENGINE_TORQUE_AVAIL : 41|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ENG_LOAD_AT_CURRENT_SPEED_AVAIL : 42|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ REFERENCE_ENGINE_TORQUE_AVAIL : 43|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 1052 ESTOP_RPT: 1 PACMOD
  SG_ ESTOP : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -939,7 +969,7 @@ BO_ 192 SAFETY_FUNC_CMD: 1 CUSTOMER_ECU
  SG_ COMMAND : 3|4@0+ (1,0) [0|5] ""  PACMOD
 
 BO_ 1056 SAFETY_FUNC_CRITICAL_STOP_RPT: 3  PACMOD
- SG_ AUTOMSMAN_OPCTRL_FAULT : 0|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ AUTOMS_MAN_OPCTRL_FAULT : 0|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ REMOTE_STOP_FAULT : 1|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SAFETY_BRAKE_OPCTRL_OFF : 2|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ SAFETY_BRAKE_CMD_TIMEOUT : 3|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -965,7 +995,7 @@ BO_ 1056 SAFETY_FUNC_CRITICAL_STOP_RPT: 3  PACMOD
 BO_ 64 SAFETY_FUNC_RPT: 4 PACMOD
  SG_ COMMANDED_VALUE : 3|4@0+ (1,0) [0|5] ""  CUSTOMER_ECU
  SG_ STATE : 7|4@0+ (1,0) [0|8] ""  CUSTOMER_ECU
- SG_ AUTOMSMAN_OPCTRL : 9|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ AUTOMS_MAN_OPCTRL : 9|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
  SG_ CABIN_SAFETY_BRAKE_OPCTRL : 11|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
  SG_ REMOTE_STOP_STATUS : 13|2@0+ (1,0) [0|2] ""  CUSTOMER_ECU
  SG_ ENGINE_STATUS : 14|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -978,6 +1008,14 @@ BO_ 64 SAFETY_FUNC_RPT: 4 PACMOD
  SG_ MANUAL_READY_STATE_OBTAINABLE : 27|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ CRITICAL_STOP1_STATE_OBTAINABLE : 28|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ CRITICAL_STOP2_STATE_OBTAINABLE : 29|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ 
+BO_ 67 SAFETY_FUNC_RPT_2: 2 PACMOD
+ SG_ COMMANDED_STATE : 3|4@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ STATE : 7|4@0+ (1,0) [0|4] ""  CUSTOMER_ECU
+ SG_ MANUAL_STATE_OBTAINABLE : 8|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ AUTOMS_READY_STATE_OBTAINABLE : 9|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ AUTOMS_STATE_OBTAINABLE : 10|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ MANUAL_READY_STATE_OBTAINABLE : 11|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 808 SHIFT_AUX_RPT: 7 PACMOD
  SG_ BETWEEN_GEARS : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1149,6 +1187,18 @@ BO_ 344 TIPPER_BODY_CMD_00: 2 CUSTOMER_ECU
  SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ TIPPER_CONTROL_CMD : 15|8@0+ (1,0) [0|2] ""  PACMOD
+ 
+BO_ 364 TIPPER_BODY_CMD_01: 2 CUSTOMER_ECU
+ SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ TIPPER_CONTROL_CMD : 15|8@0+ (1,0) [0|2] ""  PACMOD
+
+BO_ 368 TIPPER_BODY_CMD_02: 2 CUSTOMER_ECU
+ SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ IGNORE_OVERRIDES : 1|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
+ SG_ TIPPER_CONTROL_CMD : 15|8@0+ (1,0) [0|2] ""  PACMOD
 
 BO_ 600 TIPPER_BODY_RPT_00: 4 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1163,11 +1213,93 @@ BO_ 600 TIPPER_BODY_RPT_00: 4 PACMOD
  SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
 
+BO_ 620 TIPPER_BODY_RPT_01: 4 PACMOD
+ SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ COMMAND_OUTPUT_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ INPUT_OUTPUT_FAULT : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OUTPUT_REPORTED_FAULT : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PACMOD_FAULT : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ VEHICLE_FAULT : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ COMMAND_TIMEOUT : 7|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ MANUAL_INPUT : 15|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+
+BO_ 624 TIPPER_BODY_RPT_02: 4 PACMOD
+ SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ COMMAND_OUTPUT_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ INPUT_OUTPUT_FAULT : 3|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ OUTPUT_REPORTED_FAULT : 4|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ PACMOD_FAULT : 5|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ VEHICLE_FAULT : 6|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ COMMAND_TIMEOUT : 7|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ MANUAL_INPUT : 15|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+ SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|2] ""  CUSTOMER_ECU
+
+BO_ 1072 TIRE_PRESSURE_EXTENDED_RPT: 8 PACMOD
+ SG_ TIRE_CHASSIS_INDEX_1 : 3|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_2 : 7|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_3 : 15|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_1 : 20|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_2 : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_1 : 31|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_3 : 28|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_2 : 36|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_3 : 39|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_1 : 47|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_2 : 55|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_3 : 63|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+
+BO_ 1073 TIRE_PRESSURE_EXTENDED_RPT_2: 8 PACMOD
+ SG_ TIRE_CHASSIS_INDEX_1 : 3|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_2 : 7|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_3 : 15|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_1 : 20|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_2 : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_3 : 28|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_1 : 31|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_2 : 36|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_3 : 39|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_1 : 47|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_2 : 55|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+ SG_ TIRE_PRESSURE_3 : 63|8@0+ (10,0) [0|250] "kPa"  CUSTOMER_ECU
+
 BO_ 1054 TIRE_PRESSURE_RPT: 4 PACMOD
  SG_ FRONT_LEFT_TIRE_PRESSURE : 7|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
  SG_ FRONT_RIGHT_TIRE_PRESSURE : 15|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
  SG_ REAR_LEFT_TIRE_PRESSURE : 23|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
  SG_ REAR_RIGHT_TIRE_PRESSURE : 31|8@0+ (4,0) [0|1020] "kPa"  CUSTOMER_ECU
+
+BO_ 1074 TIRE_TEMPERATURE_EXTENDED_RPT: 8 PACMOD
+ SG_ TIRE_CHASSIS_INDEX_1 : 3|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_2 : 7|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_3 : 15|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_1 : 20|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_2 : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_3 : 28|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_1 : 31|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_2 : 36|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_3 : 39|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_1 : 47|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_2 : 55|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_3 : 63|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
+
+BO_ 1075 TIRE_TEMPERATURE_EXTENDED_RPT_2: 8 PACMOD
+ SG_ TIRE_CHASSIS_INDEX_1 : 3|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_2 : 7|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_CHASSIS_INDEX_3 : 15|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_1 : 20|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_2 : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_AXLE_3 : 28|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_1 : 31|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_2 : 36|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_POSITION_3 : 39|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_1 : 47|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_2 : 55|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
+ SG_ TIRE_TEMPERATURE_3 : 63|8@0+ (1,-50) [0|200] "C"  CUSTOMER_ECU
 
 BO_ 356 TRAILER_AIR_SUPPLY_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -1232,12 +1364,14 @@ BO_ 560 TURN_RPT: 4 PACMOD
  SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|3] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|3] ""  CUSTOMER_ECU
 
-BO_ 1053 USER_NOTIFICATION_CMD: 2 CUSTOMER_ECU
+BO_ 1053 USER_NOTIFICATION_CMD: 3 CUSTOMER_ECU
  SG_ BUZZER_MUTE : 0|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ LIGHT_COMMAND : 4|4@0+ (1,0) [0|10] ""  PACMOD
  SG_ BUZZER_ON : 5|1@0+ (1,0) [0|1] "" PACMOD
  SG_ BUZZER_MUTE_INDICATOR : 7|2@0+ (1,0) [0|3] "" PACMOD
  SG_ LED_BRIGHTNESS : 11|4@0+ (1,0) [0|15] "" PACMOD
+ SG_ LIGHT_STATUS_COMMAND : 13|2@0+ (1,0) [0|3] ""  PACMOD
+ SG_ LIGHT_COMMAND_ALTERNATE : 19|4@0+ (1,0) [0|10] ""  PACMOD
 
 BO_ 1043 VEH_DYNAMICS_RPT: 1 PACMOD
  SG_ VEH_G_FORCES : 7|8@0+ (0.001,0) [-32.768|32.767] "m/s^2"  CUSTOMER_ECU
@@ -1359,7 +1493,7 @@ BO_ 1536 WATCHDOG_RPT: 8 PACMOD
  SG_ PACMINI_SYSTEM_PRESENT_FAULT : 62|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ GLOBAL_INT_POWER_SUPPLY_FAULT : 63|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
-BO_ 1057 WATCHDOG_RPT_2: 6  PACMOD
+BO_ 1057 WATCHDOG_RPT_2: 7  PACMOD
  SG_ ACCEL_RPT_TIMEOUT : 0|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_RPT_TIMEOUT : 1|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ BRAKE_DECEL_RPT_TIMEOUT : 2|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1408,6 +1542,9 @@ BO_ 1057 WATCHDOG_RPT_2: 6  PACMOD
  SG_ TIPPER_BODY_00_RPT_TIMEOUT : 45|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRAILER_AIR_SUPPLY_RPT_TIMEOUT : 46|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ TRAILER_BRAKE_RPT_TIMEOUT : 47|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ ENGINE_RPT_TIMEOUT : 48|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU 
+ SG_ TIPPER_BODY_01_RPT_TIMEOUT : 49|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ TIPPER_BODY_02_RPT_TIMEOUT : 50|1 @0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 1031 WHEEL_SPEED_RPT: 8 PACMOD
  SG_ WHEEL_SPD_AXLE_1_LEFT : 7|16@0- (0.01,0) [-327.68|327.67] "rad/s"  CUSTOMER_ECU
@@ -1619,10 +1756,12 @@ CM_ SG_ 520 COMMANDED_VALUE "NONE = no button pressed, CNCL = Cancel, FURTHER* o
 CM_ SG_ 520 OUTPUT_VALUE "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
 
 // DRIVE_TRAIN_FEATURE_RPT COMMENTS
+CM_ SG_ 1055 ANTILOCK_BRAKE_DISABLED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1055 DRIVE_MODE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1055 TRACTION_CONTROL_DISABLED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // ENGINE_BRAKE_AUX_RPT COMMENTS
 CM_ SG_ 836 ACTUAL_ENGINE_BRK_TORQUE "Less than 0 indicates the engine brake is actively braking the vehicle.";
@@ -1657,6 +1796,16 @@ CM_ SG_ 1061 FUEL_RATE_AVAIL "PACMod sets this value as a function of which vehi
 CM_ SG_ 1061 OIL_LEVEL_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1061 OIL_PRESSURE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 CM_ SG_ 1061 OIL_LEVEL "Percent of nominal full-scale value of signal from 0 to 1.";
+
+// ENGINE_LOAD_FACTOR_RPT COMMENTS
+CM_ SG_ 1063 DRVR_DEMANDED_ENG_TORQUE "The requested torque output of the engine by the driver.";
+CM_ SG_ 1063 ACTUAL_ENGINE_TORQUE "The calculated output torque of the engine.";
+CM_ SG_ 1063 ENG_LOAD_AT_CURRENT_SPEED "The ratio of actual engine torque to maximum torque available at the current engine speed, clipped to zero torque during engine braking.";
+CM_ SG_ 1063 REFERENCE_ENGINE_TORQUE "100% reference value for engine torque parameters in the ENGINE_LOAD_FACTOR_RPT.";
+CM_ SG_ 1063 DRVR_DEMANDED_ENG_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1063 ACTUAL_ENGINE_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1063 ENG_LOAD_AT_CURRENT_SPEED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
+CM_ SG_ 1063 REFERENCE_ENGINE_TORQUE_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
 
 // GLOBAL_CMD COMMENTS
 CM_ SG_ 128 SANITY_CHECK_REQUIRED "When this value is REQUIRED, the COUNTER and COMPLEMENT values must be set to enable the PACMod System.";
@@ -1693,7 +1842,7 @@ CM_ SG_ 1049 LONGITUDINAL_ACCEL "Longitudinal acceleration is positive in the fo
 CM_ SG_ 1049 VERTICAL_ACCEL "Vertical acceleration is positive in the upward direction." ;
 
 // SAFETY_FUNC_CRITICAL_STOP_RPT COMMENTS
-CM_ SG_ 1056 AUTOMSMAN_OPCTRL_FAULT "This value shall latch while the safety function is in the critical stop state.";
+CM_ SG_ 1056 AUTOMS_MAN_OPCTRL_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 REMOTE_STOP_FAULT "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 SAFETY_BRAKE_OPCTRL_OFF "This value shall latch while the safety function is in the critical stop state.";
 CM_ SG_ 1056 SAFETY_BRAKE_CMD_TIMEOUT "This value shall latch while the safety function is in the critical stop state.";
@@ -1814,10 +1963,82 @@ CM_ SG_ 129 COMPLEMENT "The COMPLEMENT shall be the complement of the COUNTER.  
 // TIPPER_BODY_CMD_00 COMMENTS
 CM_ SG_ 344 TIPPER_CONTROL_CMD "RAISE moves towards dump position, LOWER moves towards haul position.";
 
+// TIPPER_BODY_CMD_01 COMMENTS
+CM_ SG_ 364 TIPPER_CONTROL_CMD "RAISE moves towards dump position, LOWER moves towards haul position.";
+
+// TIPPER_BODY_CMD_02 COMMENTS
+CM_ SG_ 368 TIPPER_CONTROL_CMD "RAISE moves towards dump position, LOWER moves towards haul position.";
+
 // TIPPER_BODY_RPT_00 COMMENTS
 CM_ SG_ 600 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 600 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 600 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+
+// TIPPER_BODY_RPT_01 COMMENTS
+CM_ SG_ 620 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 620 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 620 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+
+// TIPPER_BODY_RPT_02 COMMENTS
+CM_ SG_ 624 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 624 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 624 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+
+// TIRE_PRESSURE_EXTENDED_RPT COMMENTS
+CM_ SG_ 1072 TIRE_CHASSIS_INDEX_1 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1072 TIRE_AXLE_1 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1072 TIRE_POSITION_1 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1072 TIRE_PRESSURE_1 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1072 TIRE_CHASSIS_INDEX_2 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1072 TIRE_AXLE_2 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1072 TIRE_POSITION_2 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1072 TIRE_PRESSURE_2 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1072 TIRE_CHASSIS_INDEX_3 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1072 TIRE_AXLE_3 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1072 TIRE_POSITION_3 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1072 TIRE_PRESSURE_3 "Values 0 to 250 represent valid measured data.";
+
+// TIRE_PRESSURE_EXTENDED_RPT_2 COMMENTS
+CM_ SG_ 1073 TIRE_CHASSIS_INDEX_1 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1073 TIRE_AXLE_1 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1073 TIRE_POSITION_1 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1073 TIRE_PRESSURE_1 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1073 TIRE_CHASSIS_INDEX_2 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1073 TIRE_AXLE_2 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1073 TIRE_POSITION_2 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1073 TIRE_PRESSURE_2 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1073 TIRE_CHASSIS_INDEX_3 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1073 TIRE_AXLE_3 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1073 TIRE_POSITION_3 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1073 TIRE_PRESSURE_3 "Values 0 to 250 represent valid measured data.";
+
+// TIRE_TEMPERATURE_EXTENDED_RPT COMMENTS
+CM_ SG_ 1074 TIRE_CHASSIS_INDEX_1 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1074 TIRE_AXLE_1 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1074 TIRE_POSITION_1 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1074 TIRE_TEMPERATURE_1 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1074 TIRE_CHASSIS_INDEX_2 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1074 TIRE_AXLE_2 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1074 TIRE_POSITION_2 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1074 TIRE_TEMPERATURE_2 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1074 TIRE_CHASSIS_INDEX_3 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1074 TIRE_AXLE_3 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1074 TIRE_POSITION_3 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1074 TIRE_TEMPERATURE_3 "Values 0 to 250 represent valid measured data.";
+
+// TIRE_TEMPERATURE_EXTENDED_RPT_2 COMMENTS
+CM_ SG_ 1075 TIRE_CHASSIS_INDEX_1 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1075 TIRE_AXLE_1 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1075 TIRE_POSITION_1 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1075 TIRE_TEMPERATURE_1 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1075 TIRE_CHASSIS_INDEX_2 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1075 TIRE_AXLE_2 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1075 TIRE_POSITION_2 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1075 TIRE_TEMPERATURE_2 "Values 0 to 250 represent valid measured data.";
+CM_ SG_ 1075 TIRE_CHASSIS_INDEX_3 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
+CM_ SG_ 1075 TIRE_AXLE_3 "Axle number starting from the front of the respective chassis number (a).";
+CM_ SG_ 1075 TIRE_POSITION_3 "Tire location starting from the left and moving sequentially to the right.";
+CM_ SG_ 1075 TIRE_TEMPERATURE_3 "Values 0 to 250 represent valid measured data.";
 
 // TURN_AUX_RPT COMMENTS
 CM_ SG_ 816 PASS_BLINKER_BULB_ON_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -1924,6 +2145,13 @@ BA_ "GenSigCycleTime" SG_ 1060 BRAKE_CIRCUIT_2_PRESSURE_AVAIL 1000;
 BA_ "GenSigCycleTime" SG_ 1060 PARK_TRAILER_AIR_PRESSURE_AVAIL 1000;
 BA_ "GenSigCycleTime" SG_ 1060 POWERTRAIN_AIR_PRESSURE_AVAIL 1000;
 BA_ "GenSigCycleTime" SG_ 1060 AIR_COMPRESSOR_STATUS_AVAIL 1000;
+
+// AUTOMS_MAN_SWITCH_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1077 500;
+BA_ "GenSigCycleTime" SG_ 1077 AUTOMS_MAN_OPCTRL 500;
+BA_ "GenSigCycleTime" SG_ 1077 AUTOMS_MAN_EXTCTRL 500;
+BA_ "GenSigCycleTime" SG_ 1077 AUTOMS_MAN_OPCTRL_AVAIL 500;
+BA_ "GenSigCycleTime" SG_ 1077 AUTOMS_MAN_EXTCTRL_AVAIL 500;
 
 // CABIN_CLIMATE_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 340 1000;
@@ -2143,11 +2371,15 @@ BA_ "GenMsgCycleTime" BO_ 1055 100;
 BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_ACTIVE 100;
 BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE 100;
 BA_ "GenSigCycleTime" SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE 100;
+BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_DISABLED 100;
 BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL 100;
 BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 100;
 BA_ "GenSigCycleTime" SG_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL 100;
+BA_ "GenSigCycleTime" SG_ 1055 ANTILOCK_BRAKE_DISABLED_AVAIL 100;
 BA_ "GenSigCycleTime" SG_ 1055 DRIVE_MODE 100;
 BA_ "GenSigCycleTime" SG_ 1055 DRIVE_MODE_AVAIL 100;
+BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_DISABLED 100;
+BA_ "GenSigCycleTime" SG_ 1055 TRACTION_CONTROL_DISABLED_AVAIL 100;
 
 // ENGINE_CMD ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 360 100;
@@ -2410,7 +2642,7 @@ BA_ "GenSigCycleTime" SG_ 576 OUTPUT_VALUE 100;
 
 // SAFETY_FUNC_CRITICAL_STOP_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1056 1000;
-BA_ "GenSigCycleTime" SG_ 1056 AUTOMSMAN_OPCTRL_FAULT 1000;
+BA_ "GenSigCycleTime" SG_ 1056 AUTOMS_MAN_OPCTRL_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 REMOTE_STOP_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1056 SAFETY_BRAKE_OPCTRL_OFF 1000;
 BA_ "GenSigCycleTime" SG_ 1056 SAFETY_BRAKE_CMD_TIMEOUT 1000;
@@ -2521,6 +2753,20 @@ BA_ "GenSigCycleTime" SG_ 344 IGNORE_OVERRIDES 100;
 BA_ "GenSigCycleTime" SG_ 344 CLEAR_OVERRIDE 100;
 BA_ "GenSigCycleTime" SG_ 344 TIPPER_CONTROL_CMD 100;
 
+// TIPPER_BODY_CMD_01 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 364 100;
+BA_ "GenSigCycleTime" SG_ 364 ENABLE 100;
+BA_ "GenSigCycleTime" SG_ 364 IGNORE_OVERRIDES 100;
+BA_ "GenSigCycleTime" SG_ 364 CLEAR_OVERRIDE 100;
+BA_ "GenSigCycleTime" SG_ 364 TIPPER_CONTROL_CMD 100;
+
+// TIPPER_BODY_CMD_02 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 368 100;
+BA_ "GenSigCycleTime" SG_ 368 ENABLE 100;
+BA_ "GenSigCycleTime" SG_ 368 IGNORE_OVERRIDES 100;
+BA_ "GenSigCycleTime" SG_ 368 CLEAR_OVERRIDE 100;
+BA_ "GenSigCycleTime" SG_ 368 TIPPER_CONTROL_CMD 100;
+
 // TIPPER_BODY_RPT_00 ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 600 100;
 BA_ "GenSigCycleTime" SG_ 600 ENABLED 100;
@@ -2535,12 +2781,100 @@ BA_ "GenSigCycleTime" SG_ 600 MANUAL_INPUT 100;
 BA_ "GenSigCycleTime" SG_ 600 COMMANDED_VALUE 100;
 BA_ "GenSigCycleTime" SG_ 600 OUTPUT_VALUE 100;
 
+// TIPPER_BODY_RPT_01 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 620 100;
+BA_ "GenSigCycleTime" SG_ 620 ENABLED 100;
+BA_ "GenSigCycleTime" SG_ 620 OVERRIDE_ACTIVE 100;
+BA_ "GenSigCycleTime" SG_ 620 COMMAND_OUTPUT_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 620 INPUT_OUTPUT_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 620 OUTPUT_REPORTED_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 620 PACMOD_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 620 VEHICLE_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 620 COMMAND_TIMEOUT 100;
+BA_ "GenSigCycleTime" SG_ 620 MANUAL_INPUT 100;
+BA_ "GenSigCycleTime" SG_ 620 COMMANDED_VALUE 100;
+BA_ "GenSigCycleTime" SG_ 620 OUTPUT_VALUE 100;
+
+// TIPPER_BODY_RPT_02 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 624 100;
+BA_ "GenSigCycleTime" SG_ 624 ENABLED 100;
+BA_ "GenSigCycleTime" SG_ 624 OVERRIDE_ACTIVE 100;
+BA_ "GenSigCycleTime" SG_ 624 COMMAND_OUTPUT_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 624 INPUT_OUTPUT_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 624 OUTPUT_REPORTED_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 624 PACMOD_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 624 VEHICLE_FAULT 100;
+BA_ "GenSigCycleTime" SG_ 624 COMMAND_TIMEOUT 100;
+BA_ "GenSigCycleTime" SG_ 624 MANUAL_INPUT 100;
+BA_ "GenSigCycleTime" SG_ 624 COMMANDED_VALUE 100;
+BA_ "GenSigCycleTime" SG_ 624 OUTPUT_VALUE 100;
+
+// TIRE_PRESSURE_EXTENDED_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1072 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_CHASSIS_INDEX_1 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_AXLE_1 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_POSITION_1 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_PRESSURE_1 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_CHASSIS_INDEX_2 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_AXLE_2 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_POSITION_2 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_PRESSURE_2 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_CHASSIS_INDEX_3 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_AXLE_3 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_POSITION_3 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_PRESSURE_3 500;
+
+// TIRE_PRESSURE_EXTENDED_RPT_2 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1073 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_CHASSIS_INDEX_1 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_AXLE_1 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_POSITION_1 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_PRESSURE_1 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_CHASSIS_INDEX_2 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_AXLE_2 500;
+BA_ "GenSigCycleTime" SG_ 1072 TIRE_POSITION_2 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_PRESSURE_2 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_CHASSIS_INDEX_3 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_AXLE_3 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_POSITION_3 500;
+BA_ "GenSigCycleTime" SG_ 1073 TIRE_PRESSURE_3 500;
+
 // TIRE_PRESSURE_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1054 100;
 BA_ "GenSigCycleTime" SG_ 1054 FRONT_LEFT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 FRONT_RIGHT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 REAR_LEFT_TIRE_PRESSURE 100;
 BA_ "GenSigCycleTime" SG_ 1054 REAR_RIGHT_TIRE_PRESSURE 100;
+
+// TIRE_TEMPERATURE_EXTENDED_RPT ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1074 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_CHASSIS_INDEX_1 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_AXLE_1 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_POSITION_1 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_TEMPERATURE_1 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_CHASSIS_INDEX_2 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_AXLE_2 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_POSITION_2 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_TEMPERATURE_2 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_CHASSIS_INDEX_3 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_AXLE_3 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_POSITION_3 500;
+BA_ "GenSigCycleTime" SG_ 1074 TIRE_TEMPERATURE_3 500;
+
+// TIRE_TEMPERATURE_EXTENDED_RPT_2 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1075 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_CHASSIS_INDEX_1 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_AXLE_1 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_POSITION_1 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_TEMPERATURE_1 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_CHASSIS_INDEX_2 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_AXLE_2 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_POSITION_2 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_TEMPERATURE_2 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_CHASSIS_INDEX_3 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_AXLE_3 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_POSITION_3 500;
+BA_ "GenSigCycleTime" SG_ 1075 TIRE_TEMPERATURE_3 500;
 
 // TURN_AUX_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 816 100;
@@ -2577,6 +2911,8 @@ BA_ "GenSigCycleTime" SG_ 1053 LIGHT_COMMAND 250;
 BA_ "GenSigCycleTime" SG_ 1053 BUZZER_ON 250;
 BA_ "GenSigCycleTime" SG_ 1053 BUZZER_MUTE_INDICATOR 250;
 BA_ "GenSigCycleTime" SG_ 1053 LED_BRIGHTNESS 250;
+BA_ "GenSigCycleTime" SG_ 1053 LIGHT_STATUS_COMMAND 250;
+BA_ "GenSigCycleTime" SG_ 1053 LIGHT_COMMAND_ALTERNATE 250;
 
 // VIN_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1044 1000;
@@ -2708,6 +3044,13 @@ BA_ "GenSigCycleTime" SG_ 1057 DRIVE_MODE_INVALID 1000;
 BA_ "GenSigCycleTime" SG_ 1057 GLOBAL_CMD_SANITY_FAULT 1000;
 BA_ "GenSigCycleTime" SG_ 1057 GLOBAL_CMD_TIMEOUT 1000;
 BA_ "GenSigCycleTime" SG_ 1057 EXHAUST_BRAKE_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 POWER_TAKE_OFF_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 TIPPER_BODY_00_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 TRAILER_AIR_SUPPLY_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 TRAILER_BRAKE_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 ENGINE_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 TIPPER_BODY_01_RPT_TIMEOUT 1000;
+BA_ "GenSigCycleTime" SG_ 1057 TIPPER_BODY_02_RPT_TIMEOUT 1000;
 
 // WIPER_AUX_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 820 100;
@@ -2796,6 +3139,20 @@ VAL_ 1050 YAW_NEW_DATA_RX 0 "NEW_DATA_NOT_RX" 1 "NEW_DATA_RX" ;
 VAL_ 1050 PITCH_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 ROLL_VALID 0 "NOT_VALID" 1 "VALID" ;
 VAL_ 1050 YAW_VALID 0 "NOT_VALID" 1 "VALID" ;
+
+// AUTOMS_MAN_SWITCH_RPT VALUES
+VAL_ 1077 AUTOMS_MAN_OPCTRL 0 "INVALID" 1 "MANUAL" 2 "AUTOMS" ;
+VAL_ 1077 AUTOMS_MAN_EXTCTRL 0 "INVALID" 1 "MANUAL" 2 "AUTOMS" ;
+VAL_ 1077 AUTOMS_MAN_OPCTRL_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 1077 AUTOMS_MAN_EXTCTRL_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+
+//SAFETY_FUNC_RPT_2 VALUES
+VAL_ 67 COMMANDED_STATE 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" ;
+VAL_ 67 STATE 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" 4 "MANUAL" ;
+VAL_ 67 MANUAL_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
+VAL_ 67 AUTOMS_READY_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
+VAL_ 67 AUTOMS_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
+VAL_ 67 MANUAL_READY_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
 
 // BRAKE_AUX_RPT VALUES
 VAL_ 772 OPERATOR_INTERACTION 0 "NO_INTERACTION" 1 "INTERACTION";
@@ -2964,6 +3321,8 @@ VAL_ 32 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 32 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 VAL_ 32 ENGINE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 32 TIPPER_BODY_01 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 32 TIPPER_BODY_02 0 "ABSENT" 1 "PRESENT" ;
 
 // COMPONENT_RPT_01 VALUES
 VAL_ 33 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -3004,6 +3363,8 @@ VAL_ 33 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 33 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 VAL_ 33 ENGINE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 33 TIPPER_BODY_01 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 33 TIPPER_BODY_02 0 "ABSENT" 1 "PRESENT" ;
 
 // COMPONENT_RPT_02 VALUES
 VAL_ 34 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -3044,6 +3405,8 @@ VAL_ 34 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 34 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 VAL_ 34 ENGINE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 34 TIPPER_BODY_01 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 34 TIPPER_BODY_02 0 "ABSENT" 1 "PRESENT" ;
 
 // COMPONENT_RPT_03 VALUES
 VAL_ 35 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -3084,6 +3447,8 @@ VAL_ 35 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 35 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 VAL_ 35 ENGINE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 35 TIPPER_BODY_01 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 35 TIPPER_BODY_02 0 "ABSENT" 1 "PRESENT" ;
 
 // COMPONENT_RPT_04 VALUES
 VAL_ 36 COMPONENT_TYPE 0 "PACMOD" 1 "PACMINI" 2 "PACMICRO" ;
@@ -3124,6 +3489,8 @@ VAL_ 36 WATCHDOG_SANITY_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 36 WATCHDOG_SYSTEM_PRESENT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 36 COMPONENT_READY 0 "NOT_READY" 1 "READY" ;
 VAL_ 36 ENGINE 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 TIPPER_BODY_01 0 "ABSENT" 1 "PRESENT" ;
+VAL_ 36 TIPPER_BODY_02 0 "ABSENT" 1 "PRESENT" ;
 
 // CRUISE_CONTROL_BUTTONS_CMD
 VAL_ 264 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -3204,11 +3571,15 @@ VAL_ 1047 CARGO_DOOR_OPEN_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 ANTILOCK_BRAKE_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 1055 TRACTION_CONTROL_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
 VAL_ 1055 FOUR_WHEEL_DRIVE_ACTIVE 0 "NOT_ACTIVE" 1 "ACTIVE" ;
+VAL_ 1055 ANTILOCK_BRAKE_DISABLED  0 "NOT_DISABLED" 1 "DISABLED";
 VAL_ 1055 ANTILOCK_BRAKE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 TRACTION_CONTROL_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1055 FOUR_WHEEL_DRIVE_ACTIVE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 1055 ANTILOCK_BRAKE_DISABLED_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 VAL_ 1055 DRIVE_MODE 0 "NORMAL" 1 "ECO" 2 "SPORT" ;
 VAL_ 1055 DRIVE_MODE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
+VAL_ 1055 TRACTION_CONTROL_DISABLED  0 "NOT_DISABLED" 1 "DISABLED";
+VAL_ 1055 TRACTION_CONTROL_DISABLED_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 
 // ENGINE_BRAKE_AUX_RPT VALUES
 VAL_ 836 ENGINE_BRAKE_STATUS 0 "BRAKING_NOT_ACTIVE" 1 "BRAKING_ACTIVE";
@@ -3269,6 +3640,12 @@ VAL_ 1040 DIESEL_EXHAUST_FLUID_LEVEL_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE" ;
 VAL_ 1061 FUEL_RATE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 VAL_ 1061 OIL_LEVEL_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 VAL_ 1061 OIL_PRESSURE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+
+// ENGINE_LOAD_FACTOR VALUES
+VAL_ 1063 DRVR_DEMANDED_ENG_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1063 ACTUAL_ENGINE_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1063 ENG_LOAD_AT_CURRENT_SPEED_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
+VAL_ 1063 REFERENCE_ENGINE_TORQUE_AVAIL 0 "NOT_AVAILABLE" 1 "AVAILABLE";
 
 // ESTOP_RPT VALUES
 VAL_ 1052 ESTOP 0 "RELEASED" 1 "PRESSED" ;
@@ -3556,7 +3933,7 @@ VAL_ 65 REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
 VAL_ 192 COMMAND 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" 4 "CRITICAL_STOP1" 5 "CRITICAL_STOP2" ;
 
 // SAFETY_FUNC_CRITICAL_STOP_RPT VALUES
-VAL_ 1056 AUTOMSMAN_OPCTRL_FAULT 0 "FALSE" 1 "TRUE";
+VAL_ 1056 AUTOMS_MAN_OPCTRL_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 REMOTE_STOP_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1056 SAFETY_BRAKE_OPCTRL_OFF 0 "FALSE" 1 "TRUE";
 VAL_ 1056 SAFETY_BRAKE_CMD_TIMEOUT 0 "FALSE" 1 "TRUE";
@@ -3582,7 +3959,7 @@ VAL_ 1056 PRI_SAFETY_BRAKE_PRESSURE_FAULT 0 "FALSE" 1 "TRUE";
 // SAFETY_FUNC_RPT VALUES
 VAL_ 64 COMMANDED_VALUE 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" 4 "CRITICAL_STOP1" 5 "CRITICAL_STOP2" ;
 VAL_ 64 STATE 0 "MANUAL_BRAKED" 1 "MANUAL_UNBRAKED" 2 "AUTOMS_READY" 3 "AUTOMS_INACTIVE" 4 "AUTOMS_ACTIVE_BRAKED" 5 "AUTOMS_ACTIVE_UNBRAKED" 6 "MANUAL_READY" 7 "CRITICAL_STOP1" 8 "CRITICAL_STOP2" 9 "STARTUP" ;
-VAL_ 64 AUTOMSMAN_OPCTRL 0 "INVALID" 1 "MANUAL" 2 "AUTOMS" ;
+VAL_ 64 AUTOMS_MAN_OPCTRL 0 "INVALID" 1 "MANUAL" 2 "AUTOMS" ;
 VAL_ 64 CABIN_SAFETY_BRAKE_OPCTRL 0 "INVALID" 1 "APPLIED" 2 "UNAPPLIED" ;
 VAL_ 64 REMOTE_STOP_STATUS 0 "INVALID" 1 "GO" 2 "STOP" ;
 VAL_ 64 ENGINE_STATUS 0 "NOT_RUNNING" 1 "RUNNING" ;
@@ -3689,6 +4066,18 @@ VAL_ 344 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
 VAL_ 344 CLEAR_OVERRIDE 0 "FALSE" 1 "TRUE" ;
 VAL_ 344 TIPPER_CONTROL_CMD 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
 
+// TIPPER_BODY_CMD_01 VALUES
+VAL_ 364 ENABLE 0 "DISABLE" 1 "ENABLE" ;
+VAL_ 364 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
+VAL_ 364 CLEAR_OVERRIDE 0 "FALSE" 1 "TRUE" ;
+VAL_ 364 TIPPER_CONTROL_CMD 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+
+// TIPPER_BODY_CMD_02 VALUES
+VAL_ 368 ENABLE 0 "DISABLE" 1 "ENABLE" ;
+VAL_ 368 IGNORE_OVERRIDES 0 "FALSE" 1 "TRUE" ;
+VAL_ 368 CLEAR_OVERRIDE 0 "FALSE" 1 "TRUE" ;
+VAL_ 368 TIPPER_CONTROL_CMD 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+
 // TIPPER_BODY_RPT_00 VALUES
 VAL_ 600 ENABLED 0 "FALSE" 1 "TRUE" ;
 VAL_ 600 OVERRIDE_ACTIVE 0 "FALSE" 1 "TRUE" ;
@@ -3701,6 +4090,52 @@ VAL_ 600 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 600 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
 VAL_ 600 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
 VAL_ 600 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+
+// TIPPER_BODY_RPT_01 VALUES
+VAL_ 620 ENABLED 0 "FALSE" 1 "TRUE" ;
+VAL_ 620 OVERRIDE_ACTIVE 0 "FALSE" 1 "TRUE" ;
+VAL_ 620 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 620 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 620 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 620 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 620 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 620 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 620 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+VAL_ 620 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+VAL_ 620 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+
+// TIPPER_BODY_RPT_02 VALUES
+VAL_ 624 ENABLED 0 "FALSE" 1 "TRUE" ;
+VAL_ 624 OVERRIDE_ACTIVE 0 "FALSE" 1 "TRUE" ;
+VAL_ 624 COMMAND_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 624 INPUT_OUTPUT_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 624 OUTPUT_REPORTED_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 624 PACMOD_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 624 VEHICLE_FAULT 0 "NO_FAULT" 1 "FAULT" ;
+VAL_ 624 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
+VAL_ 624 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+VAL_ 624 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+VAL_ 624 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" ;
+
+// TIRE_PRESSURE_EXTENDED_RPT VALUES
+VAL_ 1072 TIRE_PRESSURE_1 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1072 TIRE_PRESSURE_2 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1072 TIRE_PRESSURE_3 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+
+// TIRE_PRESSURE_EXTENDED_RPT_2 VALUES
+VAL_ 1073 TIRE_PRESSURE_1 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1073 TIRE_PRESSURE_2 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1073 TIRE_PRESSURE_3 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+
+// TIRE_TEMPERATURE_EXTENDED_RPT VALUES
+VAL_ 1074 TIRE_TEMPERATURE_1 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1074 TIRE_TEMPERATURE_2 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1074 TIRE_TEMPERATURE_3 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+
+// TIRE_TEMPERATURE_EXTENDED_RPT_2 VALUES
+VAL_ 1075 TIRE_TEMPERATURE_1 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1075 TIRE_TEMPERATURE_2 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
+VAL_ 1075 TIRE_TEMPERATURE_3 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
 
 // TRAILER_AIR_SUPPLY_CMD VALUES
 VAL_ 356 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -3767,6 +4202,8 @@ VAL_ 1053 LIGHT_COMMAND 0 "NO_ACTION" 1 "WHITE" 2 "RED" 3 "GREEN" 4 "BLUE" 5 "PU
 VAL_ 1053 BUZZER_ON 0 "NO_ACTION" 1 "BUZZER_ON" ;
 VAL_ 1053 BUZZER_MUTE_INDICATOR 0 "ENABLED" 1 "DISABLED" ;
 VAL_ 1053 LED_BRIGHTNESS 0 "NO_ACTION" 1 "MIN_BRIGHTNESS" 2 "LEVEL_1" 3 "LEVEL_2" 4 "LEVEL_3" 5 "LEVEL_4" 6 "LEVEL_5" 7 "LEVEL_6" 8 "LEVEL_7" 9 "LEVEL_8" 10 "LEVEL_9" 11 "LEVEL_10" 12 "LEVEL_11" 13 "MAX_BRIGHTNESS" ;
+VAL_ 1053 LIGHT_STATUS_COMMAND 0 "NO_ACTION" 1 "NO_BLINK" 2 "BLINK" 3 "ALTERNATE" ;
+VAL_ 1053 LIGHT_COMMAND_ALTERNATE 0 "NO_ACTION" 1 "WHITE" 2 "RED" 3 "GREEN" 4 "BLUE" 5 "PURPLE" 6 "ORANGE" 7 "YELLOW" 8 "TEAL" 9 "PINK" 10 "OFF" ;
 
 // VEHICLE_FAULT_RPT VALUES
 VAL_ 66 ENGINE_CHECK_LIGHT 0 "FALSE" 1 "TRUE";
@@ -3914,6 +4351,13 @@ VAL_ 1057 DRIVE_MODE_INVALID 0 "FALSE" 1 "TRUE";
 VAL_ 1057 GLOBAL_CMD_SANITY_FAULT 0 "FALSE" 1 "TRUE";
 VAL_ 1057 GLOBAL_CMD_TIMEOUT 0 "FALSE" 1 "TRUE";
 VAL_ 1057 EXHAUST_BRAKE_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 POWER_TAKE_OFF_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 TIPPER_BODY_00_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 TRAILER_AIR_SUPPLY_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 TRAILER_BRAKE_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 ENGINE_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 TIPPER_BODY_01_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
+VAL_ 1057 TIPPER_BODY_02_RPT_TIMEOUT 0 "FALSE" 1 "TRUE";
 
 // WIPER_AUX_RPT VALUES
 VAL_ 820 FRONT_WIPING 0 "NOT_WIPING" 1 "WIPING" ;

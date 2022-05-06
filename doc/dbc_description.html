@@ -12,7 +12,7 @@
         <img src="HXGNASLogo.png" style="{background-color:white;}" width="350">
       </div>
       <div class="dbc-version-pane" id="dbc-version-pane">
-        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 12.2.0</p>
+        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 12.3.0</p>
         <p class="secondary-text dark-mode-word" id="dark-mode-word">Dark Mode</p>
         <p class="secondary-text light-mode-word" id="light-mode-word">Light Mode</p>
         <label class="dark-mode-switch">
@@ -27,6 +27,7 @@
         <a class="quick-link secondary-text" href="#ACCEL_RPT">ACCEL_RPT</a>
         <a class="quick-link secondary-text" href="#AIR_PRESSURE_RPT">AIR_PRESSURE_RPT</a>
         <a class="quick-link secondary-text" href="#ANG_VEL_RPT">ANG_VEL_RPT</a>
+        <a class="quick-link secondary-text" href="#AUTOMS_MAN_SWITCH_RPT">AUTOMS_MAN_SWITCH_RPT</a>
         <a class="quick-link secondary-text" href="#BRAKE_AUX_RPT">BRAKE_AUX_RPT</a>
         <a class="quick-link secondary-text" href="#BRAKE_CMD">BRAKE_CMD</a>
         <a class="quick-link secondary-text" href="#BRAKE_CMD_LIMIT_RPT">BRAKE_CMD_LIMIT_RPT</a>
@@ -64,6 +65,7 @@
         <a class="quick-link secondary-text" href="#ENGINE_BRAKE_CMD">ENGINE_BRAKE_CMD</a>
         <a class="quick-link secondary-text" href="#ENGINE_BRAKE_RPT">ENGINE_BRAKE_RPT</a>
         <a class="quick-link secondary-text" href="#ENGINE_CMD">ENGINE_CMD</a>
+        <a class="quick-link secondary-text" href="#ENGINE_LOAD_FACTOR_RPT">ENGINE_LOAD_FACTOR_RPT</a>
         <a class="quick-link secondary-text" href="#ENGINE_RPT">ENGINE_RPT</a>
         <a class="quick-link secondary-text" href="#ESTOP_RPT">ESTOP_RPT</a>
         <a class="quick-link secondary-text" href="#EXHAUST_BRAKE_CMD">EXHAUST_BRAKE_CMD</a>
@@ -102,6 +104,7 @@
         <a class="quick-link secondary-text" href="#SAFETY_FUNC_CMD">SAFETY_FUNC_CMD</a>
         <a class="quick-link secondary-text" href="#SAFETY_FUNC_CRITICAL_STOP_RPT">SAFETY_FUNC_CRITICAL_STOP_RPT</a>
         <a class="quick-link secondary-text" href="#SAFETY_FUNC_RPT">SAFETY_FUNC_RPT</a>
+        <a class="quick-link secondary-text" href="#SAFETY_FUNC_RPT_2">SAFETY_FUNC_RPT_2</a>
         <a class="quick-link secondary-text" href="#SHIFT_AUX_RPT">SHIFT_AUX_RPT</a>
         <a class="quick-link secondary-text" href="#SHIFT_CMD">SHIFT_CMD</a>
         <a class="quick-link secondary-text" href="#SHIFT_RPT">SHIFT_RPT</a>
@@ -121,8 +124,16 @@
         <a class="quick-link secondary-text" href="#STEERING_RPT">STEERING_RPT</a>
         <a class="quick-link secondary-text" href="#SUPERVISORY_CTRL">SUPERVISORY_CTRL</a>
         <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_00">TIPPER_BODY_CMD_00</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_01">TIPPER_BODY_CMD_01</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_02">TIPPER_BODY_CMD_02</a>
         <a class="quick-link secondary-text" href="#TIPPER_BODY_RPT_00">TIPPER_BODY_RPT_00</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_RPT_01">TIPPER_BODY_RPT_01</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_RPT_02">TIPPER_BODY_RPT_02</a>
+        <a class="quick-link secondary-text" href="#TIRE_PRESSURE_EXTENDED_RPT">TIRE_PRESSURE_EXTENDED_RPT</a>
+        <a class="quick-link secondary-text" href="#TIRE_PRESSURE_EXTENDED_RPT_2">TIRE_PRESSURE_EXTENDED_RPT_2</a>
         <a class="quick-link secondary-text" href="#TIRE_PRESSURE_RPT">TIRE_PRESSURE_RPT</a>
+        <a class="quick-link secondary-text" href="#TIRE_TEMPERATURE_EXTENDED_RPT">TIRE_TEMPERATURE_EXTENDED_RPT</a>
+        <a class="quick-link secondary-text" href="#TIRE_TEMPERATURE_EXTENDED_RPT_2">TIRE_TEMPERATURE_EXTENDED_RPT_2</a>
         <a class="quick-link secondary-text" href="#TRAILER_AIR_SUPPLY_CMD">TRAILER_AIR_SUPPLY_CMD</a>
         <a class="quick-link secondary-text" href="#TRAILER_AIR_SUPPLY_RPT">TRAILER_AIR_SUPPLY_RPT</a>
         <a class="quick-link secondary-text" href="#TRAILER_BRAKE_CMD">TRAILER_BRAKE_CMD</a>
@@ -1176,7 +1187,7 @@
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>1</sup> 0=NEW_DATA_NOT_RX, 1=NEW_DATA_RX<br>
+            <sup>1</sup> 0=NOT_RX, 1=RX<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=NOT_VALID, 1=VALID<br>
@@ -1189,6 +1200,122 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>c</sup> Yaw is positive according to right hand rule with the axis pointing up.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="AUTOMS_MAN_SWITCH_RPT">
+        <h1 class="bold primary-text">AUTOMS_MAN_SWITCH_RPT</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1077</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x435</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">1</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">500</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>AUTOMS_MAN_OPCTRL
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTOMS_MAN_EXTCTRL
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTOMS_MAN_OPCTRL_AVAIL
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTOMS_MAN_EXTCTRL_AVAIL
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=INVALID, 1=MANUAL, 2=AUTOMS<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
           </p>
         </div>
       </section><br><br>
@@ -1818,7 +1945,7 @@
             <sup>2</sup> 0=ANY_EXT_BRK_DEMAND_WILL_BE_ACPTD, 2=NO_EXT_BRK_DEMAND_WILL_BE_ACPTD<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 0=FOUNDATION_BRAKES_NOT_IN_USE, 1=FOUNDATION_BRAKES_IN_USE<br>
+            <sup>3</sup> 0=NOT_IN_USE, 1=IN_USE<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>4</sup> 0=INACTIVE, 1=ACTIVE, 2=ACTIVE_BUT_INACTIVE_SOON, 6=ERROR<br>
@@ -3387,7 +3514,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 0=FAN_OFF, 1=FAN_SPEED_1, 2=FAN_SPEED_2, 3=FAN_SPEED_3, 4=FAN_SPEED_4, 5=FAN_SPEED_5, 6=FAN_SPEED_6, 7=FAN_SPEED_7, 8=FAN_SPEED_8, 9=FAN_SPEED_9, 10=FAN_SPEED_10<br>
+            <sup>3</sup> 0=OFF, 1=SPEED_1, 2=SPEED_2, 3=SPEED_3, 4=SPEED_4, 5=SPEED_5, 6=SPEED_6, 7=SPEED_7, 8=SPEED_8, 9=SPEED_9, 10=SPEED_10<br>
           </p>
         </div>
       </section><br><br>
@@ -3600,7 +3727,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 0=FAN_OFF, 1=FAN_SPEED_1, 2=FAN_SPEED_2, 3=FAN_SPEED_3, 4=FAN_SPEED_4, 5=FAN_SPEED_5, 6=FAN_SPEED_6, 7=FAN_SPEED_7, 8=FAN_SPEED_8, 9=FAN_SPEED_9, 10=FAN_SPEED_10<br>
+            <sup>4</sup> 0=OFF, 1=SPEED_1, 2=SPEED_2, 3=SPEED_3, 4=SPEED_4, 5=SPEED_5, 6=SPEED_6, 7=SPEED_7, 8=SPEED_8, 9=SPEED_9, 10=SPEED_10<br>
           </p>
         </div>
       </section><br><br>
@@ -4503,6 +4630,32 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>TIPPER_BODY_01
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -5115,6 +5268,32 @@
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">48</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_01
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
@@ -5741,6 +5920,32 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>TIPPER_BODY_01
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -6353,6 +6558,32 @@
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">48</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_01
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
@@ -6979,6 +7210,32 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>TIPPER_BODY_01
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -7133,7 +7390,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 7=CRUISE_CONTROL_LIM, 6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+            <sup>3</sup> 7=LIM, 6=ON_OFF, 5=RES_INC, 4=SET_DEC, 3=ACC_CLOSER, 2=ACC_FURTHER, 1=CNCL, 0=NONE<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>a</sup> NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.
@@ -7352,7 +7609,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 7=CRUISE_CONTROL_LIM, 6=CRUISE_CONTROL_ON_OFF, 5=CRUISE_CONTROL_RES_INC, 4=CRUISE_CONTROL_SET_DEC, 3=CRUISE_CONTROL_ACC_CLOSER, 2=CRUISE_CONTROL_ACC_FURTHER, 1=CRUISE_CONTROL_CNCL, 0=CRUISE_CONTROL_NONE<br>
+            <sup>4</sup> 7=LIM, 6=ON_OFF, 5=RES_INC, 4=SET_DEC, 3=ACC_CLOSER, 2=ACC_FURTHER, 1=CNCL, 0=NONE<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>a</sup> NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.
@@ -7474,7 +7731,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+            <sup>3</sup> 5=DOWN, 4=UP, 3=RIGHT, 2=LEFT, 1=OK, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -7687,7 +7944,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+            <sup>4</sup> 5=DOWN, 4=UP, 3=RIGHT, 2=LEFT, 1=OK, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -7806,7 +8063,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+            <sup>3</sup> 5=DOWN, 4=UP, 3=RIGHT, 2=LEFT, 1=OK, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -8019,7 +8276,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 5=DASH_CONTROL_DOWN, 4=DASH_CONTROL_UP, 3=DASH_CONTROL_RIGHT, 2=DASH_CONTROL_LEFT, 1=DASH_CONTROL_OK, 0=DASH_CONTROL_NONE<br>
+            <sup>4</sup> 5=DOWN, 4=UP, 3=RIGHT, 2=LEFT, 1=OK, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -8590,8 +8847,21 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>ANTILOCK_BRAKE_ACTIVE_AVAIL
+              <td>ANTILOCK_BRAKE_DISABLED
                 <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>ANTILOCK_BRAKE_ACTIVE_AVAIL
+                <sup>3</sup>
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
@@ -8605,7 +8875,7 @@
             </tr>
             <tr>
               <td>TRACTION_CONTROL_ACTIVE_AVAIL
-                <sup>2</sup>
+                <sup>3</sup>
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
@@ -8619,7 +8889,7 @@
             </tr>
             <tr>
               <td>FOUR_WHEEL_DRIVE_ACTIVE_AVAIL
-                <sup>2</sup>
+                <sup>3</sup>
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
@@ -8632,8 +8902,22 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>DRIVE_MODE
+              <td>ANTILOCK_BRAKE_DISABLED_AVAIL
                 <sup>3</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>DRIVE_MODE
+                <sup>4</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">11</td>
@@ -8646,11 +8930,38 @@
             </tr>
             <tr>
               <td>DRIVE_MODE_AVAIL
-                <sup>2</sup>
+                <sup>3</sup>
                 <sup>a</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">12</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TRACTION_CONTROL_DISABLED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">13</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TRACTION_CONTROL_DISABLED_AVAIL
+                <sup>3</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">14</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
@@ -8665,10 +8976,13 @@
             <sup>1</sup> 0=NOT_ACTIVE, 1=ACTIVE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>2</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
+            <sup>2</sup> 0=NOT_DISABLED, 1=DISABLED<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 0=NORMAL, 1=ECO, 2=SPORT<br>
+            <sup>3</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>4</sup> 0=NORMAL, 1=ECO, 2=SPORT<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>a</sup> PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
@@ -9153,7 +9467,7 @@
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>1</sup> 0=BRAKING_NOT_ACTIVE, 1=BRAKING_ACTIVE<br>
+            <sup>1</sup> 0=NOT_ACTIVE, 1=ACTIVE<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
@@ -9299,7 +9613,7 @@
             <sup>3</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 0=AUTO_OFF, 1=AUTO_ON<br>
+            <sup>4</sup> 0=OFF, 1=ON<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum.
@@ -9566,7 +9880,7 @@
             <sup>4</sup> 0=OFF, 1=LEVEL_1, 2=LEVEL_2, 3=LEVEL_3, 4=LEVEL_4, 5=LEVEL_5<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>5</sup> 0=AUTO_OFF, 1=AUTO_ON<br>
+            <sup>5</sup> 0=OFF, 1=ON<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>a</sup> Brake aggressiveness increases with increasing numerical values. Each operator control setting maps one-to-one with each LEVEL, starting with 1. Higher LEVELs with no match map to maximum.
@@ -9692,6 +10006,190 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>3</sup> 0=NO_ACTION, 1=ENGINE_OFF<br>
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="ENGINE_LOAD_FACTOR_RPT">
+        <h1 class="bold primary-text">ENGINE_LOAD_FACTOR_RPT</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1063</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x427</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">6</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>DRVR_DEMANDED_ENG_TORQUE
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">125</td>
+              <td class="centered-text secondary-text">%</td>
+            </tr>
+            <tr>
+              <td>ACTUAL_ENGINE_TORQUE
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">125</td>
+              <td class="centered-text secondary-text">%</td>
+            </tr>
+            <tr>
+              <td>ENG_LOAD_AT_CURRENT_SPEED
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">%</td>
+            </tr>
+            <tr>
+              <td>REFERENCE_ENGINE_TORQUE
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">64255</td>
+              <td class="centered-text secondary-text">Nm</td>
+            </tr>
+            <tr>
+              <td>DRVR_DEMANDED_ENG_TORQUE_AVAIL
+                <sup>1</sup>
+                <sup>e</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">40</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>ACTUAL_ENGINE_TORQUE_AVAIL
+                <sup>1</sup>
+                <sup>e</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">41</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>ENG_LOAD_AT_CURRENT_SPEED_AVAIL
+                <sup>1</sup>
+                <sup>e</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">42</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>REFERENCE_ENGINE_TORQUE_AVAIL
+                <sup>1</sup>
+                <sup>e</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">43</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> The requested torque output of the engine by the driver.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> The calculated output torque of the engine.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>c</sup> The ratio of actual engine torque to maximum torque available at the current engine speed, clipped to zero torque during engine braking.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>d</sup> 100% reference value for engine torque parameters in the ENGINE_LOAD_FACTOR_RPT.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>e</sup> PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
           </p>
         </div>
       </section><br><br>
@@ -10756,7 +11254,7 @@
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>1</sup> 0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
+            <sup>1</sup> 0=DISABLED, 1=ENABLED<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
@@ -10929,7 +11427,7 @@
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>1</sup> 0=CONTROL_DISABLED, 1=CONTROL_ENABLED<br>
+            <sup>1</sup> 0=DISABLED, 1=ENABLED<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
@@ -12342,7 +12840,7 @@
             <sup>2</sup> 0=DARK, 1=BRIGHT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 24=DIM_LEVEL_23, 23=DIM_LEVEL_22, 22=DIM_LEVEL_21, 21=DIM_LEVEL_20, 20=DIM_LEVEL_19, 19=DIM_LEVEL_18, 18=DIM_LEVEL_17, 17=DIM_LEVEL_16, 16=DIM_LEVEL_15, 15=DIM_LEVEL_14, 14=DIM_LEVEL_13, 13=DIM_LEVEL_12, 12=DIM_LEVEL_MAX, 11=DIM_LEVEL_11, 10=DIM_LEVEL_10, 9=DIM_LEVEL_9, 8=DIM_LEVEL_8, 7=DIM_LEVEL_7, 6=DIM_LEVEL_6, 5=DIM_LEVEL_5, 4=DIM_LEVEL_4, 3=DIM_LEVEL_3, 2=DIM_LEVEL_2, 1=DIM_LEVEL_1, 0=DIM_LEVEL_MIN<br>
+            <sup>3</sup> 24=LEVEL_23, 23=LEVEL_22, 22=LEVEL_21, 21=LEVEL_20, 20=LEVEL_19, 19=LEVEL_18, 18=LEVEL_17, 17=LEVEL_16, 16=LEVEL_15, 15=LEVEL_14, 14=LEVEL_13, 13=LEVEL_12, 12=LEVEL_MAX, 11=LEVEL_11, 10=LEVEL_10, 9=LEVEL_9, 8=LEVEL_8, 7=LEVEL_7, 6=LEVEL_6, 5=LEVEL_5, 4=LEVEL_4, 3=LEVEL_3, 2=LEVEL_2, 1=LEVEL_1, 0=LEVEL_MIN<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>4</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
@@ -12660,7 +13158,7 @@
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>1</sup> 0=NEW_DATA_NOT_RX, 1=NEW_DATA_RX<br>
+            <sup>1</sup> 0=NOT_RX, 1=RX<br>
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=NOT_VALID, 1=VALID<br>
@@ -13123,7 +13621,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>3</sup> 6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
+            <sup>3</sup> 6=VOL_DOWN, 5=VOL_UP, 4=NEXT_TRACK_HANG_UP, 3=PREV_TRACK_ANSWER, 2=MUTE, 1=VOICE_COMMAND, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -13336,7 +13834,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 6=MEDIA_CONTROL_VOL_DOWN, 5=MEDIA_CONTROL_VOL_UP, 4=MEDIA_CONTROL_NEXT_TRACK_HANG_UP, 3=MEDIA_CONTROL_PREV_TRACK_ANSWER, 2=MEDIA_CONTROL_MUTE, 1=MEDIA_CONTROL_VOICE_COMMAND, 0=MEDIA_CONTROL_NONE<br>
+            <sup>4</sup> 6=VOL_DOWN, 5=VOL_UP, 4=NEXT_TRACK_HANG_UP, 3=PREV_TRACK_ANSWER, 2=MUTE, 1=VOICE_COMMAND, 0=NONE<br>
           </p>
         </div>
       </section><br><br>
@@ -13938,7 +14436,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -14057,7 +14555,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -15234,7 +15732,7 @@
             <sup>4</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>5</sup> 0=COMMAND_NOT_PERMITTED, 1=COMMAND_PERMITTED<br>
+            <sup>5</sup> 0=NOT_PERMITTED, 1=PERMITTED<br>
           </p>
         </div>
       </section><br><br>
@@ -15275,7 +15773,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -15366,7 +15864,7 @@
               <td class="centered-text bold secondary-text">Unit</td>
             </tr>
             <tr>
-              <td>AUTOMSMAN_OPCTRL_FAULT
+              <td>AUTOMS_MAN_OPCTRL_FAULT
                 <sup>1</sup>
                 <sup>a</sup>
               </td>
@@ -15779,7 +16277,7 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>AUTOMSMAN_OPCTRL
+              <td>AUTOMS_MAN_OPCTRL
                 <sup>3</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
@@ -15976,6 +16474,151 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>9</sup> 0=NOT_OBTAINABLE, 1=OBTAINABLE<br>
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="SAFETY_FUNC_RPT_2">
+        <h1 class="bold primary-text">SAFETY_FUNC_RPT_2</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">67</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x43</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">2</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>COMMANDED_STATE
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>STATE
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>MANUAL_STATE_OBTAINABLE
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTOMS_READY_STATE_OBTAINABLE
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">9</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>AUTOMS_STATE_OBTAINABLE
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>MANUAL_READY_STATE_OBTAINABLE
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">11</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=NONE, 1=AUTOMS_READY, 2=AUTOMS, 3=MANUAL_READY<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=NONE, 1=AUTOMS_READY, 2=AUTOMS, 3=MANUAL_READY, 4=MANUAL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>3</sup> 0=NOT_OBTAINABLE, 1=OBTAINABLE<br>
           </p>
         </div>
       </section><br><br>
@@ -17532,7 +18175,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Freightliner</p>
+            <p class="secondary-text supported-vehicles-list">Freightliner, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -17651,7 +18294,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Freightliner</p>
+            <p class="secondary-text supported-vehicles-list">Freightliner, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -19051,6 +19694,252 @@
           </p>
         </div>
       </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_CMD_01">
+        <h1 class="bold primary-text">TIPPER_BODY_CMD_01</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">364</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x16c</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">2</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">CUSTOMER_ECU</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ENABLE
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>IGNORE_OVERRIDES
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>CLEAR_OVERRIDE
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_CONTROL_CMD
+                <sup>3</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=DISABLE, 1=ENABLE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=FALSE, 1=TRUE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>3</sup> 0=NO_ACTION, 1=RAISE, 2=LOWER<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> RAISE moves towards dump position, LOWER moves towards haul position.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_CMD_02">
+        <h1 class="bold primary-text">TIPPER_BODY_CMD_02</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">368</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x170</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">2</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">CUSTOMER_ECU</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ENABLE
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>IGNORE_OVERRIDES
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>CLEAR_OVERRIDE
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_CONTROL_CMD
+                <sup>3</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=DISABLE, 1=ENABLE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=FALSE, 1=TRUE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>3</sup> 0=NO_ACTION, 1=RAISE, 2=LOWER<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> RAISE moves towards dump position, LOWER moves towards haul position.
+          </p>
+        </div>
+      </section><br><br>
       <section class="message-container" id="TIPPER_BODY_RPT_00">
         <h1 class="bold primary-text">TIPPER_BODY_RPT_00</h1>
         <table class="message-table">
@@ -19270,6 +20159,908 @@
           </p>
         </div>
       </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_RPT_01">
+        <h1 class="bold primary-text">TIPPER_BODY_RPT_01</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">620</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x26c</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">4</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ENABLED
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OVERRIDE_ACTIVE
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMAND_OUTPUT_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>INPUT_OUTPUT_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OUTPUT_REPORTED_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>PACMOD_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>VEHICLE_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">6</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMAND_TIMEOUT
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>MANUAL_INPUT
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMANDED_VALUE
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OUTPUT_VALUE
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=FALSE, 1=TRUE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=NO_FAULT, 1=FAULT<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>4</sup> 0=NO_ACTION, 1=RAISE, 2=LOWER<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> RAISE moves towards dump position, LOWER moves towards haul position.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_RPT_02">
+        <h1 class="bold primary-text">TIPPER_BODY_RPT_02</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">624</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x270</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">4</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ENABLED
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OVERRIDE_ACTIVE
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMAND_OUTPUT_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>INPUT_OUTPUT_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OUTPUT_REPORTED_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>PACMOD_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>VEHICLE_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">6</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMAND_TIMEOUT
+                <sup>3</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>MANUAL_INPUT
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>COMMANDED_VALUE
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>OUTPUT_VALUE
+                <sup>4</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=FALSE, 1=TRUE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=NO_FAULT, 1=FAULT<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>4</sup> 0=NO_ACTION, 1=RAISE, 2=LOWER<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> RAISE moves towards dump position, LOWER moves towards haul position.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIRE_PRESSURE_EXTENDED_RPT">
+        <h1 class="bold primary-text">TIRE_PRESSURE_EXTENDED_RPT</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1072</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x430</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">500</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_1
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_2
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_3
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_1
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">20</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_2
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_3
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">28</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_1
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_2
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">36</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_3
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_1
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_2
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_3
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">63</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_ACTIVE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle number starting from the front of the respective chassis number (a).
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>c</sup> Tire location starting from the left and moving sequentially to the right.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>d</sup> Values 0 to 250 represent valid measured data.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIRE_PRESSURE_EXTENDED_RPT_2">
+        <h1 class="bold primary-text">TIRE_PRESSURE_EXTENDED_RPT_2</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1073</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x431</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">500</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_1
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_2
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_3
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_1
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">20</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_2
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_3
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">28</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_1
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_2
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">36</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_3
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_1
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_2
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>TIRE_PRESSURE_3
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">63</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_ACTIVE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle number starting from the front of the respective chassis number (a).
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>c</sup> Tire location starting from the left and moving sequentially to the right.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>d</sup> Values 0 to 250 represent valid measured data.
+          </p>
+        </div>
+      </section><br><br>
       <section class="message-container" id="TIRE_PRESSURE_RPT">
         <h1 class="bold primary-text">TIRE_PRESSURE_RPT</h1>
         <table class="message-table">
@@ -19370,6 +21161,470 @@
           </table>
         </div>
         <div class="notes-container" id="notes-container"></div>
+      </section><br><br>
+      <section class="message-container" id="TIRE_TEMPERATURE_EXTENDED_RPT">
+        <h1 class="bold primary-text">TIRE_TEMPERATURE_EXTENDED_RPT</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1074</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x432</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">500</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_1
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_2
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_3
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_1
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">20</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_2
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_3
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">28</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_1
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_2
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">36</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_3
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_1
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_2
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_3
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">63</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_ACTIVE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle number starting from the front of the respective chassis number (a).
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>c</sup> Tire location starting from the left and moving sequentially to the right.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>d</sup> Values 0 to 250 represent valid measured data.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIRE_TEMPERATURE_EXTENDED_RPT_2">
+        <h1 class="bold primary-text">TIRE_TEMPERATURE_EXTENDED_RPT_2</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1075</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x433</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">500</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_1
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_2
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_CHASSIS_INDEX_3
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_1
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">20</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_2
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_AXLE_3
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">28</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_1
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_2
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">36</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_POSITION_3
+                <sup>c</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_1
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_2
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+            <tr>
+              <td>TIRE_TEMPERATURE_3
+                <sup>1</sup>
+                <sup>d</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">63</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">-50</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">200</td>
+              <td class="centered-text secondary-text">C</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_ACTIVE<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle number starting from the front of the respective chassis number (a).
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>c</sup> Tire location starting from the left and moving sequentially to the right.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>d</sup> Values 0 to 250 represent valid measured data.
+          </p>
+        </div>
       </section><br><br>
       <section class="message-container" id="TRAILER_AIR_SUPPLY_CMD">
         <h1 class="bold primary-text">TRAILER_AIR_SUPPLY_CMD</h1>
@@ -20491,7 +22746,7 @@
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">DLC</td>
-            <td class="left-justified-text secondary-text">2</td>
+            <td class="left-justified-text secondary-text">3</td>
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">Sender</td>
@@ -20606,6 +22861,32 @@
               <td class="centered-text secondary-text">15</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>LIGHT_STATUS_COMMAND
+                <sup>6</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">13</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>LIGHT_COMMAND_ALTERNATE
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">19</td>
+              <td class="centered-text secondary-text">4</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -20623,6 +22904,9 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>5</sup> 0=NO_ACTION, 1=MIN_BRIGHTNESS, 2=LEVEL_1, 3=LEVEL_2, 4=LEVEL_3, 5=LEVEL_4, 6=LEVEL_5, 7=LEVEL_6, 8=LEVEL_7, 9=LEVEL_8, 10=LEVEL_9, 11=LEVEL_10, 12=LEVEL_11, 13=MAX_BRIGHTNESS<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>6</sup> 0=NO_ACTION, 1=NO_BLINK, 2=BLINK, 3=ALTERNATE<br>
           </p>
         </div>
       </section><br><br>
@@ -21313,7 +23597,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, JPN Taxi, MKZ, Development Vehicle 02, Development Vehicle 03, Development Vehicle 04</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, JPN Taxi, MKZ, Development Vehicle 02, Development Vehicle 04</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -22435,7 +24719,7 @@
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">DLC</td>
-            <td class="left-justified-text secondary-text">6</td>
+            <td class="left-justified-text secondary-text">7</td>
           </tr>
           <tr>
             <td class="message-table-titles-width secondary-text">Sender</td>
@@ -23044,7 +25328,9 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>POWER_TAKE_OFF_RPT_TIMEOUT</td>
+              <td>POWER_TAKE_OFF_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">44</td>
               <td class="centered-text secondary-text">1</td>
@@ -23055,7 +25341,9 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>TIPPER_BODY_00_RPT_TIMEOUT</td>
+              <td>TIPPER_BODY_00_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">45</td>
               <td class="centered-text secondary-text">1</td>
@@ -23066,7 +25354,9 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>TRAILER_AIR_SUPPLY_RPT_TIMEOUT</td>
+              <td>TRAILER_AIR_SUPPLY_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">46</td>
               <td class="centered-text secondary-text">1</td>
@@ -23077,9 +25367,50 @@
               <td class="centered-text secondary-text"></td>
             </tr>
             <tr>
-              <td>TRAILER_BRAKE_RPT_TIMEOUT</td>
+              <td>TRAILER_BRAKE_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>ENGINE_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">48</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_01_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">49</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>TIPPER_BODY_02_RPT_TIMEOUT
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">50</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text">0</td>
@@ -23132,7 +25463,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, JPN Taxi, MKZ</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Lexus RX 450h, Ford Transit, Development Vehicle 01, JPN Taxi, MKZ, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
@@ -23715,7 +26046,7 @@
             <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
           </div>
           <div style="width: 620px;float: left;">
-            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 01</p>
+            <p class="secondary-text supported-vehicles-list">Ford Ranger, Freightliner, Development Vehicle 01, Development Vehicle 03</p>
           </div>
         </div>
         <div class="signals-table-container" id="signals-table-container">
