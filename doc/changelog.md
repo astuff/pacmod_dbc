@@ -1,3 +1,20 @@
+# 13.0.0
+1. (Change) Retructure ENGINE_RPT signal enumerations for MANUAL_INPUT and OUTPUT
+1. (Add) Add TRAILER_BRAKE_PRESSURE_RPT_00, 01, 02, and 03
+1. (Add) Add TRAILER_WHEEL_SPEED_RPT_00
+1. (Add) Add TRAILER_PAYLOAD_RPT_00, 01, and 02
+1. (Add) Add TIPPER_BODY_AUX_RPT_00, 01, and 02
+1. (Add) Add REMOTE_STOP_RPT
+1. (Add) Add BATTERY_VOLTAGE_RPT_1, 2
+1. (Add) Add SYSTEM_ENABLED, SYSTEM_OVERRIDE_ACTIVE, and SYSTEM_FAULT_ACTIVE to COMPONENT_RPT_00, 01, 02, 03, and 04
+1. (Add) Add negative numbers being two's complement to the protocol description document
+1. (Add) Add signal status enumerations to the protocol description document
+1. (Add) Reserve internal use and internal development messages in the protocol description document
+1. (Add) Misc. minor changes to the protocol description document
+1. (Fix) Fix incorrect max values in the AIR_PRESSURE_RPT
+1. (Fix) Fix values that were incorrectly made signed in ENGINE_BRAKE_AUX_RPT, TRAILER_WHEEL_SPEED_RPT_00, and ENGINE_LOAD_FACTOR_RPT
+1. (Fix) Change improper "%" unit to ratio
+
 # 12.3.0
 1. (Add) Add ANTILOCK_BRAKE_DISABLED to DRIVETRAIN_FEATURE_RPT
 1. (Add) Add TRACTION_CONTROL_DISABLED to DRIVETRAIN_FEATURE_RPT

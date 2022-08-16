@@ -499,6 +499,21 @@
     <can_id>564</can_id>
     <can_id>568</can_id>
     <can_id>1031</can_id>
+    <can_id>1064</can_id>
+    <can_id>1065</can_id>
+    <can_id>1066</can_id>
+    <can_id>1067</can_id>
+    <can_id>1068</can_id>
+    <can_id>1069</can_id>
+    <can_id>1076</can_id>
+    <can_id>1078</can_id>
+    <can_id>1079</can_id>
+    <can_id>1080</can_id>
+    <can_id>856</can_id>
+    <can_id>876</can_id>
+    <can_id>880</can_id>
+    <can_id>1070</can_id>
+    <can_id>1081</can_id>
   </vehicle>
   <vehicle name="Development Vehicle 04" id="10">
     <can_id>17</can_id>

@@ -12,7 +12,7 @@
         <img src="HXGNASLogo.png" style="{background-color:white;}" width="350">
       </div>
       <div class="dbc-version-pane" id="dbc-version-pane">
-        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 12.3.0</p>
+        <p class="secondary-text dbc-version" id="dbc-version">DBC Version: 13.0.0</p>
         <p class="secondary-text dark-mode-word" id="dark-mode-word">Dark Mode</p>
         <p class="secondary-text light-mode-word" id="light-mode-word">Light Mode</p>
         <label class="dark-mode-switch">
@@ -28,6 +28,8 @@
         <a class="quick-link secondary-text" href="#AIR_PRESSURE_RPT">AIR_PRESSURE_RPT</a>
         <a class="quick-link secondary-text" href="#ANG_VEL_RPT">ANG_VEL_RPT</a>
         <a class="quick-link secondary-text" href="#AUTOMS_MAN_SWITCH_RPT">AUTOMS_MAN_SWITCH_RPT</a>
+        <a class="quick-link secondary-text" href="#BATTERY_VOLTAGE_LEVEL_RPT_1">BATTERY_VOLTAGE_LEVEL_RPT_1</a>
+        <a class="quick-link secondary-text" href="#BATTERY_VOLTAGE_LEVEL_RPT_2">BATTERY_VOLTAGE_LEVEL_RPT_2</a>
         <a class="quick-link secondary-text" href="#BRAKE_AUX_RPT">BRAKE_AUX_RPT</a>
         <a class="quick-link secondary-text" href="#BRAKE_CMD">BRAKE_CMD</a>
         <a class="quick-link secondary-text" href="#BRAKE_CMD_LIMIT_RPT">BRAKE_CMD_LIMIT_RPT</a>
@@ -99,6 +101,7 @@
         <a class="quick-link secondary-text" href="#REAR_LIGHTS_RPT">REAR_LIGHTS_RPT</a>
         <a class="quick-link secondary-text" href="#REAR_PASS_DOOR_CMD">REAR_PASS_DOOR_CMD</a>
         <a class="quick-link secondary-text" href="#REAR_PASS_DOOR_RPT">REAR_PASS_DOOR_RPT</a>
+        <a class="quick-link secondary-text" href="#REMOTE_STOP_RPT">REMOTE_STOP_RPT</a>
         <a class="quick-link secondary-text" href="#SAFETY_BRAKE_CMD">SAFETY_BRAKE_CMD</a>
         <a class="quick-link secondary-text" href="#SAFETY_BRAKE_RPT">SAFETY_BRAKE_RPT</a>
         <a class="quick-link secondary-text" href="#SAFETY_FUNC_CMD">SAFETY_FUNC_CMD</a>
@@ -123,6 +126,9 @@
         <a class="quick-link secondary-text" href="#STEERING_MOTOR_RPT_3">STEERING_MOTOR_RPT_3</a>
         <a class="quick-link secondary-text" href="#STEERING_RPT">STEERING_RPT</a>
         <a class="quick-link secondary-text" href="#SUPERVISORY_CTRL">SUPERVISORY_CTRL</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_AUX_RPT_00">TIPPER_BODY_AUX_RPT_00</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_AUX_RPT_01">TIPPER_BODY_AUX_RPT_01</a>
+        <a class="quick-link secondary-text" href="#TIPPER_BODY_AUX_RPT_02">TIPPER_BODY_AUX_RPT_02</a>
         <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_00">TIPPER_BODY_CMD_00</a>
         <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_01">TIPPER_BODY_CMD_01</a>
         <a class="quick-link secondary-text" href="#TIPPER_BODY_CMD_02">TIPPER_BODY_CMD_02</a>
@@ -137,7 +143,16 @@
         <a class="quick-link secondary-text" href="#TRAILER_AIR_SUPPLY_CMD">TRAILER_AIR_SUPPLY_CMD</a>
         <a class="quick-link secondary-text" href="#TRAILER_AIR_SUPPLY_RPT">TRAILER_AIR_SUPPLY_RPT</a>
         <a class="quick-link secondary-text" href="#TRAILER_BRAKE_CMD">TRAILER_BRAKE_CMD</a>
+        <a class="quick-link secondary-text" href="#TRAILER_BRAKE_PRESSURE_RPT_00">TRAILER_BRAKE_PRESSURE_RPT_00</a>
+        <a class="quick-link secondary-text" href="#TRAILER_BRAKE_PRESSURE_RPT_01">TRAILER_BRAKE_PRESSURE_RPT_01</a>
+        <a class="quick-link secondary-text" href="#TRAILER_BRAKE_PRESSURE_RPT_02">TRAILER_BRAKE_PRESSURE_RPT_02</a>
+        <a class="quick-link secondary-text" href="#TRAILER_BRAKE_PRESSURE_RPT_03">TRAILER_BRAKE_PRESSURE_RPT_03</a>
+        <a class="quick-link secondary-text" href="#TRAILER_BRAKE_PRESSURE_RPT_04">TRAILER_BRAKE_PRESSURE_RPT_04</a>
         <a class="quick-link secondary-text" href="#TRAILER_BRAKE_RPT">TRAILER_BRAKE_RPT</a>
+        <a class="quick-link secondary-text" href="#TRAILER_PAYLOAD_RPT_00">TRAILER_PAYLOAD_RPT_00</a>
+        <a class="quick-link secondary-text" href="#TRAILER_PAYLOAD_RPT_01">TRAILER_PAYLOAD_RPT_01</a>
+        <a class="quick-link secondary-text" href="#TRAILER_PAYLOAD_RPT_02">TRAILER_PAYLOAD_RPT_02</a>
+        <a class="quick-link secondary-text" href="#TRAILER_WHEEL_SPEED_RPT_00">TRAILER_WHEEL_SPEED_RPT_00</a>
         <a class="quick-link secondary-text" href="#TURN_AUX_RPT">TURN_AUX_RPT</a>
         <a class="quick-link secondary-text" href="#TURN_CMD">TURN_CMD</a>
         <a class="quick-link secondary-text" href="#TURN_RPT">TURN_RPT</a>
@@ -475,7 +490,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -487,7 +502,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -555,7 +570,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>LIMITED_ACCEL_CMD
@@ -568,16 +583,16 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>a</sup> The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> The ACCEL_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
           <p class="notes-para secondary-text">
-            <sup>b</sup> The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT. Percent of full-scale value of signal from 0 to 1.
+            <sup>b</sup> The LIMITED_ACCEL_CMD shall have the value of command associated with this system constrained by the ACCEL_CMD_LIMIT. Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -749,7 +764,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>COMMANDED_VALUE
@@ -762,7 +777,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>OUTPUT_VALUE
@@ -775,7 +790,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -790,7 +805,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -855,7 +870,7 @@
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">2000</td>
               <td class="centered-text secondary-text">kPa</td>
             </tr>
             <tr>
@@ -866,7 +881,7 @@
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">2000</td>
               <td class="centered-text secondary-text">kPa</td>
             </tr>
             <tr>
@@ -877,7 +892,7 @@
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">2000</td>
               <td class="centered-text secondary-text">kPa</td>
             </tr>
             <tr>
@@ -888,7 +903,7 @@
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">2000</td>
               <td class="centered-text secondary-text">kPa</td>
             </tr>
             <tr>
@@ -899,7 +914,7 @@
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
-              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">2000</td>
               <td class="centered-text secondary-text">kPa</td>
             </tr>
             <tr>
@@ -1319,6 +1334,180 @@
           </p>
         </div>
       </section><br><br>
+      <section class="message-container" id="BATTERY_VOLTAGE_LEVEL_RPT_1">
+        <h1 class="bold primary-text">BATTERY_VOLTAGE_LEVEL_RPT_1</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1070</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x42e</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">2</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BATTERY_VOLTAGE_1
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">0.2</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">V</td>
+            </tr>
+            <tr>
+              <td>BATTERY_VOLTAGE_2
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">0.2</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">V</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_AVAIL<br>
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="BATTERY_VOLTAGE_LEVEL_RPT_2">
+        <h1 class="bold primary-text">BATTERY_VOLTAGE_LEVEL_RPT_2</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1081</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x439</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">2</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BATTERY_VOLTAGE_1
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">0.2</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">V</td>
+            </tr>
+            <tr>
+              <td>BATTERY_VOLTAGE_2
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">0.2</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">50</td>
+              <td class="centered-text secondary-text">V</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_AVAIL<br>
+          </p>
+        </div>
+      </section><br><br>
       <section class="message-container" id="BRAKE_AUX_RPT">
         <h1 class="bold primary-text">BRAKE_AUX_RPT</h1>
         <table class="message-table">
@@ -1383,7 +1572,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">2</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>OPERATOR_INTERACTION
@@ -1546,7 +1735,7 @@
             <sup>6</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of nominal full-scale value of signal from 0 to 1 possibly exceeding 1.
+            <sup>a</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1) possible exceeding 1.
           </p>
           <p class="notes-para secondary-text">
             <sup>b</sup> OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -1668,7 +1857,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -1680,7 +1869,7 @@
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -1748,7 +1937,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>LIMITED_BRAKE_CMD
@@ -1761,16 +1950,16 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
           <p class="notes-para secondary-text">
-            <sup>a</sup> The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> The BRAKE_CMD_LIMIT shall have the value of the limit imposed on the command associated with this system. Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
           <p class="notes-para secondary-text">
-            <sup>b</sup> The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT. Percent of full-scale value of signal from 0 to 1.
+            <sup>b</sup> The LIMITED_BRAKE_CMD shall have the value of command associated with this system constrained by the BRAKE_CMD_LIMIT. Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -2762,7 +2951,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>COMMANDED_VALUE
@@ -2775,7 +2964,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>OUTPUT_VALUE
@@ -2788,7 +2977,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -2803,7 +2992,7 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of full-scale value of signal from 0 to 1.
+            <sup>a</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -4656,6 +4845,48 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>SYSTEM_ENABLED
+                <sup>6</sup>
+                <sup>g</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">51</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_OVERRIDE_ACTIVE
+                <sup>7</sup>
+                <sup>h</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">52</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_FAULT_ACTIVE
+                <sup>3</sup>
+                <sup>i</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">53</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -4675,6 +4906,12 @@
             <sup>5</sup> 0=NOT_READY, 1=READY<br>
           </p>
           <p class="notes-para secondary-text">
+            <sup>6</sup> 0=DISABLED, 1=ENABLED<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>7</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
+          </p>
+          <p class="notes-para secondary-text">
             <sup>a</sup> Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
           </p>
           <p class="notes-para secondary-text">
@@ -4691,6 +4928,15 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>f</sup> This value will indicate whether this component is ready for by-wire control.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>g</sup> One or more systems are enabled.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>h</sup> One or more overrides are active.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>i</sup> One or more faults are active.
           </p>
         </div>
       </section><br><br>
@@ -5301,6 +5547,48 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>SYSTEM_ENABLED
+                <sup>6</sup>
+                <sup>g</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">51</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_OVERRIDE_ACTIVE
+                <sup>7</sup>
+                <sup>h</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">52</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_FAULT_ACTIVE
+                <sup>3</sup>
+                <sup>i</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">53</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -5320,6 +5608,12 @@
             <sup>5</sup> 0=NOT_READY, 1=READY<br>
           </p>
           <p class="notes-para secondary-text">
+            <sup>6</sup> 0=DISABLED, 1=ENABLED<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>7</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
+          </p>
+          <p class="notes-para secondary-text">
             <sup>a</sup> Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
           </p>
           <p class="notes-para secondary-text">
@@ -5336,6 +5630,15 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>f</sup> This value will indicate whether this component is ready for by-wire control.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>g</sup> One or more systems are enabled.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>h</sup> One or more overrides are active.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>i</sup> One or more faults are active.
           </p>
         </div>
       </section><br><br>
@@ -5946,6 +6249,48 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>SYSTEM_ENABLED
+                <sup>6</sup>
+                <sup>g</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">51</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_OVERRIDE_ACTIVE
+                <sup>7</sup>
+                <sup>h</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">52</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_FAULT_ACTIVE
+                <sup>3</sup>
+                <sup>i</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">53</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -5965,6 +6310,12 @@
             <sup>5</sup> 0=NOT_READY, 1=READY<br>
           </p>
           <p class="notes-para secondary-text">
+            <sup>6</sup> 0=DISABLED, 1=ENABLED<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>7</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
+          </p>
+          <p class="notes-para secondary-text">
             <sup>a</sup> Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
           </p>
           <p class="notes-para secondary-text">
@@ -5981,6 +6332,15 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>f</sup> This value will indicate whether this component is ready for by-wire control.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>g</sup> One or more systems are enabled.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>h</sup> One or more overrides are active.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>i</sup> One or more faults are active.
           </p>
         </div>
       </section><br><br>
@@ -6591,6 +6951,48 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>SYSTEM_ENABLED
+                <sup>6</sup>
+                <sup>g</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">51</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_OVERRIDE_ACTIVE
+                <sup>7</sup>
+                <sup>h</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">52</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_FAULT_ACTIVE
+                <sup>3</sup>
+                <sup>i</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">53</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -6610,6 +7012,12 @@
             <sup>5</sup> 0=NOT_READY, 1=READY<br>
           </p>
           <p class="notes-para secondary-text">
+            <sup>6</sup> 0=DISABLED, 1=ENABLED<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>7</sup> 0=NOT_OVERRIDDEN, 1=OVERRIDDEN<br>
+          </p>
+          <p class="notes-para secondary-text">
             <sup>a</sup> Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.
           </p>
           <p class="notes-para secondary-text">
@@ -6626,6 +7034,15 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>f</sup> This value will indicate whether this component is ready for by-wire control.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>g</sup> One or more systems are enabled.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>h</sup> One or more overrides are active.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>i</sup> One or more faults are active.
           </p>
         </div>
       </section><br><br>
@@ -7236,6 +7653,45 @@
               <td class="centered-text secondary-text">1</td>
               <td class="centered-text secondary-text"></td>
             </tr>
+            <tr>
+              <td>SYSTEM_ENABLED
+                <sup>g</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">51</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_OVERRIDE_ACTIVE
+                <sup>h</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">52</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>SYSTEM_FAULT_ACTIVE
+                <sup>i</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">53</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
           </table>
         </div>
         <div class="notes-container" id="notes-container">
@@ -7271,6 +7727,15 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>f</sup> This value will indicate whether this component is ready for by-wire control.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>g</sup> One or more systems are enabled.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>h</sup> One or more overrides are active.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>i</sup> One or more faults are active.
           </p>
         </div>
       </section><br><br>
@@ -9156,7 +9621,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>DIESEL_EXHAUST_FLUID_LEVEL
@@ -9169,7 +9634,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -9181,7 +9646,7 @@
             <sup>a</sup> PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
           </p>
           <p class="notes-para secondary-text">
-            <sup>b</sup> Percent of nominal full-scale value of signal from 0 to 1.
+            <sup>b</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -9302,7 +9767,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>OIL_PRESSURE</td>
@@ -9325,7 +9790,7 @@
             <sup>a</sup> PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.
           </p>
           <p class="notes-para secondary-text">
-            <sup>b</sup> Percent of nominal full-scale value of signal from 0 to 1.
+            <sup>b</sup> Ratio of full-scale value of signal from 0 to 1 (i.e. percent from 0 to 1).
           </p>
         </div>
       </section><br><br>
@@ -9399,7 +9864,7 @@
               <td>ACTUAL_ENGINE_BRK_TORQUE
                 <sup>a</sup>
               </td>
-              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">15</td>
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">1</td>
@@ -9412,7 +9877,7 @@
               <td>INTENDED_ENGINE_BRK_TORQUE
                 <sup>a</sup>
               </td>
-              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">23</td>
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">1</td>
@@ -10066,7 +10531,7 @@
               <td>DRVR_DEMANDED_ENG_TORQUE
                 <sup>a</sup>
               </td>
-              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">7</td>
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">1</td>
@@ -10079,7 +10544,7 @@
               <td>ACTUAL_ENGINE_TORQUE
                 <sup>b</sup>
               </td>
-              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">15</td>
               <td class="centered-text secondary-text">8</td>
               <td class="centered-text secondary-text">1</td>
@@ -10365,7 +10830,7 @@
             </tr>
             <tr>
               <td>COMMANDED_VALUE
-                <sup>4</sup>
+                <sup>5</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">23</td>
@@ -10378,7 +10843,7 @@
             </tr>
             <tr>
               <td>OUTPUT_VALUE
-                <sup>4</sup>
+                <sup>6</sup>
               </td>
               <td class="centered-text secondary-text">Unsigned</td>
               <td class="centered-text secondary-text">31</td>
@@ -10402,7 +10867,13 @@
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>4</sup> 0=NO_ACTION, 1=ENGINE_OFF<br>
+            <sup>4</sup> 0=OFF, 1=ACC, 2=ON, 3=START, 4=RUN, 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>5</sup> 0=NO_ACTION, 1=ENGINE_OFF<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>6</sup> 1=ENGINE_OFF, 2=ENGINE_RUNNING, 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_AVAIL<br>
           </p>
         </div>
       </section><br><br>
@@ -15511,6 +15982,120 @@
           </p>
         </div>
       </section><br><br>
+      <section class="message-container" id="REMOTE_STOP_RPT">
+        <h1 class="bold primary-text">REMOTE_STOP_RPT</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1076</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x434</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">4</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>REMOTE_STOP_COMMAND
+                <sup>1</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>REMOTE_STOP_SENDER_ID</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">65535</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>REMOTE_STOP_TIMEOUT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">24</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>REMOTE_STOP_FAULT
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">25</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 0=GO, 1=STOP, 2=TEST, 251=RESERVED, 252=RESERVED, 253=RESERVED, 254=ERROR, 255=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=NO_FAULT, 1=FAULT<br>
+          </p>
+        </div>
+      </section><br><br>
       <section class="message-container" id="SAFETY_BRAKE_CMD">
         <h1 class="bold primary-text">SAFETY_BRAKE_CMD</h1>
         <table class="message-table">
@@ -18534,7 +19119,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">-2</td>
               <td class="centered-text secondary-text">2</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>ROTATION_RATE</td>
@@ -18721,7 +19306,7 @@
             <sup>6</sup> 0=NOT_AVAILABLE, 1=AVAILABLE<br>
           </p>
           <p class="notes-para secondary-text">
-            <sup>a</sup> Percent of nominal full-scale value of signal from 0 to 1 and 0 to -1 possibly exceeding -1 and 1.
+            <sup>a</sup> Ratio of full-scale value of signal from -1 to 1 (i.e. percent from -1 to 1) possibly exceeding -1 and 1.
           </p>
           <p class="notes-para secondary-text">
             <sup>b</sup> OPERATOR_INTERACTION shall have the value of 1 if the driver is moving, changing, or otherwise touching the operator control(s) that relates to this signal to an extent that is detectable. Otherwise, the value shall be 0.
@@ -19568,6 +20153,496 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>c</sup> The COMPLEMENT shall be the complement of the COUNTER.  For example, if COUNTER is 0x1011, then the COMPLEMENT is 0x0100.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_AUX_RPT_00">
+        <h1 class="bold primary-text">TIPPER_BODY_AUX_RPT_00</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">856</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x358</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">5</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Trailer number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ROLL_ANGLE
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>PITCH_ANGLE
+                <sup>1</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_OPEN
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">33</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_CLOSED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">35</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_LOWERED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">37</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_RAISED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=FALSE, 1=TRUE, 2=ERROR, 3=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Roll angle between base of tub and level ground. Level is zero. Roll is positive according to right hand rule with the axis pointing forward.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Pitch angle between base of tub and level ground. Level is zero. Pitch is positive according to right hand rule with the axis pointing left.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_AUX_RPT_01">
+        <h1 class="bold primary-text">TIPPER_BODY_AUX_RPT_01</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">876</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x36c</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">5</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Trailer number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ROLL_ANGLE
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>PITCH_ANGLE
+                <sup>1</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_OPEN
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">33</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_CLOSED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">35</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_LOWERED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">37</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_RAISED</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=FALSE, 1=TRUE, 2=ERROR, 3=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Roll angle between base of tub and level ground. Level is zero. Roll is positive according to right hand rule with the axis pointing forward.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Pitch angle between base of tub and level ground. Level is zero. Pitch is positive according to right hand rule with the axis pointing left.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TIPPER_BODY_AUX_RPT_02">
+        <h1 class="bold primary-text">TIPPER_BODY_AUX_RPT_02</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">880</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x370</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">5</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Trailer number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>ROLL_ANGLE
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>PITCH_ANGLE
+                <sup>1</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.001</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-32.768</td>
+              <td class="centered-text secondary-text">32.762</td>
+              <td class="centered-text secondary-text">rad</td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_OPEN
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">33</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>DOOR_FULLY_CLOSED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">35</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_LOWERED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">37</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+            <tr>
+              <td>BODY_FULLY_RAISED
+                <sup>2</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">2</td>
+              <td class="centered-text secondary-text">1</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">3</td>
+              <td class="centered-text secondary-text"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 0=FALSE, 1=TRUE, 2=ERROR, 3=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Roll angle between base of tub and level ground. Level is zero. Roll is positive according to right hand rule with the axis pointing forward.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Pitch angle between base of tub and level ground. Level is zero. Pitch is positive according to right hand rule with the axis pointing left.
           </p>
         </div>
       </section><br><br>
@@ -22059,7 +23134,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -22069,6 +23144,826 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>2</sup> 0=FALSE, 1=TRUE<br>
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_BRAKE_PRESSURE_RPT_00">
+        <h1 class="bold primary-text">TRAILER_BRAKE_PRESSURE_RPT_00</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1064</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x428</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">7</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>PNEUMATIC_SUPPLY_PRESSURE</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle number starting from the front of the respective chassis number (described in message comment).
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_BRAKE_PRESSURE_RPT_01">
+        <h1 class="bold primary-text">TRAILER_BRAKE_PRESSURE_RPT_01</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1065</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x429</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">7</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>PNEUMATIC_SUPPLY_PRESSURE</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle number starting from the front of the respective chassis number (described in message comment).
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_BRAKE_PRESSURE_RPT_02">
+        <h1 class="bold primary-text">TRAILER_BRAKE_PRESSURE_RPT_02</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1066</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x42a</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">7</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>PNEUMATIC_SUPPLY_PRESSURE</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle number starting from the front of the respective chassis number (described in message comment).
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_BRAKE_PRESSURE_RPT_03">
+        <h1 class="bold primary-text">TRAILER_BRAKE_PRESSURE_RPT_03</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1067</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x42b</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">7</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>PNEUMATIC_SUPPLY_PRESSURE</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle number starting from the front of the respective chassis number (described in message comment).
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_BRAKE_PRESSURE_RPT_04">
+        <h1 class="bold primary-text">TRAILER_BRAKE_PRESSURE_RPT_04</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1068</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x42c</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">7</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">100</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_1_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">15</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_2_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">31</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_LEFT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>BRAKE_PRESSURE_AXLE_3_RIGHT
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">47</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+            <tr>
+              <td>PNEUMATIC_SUPPLY_PRESSURE</td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">8</td>
+              <td class="centered-text secondary-text">5</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">1250</td>
+              <td class="centered-text secondary-text">kPa</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle number starting from the front of the respective chassis number (described in message comment).
           </p>
         </div>
       </section><br><br>
@@ -22238,7 +24133,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>COMMANDED_VALUE</td>
@@ -22249,7 +24144,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
             <tr>
               <td>OUTPUT_VALUE</td>
@@ -22260,7 +24155,7 @@
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">0</td>
               <td class="centered-text secondary-text">1</td>
-              <td class="centered-text secondary-text">%</td>
+              <td class="centered-text secondary-text">ratio</td>
             </tr>
           </table>
         </div>
@@ -22273,6 +24168,530 @@
           </p>
           <p class="notes-para secondary-text">
             <sup>3</sup> 0=NO_TIMEOUT, 1=TIMEOUT<br>
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_PAYLOAD_RPT_00">
+        <h1 class="bold primary-text">TRAILER_PAYLOAD_RPT_00</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1078</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x436</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Tipper body number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_00
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_00
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_01
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_01
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 65531=RESERVED, 65532=RESERVED, 65533=RESERVED, 65534=ERROR, 65535=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only the contents of the trailer.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only an empty trailer.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_PAYLOAD_RPT_01">
+        <h1 class="bold primary-text">TRAILER_PAYLOAD_RPT_01</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1079</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x437</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text"></td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">250</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Tipper body number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_00
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_00
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_01
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_01
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 65531=RESERVED, 65532=RESERVED, 65533=RESERVED, 65534=ERROR, 65535=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only the contents of the trailer.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only an empty trailer.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_PAYLOAD_RPT_02">
+        <h1 class="bold primary-text">TRAILER_PAYLOAD_RPT_02</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1080</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x438</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">8</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Tipper body number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_00
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_00
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>PAYLOAD_01
+                <sup>1</sup>
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Signed</td>
+              <td class="centered-text secondary-text">39</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">-327680</td>
+              <td class="centered-text secondary-text">327610</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+            <tr>
+              <td>TARE_01
+                <sup>2</sup>
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">55</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">10</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">655300</td>
+              <td class="centered-text secondary-text">Kg</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>1</sup> 32763=RESERVED, 32764=RESERVED, 32765=RESERVED, 32766=ERROR, 32767=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>2</sup> 65531=RESERVED, 65532=RESERVED, 65533=RESERVED, 65534=ERROR, 65535=NOT_AVAIL<br>
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only the contents of the trailer.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only an empty trailer.
+          </p>
+        </div>
+      </section><br><br>
+      <section class="message-container" id="TRAILER_WHEEL_SPEED_RPT_00">
+        <h1 class="bold primary-text">TRAILER_WHEEL_SPEED_RPT_00</h1>
+        <table class="message-table">
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Decimal</td>
+            <td class="left-justified-text secondary-text">1069</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">ID Hexadecimal</td>
+            <td class="left-justified-text secondary-text">0x42d</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Frame Format</td>
+            <td class="left-justified-text secondary-text">Standard</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">DLC</td>
+            <td class="left-justified-text secondary-text">4</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Sender</td>
+            <td class="left-justified-text secondary-text">PACMOD</td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Send Type</td>
+            <td class="left-justified-text secondary-text">Cyclic </td>
+          </tr>
+          <tr>
+            <td class="message-table-titles-width secondary-text">Interval (ms)</td>
+            <td class="left-justified-text secondary-text">33</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="message-comment secondary-text">Message Comments</td>
+          </tr>
+          <tr>
+            <td class="secondary-text" colspan="3">Chassis number increments from the front most trailer and is indicated by the report index.</td>
+          </tr>
+        </table>
+        <div class="supported-vehicles-container" id="supported-vehicles-container">
+          <div style="width: 150px;float: left;">
+            <p class="inline supported-vehicles secondary-text">Supported Vehicles: </p>
+          </div>
+          <div style="width: 620px;float: left;">
+            <p class="secondary-text supported-vehicles-list">Development Vehicle 03</p>
+          </div>
+        </div>
+        <div class="signals-table-container" id="signals-table-container">
+          <table class="signals-table secondary-text" id="signals-table">
+            <tr class="header-row">
+              <td class="centered-text bold secondary-text">Name</td>
+              <td class="centered-text bold secondary-text">Type</td>
+              <td class="centered-text bold secondary-text">Bitpos</td>
+              <td class="centered-text bold secondary-text">Length</td>
+              <td class="centered-text bold secondary-text">Factor</td>
+              <td class="centered-text bold secondary-text">Offset</td>
+              <td class="centered-text bold secondary-text">Min</td>
+              <td class="centered-text bold secondary-text">Max</td>
+              <td class="centered-text bold secondary-text">Unit</td>
+            </tr>
+            <tr>
+              <td>WHEEL_BASED_VEHICLE_SPEED
+                <sup>a</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">7</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.00390625</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">0</td>
+              <td class="centered-text secondary-text">250</td>
+              <td class="centered-text secondary-text">km/h</td>
+            </tr>
+            <tr>
+              <td>WHEEL_SPEED_DIFFERENCE_MAIN_AXLE
+                <sup>b</sup>
+              </td>
+              <td class="centered-text secondary-text">Unsigned</td>
+              <td class="centered-text secondary-text">23</td>
+              <td class="centered-text secondary-text">16</td>
+              <td class="centered-text secondary-text">0.00390625</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">-125</td>
+              <td class="centered-text secondary-text">125</td>
+              <td class="centered-text secondary-text">km/h</td>
+            </tr>
+          </table>
+        </div>
+        <div class="notes-container" id="notes-container">
+          <p class="notes-para secondary-text">
+            <sup>a</sup> Absolute value of the average of wheel speeds for one trailer axle.
+          </p>
+          <p class="notes-para secondary-text">
+            <sup>b</sup> Difference = speed right - speed left
           </p>
         </div>
       </section><br><br>

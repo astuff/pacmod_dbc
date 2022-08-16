@@ -1,6 +1,6 @@
 # User CAN Protocol Standard 3.0
 
-This document the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod 3.0 System and resides on the User CAN data bus.
+This document the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod System and resides on the User CAN data bus.
 
 ## Document References
 This document is the authoritative defintion of the User CAN Protocol.  The following documents are supplimental to this document.  They all reside in GitHub (https://github.com/astuff/pacmod_dbc).
@@ -15,7 +15,7 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 - CAN Message: A CAN message is a CAN frame with a specific value in its CAN arbitration field.
 - Component: An individual electronic part of the PACMod System that communicates on the User CAN.
 - DBC: The as_pacmod.dbc file.
-- PACMod System: The PACMod System is the PACMod 3.0 System.
+- PACMod System: The PACMod System is the PACMod System.
 - System: A vehicle system that is under by-wire control.
 - User CAN: The CAN bus that interfaces to the PACMod System.
 - User PC: Any device the customer uses to communicate with the PACMod System.
@@ -61,6 +61,29 @@ Component reports have a fixed association to a single component.  It contains d
 
 There are other miscellaneous commands and reports.
 
+## Signal Status Enumerations
+These enumerations indicate the status of signals. They are:
+
+ERROR - The signal is not correct.
+NOT_AVAIL - The signal is not available.
+All signals that can possess one or more of these statuses shall reserve the largest positive value as follows.
+
+(N = the largest positive value for the given value space. For non-integers, consider the value space as an integer.)
+
+Single Bit Data
+
+Reserve 2-bits for data and statuses, defined as follows.
+0=FALSE_STATE, 1=TRUE_STATE, 2=ERROR, 3=NOT_AVAIL
+2-7 Bit Data
+
+Reserve two largest positive values for statuses, defined as follows.
+N-1=ERROR, N=NOT_AVAIL
+8 Bit Data and Larger
+
+Reserve five largest positive values for statuses, defined as follows.
+N-5, N-4, and N-3=RESERVED, N-1=ERROR, N=NOT_AVAIL
+RESERVED values are for later use.
+
 ## CAN Bus
 User CAN Protocol datalink layer is CAN 2.0 at 500kbps.
 
@@ -77,20 +100,21 @@ The list below constrains the assignment of CAN IDs to specific messages. Its pu
 1. 0x300-0x3FF (768-1023) - System-based auxiliary reports
 1. 0x400-0x4FF (1024-1279) - Misc. reports, non-time-critical commands
 1. 0x500-0x5FF (1280-1535) - Internal diagnostic messages (generally undocumented)
-1. 0x600-0x6FF (1536-1791) - Internal development
+1. 0x600-0x6BF (1536-1726) - Internal development
+1. 0x6C0-0x6FF (1727-1791) - Internal use
 1. 0x700-0x7FF (1792-2047) - Unused
 
 ## Rules for Transmitting CAN Messages
 
-All system messages transmit at 30Hz.  Other messages transmit at 30Hz or less. Transmission of successive messages shall not be back-to-back but must have a minimum separation of 500 microseconds.  See the figure below.  Faster data transmission may prevent PACMod from processing all data and result in inconsistent behavior. If the PACMod System does not receive a command message for a period of 100ms or more while by-wire control is active, the system reverts to manual mode.
+All system messages transmit at 30Hz.  Other messages transmit at 30Hz or less. Transmission of successive messages shall not be back-to-back but must have a minimum separation of 500 microseconds.  See the figure below.  Faster data transmission may prevent PACMod from processing all data and result in inconsistent behavior.
 
 The figure below is an example of the minimum separation between the transmission of the BRAKE_CMD, STEERING_CMD, and the ACCEL_CMD messages by the User PC.  The User PC transmits the complete set of messages, each separated by 500us.  The user then transmits the same set of messages again on 30Hz cycle (33.3ms) later.  Each message is again separated by 500us.
 
 ![alt_text](min_xsmn_separation.jpg "min_xsmn_separation.jpg")
 
-## CAN Message Data
+## CAN Signals
 
-The byte order of all CAN messages is Motorola/Big-Endian.
+The byte order of all CAN signals is Motorola/Big-Endian. All negative numbers are represented as two’s compliment.
 
 ## CAN Message Availability
 
