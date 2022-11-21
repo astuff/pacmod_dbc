@@ -425,44 +425,63 @@
     <can_id>34</can_id>
     <can_id>35</can_id>
     <can_id>36</can_id>
+    <can_id>37</can_id>
+    <can_id>38</can_id>
     <can_id>67</can_id>
+    <can_id>68</can_id>
     <can_id>128</can_id>
+    <can_id>192</can_id>
     <can_id>256</can_id>
     <can_id>260</can_id>
     <can_id>276</can_id>
     <can_id>284</can_id>
+    <can_id>292</can_id>
     <can_id>296</can_id>
     <can_id>300</can_id>
     <can_id>304</can_id>
     <can_id>308</can_id>
+    <can_id>312</can_id>
     <can_id>324</can_id>
     <can_id>325</can_id>
+    <can_id>344</can_id>
+    <can_id>348</can_id>
     <can_id>360</can_id>
+    <can_id>364</can_id>
+    <can_id>368</can_id>
     <can_id>512</can_id>
     <can_id>516</can_id>
+    <can_id>518</can_id>
     <can_id>532</can_id>
     <can_id>540</can_id>
+    <can_id>548</can_id>
     <can_id>552</can_id>
     <can_id>556</can_id>
+    <can_id>558</can_id>
     <can_id>560</can_id>
+    <can_id>564</can_id>
+    <can_id>568</can_id>
     <can_id>580</can_id>
     <can_id>581</can_id>
+    <can_id>600</can_id>
+    <can_id>604</can_id>
     <can_id>616</can_id>
+    <can_id>620</can_id>
+    <can_id>624</can_id>
     <can_id>768</can_id>
     <can_id>772</can_id>
+    <can_id>774</can_id>
     <can_id>804</can_id>
     <can_id>808</can_id>
     <can_id>812</can_id>
+    <can_id>814</can_id>
     <can_id>816</can_id>
     <can_id>820</can_id>
     <can_id>836</can_id>
+    <can_id>856</can_id>
+    <can_id>876</can_id>
+    <can_id>880</can_id>
     <can_id>1024</can_id>
-    <can_id>1025</can_id>
-    <can_id>1026</can_id>
-    <can_id>1027</can_id>
-    <can_id>1028</can_id>
-    <can_id>1029</can_id>
-    <can_id>1030</can_id>
+    <can_id>1031</can_id>
     <can_id>1032</can_id>
     <can_id>1033</can_id>
     <can_id>1034</can_id>
@@ -470,112 +489,101 @@
     <can_id>1036</can_id>
     <can_id>1040</can_id>
     <can_id>1042</can_id>
-    <can_id>1048</can_id>
     <can_id>1052</can_id>
     <can_id>1053</can_id>
-    <can_id>1057</can_id>
+    <can_id>1055</can_id>
     <can_id>1059</can_id>
     <can_id>1060</can_id>
     <can_id>1061</can_id>
     <can_id>1062</can_id>
-    <can_id>344</can_id>
-    <can_id>600</can_id>
-    <can_id>364</can_id>
-    <can_id>620</can_id>
-    <can_id>368</can_id>
-    <can_id>624</can_id>
-    <can_id>348</can_id>
-    <can_id>604</can_id>
-    <can_id>1072</can_id>
-    <can_id>1073</can_id>
-    <can_id>1074</can_id>
-    <can_id>1075</can_id>
     <can_id>1063</can_id>
-    <can_id>1077</can_id>
-    <can_id>192</can_id>
-    <can_id>292</can_id>
-    <can_id>312</can_id>
-    <can_id>548</can_id>
-    <can_id>564</can_id>
-    <can_id>568</can_id>
-    <can_id>1031</can_id>
     <can_id>1064</can_id>
     <can_id>1065</can_id>
     <can_id>1066</can_id>
     <can_id>1067</can_id>
     <can_id>1068</can_id>
     <can_id>1069</can_id>
+    <can_id>1070</can_id>
+    <can_id>1072</can_id>
+    <can_id>1073</can_id>
+    <can_id>1074</can_id>
+    <can_id>1075</can_id>
     <can_id>1076</can_id>
+    <can_id>1077</can_id>
     <can_id>1078</can_id>
     <can_id>1079</can_id>
     <can_id>1080</can_id>
-    <can_id>856</can_id>
-    <can_id>876</can_id>
-    <can_id>880</can_id>
-    <can_id>1070</can_id>
+    <can_id>1083</can_id>
     <can_id>1081</can_id>
   </vehicle>
   <vehicle name="Development Vehicle 04" id="10">
     <can_id>17</can_id>
     <can_id>32</can_id>
     <can_id>33</can_id>
-    <can_id>34</can_id>
+    <can_id>37</can_id>
+    <can_id>38</can_id>
+    <can_id>67</can_id>
+    <can_id>68</can_id>
     <can_id>128</can_id>
+    <can_id>192</can_id>
     <can_id>256</can_id>
     <can_id>260</can_id>
     <can_id>276</can_id>
     <can_id>280</can_id>
     <can_id>284</can_id>
+    <can_id>292</can_id>
     <can_id>296</can_id>
     <can_id>300</can_id>
     <can_id>304</can_id>
     <can_id>308</can_id>
+    <can_id>312</can_id>
     <can_id>324</can_id>
-    <can_id>325</can_id>
+    <can_id>344</can_id>
+    <can_id>348</can_id>
     <can_id>356</can_id>
+    <can_id>364</can_id>
+    <can_id>368</can_id>
     <can_id>512</can_id>
     <can_id>516</can_id>
+    <can_id>518</can_id>
     <can_id>532</can_id>
     <can_id>536</can_id>
     <can_id>540</can_id>
+    <can_id>548</can_id>
+    <can_id>550</can_id>
     <can_id>552</can_id>
     <can_id>556</can_id>
+    <can_id>558</can_id>
     <can_id>560</can_id>
+    <can_id>564</can_id>
+    <can_id>568</can_id>
     <can_id>580</can_id>
-    <can_id>581</can_id>
+    <can_id>600</can_id>
+    <can_id>604</can_id>
     <can_id>612</can_id>
+    <can_id>614</can_id>
+    <can_id>620</can_id>
+    <can_id>624</can_id>
     <can_id>768</can_id>
     <can_id>772</can_id>
-    <can_id>792</can_id>
+    <can_id>774</can_id>
     <can_id>804</can_id>
     <can_id>808</can_id>
     <can_id>812</can_id>
-    <can_id>816</can_id>
-    <can_id>820</can_id>
-    <can_id>836</can_id>
+    <can_id>814</can_id>
+    <can_id>856</can_id>
+    <can_id>876</can_id>
+    <can_id>880</can_id>
     <can_id>1024</can_id>
-    <can_id>1025</can_id>
-    <can_id>1026</can_id>
-    <can_id>1027</can_id>
-    <can_id>1028</can_id>
-    <can_id>1029</can_id>
-    <can_id>1030</can_id>
     <can_id>1032</can_id>
     <can_id>1033</can_id>
-    <can_id>1034</can_id>
     <can_id>1040</can_id>
-    <can_id>1044</can_id>
-    <can_id>1048</can_id>
     <can_id>1052</can_id>
     <can_id>1053</can_id>
-    <can_id>1057</can_id>
     <can_id>1059</can_id>
     <can_id>1060</can_id>
-    <can_id>1061</can_id>
-    <can_id>1062</can_id>
-    <can_id>344</can_id>
-    <can_id>600</can_id>
-    <can_id>348</can_id>
-    <can_id>604</can_id>
+    <can_id>1070</can_id>
+    <can_id>1077</can_id>
+    <can_id>1081</can_id>
   </vehicle>
 </vehicles>

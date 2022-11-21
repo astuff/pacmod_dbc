@@ -84,6 +84,8 @@ Reserve five largest positive values for statuses, defined as follows.
 N-5, N-4, and N-3=RESERVED, N-1=ERROR, N=NOT_AVAIL
 RESERVED values are for later use.
 
+If one of the enumeration values do not apply to a given signal - NOT_USED may be used.
+
 ## CAN Bus
 User CAN Protocol datalink layer is CAN 2.0 at 500kbps.
 
