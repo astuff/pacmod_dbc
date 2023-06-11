@@ -427,6 +427,7 @@
     <can_id>36</can_id>
     <can_id>37</can_id>
     <can_id>38</can_id>
+    <can_id>39</can_id>
     <can_id>67</can_id>
     <can_id>68</can_id>
     <can_id>128</can_id>
@@ -448,6 +449,7 @@
     <can_id>360</can_id>
     <can_id>364</can_id>
     <can_id>368</can_id>
+    <can_id>372</can_id>
     <can_id>512</can_id>
     <can_id>516</can_id>
     <can_id>518</can_id>
@@ -467,6 +469,7 @@
     <can_id>616</can_id>
     <can_id>620</can_id>
     <can_id>624</can_id>
+    <can_id>628</can_id>
     <can_id>768</can_id>
     <can_id>772</can_id>
     <can_id>774</can_id>
@@ -513,8 +516,14 @@
     <can_id>1078</can_id>
     <can_id>1079</can_id>
     <can_id>1080</can_id>
-    <can_id>1083</can_id>
     <can_id>1081</can_id>
+    <can_id>1083</can_id>
+    <can_id>1084</can_id>
+    <can_id>1085</can_id>
+    <can_id>1086</can_id>
+    <can_id>1087</can_id>
+    <can_id>1088</can_id>
+    <can_id>1089</can_id>
   </vehicle>
   <vehicle name="Development Vehicle 04" id="10">
     <can_id>17</can_id>

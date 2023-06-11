@@ -11,11 +11,13 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 
 ## Definitions
 
+- Amber Warning Lamp: Warning lamp that indicates faults that do not require the vehicle to stop immediately.
 - CAN ID: A CAN ID is the value in the CAN arbitration field that identifies the data in the CAN data field.
 - CAN Message: A CAN message is a CAN frame with a specific value in its CAN arbitration field.
 - Component: An individual electronic part of the PACMod System that communicates on the User CAN.
 - DBC: The as_pacmod.dbc file.
 - PACMod System: The PACMod System is the PACMod System.
+- Red Warning Lamp: warning lamp that indicates faults that do require the vehicle to stop immediately.
 - System: A vehicle system that is under by-wire control.
 - User CAN: The CAN bus that interfaces to the PACMod System.
 - User PC: Any device the customer uses to communicate with the PACMod System.
@@ -301,6 +303,7 @@ Abbreviations are only required when the name is over 32 characters.
 - LON: Longitude
 - MAN: manual
 - MAX: Maximum
+- MC: Master Cylinder
 - MFG: Manufacturing
 - OPCTRL: Operator Control
 - PASS: Passenger
@@ -318,6 +321,7 @@ Abbreviations are only required when the name is over 32 characters.
 - SYS: System
 - TEMP: Temperature
 - TRC: Traction Control
+- TRQ: Torque
 - USR: User
 - VEH: Vehicle
 - VEL: Velocity

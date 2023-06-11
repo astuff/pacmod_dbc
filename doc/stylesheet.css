@@ -153,10 +153,10 @@ html {
 
   .message-container {
       position: relative;
-      width: 820px;
+      width: 900px;
       height: auto;
       padding-top: 1px;
-      padding-right: 10px;
+      padding-right: 0px;
       padding-left: 10px;
       padding-bottom: 10px;
       background-color: #404040;
@@ -164,7 +164,7 @@ html {
   }
 
   .message-table {
-      width: 820px;
+      width: 890px;
       padding: 10px;
       background-color: #282828;
       border-radius: 4px;
@@ -180,11 +180,12 @@ html {
 
   .supported-vehicles-container {
       position: relative;
-      width: 815px;
+      width: 880px;
       text-align: center;
       padding-top: 5px;
-      padding-bottom: 40px;
+      padding-bottom: 65px; /* This value has to be increased manually when the number of supported vehicles wraps around to the next row */
       padding-left: 5px;
+      padding-right: 5px;
       background-color: #282828;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -202,14 +203,14 @@ html {
 
   .signals-table-container {
       position: relative;
-      width: 800px;
+      width: 870px;
       padding: 10px;
       background-color: #282828;
       border-radius: 4px;
   }
 
   .signals-table {
-      width: 800px;
+      width: 870px;
       border-collapse: collapse;
   }
 
@@ -223,7 +224,7 @@ html {
 
   .notes-container {
       background-color: #282828;
-      width: 800px;
+      width: 870px;
       padding-top: 2px;
       padding-left: 10px;
       padding-bottom: 10px;

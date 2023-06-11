@@ -1,3 +1,14 @@
+# 13.2.0
+1. (Add) Add GEAR_CMD and GEAR_RPT messages
+1. (Add) Add ACCEL_PEDAL_POSITION_VOLTAGE_RPT, BRAKE_MC_VOLTAGE_RPT, BRAKE_PEDAL_POSITION_VOLTAGE_RPT, STEERING_TRQ_SENSOR_VOLTAGE_RPT
+1. (Add) Add signal status enumerations to all signals in the TRAILER_WHEEL_SPEED_RPT_00, TRAILER_BRAKE_PRESSURE_RPT_00, 01, 02, 03, and 04
+1. (Add) Add COMPONENT_RPT_05 and SOFTWARE_VERSION_RPT_05
+1. (Add) Add TRAILER_FAULT_RPT_00, 01, 02, 03, and 04
+1. (Add) Add DIFFERENTIAL_LOCKS by-wire system
+1. (Add) Add DEVELOPMENT_MODE_REQUEST signal to GLOBAL_CMD and DEVELOPMENT_MODE and DEVELOPMENT_MODE_ALLOWED signals to GLOBAL_RPT_2 
+1. (Add) Adding additional enum values for the SHIFT_CMD and SHIFT_RPT to add manual gear control capability
+1. (Fix) Fixing certain html margins causing undesirable text wrapping in the dbc description html document
+
 # 13.1.0
 1. (Add) Add STEERING_FLUID_PRESSURE signal to the STEERING_AUX_RPT and STEERING_AUX_RPT_2
 1. (Add) Add USER_PC_HEALTH_RPT_00 and USER_PC_HEALTH_RPT_01
