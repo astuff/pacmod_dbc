@@ -1,3 +1,168 @@
+# 14.0.0
+1. (Change) Change ROLL_ANGLE to be DOOR_ANGLE and PITCH_ANGLE to be BODY_ANGLE in TIPPER_BODY_AUX_RPT_00 01 02
+1. (Change) Removed all Sprayer signals from the WIPER_AUX_RPT. Extended wiper signals by 1 bit each to include ERROR and NOT_AVAIL status values. Change data length code from 2 to 1. A SPRAYER_AUX_RPT and its signals will be added back to the protocol when needed.
+1. (Change) Remove YAW_RATE_RPT.
+1. (Change) Change BRAKE_MOTOR_RPT_2::ANGULAR_SPEED and STEERING_MOTOR_RPT_2::ANGULAR_SPEED from a factor of 0.1 to a factor of 0.001.
+1. (Change) Remove VEHICLE_SPEED_RPT::VEHICLE_SPEED_VALID and add ERROR and NOT_AVAIL data status enums to VEHICLE_SPEED_RPT::VEHICLE_SPEED. Change data length code from 2 to 1.
+1. (Change) Restructure Component Report: Remove component type, system present flags, supervisory signals, and can timeout fault. Add local state machine state. Change data length code from 8 to 4.
+1. (Change) Moved LOW, MEDIUM, and HIGH enums in the wiper report from 253, 254, 255 to 248, 249, 250 respectivly.
+1. (Add) Add DBW_HEALTH_RPT_00 and 01 messages
+1. (Add) Add AMBIENT_CONDITION_RPT message
+1. (Add) Add signal status enumerations to signals in the AIR_PRESSURE_RPT, BRAKE_AUX_RPT, BRAKE_AUX_RPT_2, ENGINE_AUX_RPT, ENGINE_AUX_RPT_2, ENGINE_BRAKE_AUX_RPT, ENGINE_LOAD_FACTOR_RPT, SHIFT_AUX_RPT, STEERING_AUX_RPT, STEERING_AUX_RPT_2, WHEEL_SPEED_RPT, and WHEEL_SPEED_RPT_2
+1. (Add) Add SELF_TEST_STATUS signal to BRAKE_RPT, BRAKE_RPT_2, STEERING_RPT, STEERING_RPT_2, PARKING_BRAKE_RPT, PARKING_BRAKE_RPT_2, TRAILER_AIR_SUPPLY_RPT, and TRAILER_AIR_SUPPLY_RPT_2.
+1. (Add) Add TRAILER_IDENTIFIER_RPT_00, 01, 02, 03, 04
+1. (Add) Add COMPONENT_AUX_RPT_00 - 05 which includes LOCATION_CODE and KEY_SWITCH_STATUS data.
+1. (Add) Add data status enumerations to
+    - ACCEL_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - BRAKE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - BRAKE_RPT_2
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - CABIN_CLIMATE_RPT
+        - MAN_AC_OFF_ON
+        - MAN_MAX_AC_OFF_ON
+        - MAN_DEFROST_OFF_ON
+        - MAN_MAX_DEFROST_OFF_ON
+        - MAN_DIR_UP_OFF_ON
+        - MAN_DIR_DOWN_OFF_ON
+        - CMD_AC_OFF_ON
+        - CMD_MAX_AC_OFF_ON
+        - CMD_DEFROST_OFF_ON
+        - CMD_MAX_DEFROST_OFF_ON
+        - CMD_DIR_UP_OFF_ON
+        - CMD_DIR_DOWN_OFF_ON
+        - OUT_AC_OFF_ON
+        - OUT_MAX_AC_OFF_ON
+        - OUT_DEFROST_OFF_ON
+        - OUT_MAX_DEFROST_OFF_ON
+        - OUT_DIR_UP_OFF_ON
+        - OUT_DIR_DOWN_OFF_ON
+    - CABIN_FAN_SPEED_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - CABIN_TEMP_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - CRUISE_CONTROL_BUTTONS_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - DASH_CONTROLS_LEFT_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - DASH_CONTROLS_RIGHT_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - ENGINE_BRAKE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+        - MAN_AUTO
+        - CMD_AUTO
+        - OUT_AUTO
+    - ENGINE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - EXHAUST_BRAKE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - HAZARD_LIGHTS_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - HEADLIGHT_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - HORN_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - MARKER_LAMP_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - MEDIA_CONTROLS_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - PARKING_BRAKE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - PARKING_BRAKE_RPT_2
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - POWER_TAKE_OFF_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - REAR_PASS_DOOR_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - SPRAYER_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - STEERING_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - STEERING_RPT_2
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TIPPER_BODY_RPT_00
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TIPPER_BODY_RPT_01
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TIPPER_BODY_RPT_02
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TRAILER_AIR_SUPPLY_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TRAILER_AIR_SUPPLY_RPT_2
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TRAILER_BRAKE_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - TURN_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    - WIPER_RPT
+        - MANUAL_INPUT
+        - COMMANDED_VALUE
+        - OUTPUT_VALUE
+    
+
+
+
 # 13.2.0
 1. (Add) Add GEAR_CMD and GEAR_RPT messages
 1. (Add) Add ACCEL_PEDAL_POSITION_VOLTAGE_RPT, BRAKE_MC_VOLTAGE_RPT, BRAKE_PEDAL_POSITION_VOLTAGE_RPT, STEERING_TRQ_SENSOR_VOLTAGE_RPT

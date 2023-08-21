@@ -72,15 +72,15 @@ All signals that can possess one or more of these statuses shall reserve the lar
 
 (N = the largest positive value for the given value space. For non-integers, consider the value space as an integer.)
 
-Single Bit Data
+## Single Bit Data
 
 Reserve 2-bits for data and statuses, defined as follows.
 0=FALSE_STATE, 1=TRUE_STATE, 2=ERROR, 3=NOT_AVAIL
-2-7 Bit Data
+## 2-7 Bit Data
 
 Reserve two largest positive values for statuses, defined as follows.
 N-1=ERROR, N=NOT_AVAIL
-8 Bit Data and Larger
+## 8 Bit Data and Larger
 
 Reserve five largest positive values for statuses, defined as follows.
 N-5, N-4, and N-3=RESERVED, N-1=ERROR, N=NOT_AVAIL
@@ -305,6 +305,7 @@ Abbreviations are only required when the name is over 32 characters.
 - MAX: Maximum
 - MC: Master Cylinder
 - MFG: Manufacturing
+- NTWRK: Network
 - OPCTRL: Operator Control
 - PASS: Passenger
 - PREV: Previous
