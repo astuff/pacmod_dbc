@@ -1,4 +1,4 @@
-VERSION "14.0.0"
+VERSION "14.1.0"
 
 
 NS_ :
@@ -362,7 +362,7 @@ BO_ 1105 COMPONENT_AUX_RPT_05: 1 PACMOD
  SG_ LOCATION_CODE : 3|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ KEY_SWITCH_STATUS : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 32 COMPONENT_RPT_00: 4 PACMOD
+BO_ 32 COMPONENT_RPT_00: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -375,8 +375,9 @@ BO_ 32 COMPONENT_RPT_00: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 33 COMPONENT_RPT_01: 4 PACMOD
+BO_ 33 COMPONENT_RPT_01: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -389,8 +390,9 @@ BO_ 33 COMPONENT_RPT_01: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 34 COMPONENT_RPT_02: 4 PACMOD
+BO_ 34 COMPONENT_RPT_02: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -403,8 +405,9 @@ BO_ 34 COMPONENT_RPT_02: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 35 COMPONENT_RPT_03: 4 PACMOD
+BO_ 35 COMPONENT_RPT_03: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -417,8 +420,9 @@ BO_ 35 COMPONENT_RPT_03: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 36 COMPONENT_RPT_04: 4 PACMOD
+BO_ 36 COMPONENT_RPT_04: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -431,8 +435,9 @@ BO_ 36 COMPONENT_RPT_04: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
-BO_ 39 COMPONENT_RPT_05: 4 PACMOD
+BO_ 39 COMPONENT_RPT_05: 5 PACMOD
  SG_ SYSTEM_ENABLED : 1|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_OVERRIDE_ACTIVE : 3|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ SYSTEM_FAULT_ACTIVE : 5|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
@@ -445,6 +450,7 @@ BO_ 39 COMPONENT_RPT_05: 4 PACMOD
  SG_ WATCHDOG_SANITY_FAULT : 21|2@0+ (1,0) [0|3] "" CUSTOMER_ECU
  SG_ COUNTER : 27|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
  SG_ COMPLEMENT : 31|4@0+ (1,0) [0|15] "" CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 34|3@0+ (1,0) [0|3] "" CUSTOMER_ECU
 
 BO_ 264 CRUISE_CONTROL_BUTTONS_CMD: 2 CUSTOMER_ECU
  SG_ ENABLE : 0|1@0+ (1,0) [0|1] ""  PACMOD
@@ -514,12 +520,16 @@ BO_ 1039 DATE_TIME_RPT: 6 PACMOD
 BO_ 40 DBW_HEALTH_RPT_00: 3 PACMOD
  SG_ COUNTER : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ CHECKSUM : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
- SG_ USER_CAN_NTWRK_INTEGRITY_FAULT : 17|2@0+ (1,0) [0|4] ""  PACMOD
+ SG_ USER_CAN_NTWRK_INTEGRITY_FAULT : 17|2@0+ (1,0) [0|4] ""  CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 20|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ SELF_TEST_STATUS : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
 
 BO_ 41 DBW_HEALTH_RPT_01: 3 PACMOD
  SG_ COUNTER : 7|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ CHECKSUM : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
- SG_ BACKUP_CAN_NTWRK_INTEGRITY_FAULT : 17|2@0+ (1,0) [0|4] ""  PACMOD
+ SG_ BACKUP_CAN_NTWRK_INTEGRITY_FAULT : 17|2@0+ (1,0) [0|4] ""  CUSTOMER_ECU
+ SG_ DBW_WARNING_LEVEL : 20|3@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ SELF_TEST_STATUS : 23|3@0+ (1,0) [0|7] ""  CUSTOMER_ECU
 
 BO_ 1041 DETECTED_OBJECT_RPT: 6 PACMOD
  SG_ FRONT_OBJECT_DISTANCE_LOW_RES : 7|24@0+ (0.001,0) [0|16777.215] "m"  CUSTOMER_ECU
@@ -1042,11 +1052,12 @@ BO_ 64 SAFETY_FUNC_RPT: 4 PACMOD
  
 BO_ 67 SAFETY_FUNC_RPT_2: 2 PACMOD
  SG_ COMMANDED_STATE : 3|4@0+ (1,0) [0|3] ""  CUSTOMER_ECU
- SG_ STATE : 7|4@0+ (1,0) [0|4] ""  CUSTOMER_ECU
+ SG_ STATE : 7|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
  SG_ MANUAL_STATE_OBTAINABLE : 8|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ AUTOMS_READY_STATE_OBTAINABLE : 9|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ AUTOMS_STATE_OBTAINABLE : 10|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ MANUAL_READY_STATE_OBTAINABLE : 11|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ SELF_TEST_ALLOWED : 12|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
 
 BO_ 68 SAFETY_RESPONSE_RPT: 1 PACMOD
  SG_ SAFETY_RESPONSE : 3|4@0+ (1,0) [0|3] ""  CUSTOMER_ECU
@@ -1318,7 +1329,7 @@ BO_ 368 TIPPER_BODY_CMD_02: 2 CUSTOMER_ECU
  SG_ CLEAR_OVERRIDE : 2|1@0+ (1,0) [0|1] ""  PACMOD
  SG_ TIPPER_CONTROL_CMD : 15|8@0+ (1,0) [0|2] ""  PACMOD
 
-BO_ 600 TIPPER_BODY_RPT_00: 4 PACMOD
+BO_ 600 TIPPER_BODY_RPT_00: 5 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_OUTPUT_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1330,8 +1341,11 @@ BO_ 600 TIPPER_BODY_RPT_00: 4 PACMOD
  SG_ MANUAL_INPUT : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ CONTROL_STATUS : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CONTROLLING_SYSTEMS : 34|2@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ PERFORMANCE_STATUS : 37|3@0+ (1,0) [0|4] ""  CUSTOMER_ECU
 
-BO_ 620 TIPPER_BODY_RPT_01: 4 PACMOD
+BO_ 620 TIPPER_BODY_RPT_01: 5 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_OUTPUT_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1343,8 +1357,11 @@ BO_ 620 TIPPER_BODY_RPT_01: 4 PACMOD
  SG_ MANUAL_INPUT : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ CONTROL_STATUS : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CONTROLLING_SYSTEMS : 34|2@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ PERFORMANCE_STATUS : 37|3@0+ (1,0) [0|4] ""  CUSTOMER_ECU
 
-BO_ 624 TIPPER_BODY_RPT_02: 4 PACMOD
+BO_ 624 TIPPER_BODY_RPT_02: 5 PACMOD
  SG_ ENABLED : 0|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ OVERRIDE_ACTIVE : 1|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
  SG_ COMMAND_OUTPUT_FAULT : 2|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
@@ -1356,6 +1373,9 @@ BO_ 624 TIPPER_BODY_RPT_02: 4 PACMOD
  SG_ MANUAL_INPUT : 15|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ COMMANDED_VALUE : 23|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
  SG_ OUTPUT_VALUE : 31|8@0+ (1,0) [0|255] ""  CUSTOMER_ECU
+ SG_ CONTROL_STATUS : 32|1@0+ (1,0) [0|1] ""  CUSTOMER_ECU
+ SG_ CONTROLLING_SYSTEMS : 34|2@0+ (1,0) [0|3] ""  CUSTOMER_ECU
+ SG_ PERFORMANCE_STATUS : 37|3@0+ (1,0) [0|4] ""  CUSTOMER_ECU
 
 BO_ 1072 TIRE_PRESSURE_EXTENDED_RPT: 8 PACMOD
  SG_ TIRE_CHASSIS_INDEX_1 : 3|4@0+ (1,0) [0|15] ""  CUSTOMER_ECU
@@ -1576,6 +1596,9 @@ BO_ 1098 TRAILER_IDENTIFIER_RPT_03: 4 PACMOD
  SG_ TRAILER_IDENTIFIER : 7|32@0+ (1,0) [0|4294967295] ""  CUSTOMER_ECU
 
 BO_ 1099 TRAILER_IDENTIFIER_RPT_04: 4 PACMOD
+ SG_ TRAILER_IDENTIFIER : 7|32@0+ (1,0) [0|4294967295] ""  CUSTOMER_ECU
+
+BO_ 1106 TRAILER_IDENTIFIER_RPT_05: 4 PACMOD
  SG_ TRAILER_IDENTIFIER : 7|32@0+ (1,0) [0|4294967295] ""  CUSTOMER_ECU
 
 BO_ 1080 TRAILER_PAYLOAD_RPT_02: 8 PACMOD
@@ -1933,19 +1956,22 @@ CM_ BO_ 1087 "Chassis number increments from the front most trailer and is indic
 CM_ BO_ 1088 "Chassis number increments from the front most trailer and is indicated by the report index.";
 
 // TRAILER_IDENTIFIER_RPT_00 MESSAGE COMMENT
-CM_ BO_ 1095 "Chassis number increments from the front most trailer and is indicated by the report index.";
+CM_ BO_ 1095 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
 
 // TRAILER_IDENTIFIER_RPT_01 MESSAGE COMMENT
-CM_ BO_ 1096 "Chassis number increments from the front most trailer and is indicated by the report index.";
+CM_ BO_ 1096 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
 
 // TRAILER_IDENTIFIER_RPT_02 MESSAGE COMMENT
-CM_ BO_ 1097 "Chassis number increments from the front most trailer and is indicated by the report index.";
+CM_ BO_ 1097 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
 
 // TRAILER_IDENTIFIER_RPT_03 MESSAGE COMMENT
-CM_ BO_ 1098 "Chassis number increments from the front most trailer and is indicated by the report index.";
+CM_ BO_ 1098 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
 
 // TRAILER_IDENTIFIER_RPT_04 MESSAGE COMMENT
-CM_ BO_ 1099 "Chassis number increments from the front most trailer and is indicated by the report index.";
+CM_ BO_ 1099 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
+
+// TRAILER_IDENTIFIER_RPT_05 MESSAGE COMMENT
+CM_ BO_ 1106 "Chassis number increments from the front most trailer (including prime mover) and is indicated by the report index.";
 
 // TRAILER_PAYLOAD_RPT_00 MESSAGE COMMENT
 CM_ BO_ 1078 "Tipper body number increments from the front most trailer and is indicated by the report index.";
@@ -2105,6 +2131,7 @@ CM_ SG_ 32 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 32 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 32 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 32 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 32 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // COMPONENT_RPT_01 COMMENTS
 CM_ SG_ 33 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -2117,6 +2144,7 @@ CM_ SG_ 33 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 33 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 33 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 33 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 33 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // COMPONENT_RPT_02 COMMENTS
 CM_ SG_ 34 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -2129,6 +2157,7 @@ CM_ SG_ 34 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 34 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 34 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 34 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 34 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // COMPONENT_RPT_03 COMMENTS
 CM_ SG_ 35 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -2141,6 +2170,7 @@ CM_ SG_ 35 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 35 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 35 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 35 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 35 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // COMPONENT_RPT_04 COMMENTS
 CM_ SG_ 36 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -2153,6 +2183,7 @@ CM_ SG_ 36 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 36 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 36 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 36 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 36 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // COMPONENT_RPT_05 COMMENTS
 CM_ SG_ 39 COUNTER "Counter shall have the value of 0 with the first message transmission.  It shall increase by 1 with each subsequent message transmission up to and including the value of 0xF.  The next message transmission shall be 0, and this pattern shall repeat.";
@@ -2165,6 +2196,7 @@ CM_ SG_ 39 SYSTEM_FAULT_ACTIVE "One or more faults are active.";
 CM_ SG_ 39 USER_PC_HEALTH_FAULT_00 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 39 USER_PC_HEALTH_FAULT_01 "This value indicates the integrity and execution of code on the USER_PC.";
 CM_ SG_ 39 STATE "This value indicates the current state of the local state machine.";
+CM_ SG_ 39 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // CRUISE_CONTROL_BUTTONS_CMD COMMENTS
 CM_ SG_ 264 CRUISE_CONTROL_BUTTON "NONE = no button pressed, CNCL = Cancel, FURTHER* or CLOSER* = Change follow distance, SET_DEC* = set/decrement, RES_INC* = resume/increment, ON_OFF = Cruise On/Off, LIM* = Speed limiter On/Off. *Exact function varies across vehicles - See platform guide.";
@@ -2177,10 +2209,12 @@ CM_ SG_ 520 OUTPUT_VALUE "NONE = no button pressed, CNCL = Cancel, FURTHER* or C
 // DBW_HEALTH_RPT_00 COMMENTS
 CM_ SG_ 40 COUNTER "The COUNTER shall have the value of 0 with the first message transmission. It shall increase by 1 with each subsequent message transmission up to and including the value of 0xFF. The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 40 CHECKSUM "The CHECKSUM shall be the least significant byte of the sum of the message ID and the COUNTER. For example, if COUNTER is 0xFB and the message ID is 0x25, then the sum is 0x0120 and the checksum is 0x20.";
+CM_ SG_ 40 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // DBW_HEALTH_RPT_01 COMMENTS
 CM_ SG_ 41 COUNTER "The COUNTER shall have the value of 0 with the first message transmission. It shall increase by 1 with each subsequent message transmission up to and including the value of 0xFF. The next message transmission shall be 0, and this pattern shall repeat.";
 CM_ SG_ 41 CHECKSUM "The CHECKSUM shall be the least significant byte of the sum of the message ID and the COUNTER. For example, if COUNTER is 0xFB and the message ID is 0x25, then the sum is 0x0120 and the checksum is 0x20.";
+CM_ SG_ 41 DBW_WARNING_LEVEL "The value 0 is no warning. The value increases from 0 to 3 with the severity of the failure. Values 4-7 are reserved. See the user guide for the exact definition.";
 
 // DRIVE_TRAIN_FEATURE_RPT COMMENTS
 CM_ SG_ 1055 ANTILOCK_BRAKE_DISABLED_AVAIL "PACMod sets this value as a function of which vehicle platform is under test and, therefore, this value does not change during operation.";
@@ -2458,16 +2492,19 @@ CM_ SG_ 368 TIPPER_CONTROL_CMD "RAISE moves towards dump position, LOWER moves t
 CM_ SG_ 600 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 600 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 600 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 600 CONTROLLING_SYSTEMS "Number of systems in control.";
 
 // TIPPER_BODY_RPT_01 COMMENTS
 CM_ SG_ 620 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 620 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 620 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 620 CONTROLLING_SYSTEMS "Number of systems in control.";
 
 // TIPPER_BODY_RPT_02 COMMENTS
 CM_ SG_ 624 MANUAL_INPUT "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 624 COMMANDED_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
 CM_ SG_ 624 OUTPUT_VALUE "RAISE moves towards dump position, LOWER moves towards haul position.";
+CM_ SG_ 624 CONTROLLING_SYSTEMS "Number of systems in control.";
 
 // TIRE_PRESSURE_EXTENDED_RPT COMMENTS
 CM_ SG_ 1072 TIRE_CHASSIS_INDEX_1 "The value 0 represents the towing vehicle and all subsequent numbers represent their location behind the towing vehicle.";
@@ -2585,6 +2622,9 @@ CM_ SG_ 1098 TRAILER_IDENTIFIER "Exact definition varies across vehicles - See p
 
 // TRAILER_IDENTIFIER_RPT_04 COMMENTS
 CM_ SG_ 1099 TRAILER_IDENTIFIER "Exact definition varies across vehicles - See platform guide.";
+
+// TRAILER_IDENTIFIER_RPT_05 COMMENTS
+CM_ SG_ 1106 TRAILER_IDENTIFIER "Exact definition varies across vehicles - See platform guide.";
 
 // TRAILER_PAYLOAD_RPT_00 COMMENTS
 CM_ SG_ 1078 PAYLOAD_00 "Axle group number starting from the front of the respective trailer number and is indicated by the signal index. This value represents only the contents of the trailer.";
@@ -3507,6 +3547,9 @@ BA_ "GenSigCycleTime" SG_ 600 COMMAND_TIMEOUT 100;
 BA_ "GenSigCycleTime" SG_ 600 MANUAL_INPUT 100;
 BA_ "GenSigCycleTime" SG_ 600 COMMANDED_VALUE 100;
 BA_ "GenSigCycleTime" SG_ 600 OUTPUT_VALUE 100;
+BA_ "GenSigCycleTime" SG_ 600 CONTROL_STATUS 100;
+BA_ "GenSigCycleTime" SG_ 600 CONTROLLING_SYSTEMS 100;
+BA_ "GenSigCycleTime" SG_ 600 PERFORMANCE_STATUS 100;
 
 // TIPPER_BODY_RPT_01 ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 620 100;
@@ -3521,6 +3564,9 @@ BA_ "GenSigCycleTime" SG_ 620 COMMAND_TIMEOUT 100;
 BA_ "GenSigCycleTime" SG_ 620 MANUAL_INPUT 100;
 BA_ "GenSigCycleTime" SG_ 620 COMMANDED_VALUE 100;
 BA_ "GenSigCycleTime" SG_ 620 OUTPUT_VALUE 100;
+BA_ "GenSigCycleTime" SG_ 620 CONTROL_STATUS 100;
+BA_ "GenSigCycleTime" SG_ 620 CONTROLLING_SYSTEMS 100;
+BA_ "GenSigCycleTime" SG_ 620 PERFORMANCE_STATUS 100;
 
 // TIPPER_BODY_RPT_02 ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 624 100;
@@ -3535,6 +3581,9 @@ BA_ "GenSigCycleTime" SG_ 624 COMMAND_TIMEOUT 100;
 BA_ "GenSigCycleTime" SG_ 624 MANUAL_INPUT 100;
 BA_ "GenSigCycleTime" SG_ 624 COMMANDED_VALUE 100;
 BA_ "GenSigCycleTime" SG_ 624 OUTPUT_VALUE 100;
+BA_ "GenSigCycleTime" SG_ 624 CONTROL_STATUS 100;
+BA_ "GenSigCycleTime" SG_ 624 CONTROLLING_SYSTEMS 100;
+BA_ "GenSigCycleTime" SG_ 624 PERFORMANCE_STATUS 100;
 
 // TIRE_PRESSURE_EXTENDED_RPT ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1072 500;
@@ -3717,6 +3766,10 @@ BA_ "GenSigCycleTime" SG_ 1098 TRAILER_IDENTIFIER 5000;
 // TRAILER_IDENTIFIER_RPT_04 ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1099 5000;
 BA_ "GenSigCycleTime" SG_ 1099 TRAILER_IDENTIFIER 5000;
+
+// TRAILER_IDENTIFIER_RPT_05 ATTRIBUTES
+BA_ "GenMsgCycleTime" BO_ 1106 5000;
+BA_ "GenSigCycleTime" SG_ 1106 TRAILER_IDENTIFIER 5000;
 
 // TRAILER_PAYLOAD_RPT_00 ATTRIBUTES
 BA_ "GenMsgCycleTime" BO_ 1078 250;
@@ -4274,7 +4327,7 @@ VAL_ 34 SYSTEM_OVERRIDE_ACTIVE 0 "NOT_OVERRIDDEN" 1 "OVERRIDDEN" 2 "ERROR" 3 "NO
 VAL_ 34 SYSTEM_FAULT_ACTIVE 0 "NO_FAULT" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL";
 VAL_ 34 USER_PC_HEALTH_FAULT_00 0 "OKAY" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL" ;
 VAL_ 34 USER_PC_HEALTH_FAULT_01 0 "OKAY" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL" ;
-VAL_ 34 STATE 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" 4 "MANUAL" 5 "STARTUP" ;
+VAL_ 34 STATE 0 "NONE" 1 "AUTOMS_READY" 2 "AUTOMS" 3 "MANUAL_READY" 4 "MANUAL" 5 "STARTUP"  ;
 
 // COMPONENT_RPT_03 VALUES
 VAL_ 35 CONFIG_FAULT 0 "NO_FAULT" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL";
@@ -4371,9 +4424,11 @@ VAL_ 528 OUTPUT_VALUE 0 "DASH_CONTROL_NONE" 1 "DASH_CONTROL_OK" 2 "DASH_CONTROL_
 
 // DBW_HEALTH_RPT_00 VALUES
 VAL_ 40 USER_CAN_NTWRK_INTEGRITY_FAULT 0 "OK" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL" ;
+VAL_ 40 SELF_TEST_STATUS 0 "NOT_RUNNING" 1 "IN_PROGRESS" 2 "SUCCESS" 3 "RESERVED" 4 "RESERVED" 5 "RESERVED" 6 "ERROR" 7 "NOT_AVAIL" ;
 
 // DBW_HEALTH_RPT_01 VALUES
 VAL_ 41 BACKUP_CAN_NTWRK_INTEGRITY_FAULT 0 "OK" 1 "FAULT" 2 "NOT_USED" 3 "NOT_AVAIL" ;
+VAL_ 41 SELF_TEST_STATUS 0 "NOT_RUNNING" 1 "IN_PROGRESS" 2 "SUCCESS" 3 "RESERVED" 4 "RESERVED" 5 "RESERVED" 6 "ERROR" 7 "NOT_AVAIL" ;
 
 // DIFFERENTIAL_LOCKS_CMD VALUES
 VAL_ 372 ENABLE 0 "DISABLE" 1 "ENABLE" ;
@@ -4879,6 +4934,7 @@ VAL_ 67 MANUAL_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
 VAL_ 67 AUTOMS_READY_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
 VAL_ 67 AUTOMS_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
 VAL_ 67 MANUAL_READY_STATE_OBTAINABLE 0 "NOT_OBTAINABLE" 1 "OBTAINABLE" ;
+VAL_ 67 SELF_TEST_ALLOWED 0 "NOT_ALLOWED" 1 "ALLOWED" ;
 
 // SAFETY_RESPONSE_RPT VALUES
 VAL_ 68 SAFETY_RESPONSE 0 "RESERVED" 1 "SAFETY_RESPONSE_1" 2 "SAFETY_RESPONSE_2" 3 "SAFETY_RESPONSE_3" ;
@@ -5073,6 +5129,8 @@ VAL_ 600 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 600 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 600 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 600 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
+VAL_ 600 CONTROL_STATUS 0 "SAFE" 1 "AVAILABLE" ;
+VAL_ 600 PERFORMANCE_STATUS 0 "NONE" 1 "CMD_TRACKING_FAILURE" 2 "APPOACHING_OPERATIONAL_LIMITS" 3 "LIMITING_ACTIVE" 4 "LIMITING_IMMINENT" ;
 
 // TIPPER_BODY_RPT_01 VALUES
 VAL_ 620 ENABLED 0 "FALSE" 1 "TRUE" ;
@@ -5086,6 +5144,8 @@ VAL_ 620 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 620 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 620 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 620 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
+VAL_ 620 CONTROL_STATUS 0 "SAFE" 1 "AVAILABLE" ;
+VAL_ 620 PERFORMANCE_STATUS 0 "NONE" 1 "CMD_TRACKING_FAILURE" 2 "APPOACHING_OPERATIONAL_LIMITS" 3 "LIMITING_ACTIVE" 4 "LIMITING_IMMINENT" ;
 
 // TIPPER_BODY_RPT_02 VALUES
 VAL_ 624 ENABLED 0 "FALSE" 1 "TRUE" ;
@@ -5099,6 +5159,8 @@ VAL_ 624 COMMAND_TIMEOUT 0 "NO_TIMEOUT" 1 "TIMEOUT" ;
 VAL_ 624 MANUAL_INPUT 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 624 COMMANDED_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
 VAL_ 624 OUTPUT_VALUE 0 "NO_ACTION" 1 "RAISE" 2 "LOWER" 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_AVAIL" ;
+VAL_ 624 CONTROL_STATUS 0 "SAFE" 1 "AVAILABLE" ;
+VAL_ 624 PERFORMANCE_STATUS 0 "NONE" 1 "CMD_TRACKING_FAILURE" 2 "APPOACHING_OPERATIONAL_LIMITS" 3 "LIMITING_ACTIVE" 4 "LIMITING_IMMINENT" ;
 
 // TIRE_PRESSURE_EXTENDED_RPT VALUES
 VAL_ 1072 TIRE_PRESSURE_1 251 "RESERVED" 252 "RESERVED" 253 "RESERVED" 254 "ERROR" 255 "NOT_ACTIVE" ;
@@ -5281,6 +5343,9 @@ VAL_ 1098 TRAILER_IDENTIFIER 4294967291 "RESERVED"  4294967292 "RESERVED" 429496
 
 // TRAILER_IDENTIFIER_RPT_04 VALUES
 VAL_ 1099 TRAILER_IDENTIFIER 4294967291 "RESERVED"  4294967292 "RESERVED" 4294967293 "RESERVED" 4294967294 "ERROR" 4294967295 "NOT_AVAIL" ;
+
+// TRAILER_IDENTIFIER_RPT_05 VALUES
+VAL_ 1106 TRAILER_IDENTIFIER 4294967291 "RESERVED"  4294967292 "RESERVED" 4294967293 "RESERVED" 4294967294 "ERROR" 4294967295 "NOT_AVAIL" ;
 
 // TRAILER_PAYLOAD_RPT_01 VALUES
 VAL_ 1079 PAYLOAD_00 32763 "RESERVED" 32764 "RESERVED"  32765 "RESERVED"  32766 "ERROR" 32767 "NOT_AVAIL" ;

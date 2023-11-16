@@ -537,6 +537,7 @@
     <can_id>1103</can_id>
     <can_id>1104</can_id>
     <can_id>1105</can_id>
+    <can_id>1106</can_id>
   </vehicle>
   <vehicle name="Development Vehicle 04" id="10">
     <can_id>17</can_id>
