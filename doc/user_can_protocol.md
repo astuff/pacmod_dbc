@@ -1,6 +1,6 @@
 # User CAN Protocol Standard 3.0
 
-This document the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod System and resides on the User CAN data bus.
+This document is the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod System and resides on the User CAN data bus.
 
 ## Document References
 This document is the authoritative defintion of the User CAN Protocol.  The following documents are supplimental to this document.  They all reside in GitHub (https://github.com/astuff/pacmod_dbc).
@@ -12,16 +12,16 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 ## Definitions
 
 - Amber Warning Lamp: Warning lamp that indicates faults that do not require the vehicle to stop immediately.
+- Red Warning Lamp: Warning lamp that indicates faults that require the vehicle to stop immediately.
 - CAN ID: A CAN ID is the value in the CAN arbitration field that identifies the data in the CAN data field.
 - CAN Message: A CAN message is a CAN frame with a specific value in its CAN arbitration field.
 - Component: An individual electronic part of the PACMod System that communicates on the User CAN.
 - DBC: The as_pacmod.dbc file.
 - PACMod System: The PACMod System is the PACMod System.
-- Red Warning Lamp: warning lamp that indicates faults that do require the vehicle to stop immediately.
 - System: A vehicle system that is under by-wire control.
 - User CAN: The CAN bus that interfaces to the PACMod System.
 - User PC: Any device the customer uses to communicate with the PACMod System.
-- Vehicle: A vehicle with under the control of the PACMod System.
+- Vehicle: Any vehicle under the control of the PACMod System.
 - Vehicle Platform: A particular manufacturer make and model compatible with the PACMod System.
 
 ## User CAN
