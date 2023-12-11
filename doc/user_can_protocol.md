@@ -3,11 +3,11 @@
 This document is the authoritative definition of the User CAN Protocol, commonly called the CAN API.  It is the interface to the PACMod System and resides on the User CAN data bus.
 
 ## Document References
-This document is the authoritative defintion of the User CAN Protocol.  The following documents are supplimental to this document.  They all reside in GitHub (https://github.com/astuff/pacmod_dbc).
+This document is the authoritative defintion of the User CAN Protocol.  The following documents are supplemental to this document.  They all reside in GitHub (https://github.com/astuff/pacmod_dbc).
 
 - as_pacmod.dbc - The file contains the CAN Message definitions in Vector proprietary DBC file format.
 - vehicle_associations.xml - The file contains the availability of each message on each of the different vehicle platforms.
-- dbc_description.html - This file is derived from as_pacmod.dbc and vehicle_associations.xml.  It is a human readble version of the same.
+- dbc_description.html - This file is derived from as_pacmod.dbc and vehicle_associations.xml.  It is a human readable version of the same.
 
 ## Definitions
 
@@ -230,7 +230,7 @@ The SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be READY when all the 
 Otherwise the SYSTEM_READY signal in the GLOBAL_RPT_2 message shall be NOT_READY.
 
 ## User Notification Command Priorities
-The buzzer and LED controls have a priority list as follows.
+The buzzer and LED controls have a priority list as follows:
 BUZZER_MUTE (highest), BUZZER_ON, and internal PACMod (lowest) are the buzzer control priorities.
 LIGHT_COMMAND::OFF (highest), LED_BRIGHTNESS, INTERIOR_LIGHTS_RPT::AMBIENT_LIGHT_SENSOR, INTERIOR_LIGHTS_RPT::DIM_LEVEL, MAX_BRIGHTNESS (lowest) are the light control priorities, as available.
 
@@ -257,9 +257,9 @@ Bool signal type names shall be suffixed with a direct reference to their affirm
 
 Enumeration signal type names that require additional specificity shall be suffixed with a reference to their corresponding physical signal type. When the signal represents logical information instead of physical, one of the following suffixes shall be used:
 
-1. MODE - shall represent a signal that is read/write and indicates differing behaviors with a given set of hardware or I/O.
-1. STATE - shall represent a signal that is read/write and indicates a physical or logical condition.
-1. STATUS - shall represent a signal that is read only and indicates a physical or logical condition.
+1. MODE -  Represents a signal that is read/write and indicates differing behaviors with a given set of hardware or I/O.
+1. STATE - Represents a signal that is read/write and indicates a physical or logical condition.
+1. STATUS - Represents a signal that is read only and indicates a physical or logical condition.
 
 ## Signal Value Name Rules
 
