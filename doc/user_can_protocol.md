@@ -7,7 +7,7 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 
 - as_pacmod.dbc - The file contains the CAN Message definitions in Vector proprietary DBC file format.
 - vehicle_associations.xml - The file contains the availability of each message on each of the different vehicle platforms.
-- dbc_description.html - This file is derived from as_pacmod.dbc and vehicle_associations.xml.  It is a human readable version of the same.
+- dbc_description.html - This file is derived from as_pacmod.dbc and vehicle_associations.xml.  It is a human readable version of the same file.
 
 ## Definitions
 
