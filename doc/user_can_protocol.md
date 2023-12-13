@@ -25,7 +25,7 @@ This document is the authoritative defintion of the User CAN Protocol.  The foll
 - Vehicle Platform: A particular manufacturer make and model compatible with the PACMod System.
 
 ## User CAN
-User CAN is the CAN bus interface to the PACMod System. It refers to both the User CAN bus and to the User CAN protocol that describes the messages on the CAN bus.
+User CAN is the CAN bus interface to the PACMod System. It refers to both the User CAN bus and the User CAN protocol that describes the messages on the CAN bus.
 
 ## Restrictions
 User CAN has the following restrictions:
@@ -34,15 +34,15 @@ User CAN has the following restrictions:
 3. Messaging beyond the interface to the PACMod system is prohibited.
 
 ## Types of CAN Messages
-Each stock vehicle system under by-wire control has an associated by-wire system command message and a by-wire system report message.  A command message is a CAN message from the User PC to command the PACMod System commanding the by-wire system to perform some action.  A command message is identified by a "CMD" in its name.  A report message from the PACMod System provides feedback to the User PC.  A report message is indicated by a "RPT" in its name.
+Each stock vehicle system under by-wire control has an associated by-wire system command message and a by-wire system report message.  A command message is a CAN message from the User PC to the PACMod System commanding the by-wire system to perform an action.  A command message is identified by a "CMD" in its name.  A report message from the PACMod System provides feedback to the User PC.  A report message is indicated by a "RPT" in its name.
 
 Each system command and report message pair is of one of the following types:
 1. Boolean: The data type carried by the command or report message is a boolean and is 8 bits long.
-1. Enumeration: The data type carried by the command or report message is an enumeration and is of 8 or 16 bits.
-1. Multi Enumeration: The data type carried by the command or report message is a set of enumerations.  They of varying number and sizes limited by how they fit into 8 or 16 bits.
+1. Enumeration: The data type carried by the command or report message is an enumeration and is 8 or 16 bits long.
+1. Multi Enumeration: The data type carried by the command or report message is a set of enumerations.  The enumerations are of varying number and sizes limited by how they fit into 8 or 16 bits.
 1. Float: The data type carried by the command or report message is 8 or 16 bit integer.
 
-A single command and report message pair communicates data related to the by-wire control established at the corresponding operator control for a single stock vehicle parameter. Each report message includes the following fields.
+A single command and report message pair communicates data related to the by-wire control established at the corresponding operator control for a single stock vehicle parameter. Each report message includes the following fields:
 
 1. MANUAL_INPUT - measurement from operator control for monitoring operator intent.
 1. COMMANDED_VALUE - copy of the command received for diagnostic of User CAN.
@@ -55,9 +55,9 @@ The availability of feedback data for the OUTPUT_VALUE varies between stock vehi
 1. COMMANDED_VALUE in by-wire mode and MANUAL_INPUT in manual mode.
 1. Zero in both modes.
 
-The global messages affect the PACMod System as a whole (all its systems and/or components).  It is made up of the global command and the global report.  The global command affects the PACMod System as a whole.  The global report reflects the status of the PACMod System as a whole.  Global messages are identified with "GLOBAL" in its name.
+The global messages affect the PACMod System as a whole (all systems and/or components).  It is made up of the global command and the global report.  The global command affects the PACMod System as a whole.  The global report reflects the status of the PACMod System as a whole.  Global messages are identified with "GLOBAL" in its name.
 
-System messages are made up of command messages and report messages and have a fixed association to a single vehicle system under by-wire control.  The system command message contains the command specific to its system.  The system report contains an echo of the command, the operator command to the corresponding system, as well as the vehicle response to the command (if available).  It also contains status information.  System auxiliary reports contain additional information related to its system.  Each data field in a system auxiliary report has a corresponding data field that indicates the availability of the data for vehicle.  System messages begin with the name of a system.  Auxiliary messages are identified with "AUX" in its name.
+System messages are made up of command messages, report messages, and have a fixed association to a single vehicle system under by-wire control.  The system command message contains the command specific to its system.  The system report contains an echo of the command, the operator command to the corresponding system, as well as the vehicle response to the command (if available).  It also contains status information.  System auxiliary reports contain additional information related to its system.  Each data field in a system auxiliary report has a corresponding data field that indicates the availability of the data for vehicle.  System messages begin with the name of a system.  Auxiliary messages are identified with "AUX" in its name.
 
 Component reports have a fixed association to a single component.  It contains data fields that indicate the type of its component, the systems available on its component, and the status of its component.
 
@@ -73,15 +73,14 @@ All signals that can possess one or more of these statuses shall reserve the lar
 (N = the largest positive value for the given value space. For non-integers, consider the value space as an integer.)
 
 ## Single Bit Data
-
-Reserve 2-bits for data and statuses, defined as follows.
+Reserve 2-bits for data and statuses, defined as follows:
 0=FALSE_STATE, 1=TRUE_STATE, 2=ERROR, 3=NOT_AVAIL
-## 2-7 Bit Data
 
+## 2-7 Bit Data
 Reserve two largest positive values for statuses, defined as follows.
 N-1=ERROR, N=NOT_AVAIL
-## 8 Bit Data and Larger
 
+## 8 Bit Data and Larger
 Reserve five largest positive values for statuses, defined as follows.
 N-5, N-4, and N-3=RESERVED, N-1=ERROR, N=NOT_AVAIL
 RESERVED values are for later use.
@@ -92,7 +91,6 @@ If one of the enumeration values do not apply to a given signal - NOT_USED may b
 User CAN Protocol datalink layer is CAN 2.0 at 500kbps.
 
 ## CAN IDs
-
 The list below constrains the assignment of CAN IDs to specific messages. Its purpose is to give increasing priority to the increasing time-criticality of associated data.
 
 1. 0x000-0x03F (0-63) - System-wide reports (global and component reports meant to be received by all components)
@@ -109,7 +107,6 @@ The list below constrains the assignment of CAN IDs to specific messages. Its pu
 1. 0x700-0x7FF (1792-2047) - Unused
 
 ## Rules for Transmitting CAN Messages
-
 All system messages transmit at 30Hz.  Other messages transmit at 30Hz or less. Transmission of successive messages shall not be back-to-back but must have a minimum separation of 500 microseconds.  See the figure below.  Faster data transmission may prevent PACMod from processing all data and result in inconsistent behavior.
 
 The figure below is an example of the minimum separation between the transmission of the BRAKE_CMD, STEERING_CMD, and the ACCEL_CMD messages by the User PC.  The User PC transmits the complete set of messages, each separated by 500us.  The user then transmits the same set of messages again on 30Hz cycle (33.3ms) later.  Each message is again separated by 500us.
@@ -118,7 +115,7 @@ The figure below is an example of the minimum separation between the transmissio
 
 ## CAN Signals
 
-The byte order of all CAN signals is Motorola/Big-Endian. All negative numbers are represented as two’s compliment.
+The byte order of all CAN signals is Motorola/Big-Endian. All negative numbers are represented as two’s complement.
 
 ## CAN Message Availability
 
